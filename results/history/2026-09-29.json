@@ -1,11 +1,16 @@
 {
- "model": "Analyst Dashboard + Whale Fusion",
- "model_version": "V20",
- "generated_utc": "2026-09-29T08:47:01+00:00",
+ "model": "V21 trend/momentum rating + Analyst Dashboard V20 entry timing",
+ "model_version": "V21",
+ "rating_rule": {
+  "BUY": "score >= 80 (top quintile)",
+  "SELL": "score < 20 (bottom quintile)",
+  "HOLD": "otherwise"
+ },
+ "generated_utc": "2026-09-29T09:31:35+00:00",
  "market_date": "2026-09-29",
  "data_source": "Yahoo Finance (adjusted daily OHLCV)",
  "benchmark": "^TA125.TA",
- "thresholds": {
+ "timing_thresholds": {
   "buy": 68.0,
   "strong_buy": 82.0
  },
@@ -20,52 +25,75 @@
    "sector": "אנרגיה",
    "data_ok": true,
    "data_issues": [],
+   "score": 61.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 0.4,
+     "percentile": 68.0
+    },
+    "hi52": {
+     "value": 67.0,
+     "percentile": 21.0
+    },
+    "dist_ema200": {
+     "value": -2.2,
+     "percentile": 54.0
+    },
+    "ema50_200": {
+     "value": 9.4,
+     "percentile": 91.0
+    }
+   },
+   "timing": {
+    "score": 48.9,
+    "score_week_max": 54.2,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 36.2,
+    "sell_score": 15.0,
+    "sell_action": "TRIM",
+    "layers": {
+     "trend": 5.0,
+     "pullback": 19.9,
+     "reversal": 8.0,
+     "volume": 6.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": true,
+     "reversal_ready": true,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 55.5,
-   "score_week_max": 55.5,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 36.2,
-   "sell_score": 23.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 5.0,
-    "pullback": 15.5,
-    "reversal": 23.0,
-    "volume": 2.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": true,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 213.5,
-    "chg_1w_pct": -6.8,
-    "chg_1m_pct": -9.1,
-    "rsi": 37.6,
-    "adx": 36.0,
-    "atr_pct": 4.14,
-    "dist_ema200_pct": -2.6,
-    "dist_from_high_pct": 11.6,
-    "cmf": -0.006,
-    "rvol": 0.16,
-    "beta": 2.54,
-    "rs_3m_pct": -21.2,
-    "rs_percentile": 8.0,
-    "stop_ref": 201.78,
-    "stop_risk_pct": 5.5,
-    "median_turnover_ils": 72620250.0,
-    "reversal_signals": 3,
+    "close": 212.7,
+    "chg_1w_pct": -4.6,
+    "chg_1m_pct": -8.9,
+    "rsi": 37.3,
+    "adx": 37.9,
+    "atr_pct": 4.06,
+    "dist_ema200_pct": -2.9,
+    "dist_from_high_pct": 11.9,
+    "cmf": 0.076,
+    "rvol": 0.24,
+    "beta": 2.7,
+    "rs_3m_pct": -18.8,
+    "rs_percentile": 10.0,
+    "stop_ref": 206.98,
+    "stop_risk_pct": 2.7,
+    "median_turnover_ils": 65548350.0,
+    "reversal_signals": 2,
     "pattern": "None"
    },
    "whale": {
@@ -83,51 +111,74 @@
    "sector": "ביטוח",
    "data_ok": true,
    "data_issues": [],
+   "score": 98.0,
+   "rating": "BUY",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 3.5,
+     "percentile": 73.0
+    },
+    "hi52": {
+     "value": 95.2,
+     "percentile": 100.0
+    },
+    "dist_ema200": {
+     "value": 22.1,
+     "percentile": 98.0
+    },
+    "ema50_200": {
+     "value": 14.2,
+     "percentile": 98.0
+    }
+   },
+   "timing": {
+    "score": 47.3,
+    "score_week_max": 55.3,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 29.0,
+    "sell_score": 8.0,
+    "sell_action": "HOLD",
+    "layers": {
+     "trend": 11.3,
+     "pullback": 8.0,
+     "reversal": 2.0,
+     "volume": 11.0,
+     "risk": 10.0,
+     "rs": 5.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": true,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": true,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 50.1,
-   "score_week_max": 51.4,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 29.0,
-   "sell_score": 22.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 11.1,
-    "pullback": 8.0,
-    "reversal": 5.0,
-    "volume": 11.0,
-    "risk": 10.0,
-    "rs": 5.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": true,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 199.9,
-    "chg_1w_pct": -0.0,
-    "chg_1m_pct": 4.1,
-    "rsi": 62.2,
-    "adx": 37.9,
-    "atr_pct": 2.17,
-    "dist_ema200_pct": 21.3,
-    "dist_from_high_pct": 2.5,
-    "cmf": 0.213,
-    "rvol": 0.26,
-    "beta": 1.09,
-    "rs_3m_pct": 25.3,
-    "rs_percentile": 97.0,
-    "stop_ref": 192.83,
-    "stop_risk_pct": 3.5,
-    "median_turnover_ils": 42183561.0,
+    "close": 199.2,
+    "chg_1w_pct": -1.6,
+    "chg_1m_pct": 2.9,
+    "rsi": 61.3,
+    "adx": 38.0,
+    "atr_pct": 2.18,
+    "dist_ema200_pct": 20.6,
+    "dist_from_high_pct": 2.9,
+    "cmf": 0.283,
+    "rvol": 0.35,
+    "beta": 1.17,
+    "rs_3m_pct": 23.1,
+    "rs_percentile": 98.0,
+    "stop_ref": 186.92,
+    "stop_risk_pct": 6.2,
+    "median_turnover_ils": 41921760.0,
     "reversal_signals": 0,
     "pattern": "None"
    },
@@ -146,51 +197,74 @@
    "sector": "סמיקונדקטור",
    "data_ok": true,
    "data_issues": [],
+   "score": 9.0,
+   "rating": "SELL",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -23.5,
+     "percentile": 9.0
+    },
+    "hi52": {
+     "value": 64.5,
+     "percentile": 11.0
+    },
+    "dist_ema200": {
+     "value": -7.8,
+     "percentile": 21.0
+    },
+    "ema50_200": {
+     "value": -5.8,
+     "percentile": 16.0
+    }
+   },
+   "timing": {
+    "score": 30.0,
+    "score_week_max": 38.2,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 38.9,
+    "sell_score": 16.0,
+    "sell_action": "TRIM",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 8.0,
+     "reversal": 10.0,
+     "volume": 2.0,
+     "risk": 5.0,
+     "rs": 3.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": false,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 27.0,
-   "score_week_max": 42.3,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 38.9,
-   "sell_score": 16.0,
-   "sell_action": "TRIM",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 8.0,
-    "reversal": 10.0,
-    "volume": 2.0,
-    "risk": 5.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": false,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 1163.3,
-    "chg_1w_pct": 10.0,
-    "chg_1m_pct": 4.4,
-    "rsi": 57.8,
-    "adx": 20.6,
-    "atr_pct": 3.3,
-    "dist_ema200_pct": -7.3,
-    "dist_from_high_pct": 0.6,
-    "cmf": -0.207,
-    "rvol": 0.22,
-    "beta": 1.55,
-    "rs_3m_pct": -28.5,
-    "rs_percentile": 2.0,
-    "stop_ref": 991.79,
-    "stop_risk_pct": 14.7,
-    "median_turnover_ils": 80886568.0,
+    "close": 1157.5,
+    "chg_1w_pct": 7.0,
+    "chg_1m_pct": 10.5,
+    "rsi": 57.4,
+    "adx": 19.4,
+    "atr_pct": 3.15,
+    "dist_ema200_pct": -7.6,
+    "dist_from_high_pct": 1.1,
+    "cmf": -0.106,
+    "rvol": 0.32,
+    "beta": 1.72,
+    "rs_3m_pct": -25.0,
+    "rs_percentile": 3.0,
+    "stop_ref": 992.75,
+    "stop_risk_pct": 14.2,
+    "median_turnover_ils": 66478155.0,
     "reversal_signals": 1,
     "pattern": "None"
    },
@@ -209,51 +283,74 @@
    "sector": "תקשורת",
    "data_ok": true,
    "data_issues": [],
+   "score": 57.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -8.5,
+     "percentile": 39.0
+    },
+    "hi52": {
+     "value": 80.6,
+     "percentile": 68.0
+    },
+    "dist_ema200": {
+     "value": -0.4,
+     "percentile": 61.0
+    },
+    "ema50_200": {
+     "value": 2.6,
+     "percentile": 62.0
+    }
+   },
+   "timing": {
+    "score": 37.3,
+    "score_week_max": 58.3,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 38.9,
+    "sell_score": 23.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 5.0,
+     "pullback": 16.3,
+     "reversal": 2.0,
+     "volume": 2.0,
+     "risk": 10.0,
+     "rs": 2.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": true,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 42.6,
-   "score_week_max": 58.3,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 38.9,
-   "sell_score": 15.0,
-   "sell_action": "TRIM",
-   "layers": {
-    "trend": 5.0,
-    "pullback": 15.6,
-    "reversal": 4.0,
-    "volume": 6.0,
-    "risk": 10.0,
-    "rs": 2.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 7.41,
-    "chg_1w_pct": -1.7,
-    "chg_1m_pct": -5.0,
-    "rsi": 37.4,
-    "adx": 22.6,
-    "atr_pct": 1.76,
-    "dist_ema200_pct": -0.1,
-    "dist_from_high_pct": 8.2,
-    "cmf": 0.013,
-    "rvol": 0.15,
+    "close": 7.36,
+    "chg_1w_pct": -2.1,
+    "chg_1m_pct": -6.4,
+    "rsi": 35.6,
+    "adx": 23.7,
+    "atr_pct": 1.8,
+    "dist_ema200_pct": -0.7,
+    "dist_from_high_pct": 8.7,
+    "cmf": -0.017,
+    "rvol": 0.22,
     "beta": 0.33,
-    "rs_3m_pct": 3.1,
-    "rs_percentile": 69.0,
+    "rs_3m_pct": 2.0,
+    "rs_percentile": 71.0,
     "stop_ref": 7.27,
-    "stop_risk_pct": 1.8,
-    "median_turnover_ils": 43019276.0,
+    "stop_risk_pct": 1.2,
+    "median_turnover_ils": 38627862.0,
     "reversal_signals": 1,
     "pattern": "None"
    },
@@ -272,52 +369,75 @@
    "sector": "תחבורה ולוגיסטיקה",
    "data_ok": true,
    "data_issues": [],
+   "score": null,
+   "rating": "N/A",
+   "rating_note": "illiquid: median turnover below ILS 1M",
+   "factors": {
+    "mom_6_1": {
+     "value": -19.6,
+     "percentile": null
+    },
+    "hi52": {
+     "value": 77.1,
+     "percentile": null
+    },
+    "dist_ema200": {
+     "value": -6.2,
+     "percentile": null
+    },
+    "ema50_200": {
+     "value": -5.1,
+     "percentile": null
+    }
+   },
+   "timing": {
+    "score": 32.1,
+    "score_week_max": 36.8,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 46.0,
+    "sell_score": 23.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 9.5,
+     "reversal": 2.0,
+     "volume": 9.0,
+     "risk": 6.7,
+     "rs": 3.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": true,
+     "reversal_ready": false,
+     "volume_ready": true,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": false
+    }
+   },
    "asof": "2026-09-29",
-   "score": 38.3,
-   "score_week_max": 38.3,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 46.0,
-   "sell_score": 23.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 8.6,
-    "reversal": 8.0,
-    "volume": 11.0,
-    "risk": 5.7,
-    "rs": 3.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": false,
-    "setup_ready": false,
-    "liquid": false
-   },
    "metrics": {
-    "close": 46.69,
-    "chg_1w_pct": -3.0,
-    "chg_1m_pct": 3.8,
-    "rsi": 47.4,
-    "adx": 15.3,
-    "atr_pct": 2.38,
-    "dist_ema200_pct": -5.4,
-    "dist_from_high_pct": 5.5,
-    "cmf": 0.183,
-    "rvol": 0.06,
-    "beta": 0.5,
-    "rs_3m_pct": -9.0,
-    "rs_percentile": 37.0,
+    "close": 46.29,
+    "chg_1w_pct": -3.2,
+    "chg_1m_pct": 4.1,
+    "rsi": 44.8,
+    "adx": 16.8,
+    "atr_pct": 2.43,
+    "dist_ema200_pct": -6.1,
+    "dist_from_high_pct": 6.3,
+    "cmf": 0.146,
+    "rvol": 0.18,
+    "beta": 0.24,
+    "rs_3m_pct": -5.7,
+    "rs_percentile": 48.0,
     "stop_ref": 41.75,
-    "stop_risk_pct": 10.6,
-    "median_turnover_ils": 516560.0,
-    "reversal_signals": 1,
+    "stop_risk_pct": 9.8,
+    "median_turnover_ils": 450948.0,
+    "reversal_signals": 0,
     "pattern": "None"
    },
    "whale": {
@@ -335,59 +455,82 @@
    "sector": "טכנולוגיה",
    "data_ok": true,
    "data_issues": [],
+   "score": 54.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -6.1,
+     "percentile": 52.0
+    },
+    "hi52": {
+     "value": 66.0,
+     "percentile": 18.0
+    },
+    "dist_ema200": {
+     "value": 1.8,
+     "percentile": 71.0
+    },
+    "ema50_200": {
+     "value": -0.7,
+     "percentile": 43.0
+    }
+   },
+   "timing": {
+    "score": 48.6,
+    "score_week_max": 51.2,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 38.3,
+    "sell_score": 23.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 13.0,
+     "pullback": 19.6,
+     "reversal": 2.0,
+     "volume": 2.0,
+     "risk": 10.0,
+     "rs": 2.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": true,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 57.9,
-   "score_week_max": 57.9,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 38.3,
-   "sell_score": 15.0,
-   "sell_action": "TRIM",
-   "layers": {
-    "trend": 15.0,
-    "pullback": 18.9,
-    "reversal": 7.0,
-    "volume": 2.0,
-    "risk": 10.0,
-    "rs": 5.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": true,
-    "trend_ready": true,
-    "pullback_ready": true,
-    "reversal_ready": true,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 101.2,
-    "chg_1w_pct": -1.4,
-    "chg_1m_pct": -8.0,
-    "rsi": 47.7,
-    "adx": 18.3,
-    "atr_pct": 3.04,
-    "dist_ema200_pct": 2.6,
-    "dist_from_high_pct": 11.1,
-    "cmf": -0.166,
-    "rvol": 0.34,
-    "beta": 0.38,
-    "rs_3m_pct": 31.6,
-    "rs_percentile": 98.0,
-    "stop_ref": 98.12,
-    "stop_risk_pct": 3.0,
-    "median_turnover_ils": 14230583.0,
-    "reversal_signals": 2,
+    "close": 100.5,
+    "chg_1w_pct": -3.7,
+    "chg_1m_pct": -8.8,
+    "rsi": 46.0,
+    "adx": 17.9,
+    "atr_pct": 3.02,
+    "dist_ema200_pct": 1.9,
+    "dist_from_high_pct": 11.7,
+    "cmf": -0.219,
+    "rvol": 0.52,
+    "beta": 0.33,
+    "rs_3m_pct": 22.8,
+    "rs_percentile": 97.0,
+    "stop_ref": 99.38,
+    "stop_risk_pct": 1.1,
+    "median_turnover_ils": 13630980.0,
+    "reversal_signals": 1,
     "pattern": "None"
    },
    "whale": {
     "breakout_week": false,
     "accumulating": false,
     "distributing": false,
-    "whale_buy_week": true,
+    "whale_buy_week": false,
     "whale_sell_week": false
    }
   },
@@ -398,51 +541,74 @@
    "sector": "אנרגיה",
    "data_ok": true,
    "data_issues": [],
+   "score": 35.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -21.6,
+     "percentile": 14.0
+    },
+    "hi52": {
+     "value": 65.8,
+     "percentile": 16.0
+    },
+    "dist_ema200": {
+     "value": -2.6,
+     "percentile": 48.0
+    },
+    "ema50_200": {
+     "value": 4.1,
+     "percentile": 75.0
+    }
+   },
+   "timing": {
+    "score": 51.4,
+    "score_week_max": 53.5,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 40.9,
+    "sell_score": 15.0,
+    "sell_action": "TRIM",
+    "layers": {
+     "trend": 5.0,
+     "pullback": 19.4,
+     "reversal": 5.0,
+     "volume": 9.0,
+     "risk": 10.0,
+     "rs": 3.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": true,
+     "reversal_ready": false,
+     "volume_ready": true,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 44.6,
-   "score_week_max": 53.5,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 40.9,
-   "sell_score": 23.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 5.0,
-    "pullback": 19.6,
-    "reversal": 5.0,
-    "volume": 2.0,
-    "risk": 10.0,
-    "rs": 3.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 89.91,
-    "chg_1w_pct": -4.6,
-    "chg_1m_pct": -8.5,
-    "rsi": 40.4,
-    "adx": 10.3,
-    "atr_pct": 3.5,
-    "dist_ema200_pct": -3.4,
-    "dist_from_high_pct": 11.7,
-    "cmf": -0.047,
-    "rvol": 0.21,
-    "beta": 1.74,
-    "rs_3m_pct": -5.1,
-    "rs_percentile": 48.0,
-    "stop_ref": 87.38,
-    "stop_risk_pct": 2.8,
-    "median_turnover_ils": 22412721.0,
+    "close": 90.1,
+    "chg_1w_pct": -2.1,
+    "chg_1m_pct": -9.3,
+    "rsi": 41.1,
+    "adx": 11.6,
+    "atr_pct": 3.46,
+    "dist_ema200_pct": -3.2,
+    "dist_from_high_pct": 11.5,
+    "cmf": 0.083,
+    "rvol": 0.37,
+    "beta": 1.89,
+    "rs_3m_pct": -10.0,
+    "rs_percentile": 32.0,
+    "stop_ref": 87.39,
+    "stop_risk_pct": 3.0,
+    "median_turnover_ils": 22086041.0,
     "reversal_signals": 1,
     "pattern": "None"
    },
@@ -461,51 +627,74 @@
    "sector": "תעשייה ביטחונית",
    "data_ok": true,
    "data_issues": [],
+   "score": 32.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -27.4,
+     "percentile": 4.0
+    },
+    "hi52": {
+     "value": 69.2,
+     "percentile": 30.0
+    },
+    "dist_ema200": {
+     "value": -2.7,
+     "percentile": 46.0
+    },
+    "ema50_200": {
+     "value": 3.0,
+     "percentile": 66.0
+    }
+   },
+   "timing": {
+    "score": 37.0,
+    "score_week_max": 47.2,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 50.1,
+    "sell_score": 37.0,
+    "sell_action": "EXIT",
+    "layers": {
+     "trend": 5.0,
+     "pullback": 11.0,
+     "reversal": 2.0,
+     "volume": 9.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": true,
+     "reversal_ready": false,
+     "volume_ready": true,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 40.3,
-   "score_week_max": 52.3,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 50.1,
-   "sell_score": 37.0,
-   "sell_action": "EXIT",
-   "layers": {
-    "trend": 5.0,
-    "pullback": 11.3,
-    "reversal": 2.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 3.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 2136.9,
-    "chg_1w_pct": -5.9,
-    "chg_1m_pct": 1.2,
+    "close": 2141.5,
+    "chg_1w_pct": -3.9,
+    "chg_1m_pct": 1.6,
     "rsi": 38.2,
-    "adx": 16.9,
-    "atr_pct": 2.65,
-    "dist_ema200_pct": -3.3,
-    "dist_from_high_pct": 7.9,
-    "cmf": 0.15,
-    "rvol": 0.52,
-    "beta": -0.11,
-    "rs_3m_pct": -7.8,
-    "rs_percentile": 44.0,
-    "stop_ref": 2039.22,
-    "stop_risk_pct": 4.6,
-    "median_turnover_ils": 101012444.0,
+    "adx": 16.1,
+    "atr_pct": 2.47,
+    "dist_ema200_pct": -3.1,
+    "dist_from_high_pct": 7.7,
+    "cmf": 0.056,
+    "rvol": 0.62,
+    "beta": -0.18,
+    "rs_3m_pct": -7.2,
+    "rs_percentile": 42.0,
+    "stop_ref": 2041.03,
+    "stop_risk_pct": 4.7,
+    "median_turnover_ils": 89171489.0,
     "reversal_signals": 0,
     "pattern": "None"
    },
@@ -514,7 +703,7 @@
     "accumulating": false,
     "distributing": false,
     "whale_buy_week": false,
-    "whale_sell_week": true
+    "whale_sell_week": false
    }
   },
   {
@@ -524,51 +713,74 @@
    "sector": "נדל\"ן מניב",
    "data_ok": true,
    "data_issues": [],
+   "score": 50.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -7.7,
+     "percentile": 41.0
+    },
+    "hi52": {
+     "value": 79.2,
+     "percentile": 62.0
+    },
+    "dist_ema200": {
+     "value": -7.6,
+     "percentile": 25.0
+    },
+    "ema50_200": {
+     "value": -0.3,
+     "percentile": 45.0
+    }
+   },
+   "timing": {
+    "score": 32.0,
+    "score_week_max": 43.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 68.9,
+    "sell_score": 39.0,
+    "sell_action": "EXIT",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 16.0,
+     "reversal": 2.0,
+     "volume": 2.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 36.0,
-   "score_week_max": 44.1,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 68.9,
-   "sell_score": 31.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 16.0,
-    "reversal": 2.0,
-    "volume": 6.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 381.8,
-    "chg_1w_pct": -5.7,
-    "chg_1m_pct": -7.1,
-    "rsi": 25.8,
-    "adx": 21.1,
-    "atr_pct": 2.27,
-    "dist_ema200_pct": -7.1,
-    "dist_from_high_pct": 12.9,
-    "cmf": 0.095,
-    "rvol": 0.56,
-    "beta": 1.17,
-    "rs_3m_pct": -10.9,
-    "rs_percentile": 27.0,
-    "stop_ref": 393.87,
+    "close": 379.3,
+    "chg_1w_pct": -6.3,
+    "chg_1m_pct": -7.0,
+    "rsi": 24.6,
+    "adx": 22.7,
+    "atr_pct": 2.25,
+    "dist_ema200_pct": -7.6,
+    "dist_from_high_pct": 13.5,
+    "cmf": -0.017,
+    "rvol": 0.65,
+    "beta": 1.12,
+    "rs_3m_pct": -12.0,
+    "rs_percentile": 31.0,
+    "stop_ref": 393.94,
     "stop_risk_pct": 0.0,
-    "median_turnover_ils": 16606853.0,
+    "median_turnover_ils": 14985947.0,
     "reversal_signals": 0,
     "pattern": "None"
    },
@@ -587,52 +799,75 @@
    "sector": "תעשייה",
    "data_ok": true,
    "data_issues": [],
+   "score": 12.0,
+   "rating": "SELL",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -17.0,
+     "percentile": 21.0
+    },
+    "hi52": {
+     "value": 62.4,
+     "percentile": 7.0
+    },
+    "dist_ema200": {
+     "value": -9.6,
+     "percentile": 16.0
+    },
+    "ema50_200": {
+     "value": -2.7,
+     "percentile": 34.0
+    }
+   },
+   "timing": {
+    "score": 44.0,
+    "score_week_max": 54.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 27.6,
+    "sell_score": 31.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 20.0,
+     "reversal": 10.0,
+     "volume": 2.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": true,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 40.0,
-   "score_week_max": 54.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 27.6,
-   "sell_score": 23.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 16.0,
-    "reversal": 10.0,
-    "volume": 2.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 55.69,
-    "chg_1w_pct": -3.2,
-    "chg_1m_pct": -4.3,
-    "rsi": 40.2,
-    "adx": 28.2,
-    "atr_pct": 3.66,
-    "dist_ema200_pct": -10.7,
-    "dist_from_high_pct": 14.9,
-    "cmf": -0.01,
-    "rvol": 0.71,
-    "beta": 1.23,
-    "rs_3m_pct": -15.7,
-    "rs_percentile": 15.0,
-    "stop_ref": 52.77,
-    "stop_risk_pct": 5.2,
-    "median_turnover_ils": 7177517.0,
-    "reversal_signals": 1,
+    "close": 56.32,
+    "chg_1w_pct": 1.7,
+    "chg_1m_pct": -0.8,
+    "rsi": 42.9,
+    "adx": 28.4,
+    "atr_pct": 3.68,
+    "dist_ema200_pct": -9.6,
+    "dist_from_high_pct": 13.9,
+    "cmf": -0.015,
+    "rvol": 0.75,
+    "beta": 1.01,
+    "rs_3m_pct": -13.2,
+    "rs_percentile": 21.0,
+    "stop_ref": 55.96,
+    "stop_risk_pct": 0.6,
+    "median_turnover_ils": 7056441.0,
+    "reversal_signals": 2,
     "pattern": "None"
    },
    "whale": {
@@ -650,52 +885,75 @@
    "sector": "נדל\"ן מניב",
    "data_ok": true,
    "data_issues": [],
+   "score": 44.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -15.3,
+     "percentile": 32.0
+    },
+    "hi52": {
+     "value": 79.1,
+     "percentile": 61.0
+    },
+    "dist_ema200": {
+     "value": -4.9,
+     "percentile": 36.0
+    },
+    "ema50_200": {
+     "value": -2.0,
+     "percentile": 38.0
+    }
+   },
+   "timing": {
+    "score": 36.6,
+    "score_week_max": 47.9,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 55.8,
+    "sell_score": 15.0,
+    "sell_action": "TRIM",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 15.6,
+     "reversal": 2.0,
+     "volume": 7.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": true,
+     "reversal_ready": false,
+     "volume_ready": true,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 45.4,
-   "score_week_max": 45.4,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 55.8,
-   "sell_score": 15.0,
-   "sell_action": "TRIM",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 14.4,
-    "reversal": 10.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": true,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 671.0,
-    "chg_1w_pct": -2.6,
-    "chg_1m_pct": -2.6,
-    "rsi": 44.4,
-    "adx": 13.0,
-    "atr_pct": 2.23,
-    "dist_ema200_pct": -3.9,
-    "dist_from_high_pct": 7.1,
-    "cmf": 0.116,
-    "rvol": 0.25,
-    "beta": 1.1,
-    "rs_3m_pct": -3.0,
-    "rs_percentile": 55.0,
-    "stop_ref": 648.3,
-    "stop_risk_pct": 3.4,
+    "close": 664.0,
+    "chg_1w_pct": -3.0,
+    "chg_1m_pct": -2.0,
+    "rsi": 40.0,
+    "adx": 15.4,
+    "atr_pct": 2.24,
+    "dist_ema200_pct": -4.8,
+    "dist_from_high_pct": 8.1,
+    "cmf": 0.013,
+    "rvol": 0.35,
+    "beta": 0.83,
+    "rs_3m_pct": -3.6,
+    "rs_percentile": 58.0,
+    "stop_ref": 655.17,
+    "stop_risk_pct": 1.3,
     "median_turnover_ils": 10326587.0,
-    "reversal_signals": 2,
+    "reversal_signals": 1,
     "pattern": "None"
    },
    "whale": {
@@ -713,50 +971,73 @@
    "sector": "נדל\"ן מניב",
    "data_ok": true,
    "data_issues": [],
+   "score": 84.0,
+   "rating": "BUY",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 8.5,
+     "percentile": 84.0
+    },
+    "hi52": {
+     "value": 87.7,
+     "percentile": 86.0
+    },
+    "dist_ema200": {
+     "value": 4.8,
+     "percentile": 80.0
+    },
+    "ema50_200": {
+     "value": 4.3,
+     "percentile": 77.0
+    }
+   },
+   "timing": {
+    "score": 44.9,
+    "score_week_max": 52.9,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 38.2,
+    "sell_score": 19.0,
+    "sell_action": "TRIM",
+    "layers": {
+     "trend": 13.0,
+     "pullback": 10.9,
+     "reversal": 2.0,
+     "volume": 7.0,
+     "risk": 10.0,
+     "rs": 2.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": true,
+     "pullback_ready": true,
+     "reversal_ready": false,
+     "volume_ready": true,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": false
+    }
+   },
    "asof": "2026-09-29",
-   "score": 49.2,
-   "score_week_max": 49.4,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 38.2,
-   "sell_score": 19.0,
-   "sell_action": "TRIM",
-   "layers": {
-    "trend": 13.0,
-    "pullback": 10.2,
-    "reversal": 5.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 2.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": true,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": false
-   },
    "metrics": {
-    "close": 39.84,
-    "chg_1w_pct": -1.6,
-    "chg_1m_pct": -1.7,
-    "rsi": 49.3,
-    "adx": 24.4,
-    "atr_pct": 2.51,
-    "dist_ema200_pct": 5.2,
-    "dist_from_high_pct": 7.0,
-    "cmf": 0.156,
-    "rvol": 0.07,
-    "beta": 1.51,
-    "rs_3m_pct": 12.2,
-    "rs_percentile": 89.0,
-    "stop_ref": 37.66,
-    "stop_risk_pct": 5.5,
+    "close": 39.6,
+    "chg_1w_pct": -2.0,
+    "chg_1m_pct": -1.0,
+    "rsi": 47.0,
+    "adx": 22.4,
+    "atr_pct": 2.5,
+    "dist_ema200_pct": 4.5,
+    "dist_from_high_pct": 7.5,
+    "cmf": 0.126,
+    "rvol": 0.1,
+    "beta": 1.39,
+    "rs_3m_pct": 11.9,
+    "rs_percentile": 87.0,
+    "stop_ref": 37.67,
+    "stop_risk_pct": 4.9,
     "median_turnover_ils": 942933.0,
     "reversal_signals": 0,
     "pattern": "None"
@@ -765,7 +1046,7 @@
     "breakout_week": false,
     "accumulating": false,
     "distributing": false,
-    "whale_buy_week": false,
+    "whale_buy_week": true,
     "whale_sell_week": false
    }
   },
@@ -776,52 +1057,75 @@
    "sector": "תעשייה",
    "data_ok": true,
    "data_issues": [],
+   "score": 86.0,
+   "rating": "BUY",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 12.8,
+     "percentile": 88.0
+    },
+    "hi52": {
+     "value": 83.6,
+     "percentile": 73.0
+    },
+    "dist_ema200": {
+     "value": 8.9,
+     "percentile": 93.0
+    },
+    "ema50_200": {
+     "value": 5.0,
+     "percentile": 80.0
+    }
+   },
+   "timing": {
+    "score": 56.2,
+    "score_week_max": 61.8,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 46.8,
+    "sell_score": 0.0,
+    "sell_action": "HOLD",
+    "layers": {
+     "trend": 13.0,
+     "pullback": 12.2,
+     "reversal": 10.0,
+     "volume": 6.0,
+     "risk": 10.0,
+     "rs": 5.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": true,
+     "pullback_ready": true,
+     "reversal_ready": true,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 50.8,
-   "score_week_max": 59.7,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 46.8,
-   "sell_score": 0.0,
-   "sell_action": "HOLD",
-   "layers": {
-    "trend": 13.0,
-    "pullback": 8.8,
-    "reversal": 5.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 5.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": true,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 25.83,
-    "chg_1w_pct": -1.5,
-    "chg_1m_pct": -1.6,
-    "rsi": 53.9,
-    "adx": 21.4,
+    "close": 25.98,
+    "chg_1w_pct": 1.6,
+    "chg_1m_pct": 2.3,
+    "rsi": 55.9,
+    "adx": 20.2,
     "atr_pct": 2.6,
-    "dist_ema200_pct": 7.7,
-    "dist_from_high_pct": 5.7,
-    "cmf": 0.101,
-    "rvol": 0.33,
-    "beta": 0.52,
-    "rs_3m_pct": 5.2,
-    "rs_percentile": 76.0,
-    "stop_ref": 24.61,
-    "stop_risk_pct": 4.7,
-    "median_turnover_ils": 2680057.0,
-    "reversal_signals": 0,
+    "dist_ema200_pct": 8.2,
+    "dist_from_high_pct": 5.2,
+    "cmf": 0.048,
+    "rvol": 0.52,
+    "beta": 0.29,
+    "rs_3m_pct": 6.1,
+    "rs_percentile": 77.0,
+    "stop_ref": 25.45,
+    "stop_risk_pct": 2.0,
+    "median_turnover_ils": 2395409.0,
+    "reversal_signals": 2,
     "pattern": "None"
    },
    "whale": {
@@ -839,50 +1143,73 @@
    "sector": "גז ונפט",
    "data_ok": true,
    "data_issues": [],
+   "score": 100.0,
+   "rating": "BUY",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 46.9,
+     "percentile": 100.0
+    },
+    "hi52": {
+     "value": 88.2,
+     "percentile": 89.0
+    },
+    "dist_ema200": {
+     "value": 31.9,
+     "percentile": 100.0
+    },
+    "ema50_200": {
+     "value": 27.4,
+     "percentile": 100.0
+    }
+   },
+   "timing": {
+    "score": 51.7,
+    "score_week_max": 55.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 44.8,
+    "sell_score": 23.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 10.0,
+     "pullback": 19.7,
+     "reversal": 10.0,
+     "volume": 0.0,
+     "risk": 10.0,
+     "rs": 2.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": true,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 61.0,
-   "score_week_max": 61.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 44.8,
-   "sell_score": 15.0,
-   "sell_action": "TRIM",
-   "layers": {
-    "trend": 10.0,
-    "pullback": 20.0,
-    "reversal": 10.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 2.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": true,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 2.12,
-    "chg_1w_pct": -3.7,
-    "chg_1m_pct": 3.0,
-    "rsi": 44.9,
-    "adx": 24.0,
-    "atr_pct": 3.4,
-    "dist_ema200_pct": 28.9,
-    "dist_from_high_pct": 12.5,
-    "cmf": 0.061,
-    "rvol": 0.25,
-    "beta": 1.17,
-    "rs_3m_pct": 32.3,
+    "close": 2.14,
+    "chg_1w_pct": -1.1,
+    "chg_1m_pct": 0.9,
+    "rsi": 47.6,
+    "adx": 23.4,
+    "atr_pct": 3.36,
+    "dist_ema200_pct": 29.6,
+    "dist_from_high_pct": 11.8,
+    "cmf": -0.052,
+    "rvol": 0.36,
+    "beta": 1.03,
+    "rs_3m_pct": 30.0,
     "rs_percentile": 100.0,
     "stop_ref": 2.12,
-    "stop_risk_pct": 0.0,
+    "stop_risk_pct": 0.6,
     "median_turnover_ils": 16742459.0,
     "reversal_signals": 2,
     "pattern": "None"
@@ -902,52 +1229,75 @@
    "sector": "אנרגיה",
    "data_ok": true,
    "data_issues": [],
+   "score": 14.0,
+   "rating": "SELL",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -6.2,
+     "percentile": 50.0
+    },
+    "hi52": {
+     "value": 65.4,
+     "percentile": 12.0
+    },
+    "dist_ema200": {
+     "value": -17.4,
+     "percentile": 5.0
+    },
+    "ema50_200": {
+     "value": -6.0,
+     "percentile": 12.0
+    }
+   },
+   "timing": {
+    "score": 52.0,
+    "score_week_max": 55.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 26.4,
+    "sell_score": 39.0,
+    "sell_action": "EXIT",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 20.0,
+     "reversal": 15.0,
+     "volume": 2.0,
+     "risk": 10.0,
+     "rs": 3.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": true,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 39.0,
-   "score_week_max": 39.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 26.4,
-   "sell_score": 39.0,
-   "sell_action": "EXIT",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 20.0,
-    "reversal": 2.0,
-    "volume": 2.0,
-    "risk": 10.0,
-    "rs": 3.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 275.5,
-    "chg_1w_pct": -5.5,
-    "chg_1m_pct": -11.3,
-    "rsi": 30.9,
-    "adx": 20.9,
-    "atr_pct": 2.91,
-    "dist_ema200_pct": -17.2,
+    "close": 275.7,
+    "chg_1w_pct": -5.6,
+    "chg_1m_pct": -10.2,
+    "rsi": 32.3,
+    "adx": 20.3,
+    "atr_pct": 2.89,
+    "dist_ema200_pct": -17.0,
     "dist_from_high_pct": 16.9,
-    "cmf": -0.146,
-    "rvol": 0.2,
-    "beta": 1.83,
-    "rs_3m_pct": -17.6,
-    "rs_percentile": 13.0,
-    "stop_ref": 274.29,
-    "stop_risk_pct": 0.4,
-    "median_turnover_ils": 20700361.0,
-    "reversal_signals": 1,
+    "cmf": -0.217,
+    "rvol": 0.4,
+    "beta": 1.49,
+    "rs_3m_pct": -15.2,
+    "rs_percentile": 15.0,
+    "stop_ref": 272.81,
+    "stop_risk_pct": 1.0,
+    "median_turnover_ils": 19860850.0,
+    "reversal_signals": 3,
     "pattern": "None"
    },
    "whale": {
@@ -965,51 +1315,74 @@
    "sector": "טכנולוגיה",
    "data_ok": true,
    "data_issues": [],
+   "score": 20.0,
+   "rating": "SELL",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -19.1,
+     "percentile": 18.0
+    },
+    "hi52": {
+     "value": 65.7,
+     "percentile": 14.0
+    },
+    "dist_ema200": {
+     "value": -1.1,
+     "percentile": 57.0
+    },
+    "ema50_200": {
+     "value": -8.2,
+     "percentile": 9.0
+    }
+   },
+   "timing": {
+    "score": 32.0,
+    "score_week_max": 48.8,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 34.0,
+    "sell_score": 8.0,
+    "sell_action": "HOLD",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 16.0,
+     "reversal": 2.0,
+     "volume": 5.0,
+     "risk": 5.0,
+     "rs": 2.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": true,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": false,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 36.0,
-   "score_week_max": 58.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 34.0,
-   "sell_score": 0.0,
-   "sell_action": "HOLD",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 16.0,
-    "reversal": 2.0,
-    "volume": 9.0,
-    "risk": 5.0,
-    "rs": 2.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": false,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 337.8,
-    "chg_1w_pct": 3.3,
-    "chg_1m_pct": 8.8,
-    "rsi": 56.3,
-    "adx": 26.3,
-    "atr_pct": 3.93,
-    "dist_ema200_pct": -0.2,
-    "dist_from_high_pct": 12.8,
-    "cmf": 0.005,
-    "rvol": 0.17,
-    "beta": 0.82,
-    "rs_3m_pct": 23.9,
-    "rs_percentile": 95.0,
-    "stop_ref": 290.46,
-    "stop_risk_pct": 14.0,
-    "median_turnover_ils": 27724955.0,
+    "close": 336.8,
+    "chg_1w_pct": -5.7,
+    "chg_1m_pct": 3.1,
+    "rsi": 55.5,
+    "adx": 27.3,
+    "atr_pct": 3.75,
+    "dist_ema200_pct": -0.5,
+    "dist_from_high_pct": 13.0,
+    "cmf": -0.005,
+    "rvol": 0.23,
+    "beta": 0.87,
+    "rs_3m_pct": 17.5,
+    "rs_percentile": 94.0,
+    "stop_ref": 290.78,
+    "stop_risk_pct": 13.7,
+    "median_turnover_ils": 26940123.0,
     "reversal_signals": 0,
     "pattern": "None"
    },
@@ -1030,52 +1403,75 @@
    "data_issues": [
     "unit change on 2026-05-18 corrected (earlier prices x100)"
    ],
+   "score": 73.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 2.4,
+     "percentile": 70.0
+    },
+    "hi52": {
+     "value": 87.4,
+     "percentile": 84.0
+    },
+    "dist_ema200": {
+     "value": 4.1,
+     "percentile": 79.0
+    },
+    "ema50_200": {
+     "value": 1.8,
+     "percentile": 55.0
+    }
+   },
+   "timing": {
+    "score": 34.0,
+    "score_week_max": 46.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 53.0,
+    "sell_score": 53.0,
+    "sell_action": "EXIT",
+    "layers": {
+     "trend": 13.0,
+     "pullback": 8.0,
+     "reversal": 2.0,
+     "volume": 4.0,
+     "risk": 5.0,
+     "rs": 2.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": true,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": false,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 50.0,
-   "score_week_max": 50.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 53.0,
-   "sell_score": 45.0,
-   "sell_action": "EXIT",
-   "layers": {
-    "trend": 13.0,
-    "pullback": 12.0,
-    "reversal": 5.0,
-    "volume": 8.0,
-    "risk": 10.0,
-    "rs": 2.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": true,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 4.63,
-    "chg_1w_pct": -3.3,
-    "chg_1m_pct": 1.4,
-    "rsi": 50.1,
-    "adx": 24.6,
-    "atr_pct": 2.08,
+    "close": 4.64,
+    "chg_1w_pct": -2.7,
+    "chg_1m_pct": -1.5,
+    "rsi": 50.2,
+    "adx": 26.9,
+    "atr_pct": 2.15,
     "dist_ema200_pct": 3.7,
-    "dist_from_high_pct": 4.4,
-    "cmf": 0.037,
-    "rvol": 0.3,
-    "beta": 0.54,
-    "rs_3m_pct": 5.4,
-    "rs_percentile": 77.0,
-    "stop_ref": 4.52,
-    "stop_risk_pct": 2.5,
-    "median_turnover_ils": 4820244.0,
-    "reversal_signals": 1,
+    "dist_from_high_pct": 4.3,
+    "cmf": -0.047,
+    "rvol": 0.38,
+    "beta": 0.48,
+    "rs_3m_pct": 7.7,
+    "rs_percentile": 84.0,
+    "stop_ref": 3.91,
+    "stop_risk_pct": 15.7,
+    "median_turnover_ils": 4601529.0,
+    "reversal_signals": 0,
     "pattern": "None"
    },
    "whale": {
@@ -1093,51 +1489,74 @@
    "sector": "נדל\"ן מניב",
    "data_ok": true,
    "data_issues": [],
+   "score": 89.0,
+   "rating": "BUY",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 4.4,
+     "percentile": 75.0
+    },
+    "hi52": {
+     "value": 85.1,
+     "percentile": 79.0
+    },
+    "dist_ema200": {
+     "value": 8.9,
+     "percentile": 95.0
+    },
+    "ema50_200": {
+     "value": 10.9,
+     "percentile": 95.0
+    }
+   },
+   "timing": {
+    "score": 55.2,
+    "score_week_max": 55.2,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 43.5,
+    "sell_score": 23.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 13.0,
+     "pullback": 18.2,
+     "reversal": 5.0,
+     "volume": 9.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": true,
+     "pullback_ready": true,
+     "reversal_ready": false,
+     "volume_ready": true,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 52.4,
-   "score_week_max": 53.2,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 43.5,
-   "sell_score": 23.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 13.0,
-    "pullback": 18.4,
-    "reversal": 2.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": true,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 11.17,
-    "chg_1w_pct": -4.7,
-    "chg_1m_pct": -3.3,
-    "rsi": 42.9,
-    "adx": 17.2,
-    "atr_pct": 3.04,
-    "dist_ema200_pct": 7.9,
-    "dist_from_high_pct": 10.6,
-    "cmf": 0.228,
-    "rvol": 0.34,
-    "beta": 2.28,
-    "rs_3m_pct": -1.7,
-    "rs_percentile": 58.0,
-    "stop_ref": 10.99,
-    "stop_risk_pct": 1.6,
-    "median_turnover_ils": 2274372.0,
+    "close": 11.19,
+    "chg_1w_pct": -3.8,
+    "chg_1m_pct": -1.3,
+    "rsi": 43.5,
+    "adx": 16.5,
+    "atr_pct": 2.95,
+    "dist_ema200_pct": 8.0,
+    "dist_from_high_pct": 10.4,
+    "cmf": 0.074,
+    "rvol": 0.48,
+    "beta": 2.14,
+    "rs_3m_pct": -4.5,
+    "rs_percentile": 52.0,
+    "stop_ref": 11.0,
+    "stop_risk_pct": 1.7,
+    "median_turnover_ils": 2237861.0,
     "reversal_signals": 1,
     "pattern": "None"
    },
@@ -1156,59 +1575,82 @@
    "sector": "בנקאות",
    "data_ok": true,
    "data_issues": [],
+   "score": 88.0,
+   "rating": "BUY",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 3.2,
+     "percentile": 71.0
+    },
+    "hi52": {
+     "value": 93.6,
+     "percentile": 98.0
+    },
+    "dist_ema200": {
+     "value": 6.5,
+     "percentile": 86.0
+    },
+    "ema50_200": {
+     "value": 6.0,
+     "percentile": 84.0
+    }
+   },
+   "timing": {
+    "score": 40.6,
+    "score_week_max": 47.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 36.5,
+    "sell_score": 23.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 15.0,
+     "pullback": 8.6,
+     "reversal": 2.0,
+     "volume": 3.0,
+     "risk": 10.0,
+     "rs": 2.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": true,
+     "trend_ready": true,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 55.2,
-   "score_week_max": 56.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 36.5,
-   "sell_score": 7.0,
-   "sell_action": "HOLD",
-   "layers": {
-    "trend": 15.0,
-    "pullback": 12.2,
-    "reversal": 7.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 2.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": true,
-    "trend_ready": true,
-    "pullback_ready": true,
-    "reversal_ready": true,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": true,
-    "liquid": true
-   },
    "metrics": {
-    "close": 76.08,
-    "chg_1w_pct": -2.6,
-    "chg_1m_pct": -0.4,
-    "rsi": 43.3,
-    "adx": 25.4,
-    "atr_pct": 1.41,
-    "dist_ema200_pct": 6.4,
-    "dist_from_high_pct": 5.1,
-    "cmf": 0.046,
-    "rvol": 0.28,
-    "beta": 0.61,
-    "rs_3m_pct": 12.0,
-    "rs_percentile": 87.0,
-    "stop_ref": 74.94,
-    "stop_risk_pct": 1.5,
-    "median_turnover_ils": 178569774.0,
-    "reversal_signals": 2,
+    "close": 75.76,
+    "chg_1w_pct": -2.1,
+    "chg_1m_pct": -0.7,
+    "rsi": 41.7,
+    "adx": 26.3,
+    "atr_pct": 1.43,
+    "dist_ema200_pct": 5.9,
+    "dist_from_high_pct": 5.5,
+    "cmf": -0.094,
+    "rvol": 0.47,
+    "beta": 0.6,
+    "rs_3m_pct": 12.9,
+    "rs_percentile": 89.0,
+    "stop_ref": 77.46,
+    "stop_risk_pct": 0.0,
+    "median_turnover_ils": 178167371.0,
+    "reversal_signals": 0,
     "pattern": "None"
    },
    "whale": {
     "breakout_week": false,
     "accumulating": false,
     "distributing": false,
-    "whale_buy_week": true,
+    "whale_buy_week": false,
     "whale_sell_week": false
    }
   },
@@ -1221,52 +1663,75 @@
    "data_issues": [
     "unit change on 2026-05-18 corrected (earlier prices x100)"
    ],
+   "score": 30.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -10.7,
+     "percentile": 38.0
+    },
+    "hi52": {
+     "value": 76.6,
+     "percentile": 52.0
+    },
+    "dist_ema200": {
+     "value": -5.8,
+     "percentile": 30.0
+    },
+    "ema50_200": {
+     "value": -3.5,
+     "percentile": 25.0
+    }
+   },
+   "timing": {
+    "score": 33.8,
+    "score_week_max": 42.2,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 55.1,
+    "sell_score": 23.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 11.8,
+     "reversal": 2.0,
+     "volume": 6.0,
+     "risk": 10.0,
+     "rs": 2.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 42.1,
-   "score_week_max": 44.5,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 55.1,
-   "sell_score": 15.0,
-   "sell_action": "TRIM",
-   "layers": {
-    "trend": 4.0,
-    "pullback": 15.1,
-    "reversal": 5.0,
-    "volume": 6.0,
-    "risk": 10.0,
-    "rs": 2.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": true,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 1.99,
-    "chg_1w_pct": -5.5,
-    "chg_1m_pct": -3.3,
-    "rsi": 37.8,
-    "adx": 27.7,
-    "atr_pct": 2.54,
-    "dist_ema200_pct": -5.2,
-    "dist_from_high_pct": 7.7,
-    "cmf": 0.16,
-    "rvol": 0.48,
-    "beta": 0.62,
-    "rs_3m_pct": 4.3,
-    "rs_percentile": 74.0,
-    "stop_ref": 1.93,
-    "stop_risk_pct": 3.0,
-    "median_turnover_ils": 3436841.0,
-    "reversal_signals": 1,
+    "close": 1.98,
+    "chg_1w_pct": -3.1,
+    "chg_1m_pct": -3.9,
+    "rsi": 35.3,
+    "adx": 29.4,
+    "atr_pct": 2.57,
+    "dist_ema200_pct": -5.8,
+    "dist_from_high_pct": 8.3,
+    "cmf": 0.067,
+    "rvol": 0.64,
+    "beta": 0.47,
+    "rs_3m_pct": 1.8,
+    "rs_percentile": 69.0,
+    "stop_ref": 2.05,
+    "stop_risk_pct": 0.0,
+    "median_turnover_ils": 3146307.0,
+    "reversal_signals": 0,
     "pattern": "None"
    },
    "whale": {
@@ -1284,51 +1749,74 @@
    "sector": "נדל\"ן בנייה",
    "data_ok": true,
    "data_issues": [],
+   "score": 29.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -16.3,
+     "percentile": 30.0
+    },
+    "hi52": {
+     "value": 70.1,
+     "percentile": 39.0
+    },
+    "dist_ema200": {
+     "value": -4.5,
+     "percentile": 39.0
+    },
+    "ema50_200": {
+     "value": -2.8,
+     "percentile": 32.0
+    }
+   },
+   "timing": {
+    "score": 32.7,
+    "score_week_max": 36.5,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 62.6,
+    "sell_score": 31.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 16.7,
+     "reversal": 2.0,
+     "volume": 2.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": true,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 32.0,
-   "score_week_max": 47.8,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 62.6,
-   "sell_score": 31.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 16.0,
-    "reversal": 2.0,
-    "volume": 2.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 365.8,
-    "chg_1w_pct": -1.4,
-    "chg_1m_pct": -3.4,
-    "rsi": 45.1,
-    "adx": 16.7,
-    "atr_pct": 2.69,
-    "dist_ema200_pct": -3.9,
-    "dist_from_high_pct": 8.5,
-    "cmf": -0.16,
-    "rvol": 0.19,
-    "beta": 1.13,
-    "rs_3m_pct": -0.4,
-    "rs_percentile": 61.0,
-    "stop_ref": 358.27,
-    "stop_risk_pct": 2.1,
-    "median_turnover_ils": 5535317.0,
+    "close": 363.4,
+    "chg_1w_pct": -5.8,
+    "chg_1m_pct": -1.6,
+    "rsi": 43.9,
+    "adx": 16.3,
+    "atr_pct": 2.64,
+    "dist_ema200_pct": -4.5,
+    "dist_from_high_pct": 9.1,
+    "cmf": -0.352,
+    "rvol": 0.24,
+    "beta": 1.07,
+    "rs_3m_pct": -3.2,
+    "rs_percentile": 60.0,
+    "stop_ref": 358.41,
+    "stop_risk_pct": 1.4,
+    "median_turnover_ils": 5521047.0,
     "reversal_signals": 1,
     "pattern": "None"
    },
@@ -1347,51 +1835,74 @@
    "sector": "שירותים פיננסים",
    "data_ok": true,
    "data_issues": [],
+   "score": 96.0,
+   "rating": "BUY",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 25.9,
+     "percentile": 96.0
+    },
+    "hi52": {
+     "value": 90.3,
+     "percentile": 93.0
+    },
+    "dist_ema200": {
+     "value": 8.5,
+     "percentile": 91.0
+    },
+    "ema50_200": {
+     "value": 8.6,
+     "percentile": 89.0
+    }
+   },
+   "timing": {
+    "score": 52.4,
+    "score_week_max": 57.3,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 40.8,
+    "sell_score": 39.0,
+    "sell_action": "EXIT",
+    "layers": {
+     "trend": 13.0,
+     "pullback": 17.4,
+     "reversal": 5.0,
+     "volume": 5.0,
+     "risk": 10.0,
+     "rs": 2.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": true,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": false
+    }
+   },
    "asof": "2026-09-29",
-   "score": 56.7,
-   "score_week_max": 57.3,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 40.8,
-   "sell_score": 31.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 13.0,
-    "pullback": 17.7,
-    "reversal": 5.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 2.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": true,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": false
-   },
    "metrics": {
-    "close": 640.7,
-    "chg_1w_pct": -4.6,
+    "close": 642.8,
+    "chg_1w_pct": -2.9,
     "chg_1m_pct": -2.4,
-    "rsi": 42.5,
-    "adx": 20.3,
-    "atr_pct": 3.35,
-    "dist_ema200_pct": 7.6,
-    "dist_from_high_pct": 10.0,
-    "cmf": 0.168,
-    "rvol": 0.13,
-    "beta": 1.35,
-    "rs_3m_pct": 3.8,
-    "rs_percentile": 71.0,
-    "stop_ref": 642.17,
+    "rsi": 43.5,
+    "adx": 19.5,
+    "atr_pct": 3.2,
+    "dist_ema200_pct": 7.9,
+    "dist_from_high_pct": 9.7,
+    "cmf": -0.003,
+    "rvol": 0.41,
+    "beta": 1.17,
+    "rs_3m_pct": 7.3,
+    "rs_percentile": 81.0,
+    "stop_ref": 642.62,
     "stop_risk_pct": 0.0,
-    "median_turnover_ils": 844802.0,
+    "median_turnover_ils": 749977.0,
     "reversal_signals": 1,
     "pattern": "None"
    },
@@ -1410,49 +1921,72 @@
    "sector": "גז ונפט",
    "data_ok": true,
    "data_issues": [],
+   "score": 25.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -16.9,
+     "percentile": 25.0
+    },
+    "hi52": {
+     "value": 69.5,
+     "percentile": 34.0
+    },
+    "dist_ema200": {
+     "value": -5.9,
+     "percentile": 29.0
+    },
+    "ema50_200": {
+     "value": -2.2,
+     "percentile": 36.0
+    }
+   },
+   "timing": {
+    "score": 35.3,
+    "score_week_max": 47.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 43.2,
+    "sell_score": 23.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 4.0,
+     "pullback": 15.3,
+     "reversal": 2.0,
+     "volume": 4.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": true,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 39.0,
-   "score_week_max": 47.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 43.2,
-   "sell_score": 31.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 4.0,
-    "pullback": 15.0,
-    "reversal": 4.0,
-    "volume": 6.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": true,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 15.96,
-    "chg_1w_pct": -4.4,
-    "chg_1m_pct": -3.3,
-    "rsi": 36.9,
-    "adx": 14.7,
+    "close": 15.91,
+    "chg_1w_pct": -3.5,
+    "chg_1m_pct": -3.5,
+    "rsi": 37.4,
+    "adx": 16.2,
     "atr_pct": 2.07,
-    "dist_ema200_pct": -5.7,
-    "dist_from_high_pct": 7.6,
-    "cmf": 0.084,
-    "rvol": 0.4,
-    "beta": 0.74,
-    "rs_3m_pct": -0.0,
-    "rs_percentile": 65.0,
-    "stop_ref": 16.02,
+    "dist_ema200_pct": -5.9,
+    "dist_from_high_pct": 7.9,
+    "cmf": 0.013,
+    "rvol": 0.57,
+    "beta": 0.64,
+    "rs_3m_pct": -1.9,
+    "rs_percentile": 61.0,
+    "stop_ref": 16.03,
     "stop_risk_pct": 0.0,
     "median_turnover_ils": 13250907.0,
     "reversal_signals": 1,
@@ -1473,52 +2007,75 @@
    "sector": "מדיה ותקשורת",
    "data_ok": true,
    "data_issues": [],
+   "score": 91.0,
+   "rating": "BUY",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 13.1,
+     "percentile": 89.0
+    },
+    "hi52": {
+     "value": 79.5,
+     "percentile": 64.0
+    },
+    "dist_ema200": {
+     "value": 9.6,
+     "percentile": 96.0
+    },
+    "ema50_200": {
+     "value": 13.9,
+     "percentile": 96.0
+    }
+   },
+   "timing": {
+    "score": 54.1,
+    "score_week_max": 63.6,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 36.5,
+    "sell_score": 27.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 13.0,
+     "pullback": 17.1,
+     "reversal": 5.0,
+     "volume": 9.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": true,
+     "pullback_ready": true,
+     "reversal_ready": false,
+     "volume_ready": true,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 50.4,
-   "score_week_max": 54.9,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 36.5,
-   "sell_score": 27.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 13.0,
-    "pullback": 13.4,
-    "reversal": 5.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": true,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 2.48,
-    "chg_1w_pct": -4.1,
-    "chg_1m_pct": -2.4,
-    "rsi": 44.8,
-    "adx": 12.3,
-    "atr_pct": 3.37,
-    "dist_ema200_pct": 8.3,
-    "dist_from_high_pct": 9.7,
-    "cmf": 0.283,
-    "rvol": 0.18,
-    "beta": 1.74,
-    "rs_3m_pct": -12.7,
-    "rs_percentile": 24.0,
-    "stop_ref": 2.35,
-    "stop_risk_pct": 5.1,
+    "close": 2.49,
+    "chg_1w_pct": -0.4,
+    "chg_1m_pct": 0.0,
+    "rsi": 45.7,
+    "adx": 12.1,
+    "atr_pct": 3.33,
+    "dist_ema200_pct": 8.5,
+    "dist_from_high_pct": 9.5,
+    "cmf": 0.267,
+    "rvol": 0.24,
+    "beta": 1.55,
+    "rs_3m_pct": -17.0,
+    "rs_percentile": 11.0,
+    "stop_ref": 2.42,
+    "stop_risk_pct": 2.6,
     "median_turnover_ils": 6328850.0,
-    "reversal_signals": 0,
+    "reversal_signals": 1,
     "pattern": "None"
    },
    "whale": {
@@ -1536,52 +2093,75 @@
    "sector": "שירותים פיננסים",
    "data_ok": true,
    "data_issues": [],
+   "score": 44.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -16.7,
+     "percentile": 27.0
+    },
+    "hi52": {
+     "value": 68.3,
+     "percentile": 27.0
+    },
+    "dist_ema200": {
+     "value": -3.0,
+     "percentile": 45.0
+    },
+    "ema50_200": {
+     "value": 3.1,
+     "percentile": 68.0
+    }
+   },
+   "timing": {
+    "score": 40.9,
+    "score_week_max": 50.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 29.8,
+    "sell_score": 31.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 5.0,
+     "pullback": 10.9,
+     "reversal": 10.0,
+     "volume": 2.0,
+     "risk": 10.0,
+     "rs": 3.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": true,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 49.0,
-   "score_week_max": 50.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 29.8,
-   "sell_score": 15.0,
-   "sell_action": "TRIM",
-   "layers": {
-    "trend": 5.0,
-    "pullback": 10.0,
-    "reversal": 15.0,
-    "volume": 6.0,
-    "risk": 10.0,
-    "rs": 3.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": true,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 119.3,
-    "chg_1w_pct": -0.3,
-    "chg_1m_pct": 0.7,
-    "rsi": 41.7,
-    "adx": 12.8,
-    "atr_pct": 2.92,
-    "dist_ema200_pct": -2.6,
-    "dist_from_high_pct": 6.7,
-    "cmf": 0.098,
-    "rvol": 0.27,
-    "beta": 1.09,
-    "rs_3m_pct": -10.1,
-    "rs_percentile": 29.0,
+    "close": 118.3,
+    "chg_1w_pct": -3.4,
+    "chg_1m_pct": -0.6,
+    "rsi": 39.7,
+    "adx": 13.8,
+    "atr_pct": 2.94,
+    "dist_ema200_pct": -3.4,
+    "dist_from_high_pct": 7.5,
+    "cmf": -0.022,
+    "rvol": 0.37,
+    "beta": 0.87,
+    "rs_3m_pct": -13.1,
+    "rs_percentile": 23.0,
     "stop_ref": 112.16,
-    "stop_risk_pct": 6.0,
-    "median_turnover_ils": 10615632.0,
-    "reversal_signals": 2,
+    "stop_risk_pct": 5.2,
+    "median_turnover_ils": 10456362.0,
+    "reversal_signals": 1,
     "pattern": "None"
    },
    "whale": {
@@ -1599,51 +2179,74 @@
    "sector": "בנקאות",
    "data_ok": true,
    "data_issues": [],
+   "score": 80.0,
+   "rating": "BUY",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -1.0,
+     "percentile": 62.0
+    },
+    "hi52": {
+     "value": 91.6,
+     "percentile": 95.0
+    },
+    "dist_ema200": {
+     "value": 6.3,
+     "percentile": 84.0
+    },
+    "ema50_200": {
+     "value": 5.2,
+     "percentile": 82.0
+    }
+   },
+   "timing": {
+    "score": 45.0,
+    "score_week_max": 51.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 37.0,
+    "sell_score": 15.0,
+    "sell_action": "TRIM",
+    "layers": {
+     "trend": 15.0,
+     "pullback": 12.0,
+     "reversal": 2.0,
+     "volume": 4.0,
+     "risk": 10.0,
+     "rs": 2.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": true,
+     "trend_ready": true,
+     "pullback_ready": true,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 50.0,
-   "score_week_max": 51.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 37.0,
-   "sell_score": 27.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 15.0,
-    "pullback": 12.0,
-    "reversal": 2.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 2.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": true,
-    "trend_ready": true,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 78.21,
-    "chg_1w_pct": -2.2,
+    "close": 77.86,
+    "chg_1w_pct": -1.7,
     "chg_1m_pct": 0.8,
-    "rsi": 46.8,
-    "adx": 20.8,
-    "atr_pct": 1.42,
-    "dist_ema200_pct": 6.4,
-    "dist_from_high_pct": 4.6,
-    "cmf": 0.062,
-    "rvol": 0.24,
-    "beta": 0.48,
-    "rs_3m_pct": 11.7,
-    "rs_percentile": 85.0,
-    "stop_ref": 77.04,
-    "stop_risk_pct": 1.5,
-    "median_turnover_ils": 175905957.0,
+    "rsi": 44.8,
+    "adx": 22.1,
+    "atr_pct": 1.48,
+    "dist_ema200_pct": 5.8,
+    "dist_from_high_pct": 5.0,
+    "cmf": 0.0,
+    "rvol": 0.38,
+    "beta": 0.49,
+    "rs_3m_pct": 13.0,
+    "rs_percentile": 90.0,
+    "stop_ref": 75.5,
+    "stop_risk_pct": 3.0,
+    "median_turnover_ils": 167941350.0,
     "reversal_signals": 1,
     "pattern": "None"
    },
@@ -1662,50 +2265,73 @@
    "sector": "אופנה והלבשה",
    "data_ok": true,
    "data_issues": [],
+   "score": 77.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 14.9,
+     "percentile": 91.0
+    },
+    "hi52": {
+     "value": 88.2,
+     "percentile": 88.0
+    },
+    "dist_ema200": {
+     "value": 1.5,
+     "percentile": 68.0
+    },
+    "ema50_200": {
+     "value": 2.6,
+     "percentile": 61.0
+    }
+   },
+   "timing": {
+    "score": 53.3,
+    "score_week_max": 62.7,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 40.1,
+    "sell_score": 31.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 13.0,
+     "pullback": 17.3,
+     "reversal": 2.0,
+     "volume": 9.0,
+     "risk": 10.0,
+     "rs": 2.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": true,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": true,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 52.4,
-   "score_week_max": 62.7,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 40.1,
-   "sell_score": 15.0,
-   "sell_action": "TRIM",
-   "layers": {
-    "trend": 13.0,
-    "pullback": 16.4,
-    "reversal": 2.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 2.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": true,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 176.4,
-    "chg_1w_pct": -2.6,
-    "chg_1m_pct": -2.9,
-    "rsi": 42.7,
-    "adx": 19.8,
-    "atr_pct": 1.92,
-    "dist_ema200_pct": 2.2,
-    "dist_from_high_pct": 8.9,
-    "cmf": 0.184,
-    "rvol": 0.22,
-    "beta": 0.56,
-    "rs_3m_pct": 5.7,
-    "rs_percentile": 81.0,
-    "stop_ref": 173.4,
-    "stop_risk_pct": 1.7,
+    "close": 174.9,
+    "chg_1w_pct": -1.5,
+    "chg_1m_pct": -3.6,
+    "rsi": 39.8,
+    "adx": 21.0,
+    "atr_pct": 2.04,
+    "dist_ema200_pct": 1.3,
+    "dist_from_high_pct": 9.7,
+    "cmf": 0.076,
+    "rvol": 0.31,
+    "beta": 0.34,
+    "rs_3m_pct": 5.9,
+    "rs_percentile": 76.0,
+    "stop_ref": 173.31,
+    "stop_risk_pct": 0.9,
     "median_turnover_ils": 1479490.0,
     "reversal_signals": 1,
     "pattern": "None"
@@ -1725,114 +2351,74 @@
    "sector": "טכנולוגיה",
    "data_ok": true,
    "data_issues": [],
+   "score": 75.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 10.7,
+     "percentile": 86.0
+    },
+    "hi52": {
+     "value": 84.2,
+     "percentile": 77.0
+    },
+    "dist_ema200": {
+     "value": 3.2,
+     "percentile": 77.0
+    },
+    "ema50_200": {
+     "value": 2.3,
+     "percentile": 57.0
+    }
+   },
+   "timing": {
+    "score": 51.0,
+    "score_week_max": 56.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 42.0,
+    "sell_score": 23.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 15.0,
+     "pullback": 15.0,
+     "reversal": 4.0,
+     "volume": 5.0,
+     "risk": 10.0,
+     "rs": 2.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": true,
+     "trend_ready": true,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 59.4,
-   "score_week_max": 62.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 42.0,
-   "sell_score": 23.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 15.0,
-    "pullback": 14.4,
-    "reversal": 10.0,
-    "volume": 5.0,
-    "risk": 10.0,
-    "rs": 5.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": true,
-    "trend_ready": true,
-    "pullback_ready": true,
-    "reversal_ready": true,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 235.1,
-    "chg_1w_pct": -3.5,
-    "chg_1m_pct": -4.8,
-    "rsi": 44.8,
-    "adx": 22.2,
-    "atr_pct": 2.53,
-    "dist_ema200_pct": 3.7,
-    "dist_from_high_pct": 7.1,
-    "cmf": -0.036,
-    "rvol": 0.39,
+    "close": 233.7,
+    "chg_1w_pct": -5.9,
+    "chg_1m_pct": -3.4,
+    "rsi": 44.4,
+    "adx": 21.7,
+    "atr_pct": 2.54,
+    "dist_ema200_pct": 3.1,
+    "dist_from_high_pct": 7.6,
+    "cmf": -0.111,
+    "rvol": 0.52,
     "beta": 0.86,
-    "rs_3m_pct": 20.2,
-    "rs_percentile": 94.0,
-    "stop_ref": 226.72,
-    "stop_risk_pct": 3.6,
-    "median_turnover_ils": 6810323.0,
-    "reversal_signals": 2,
-    "pattern": "None"
-   },
-   "whale": {
-    "breakout_week": false,
-    "accumulating": false,
-    "distributing": false,
-    "whale_buy_week": true,
-    "whale_sell_week": false
-   }
-  },
-  {
-   "tase_id": "759019",
-   "name": "גב ים",
-   "ticker": "GVYM.TA",
-   "sector": "נדל\"ן מניב",
-   "data_ok": true,
-   "data_issues": [],
-   "asof": "2026-09-29",
-   "score": 40.3,
-   "score_week_max": 60.6,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 46.4,
-   "sell_score": 15.0,
-   "sell_action": "TRIM",
-   "layers": {
-    "trend": 5.0,
-    "pullback": 9.3,
-    "reversal": 7.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
-   "metrics": {
-    "close": 37.41,
-    "chg_1w_pct": -2.2,
-    "chg_1m_pct": -0.8,
-    "rsi": 47.3,
-    "adx": 15.3,
-    "atr_pct": 2.18,
-    "dist_ema200_pct": -0.3,
-    "dist_from_high_pct": 6.1,
-    "cmf": 0.044,
-    "rvol": 0.3,
-    "beta": 0.84,
-    "rs_3m_pct": -0.2,
-    "rs_percentile": 63.0,
-    "stop_ref": 36.0,
-    "stop_risk_pct": 3.8,
-    "median_turnover_ils": 2817863.0,
+    "rs_3m_pct": 13.1,
+    "rs_percentile": 92.0,
+    "stop_ref": 233.64,
+    "stop_risk_pct": 0.0,
+    "median_turnover_ils": 6127983.0,
     "reversal_signals": 1,
     "pattern": "None"
    },
@@ -1845,56 +2431,165 @@
    }
   },
   {
+   "tase_id": "759019",
+   "name": "גב ים",
+   "ticker": "GVYM.TA",
+   "sector": "נדל\"ן מניב",
+   "data_ok": true,
+   "data_issues": [],
+   "score": 62.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -2.7,
+     "percentile": 59.0
+    },
+    "hi52": {
+     "value": 83.6,
+     "percentile": 75.0
+    },
+    "dist_ema200": {
+     "value": 0.2,
+     "percentile": 64.0
+    },
+    "ema50_200": {
+     "value": 0.1,
+     "percentile": 48.0
+    }
+   },
+   "timing": {
+    "score": 51.9,
+    "score_week_max": 65.7,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 46.4,
+    "sell_score": 7.0,
+    "sell_action": "HOLD",
+    "layers": {
+     "trend": 13.0,
+     "pullback": 12.9,
+     "reversal": 7.0,
+     "volume": 7.0,
+     "risk": 10.0,
+     "rs": 2.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": true,
+     "pullback_ready": true,
+     "reversal_ready": true,
+     "volume_ready": true,
+     "risk_ready": true,
+     "setup_ready": true,
+     "liquid": true
+    }
+   },
+   "asof": "2026-09-29",
+   "metrics": {
+    "close": 37.55,
+    "chg_1w_pct": -0.2,
+    "chg_1m_pct": -0.4,
+    "rsi": 48.8,
+    "adx": 19.0,
+    "atr_pct": 2.31,
+    "dist_ema200_pct": 0.1,
+    "dist_from_high_pct": 5.7,
+    "cmf": 0.094,
+    "rvol": 0.55,
+    "beta": 0.55,
+    "rs_3m_pct": 0.9,
+    "rs_percentile": 68.0,
+    "stop_ref": 36.57,
+    "stop_risk_pct": 2.6,
+    "median_turnover_ils": 2817863.0,
+    "reversal_signals": 2,
+    "pattern": "None"
+   },
+   "whale": {
+    "breakout_week": false,
+    "accumulating": false,
+    "distributing": false,
+    "whale_buy_week": true,
+    "whale_sell_week": false
+   }
+  },
+  {
    "tase_id": "373019",
    "name": "אאורה",
    "ticker": "AURA.TA",
    "sector": "נדל\"ן בנייה",
    "data_ok": true,
    "data_issues": [],
+   "score": 11.0,
+   "rating": "SELL",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -23.4,
+     "percentile": 11.0
+    },
+    "hi52": {
+     "value": 67.0,
+     "percentile": 20.0
+    },
+    "dist_ema200": {
+     "value": -9.5,
+     "percentile": 18.0
+    },
+    "ema50_200": {
+     "value": -7.9,
+     "percentile": 11.0
+    }
+   },
+   "timing": {
+    "score": 34.0,
+    "score_week_max": 49.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 28.9,
+    "sell_score": 49.0,
+    "sell_action": "EXIT",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 20.0,
+     "reversal": 2.0,
+     "volume": 0.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 39.0,
-   "score_week_max": 49.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 28.9,
-   "sell_score": 49.0,
-   "sell_action": "EXIT",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 20.0,
-    "reversal": 2.0,
-    "volume": 5.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 17.13,
-    "chg_1w_pct": -6.4,
-    "chg_1m_pct": -3.4,
-    "rsi": 42.9,
-    "adx": 18.6,
-    "atr_pct": 3.33,
-    "dist_ema200_pct": -9.1,
-    "dist_from_high_pct": 13.8,
-    "cmf": -0.027,
-    "rvol": 0.23,
-    "beta": 1.61,
-    "rs_3m_pct": -9.3,
-    "rs_percentile": 35.0,
-    "stop_ref": 17.06,
-    "stop_risk_pct": 0.4,
+    "close": 17.08,
+    "chg_1w_pct": -7.2,
+    "chg_1m_pct": -4.6,
+    "rsi": 43.7,
+    "adx": 19.0,
+    "atr_pct": 3.59,
+    "dist_ema200_pct": -9.3,
+    "dist_from_high_pct": 14.1,
+    "cmf": -0.183,
+    "rvol": 0.34,
+    "beta": 1.56,
+    "rs_3m_pct": -13.6,
+    "rs_percentile": 18.0,
+    "stop_ref": 17.04,
+    "stop_risk_pct": 0.2,
     "median_turnover_ils": 4284987.0,
     "reversal_signals": 1,
     "pattern": "None"
@@ -1914,51 +2609,74 @@
    "sector": "מזון וקמעונאות",
    "data_ok": true,
    "data_issues": [],
+   "score": 48.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -16.9,
+     "percentile": 23.0
+    },
+    "hi52": {
+     "value": 73.6,
+     "percentile": 46.0
+    },
+    "dist_ema200": {
+     "value": -2.5,
+     "percentile": 52.0
+    },
+    "ema50_200": {
+     "value": 0.0,
+     "percentile": 46.0
+    }
+   },
+   "timing": {
+    "score": 32.4,
+    "score_week_max": 42.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 54.7,
+    "sell_score": 15.0,
+    "sell_action": "TRIM",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 12.4,
+     "reversal": 2.0,
+     "volume": 6.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": true,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 32.5,
-   "score_week_max": 45.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 54.7,
-   "sell_score": 15.0,
-   "sell_action": "TRIM",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 12.5,
-    "reversal": 2.0,
-    "volume": 6.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 111.0,
-    "chg_1w_pct": 1.6,
-    "chg_1m_pct": -1.5,
-    "rsi": 44.0,
-    "adx": 9.6,
-    "atr_pct": 1.82,
-    "dist_ema200_pct": -2.7,
-    "dist_from_high_pct": 5.5,
-    "cmf": 0.124,
-    "rvol": 0.23,
-    "beta": -0.29,
-    "rs_3m_pct": -5.8,
-    "rs_percentile": 47.0,
-    "stop_ref": 107.99,
-    "stop_risk_pct": 2.7,
-    "median_turnover_ils": 9539820.0,
+    "close": 111.1,
+    "chg_1w_pct": -0.4,
+    "chg_1m_pct": -1.2,
+    "rsi": 44.4,
+    "adx": 9.7,
+    "atr_pct": 1.79,
+    "dist_ema200_pct": -2.6,
+    "dist_from_high_pct": 5.4,
+    "cmf": 0.108,
+    "rvol": 0.27,
+    "beta": -0.42,
+    "rs_3m_pct": -4.4,
+    "rs_percentile": 53.0,
+    "stop_ref": 108.01,
+    "stop_risk_pct": 2.8,
+    "median_turnover_ils": 9001773.0,
     "reversal_signals": 1,
     "pattern": "None"
    },
@@ -1966,7 +2684,7 @@
     "breakout_week": false,
     "accumulating": false,
     "distributing": false,
-    "whale_buy_week": true,
+    "whale_buy_week": false,
     "whale_sell_week": false
    }
   },
@@ -1977,50 +2695,73 @@
    "sector": "שירותים פיננסים",
    "data_ok": true,
    "data_issues": [],
+   "score": null,
+   "rating": "N/A",
+   "rating_note": "illiquid: median turnover below ILS 1M",
+   "factors": {
+    "mom_6_1": {
+     "value": -17.0,
+     "percentile": null
+    },
+    "hi52": {
+     "value": 70.3,
+     "percentile": null
+    },
+    "dist_ema200": {
+     "value": -11.8,
+     "percentile": null
+    },
+    "ema50_200": {
+     "value": -4.1,
+     "percentile": null
+    }
+   },
+   "timing": {
+    "score": 39.0,
+    "score_week_max": 42.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 41.4,
+    "sell_score": 39.0,
+    "sell_action": "EXIT",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 20.0,
+     "reversal": 5.0,
+     "volume": 2.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": false
+    }
+   },
    "asof": "2026-09-29",
-   "score": 39.0,
-   "score_week_max": 42.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 41.4,
-   "sell_score": 39.0,
-   "sell_action": "EXIT",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 20.0,
-    "reversal": 5.0,
-    "volume": 2.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": false
-   },
    "metrics": {
     "close": 20.37,
-    "chg_1w_pct": -3.6,
-    "chg_1m_pct": -9.0,
-    "rsi": 33.1,
-    "adx": 29.1,
-    "atr_pct": 3.07,
-    "dist_ema200_pct": -11.7,
+    "chg_1w_pct": -3.7,
+    "chg_1m_pct": -9.6,
+    "rsi": 33.0,
+    "adx": 30.7,
+    "atr_pct": 2.88,
+    "dist_ema200_pct": -11.6,
     "dist_from_high_pct": 14.2,
-    "cmf": -0.172,
-    "rvol": 0.27,
-    "beta": 1.21,
-    "rs_3m_pct": -14.7,
-    "rs_percentile": 18.0,
-    "stop_ref": 20.25,
-    "stop_risk_pct": 0.6,
+    "cmf": -0.176,
+    "rvol": 0.32,
+    "beta": 1.27,
+    "rs_3m_pct": -13.7,
+    "rs_percentile": 16.0,
+    "stop_ref": 20.27,
+    "stop_risk_pct": 0.5,
     "median_turnover_ils": 281021.0,
     "reversal_signals": 1,
     "pattern": "None"
@@ -2040,52 +2781,75 @@
    "sector": "נדל\"ן מניב",
    "data_ok": true,
    "data_issues": [],
+   "score": 27.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -16.4,
+     "percentile": 29.0
+    },
+    "hi52": {
+     "value": 72.3,
+     "percentile": 45.0
+    },
+    "dist_ema200": {
+     "value": -7.7,
+     "percentile": 23.0
+    },
+    "ema50_200": {
+     "value": -0.9,
+     "percentile": 41.0
+    }
+   },
+   "timing": {
+    "score": 33.8,
+    "score_week_max": 37.9,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 46.9,
+    "sell_score": 23.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 13.8,
+     "reversal": 2.0,
+     "volume": 6.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 45.0,
-   "score_week_max": 45.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 46.9,
-   "sell_score": 23.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 17.0,
-    "reversal": 10.0,
-    "volume": 6.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": true,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 373.9,
-    "chg_1w_pct": -4.7,
-    "chg_1m_pct": -4.4,
-    "rsi": 34.6,
-    "adx": 32.7,
+    "close": 371.0,
+    "chg_1w_pct": -2.9,
+    "chg_1m_pct": -6.4,
+    "rsi": 33.8,
+    "adx": 34.0,
     "atr_pct": 2.33,
-    "dist_ema200_pct": -7.1,
-    "dist_from_high_pct": 9.4,
-    "cmf": 0.176,
-    "rvol": 0.3,
-    "beta": 0.78,
-    "rs_3m_pct": -9.9,
-    "rs_percentile": 31.0,
-    "stop_ref": 376.15,
+    "dist_ema200_pct": -7.8,
+    "dist_from_high_pct": 10.1,
+    "cmf": 0.085,
+    "rvol": 0.36,
+    "beta": 0.8,
+    "rs_3m_pct": -12.8,
+    "rs_percentile": 24.0,
+    "stop_ref": 376.18,
     "stop_risk_pct": 0.0,
     "median_turnover_ils": 22146206.0,
-    "reversal_signals": 2,
+    "reversal_signals": 0,
     "pattern": "None"
    },
    "whale": {
@@ -2103,52 +2867,75 @@
    "sector": "תקשורת",
    "data_ok": true,
    "data_issues": [],
+   "score": 70.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -6.4,
+     "percentile": 48.0
+    },
+    "hi52": {
+     "value": 81.9,
+     "percentile": 70.0
+    },
+    "dist_ema200": {
+     "value": 2.9,
+     "percentile": 75.0
+    },
+    "ema50_200": {
+     "value": 2.9,
+     "percentile": 64.0
+    }
+   },
+   "timing": {
+    "score": 51.6,
+    "score_week_max": 59.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 44.9,
+    "sell_score": 31.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 13.0,
+     "pullback": 15.6,
+     "reversal": 2.0,
+     "volume": 6.0,
+     "risk": 10.0,
+     "rs": 5.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": true,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 55.4,
-   "score_week_max": 59.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 44.9,
-   "sell_score": 45.0,
-   "sell_action": "EXIT",
-   "layers": {
-    "trend": 13.0,
-    "pullback": 14.4,
-    "reversal": 7.0,
-    "volume": 6.0,
-    "risk": 10.0,
-    "rs": 5.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": true,
-    "pullback_ready": false,
-    "reversal_ready": true,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 35.4,
-    "chg_1w_pct": -5.1,
+    "close": 35.0,
+    "chg_1w_pct": -3.5,
     "chg_1m_pct": -1.3,
-    "rsi": 45.5,
-    "adx": 21.3,
-    "atr_pct": 2.47,
-    "dist_ema200_pct": 3.8,
-    "dist_from_high_pct": 7.1,
-    "cmf": 0.246,
-    "rvol": 0.21,
-    "beta": 0.74,
-    "rs_3m_pct": 12.7,
-    "rs_percentile": 90.0,
-    "stop_ref": 35.02,
-    "stop_risk_pct": 1.1,
-    "median_turnover_ils": 5296889.0,
-    "reversal_signals": 2,
+    "rsi": 41.9,
+    "adx": 21.4,
+    "atr_pct": 2.55,
+    "dist_ema200_pct": 2.6,
+    "dist_from_high_pct": 8.2,
+    "cmf": 0.133,
+    "rvol": 0.32,
+    "beta": 0.52,
+    "rs_3m_pct": 11.1,
+    "rs_percentile": 85.0,
+    "stop_ref": 35.01,
+    "stop_risk_pct": 0.0,
+    "median_turnover_ils": 4936587.0,
+    "reversal_signals": 1,
     "pattern": "None"
    },
    "whale": {
@@ -2166,49 +2953,72 @@
    "sector": "קמעונאות",
    "data_ok": true,
    "data_issues": [],
+   "score": 41.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -12.6,
+     "percentile": 34.0
+    },
+    "hi52": {
+     "value": 77.5,
+     "percentile": 55.0
+    },
+    "dist_ema200": {
+     "value": -5.6,
+     "percentile": 32.0
+    },
+    "ema50_200": {
+     "value": -0.9,
+     "percentile": 39.0
+    }
+   },
+   "timing": {
+    "score": 31.5,
+    "score_week_max": 34.3,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 50.6,
+    "sell_score": 31.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 15.5,
+     "reversal": 2.0,
+     "volume": 2.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 31.2,
-   "score_week_max": 36.3,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 50.6,
-   "sell_score": 39.0,
-   "sell_action": "EXIT",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 15.2,
-    "reversal": 2.0,
-    "volume": 2.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 330.8,
-    "chg_1w_pct": -4.0,
-    "chg_1m_pct": -5.6,
-    "rsi": 37.1,
-    "adx": 15.2,
-    "atr_pct": 1.97,
-    "dist_ema200_pct": -5.5,
-    "dist_from_high_pct": 7.8,
-    "cmf": -0.05,
-    "rvol": 0.33,
-    "beta": 0.48,
-    "rs_3m_pct": -11.7,
-    "rs_percentile": 26.0,
-    "stop_ref": 332.24,
+    "close": 329.9,
+    "chg_1w_pct": -2.0,
+    "chg_1m_pct": -6.0,
+    "rsi": 36.4,
+    "adx": 17.3,
+    "atr_pct": 1.94,
+    "dist_ema200_pct": -5.7,
+    "dist_from_high_pct": 8.0,
+    "cmf": -0.089,
+    "rvol": 0.42,
+    "beta": 0.4,
+    "rs_3m_pct": -12.0,
+    "rs_percentile": 29.0,
+    "stop_ref": 332.3,
     "stop_risk_pct": 0.0,
     "median_turnover_ils": 5610780.0,
     "reversal_signals": 1,
@@ -2219,7 +3029,7 @@
     "accumulating": false,
     "distributing": false,
     "whale_buy_week": false,
-    "whale_sell_week": true
+    "whale_sell_week": false
    }
   },
   {
@@ -2229,51 +3039,74 @@
    "sector": "קמעונאות",
    "data_ok": true,
    "data_issues": [],
+   "score": null,
+   "rating": "N/A",
+   "rating_note": "illiquid: median turnover below ILS 1M",
+   "factors": {
+    "mom_6_1": {
+     "value": -24.0,
+     "percentile": null
+    },
+    "hi52": {
+     "value": 63.6,
+     "percentile": null
+    },
+    "dist_ema200": {
+     "value": -17.4,
+     "percentile": null
+    },
+    "ema50_200": {
+     "value": -11.2,
+     "percentile": null
+    }
+   },
+   "timing": {
+    "score": 36.0,
+    "score_week_max": 54.5,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 22.5,
+    "sell_score": 15.0,
+    "sell_action": "TRIM",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 8.0,
+     "reversal": 2.0,
+     "volume": 11.0,
+     "risk": 10.0,
+     "rs": 3.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": true,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": false
+    }
+   },
    "asof": "2026-09-29",
-   "score": 39.0,
-   "score_week_max": 54.5,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 22.5,
-   "sell_score": 15.0,
-   "sell_action": "TRIM",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 8.0,
-    "reversal": 5.0,
-    "volume": 11.0,
-    "risk": 10.0,
-    "rs": 3.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": false
-   },
    "metrics": {
     "close": 40.07,
-    "chg_1w_pct": 0.8,
-    "chg_1m_pct": -3.6,
-    "rsi": 41.4,
-    "adx": 32.9,
-    "atr_pct": 2.07,
-    "dist_ema200_pct": -17.1,
-    "dist_from_high_pct": 2.8,
-    "cmf": 0.076,
-    "rvol": 0.04,
-    "beta": 0.0,
-    "rs_3m_pct": -17.7,
-    "rs_percentile": 11.0,
-    "stop_ref": 38.35,
+    "chg_1w_pct": 1.5,
+    "chg_1m_pct": -1.1,
+    "rsi": 42.0,
+    "adx": 31.5,
+    "atr_pct": 2.08,
+    "dist_ema200_pct": -16.9,
+    "dist_from_high_pct": 2.2,
+    "cmf": 0.087,
+    "rvol": 0.1,
+    "beta": -0.16,
+    "rs_3m_pct": -16.1,
+    "rs_percentile": 13.0,
+    "stop_ref": 38.34,
     "stop_risk_pct": 4.3,
-    "median_turnover_ils": 207850.0,
+    "median_turnover_ils": 203000.0,
     "reversal_signals": 0,
     "pattern": "None"
    },
@@ -2292,52 +3125,75 @@
    "sector": "טכנולוגיה",
    "data_ok": true,
    "data_issues": [],
+   "score": 2.0,
+   "rating": "SELL",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -43.6,
+     "percentile": 2.0
+    },
+    "hi52": {
+     "value": 49.1,
+     "percentile": 4.0
+    },
+    "dist_ema200": {
+     "value": -20.5,
+     "percentile": 4.0
+    },
+    "ema50_200": {
+     "value": -15.1,
+     "percentile": 4.0
+    }
+   },
+   "timing": {
+    "score": 36.0,
+    "score_week_max": 43.3,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 22.5,
+    "sell_score": 16.0,
+    "sell_action": "TRIM",
+    "layers": {
+     "trend": 4.0,
+     "pullback": 8.0,
+     "reversal": 4.0,
+     "volume": 7.0,
+     "risk": 10.0,
+     "rs": 3.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": true,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 43.0,
-   "score_week_max": 43.3,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 22.5,
-   "sell_score": 8.0,
-   "sell_action": "HOLD",
-   "layers": {
-    "trend": 4.0,
-    "pullback": 8.0,
-    "reversal": 7.0,
-    "volume": 11.0,
-    "risk": 10.0,
-    "rs": 3.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": true,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 30.7,
-    "chg_1w_pct": -0.2,
-    "chg_1m_pct": -1.3,
-    "rsi": 49.6,
-    "adx": 14.3,
-    "atr_pct": 3.57,
-    "dist_ema200_pct": -20.1,
-    "dist_from_high_pct": 3.3,
-    "cmf": 0.022,
-    "rvol": 0.22,
-    "beta": 1.64,
-    "rs_3m_pct": -24.6,
-    "rs_percentile": 6.0,
-    "stop_ref": 28.85,
-    "stop_risk_pct": 6.0,
-    "median_turnover_ils": 5502390.0,
-    "reversal_signals": 1,
+    "close": 30.66,
+    "chg_1w_pct": 3.3,
+    "chg_1m_pct": 5.6,
+    "rsi": 49.4,
+    "adx": 13.8,
+    "atr_pct": 3.42,
+    "dist_ema200_pct": -20.0,
+    "dist_from_high_pct": 3.5,
+    "cmf": -0.066,
+    "rvol": 0.28,
+    "beta": 1.19,
+    "rs_3m_pct": -23.9,
+    "rs_percentile": 5.0,
+    "stop_ref": 28.88,
+    "stop_risk_pct": 5.8,
+    "median_turnover_ils": 5282903.0,
+    "reversal_signals": 0,
     "pattern": "None"
    },
    "whale": {
@@ -2355,51 +3211,74 @@
    "sector": "קמעונאות",
    "data_ok": true,
    "data_issues": [],
+   "score": 66.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 22.2,
+     "percentile": 95.0
+    },
+    "hi52": {
+     "value": 75.4,
+     "percentile": 48.0
+    },
+    "dist_ema200": {
+     "value": -0.8,
+     "percentile": 59.0
+    },
+    "ema50_200": {
+     "value": 0.7,
+     "percentile": 52.0
+    }
+   },
+   "timing": {
+    "score": 48.0,
+    "score_week_max": 62.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 35.7,
+    "sell_score": 15.0,
+    "sell_action": "TRIM",
+    "layers": {
+     "trend": 5.0,
+     "pullback": 20.0,
+     "reversal": 2.0,
+     "volume": 9.0,
+     "risk": 10.0,
+     "rs": 2.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": true,
+     "reversal_ready": false,
+     "volume_ready": true,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 48.0,
-   "score_week_max": 70.2,
-   "signal": "WAIT",
-   "signal_week": "BUY",
-   "weekly_signal": "WAIT",
-   "weekly_score": 35.7,
-   "sell_score": 15.0,
-   "sell_action": "TRIM",
-   "layers": {
-    "trend": 5.0,
-    "pullback": 20.0,
-    "reversal": 2.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 2.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 307.4,
-    "chg_1w_pct": -0.9,
+    "close": 305.0,
+    "chg_1w_pct": -3.6,
     "chg_1m_pct": -6.8,
-    "rsi": 43.0,
-    "adx": 22.9,
-    "atr_pct": 2.59,
-    "dist_ema200_pct": -0.1,
-    "dist_from_high_pct": 12.9,
-    "cmf": 0.27,
-    "rvol": 0.3,
-    "beta": 0.98,
-    "rs_3m_pct": 6.6,
-    "rs_percentile": 82.0,
-    "stop_ref": 299.22,
-    "stop_risk_pct": 2.7,
-    "median_turnover_ils": 4190659.0,
+    "rsi": 41.2,
+    "adx": 22.7,
+    "atr_pct": 2.58,
+    "dist_ema200_pct": -0.9,
+    "dist_from_high_pct": 13.6,
+    "cmf": 0.181,
+    "rvol": 0.43,
+    "beta": 0.77,
+    "rs_3m_pct": 5.4,
+    "rs_percentile": 74.0,
+    "stop_ref": 299.27,
+    "stop_risk_pct": 1.9,
+    "median_turnover_ils": 4077348.0,
     "reversal_signals": 1,
     "pattern": "None"
    },
@@ -2407,7 +3286,7 @@
     "breakout_week": false,
     "accumulating": false,
     "distributing": false,
-    "whale_buy_week": true,
+    "whale_buy_week": false,
     "whale_sell_week": false
    }
   },
@@ -2418,52 +3297,75 @@
    "sector": "טכנולוגיה",
    "data_ok": true,
    "data_issues": [],
+   "score": 71.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -2.3,
+     "percentile": 61.0
+    },
+    "hi52": {
+     "value": 77.6,
+     "percentile": 57.0
+    },
+    "dist_ema200": {
+     "value": 1.6,
+     "percentile": 70.0
+    },
+    "ema50_200": {
+     "value": 7.5,
+     "percentile": 86.0
+    }
+   },
+   "timing": {
+    "score": 49.1,
+    "score_week_max": 52.7,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 32.1,
+    "sell_score": 23.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 15.0,
+     "pullback": 14.1,
+     "reversal": 4.0,
+     "volume": 6.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": true,
+     "trend_ready": true,
+     "pullback_ready": true,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 57.1,
-   "score_week_max": 57.1,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 32.1,
-   "sell_score": 23.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 15.0,
-    "pullback": 13.1,
-    "reversal": 10.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": true,
-    "trend_ready": true,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 287.3,
-    "chg_1w_pct": -3.4,
-    "chg_1m_pct": 0.5,
-    "rsi": 44.0,
-    "adx": 15.4,
-    "atr_pct": 3.83,
-    "dist_ema200_pct": 2.1,
-    "dist_from_high_pct": 9.4,
-    "cmf": 0.027,
-    "rvol": 0.33,
-    "beta": 2.21,
+    "close": 284.5,
+    "chg_1w_pct": -5.6,
+    "chg_1m_pct": 0.7,
+    "rsi": 43.2,
+    "adx": 15.8,
+    "atr_pct": 3.78,
+    "dist_ema200_pct": 1.1,
+    "dist_from_high_pct": 10.3,
+    "cmf": 0.005,
+    "rvol": 0.45,
+    "beta": 2.31,
     "rs_3m_pct": -9.8,
-    "rs_percentile": 32.0,
-    "stop_ref": 271.5,
-    "stop_risk_pct": 5.5,
-    "median_turnover_ils": 3936756.0,
-    "reversal_signals": 1,
+    "rs_percentile": 34.0,
+    "stop_ref": 271.62,
+    "stop_risk_pct": 4.5,
+    "median_turnover_ils": 3507897.0,
+    "reversal_signals": 0,
     "pattern": "None"
    },
    "whale": {
@@ -2481,52 +3383,75 @@
    "sector": "השקעות ואחזקה",
    "data_ok": true,
    "data_issues": [],
+   "score": 16.0,
+   "rating": "SELL",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -20.3,
+     "percentile": 16.0
+    },
+    "hi52": {
+     "value": 68.0,
+     "percentile": 25.0
+    },
+    "dist_ema200": {
+     "value": -9.5,
+     "percentile": 20.0
+    },
+    "ema50_200": {
+     "value": -3.8,
+     "percentile": 23.0
+    }
+   },
+   "timing": {
+    "score": 43.0,
+    "score_week_max": 43.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "BUY",
+    "weekly_score": 71.3,
+    "sell_score": 31.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 16.0,
+     "reversal": 10.0,
+     "volume": 5.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 35.0,
-   "score_week_max": 36.8,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "BUY",
-   "weekly_score": 71.3,
-   "sell_score": 39.0,
-   "sell_action": "EXIT",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 16.0,
-    "reversal": 2.0,
-    "volume": 5.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 72.62,
-    "chg_1w_pct": -7.3,
-    "chg_1m_pct": -12.2,
-    "rsi": 34.0,
-    "adx": 16.5,
-    "atr_pct": 3.39,
-    "dist_ema200_pct": -10.8,
-    "dist_from_high_pct": 15.8,
-    "cmf": -0.035,
-    "rvol": 0.51,
-    "beta": 1.33,
-    "rs_3m_pct": -6.2,
-    "rs_percentile": 45.0,
-    "stop_ref": 74.35,
+    "close": 73.85,
+    "chg_1w_pct": -5.1,
+    "chg_1m_pct": -7.7,
+    "rsi": 39.1,
+    "adx": 17.8,
+    "atr_pct": 3.37,
+    "dist_ema200_pct": -9.2,
+    "dist_from_high_pct": 14.4,
+    "cmf": -0.107,
+    "rvol": 0.74,
+    "beta": 1.29,
+    "rs_3m_pct": -6.8,
+    "rs_percentile": 44.0,
+    "stop_ref": 74.33,
     "stop_risk_pct": 0.0,
-    "median_turnover_ils": 1682370.0,
-    "reversal_signals": 0,
+    "median_turnover_ils": 1546263.0,
+    "reversal_signals": 1,
     "pattern": "None"
    },
    "whale": {
@@ -2544,59 +3469,82 @@
    "sector": "כימיה, גומי, פלסטיק",
    "data_ok": true,
    "data_issues": [],
+   "score": 39.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 0.3,
+     "percentile": 66.0
+    },
+    "hi52": {
+     "value": 70.4,
+     "percentile": 41.0
+    },
+    "dist_ema200": {
+     "value": -7.1,
+     "percentile": 27.0
+    },
+    "ema50_200": {
+     "value": -3.3,
+     "percentile": 27.0
+    }
+   },
+   "timing": {
+    "score": 39.0,
+    "score_week_max": 43.2,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 28.2,
+    "sell_score": 31.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 16.0,
+     "reversal": 4.0,
+     "volume": 2.0,
+     "risk": 10.0,
+     "rs": 5.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 45.8,
-   "score_week_max": 54.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 28.2,
-   "sell_score": 23.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 15.8,
-    "reversal": 7.0,
-    "volume": 6.0,
-    "risk": 10.0,
-    "rs": 5.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 15.9,
-    "chg_1w_pct": -4.6,
-    "chg_1m_pct": -4.2,
-    "rsi": 34.1,
-    "adx": 25.9,
-    "atr_pct": 2.22,
-    "dist_ema200_pct": -6.7,
-    "dist_from_high_pct": 11.9,
-    "cmf": 0.083,
-    "rvol": 0.47,
-    "beta": 0.65,
+    "close": 15.84,
+    "chg_1w_pct": -2.2,
+    "chg_1m_pct": -7.3,
+    "rsi": 36.9,
+    "adx": 27.5,
+    "atr_pct": 2.36,
+    "dist_ema200_pct": -7.0,
+    "dist_from_high_pct": 12.2,
+    "cmf": -0.011,
+    "rvol": 0.99,
+    "beta": 0.74,
     "rs_3m_pct": 4.1,
     "rs_percentile": 73.0,
-    "stop_ref": 16.3,
+    "stop_ref": 16.29,
     "stop_risk_pct": 0.0,
-    "median_turnover_ils": 24331796.0,
-    "reversal_signals": 1,
+    "median_turnover_ils": 23145096.0,
+    "reversal_signals": 0,
     "pattern": "None"
    },
    "whale": {
     "breakout_week": false,
     "accumulating": false,
     "distributing": false,
-    "whale_buy_week": true,
+    "whale_buy_week": false,
     "whale_sell_week": false
    }
   },
@@ -2607,57 +3555,80 @@
    "sector": "תשתיות",
    "data_ok": true,
    "data_issues": [],
+   "score": 82.0,
+   "rating": "BUY",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 16.4,
+     "percentile": 93.0
+    },
+    "hi52": {
+     "value": 86.3,
+     "percentile": 80.0
+    },
+    "dist_ema200": {
+     "value": 2.9,
+     "percentile": 73.0
+    },
+    "ema50_200": {
+     "value": 4.9,
+     "percentile": 79.0
+    }
+   },
+   "timing": {
+    "score": 46.3,
+    "score_week_max": 52.7,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 48.1,
+    "sell_score": 31.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 13.0,
+     "pullback": 19.3,
+     "reversal": 2.0,
+     "volume": 2.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": true,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 53.5,
-   "score_week_max": 53.5,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 48.1,
-   "sell_score": 23.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 13.0,
-    "pullback": 18.5,
-    "reversal": 10.0,
-    "volume": 2.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": true,
-    "pullback_ready": true,
-    "reversal_ready": true,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 111.7,
-    "chg_1w_pct": -2.2,
-    "chg_1m_pct": -2.3,
-    "rsi": 44.5,
-    "adx": 13.7,
-    "atr_pct": 2.81,
-    "dist_ema200_pct": 3.5,
-    "dist_from_high_pct": 10.7,
-    "cmf": -0.07,
-    "rvol": 0.76,
-    "beta": 1.43,
-    "rs_3m_pct": -3.1,
-    "rs_percentile": 53.0,
+    "close": 110.9,
+    "chg_1w_pct": -3.5,
+    "chg_1m_pct": -5.8,
+    "rsi": 44.2,
+    "adx": 13.5,
+    "atr_pct": 2.83,
+    "dist_ema200_pct": 2.7,
+    "dist_from_high_pct": 11.3,
+    "cmf": -0.168,
+    "rvol": 0.85,
+    "beta": 1.32,
+    "rs_3m_pct": -5.9,
+    "rs_percentile": 47.0,
     "stop_ref": 109.43,
-    "stop_risk_pct": 2.0,
+    "stop_risk_pct": 1.3,
     "median_turnover_ils": 4988156.0,
-    "reversal_signals": 2,
+    "reversal_signals": 1,
     "pattern": "None"
    },
    "whale": {
     "breakout_week": false,
-    "accumulating": false,
+    "accumulating": true,
     "distributing": false,
     "whale_buy_week": false,
     "whale_sell_week": false
@@ -2670,50 +3641,73 @@
    "sector": "טכנולוגיה",
    "data_ok": true,
    "data_issues": [],
+   "score": null,
+   "rating": "N/A",
+   "rating_note": "illiquid: median turnover below ILS 1M",
+   "factors": {
+    "mom_6_1": {
+     "value": -15.9,
+     "percentile": null
+    },
+    "hi52": {
+     "value": 51.3,
+     "percentile": null
+    },
+    "dist_ema200": {
+     "value": -17.3,
+     "percentile": null
+    },
+    "ema50_200": {
+     "value": -15.6,
+     "percentile": null
+    }
+   },
+   "timing": {
+    "score": 38.8,
+    "score_week_max": 38.8,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 30.1,
+    "sell_score": 35.0,
+    "sell_action": "EXIT",
+    "layers": {
+     "trend": 4.0,
+     "pullback": 15.2,
+     "reversal": 2.0,
+     "volume": 9.0,
+     "risk": 5.6,
+     "rs": 3.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": true,
+     "trend_ready": false,
+     "pullback_ready": true,
+     "reversal_ready": false,
+     "volume_ready": true,
+     "risk_ready": false,
+     "setup_ready": false,
+     "liquid": false
+    }
+   },
    "asof": "2026-09-29",
-   "score": 35.1,
-   "score_week_max": 44.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 30.1,
-   "sell_score": 27.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 4.0,
-    "pullback": 14.9,
-    "reversal": 2.0,
-    "volume": 9.0,
-    "risk": 5.2,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": true,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": false,
-    "setup_ready": false,
-    "liquid": false
-   },
    "metrics": {
-    "close": 44.03,
-    "chg_1w_pct": -6.8,
-    "chg_1m_pct": 0.9,
-    "rsi": 45.2,
-    "adx": 22.9,
-    "atr_pct": 3.8,
-    "dist_ema200_pct": -16.3,
-    "dist_from_high_pct": 11.1,
-    "cmf": 0.361,
-    "rvol": 0.12,
-    "beta": 0.75,
-    "rs_3m_pct": -3.4,
-    "rs_percentile": 50.0,
-    "stop_ref": 39.17,
-    "stop_risk_pct": 11.0,
+    "close": 43.9,
+    "chg_1w_pct": -9.7,
+    "chg_1m_pct": 3.7,
+    "rsi": 44.4,
+    "adx": 22.0,
+    "atr_pct": 3.63,
+    "dist_ema200_pct": -16.4,
+    "dist_from_high_pct": 11.3,
+    "cmf": 0.379,
+    "rvol": 0.4,
+    "beta": 0.94,
+    "rs_3m_pct": -1.7,
+    "rs_percentile": 63.0,
+    "stop_ref": 39.21,
+    "stop_risk_pct": 10.7,
     "median_turnover_ils": 152195.0,
     "reversal_signals": 0,
     "pattern": "None"
@@ -2733,49 +3727,72 @@
    "sector": "תקשורת",
    "data_ok": true,
    "data_issues": [],
+   "score": 59.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -7.0,
+     "percentile": 45.0
+    },
+    "hi52": {
+     "value": 82.1,
+     "percentile": 71.0
+    },
+    "dist_ema200": {
+     "value": -1.5,
+     "percentile": 55.0
+    },
+    "ema50_200": {
+     "value": 2.4,
+     "percentile": 59.0
+    }
+   },
+   "timing": {
+    "score": 38.8,
+    "score_week_max": 55.6,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 56.2,
+    "sell_score": 31.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 5.0,
+     "pullback": 12.8,
+     "reversal": 2.0,
+     "volume": 9.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": true,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 43.0,
-   "score_week_max": 55.6,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 56.2,
-   "sell_score": 31.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 5.0,
-    "pullback": 12.0,
-    "reversal": 4.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 3.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 36.65,
-    "chg_1w_pct": -6.3,
-    "chg_1m_pct": -1.6,
-    "rsi": 37.5,
-    "adx": 17.8,
-    "atr_pct": 2.39,
-    "dist_ema200_pct": -1.1,
-    "dist_from_high_pct": 8.5,
-    "cmf": 0.143,
-    "rvol": 0.16,
-    "beta": 0.82,
-    "rs_3m_pct": -1.5,
-    "rs_percentile": 60.0,
-    "stop_ref": 36.98,
+    "close": 36.38,
+    "chg_1w_pct": -4.0,
+    "chg_1m_pct": -1.5,
+    "rsi": 36.9,
+    "adx": 19.0,
+    "atr_pct": 2.46,
+    "dist_ema200_pct": -1.8,
+    "dist_from_high_pct": 9.2,
+    "cmf": 0.011,
+    "rvol": 0.3,
+    "beta": 0.67,
+    "rs_3m_pct": -3.8,
+    "rs_percentile": 56.0,
+    "stop_ref": 36.97,
     "stop_risk_pct": 0.0,
     "median_turnover_ils": 4842159.0,
     "reversal_signals": 0,
@@ -2796,51 +3813,74 @@
    "sector": "גז ונפט",
    "data_ok": true,
    "data_issues": [],
+   "score": 38.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -27.0,
+     "percentile": 5.0
+    },
+    "hi52": {
+     "value": 69.7,
+     "percentile": 38.0
+    },
+    "dist_ema200": {
+     "value": -0.2,
+     "percentile": 62.0
+    },
+    "ema50_200": {
+     "value": 0.6,
+     "percentile": 50.0
+    }
+   },
+   "timing": {
+    "score": 40.0,
+    "score_week_max": 48.4,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 37.1,
+    "sell_score": 39.0,
+    "sell_action": "EXIT",
+    "layers": {
+     "trend": 5.0,
+     "pullback": 16.0,
+     "reversal": 2.0,
+     "volume": 2.0,
+     "risk": 10.0,
+     "rs": 5.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 42.4,
-   "score_week_max": 50.1,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 37.1,
-   "sell_score": 39.0,
-   "sell_action": "EXIT",
-   "layers": {
-    "trend": 5.0,
-    "pullback": 15.4,
-    "reversal": 5.0,
-    "volume": 2.0,
-    "risk": 10.0,
-    "rs": 5.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 85.33,
-    "chg_1w_pct": -3.9,
-    "chg_1m_pct": 3.8,
-    "rsi": 41.9,
-    "adx": 24.4,
-    "atr_pct": 2.36,
-    "dist_ema200_pct": -0.0,
-    "dist_from_high_pct": 8.0,
-    "cmf": -0.046,
-    "rvol": 0.38,
-    "beta": 0.34,
-    "rs_3m_pct": 10.0,
-    "rs_percentile": 84.0,
-    "stop_ref": 84.86,
-    "stop_risk_pct": 0.5,
-    "median_turnover_ils": 19408083.0,
+    "close": 84.86,
+    "chg_1w_pct": -2.7,
+    "chg_1m_pct": 0.6,
+    "rsi": 40.2,
+    "adx": 23.3,
+    "atr_pct": 2.26,
+    "dist_ema200_pct": -0.5,
+    "dist_from_high_pct": 8.5,
+    "cmf": -0.157,
+    "rvol": 0.52,
+    "beta": 0.28,
+    "rs_3m_pct": 7.4,
+    "rs_percentile": 82.0,
+    "stop_ref": 84.91,
+    "stop_risk_pct": 0.0,
+    "median_turnover_ils": 17752384.0,
     "reversal_signals": 1,
     "pattern": "None"
    },
@@ -2859,51 +3899,74 @@
    "sector": "גז ונפט",
    "data_ok": true,
    "data_issues": [],
+   "score": 93.0,
+   "rating": "BUY",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 5.0,
+     "percentile": 77.0
+    },
+    "hi52": {
+     "value": 92.0,
+     "percentile": 96.0
+    },
+    "dist_ema200": {
+     "value": 6.8,
+     "percentile": 88.0
+    },
+    "ema50_200": {
+     "value": 7.7,
+     "percentile": 88.0
+    }
+   },
+   "timing": {
+    "score": 64.5,
+    "score_week_max": 66.4,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 38.7,
+    "sell_score": 15.0,
+    "sell_action": "TRIM",
+    "layers": {
+     "trend": 13.0,
+     "pullback": 15.5,
+     "reversal": 15.0,
+     "volume": 9.0,
+     "risk": 10.0,
+     "rs": 2.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": true,
+     "pullback_ready": true,
+     "reversal_ready": true,
+     "volume_ready": true,
+     "risk_ready": true,
+     "setup_ready": true,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 66.9,
-   "score_week_max": 68.7,
-   "signal": "WAIT",
-   "signal_week": "BUY",
-   "weekly_signal": "WAIT",
-   "weekly_score": 38.7,
-   "sell_score": 15.0,
-   "sell_action": "TRIM",
-   "layers": {
-    "trend": 13.0,
-    "pullback": 14.9,
-    "reversal": 18.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 2.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": true,
-    "pullback_ready": true,
-    "reversal_ready": true,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": true,
-    "liquid": true
-   },
    "metrics": {
-    "close": 854.3,
-    "chg_1w_pct": 0.4,
-    "chg_1m_pct": -3.1,
-    "rsi": 45.2,
-    "adx": 11.5,
+    "close": 849.7,
+    "chg_1w_pct": -1.7,
+    "chg_1m_pct": -2.2,
+    "rsi": 43.3,
+    "adx": 11.6,
     "atr_pct": 2.11,
-    "dist_ema200_pct": 6.9,
-    "dist_from_high_pct": 7.5,
-    "cmf": 0.088,
-    "rvol": 0.27,
-    "beta": 1.07,
-    "rs_3m_pct": 5.6,
+    "dist_ema200_pct": 6.2,
+    "dist_from_high_pct": 8.0,
+    "cmf": 0.046,
+    "rvol": 0.46,
+    "beta": 0.98,
+    "rs_3m_pct": 6.2,
     "rs_percentile": 79.0,
-    "stop_ref": 834.18,
-    "stop_risk_pct": 2.4,
-    "median_turnover_ils": 6935712.0,
+    "stop_ref": 834.25,
+    "stop_risk_pct": 1.8,
+    "median_turnover_ils": 6879916.0,
     "reversal_signals": 3,
     "pattern": "None"
    },
@@ -2911,7 +3974,7 @@
     "breakout_week": false,
     "accumulating": false,
     "distributing": false,
-    "whale_buy_week": true,
+    "whale_buy_week": false,
     "whale_sell_week": false
    }
   },
@@ -2922,59 +3985,82 @@
    "sector": "מלונאות ואירוח",
    "data_ok": true,
    "data_issues": [],
+   "score": 64.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 7.1,
+     "percentile": 82.0
+    },
+    "hi52": {
+     "value": 76.2,
+     "percentile": 50.0
+    },
+    "dist_ema200": {
+     "value": -2.5,
+     "percentile": 50.0
+    },
+    "ema50_200": {
+     "value": 3.3,
+     "percentile": 70.0
+    }
+   },
+   "timing": {
+    "score": 39.0,
+    "score_week_max": 44.7,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 39.3,
+    "sell_score": 31.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 5.0,
+     "pullback": 20.0,
+     "reversal": 4.0,
+     "volume": 0.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 47.0,
-   "score_week_max": 65.4,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 39.3,
-   "sell_score": 31.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 5.0,
-    "pullback": 20.0,
-    "reversal": 10.0,
-    "volume": 2.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": true,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 660.3,
-    "chg_1w_pct": -1.2,
-    "chg_1m_pct": -7.2,
-    "rsi": 39.3,
-    "adx": 24.4,
-    "atr_pct": 2.81,
-    "dist_ema200_pct": -2.0,
-    "dist_from_high_pct": 12.9,
-    "cmf": -0.185,
-    "rvol": 0.25,
-    "beta": 1.05,
-    "rs_3m_pct": -8.4,
-    "rs_percentile": 40.0,
-    "stop_ref": 653.83,
-    "stop_risk_pct": 1.0,
-    "median_turnover_ils": 5527533.0,
-    "reversal_signals": 2,
+    "close": 655.0,
+    "chg_1w_pct": -3.4,
+    "chg_1m_pct": -8.1,
+    "rsi": 38.8,
+    "adx": 24.0,
+    "atr_pct": 2.86,
+    "dist_ema200_pct": -2.8,
+    "dist_from_high_pct": 13.6,
+    "cmf": -0.34,
+    "rvol": 0.69,
+    "beta": 0.91,
+    "rs_3m_pct": -9.2,
+    "rs_percentile": 37.0,
+    "stop_ref": 653.72,
+    "stop_risk_pct": 0.2,
+    "median_turnover_ils": 5338765.0,
+    "reversal_signals": 1,
     "pattern": "None"
    },
    "whale": {
     "breakout_week": false,
     "accumulating": false,
     "distributing": false,
-    "whale_buy_week": true,
+    "whale_buy_week": false,
     "whale_sell_week": false
    }
   },
@@ -2985,50 +4071,73 @@
    "sector": "שירותים",
    "data_ok": true,
    "data_issues": [],
+   "score": 46.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -6.8,
+     "percentile": 46.0
+    },
+    "hi52": {
+     "value": 77.3,
+     "percentile": 54.0
+    },
+    "dist_ema200": {
+     "value": -4.7,
+     "percentile": 38.0
+    },
+    "ema50_200": {
+     "value": -3.1,
+     "percentile": 30.0
+    }
+   },
+   "timing": {
+    "score": 35.0,
+    "score_week_max": 47.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 41.5,
+    "sell_score": 15.0,
+    "sell_action": "TRIM",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 12.0,
+     "reversal": 2.0,
+     "volume": 9.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": true,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 41.0,
-   "score_week_max": 46.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 41.5,
-   "sell_score": 15.0,
-   "sell_action": "TRIM",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 8.0,
-    "reversal": 10.0,
-    "volume": 11.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 427.3,
-    "chg_1w_pct": 0.1,
-    "chg_1m_pct": -0.1,
-    "rsi": 48.4,
-    "adx": 23.6,
-    "atr_pct": 1.83,
-    "dist_ema200_pct": -4.1,
-    "dist_from_high_pct": 3.8,
-    "cmf": 0.301,
-    "rvol": 0.28,
-    "beta": 0.37,
-    "rs_3m_pct": -8.5,
+    "close": 424.9,
+    "chg_1w_pct": -0.7,
+    "chg_1m_pct": 0.0,
+    "rsi": 44.8,
+    "adx": 25.9,
+    "atr_pct": 1.93,
+    "dist_ema200_pct": -4.6,
+    "dist_from_high_pct": 4.3,
+    "cmf": 0.24,
+    "rvol": 0.44,
+    "beta": 0.25,
+    "rs_3m_pct": -8.0,
     "rs_percentile": 39.0,
-    "stop_ref": 412.9,
-    "stop_risk_pct": 3.4,
+    "stop_ref": 412.69,
+    "stop_risk_pct": 2.9,
     "median_turnover_ils": 1708748.0,
     "reversal_signals": 1,
     "pattern": "None"
@@ -3048,52 +4157,75 @@
    "sector": "תשתיות",
    "data_ok": true,
    "data_issues": [],
+   "score": 95.0,
+   "rating": "BUY",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 28.7,
+     "percentile": 98.0
+    },
+    "hi52": {
+     "value": 86.4,
+     "percentile": 82.0
+    },
+    "dist_ema200": {
+     "value": 7.4,
+     "percentile": 89.0
+    },
+    "ema50_200": {
+     "value": 9.5,
+     "percentile": 93.0
+    }
+   },
+   "timing": {
+    "score": 49.6,
+    "score_week_max": 57.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 44.3,
+    "sell_score": 15.0,
+    "sell_action": "TRIM",
+    "layers": {
+     "trend": 13.0,
+     "pullback": 13.6,
+     "reversal": 7.0,
+     "volume": 6.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": true,
+     "pullback_ready": true,
+     "reversal_ready": true,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 47.4,
-   "score_week_max": 49.2,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 44.3,
-   "sell_score": 15.0,
-   "sell_action": "TRIM",
-   "layers": {
-    "trend": 13.0,
-    "pullback": 9.4,
-    "reversal": 7.0,
-    "volume": 8.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": true,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 42.33,
-    "chg_1w_pct": -1.9,
-    "chg_1m_pct": -1.6,
+    "close": 42.27,
+    "chg_1w_pct": -1.2,
+    "chg_1m_pct": -0.5,
     "rsi": 45.8,
-    "adx": 10.5,
-    "atr_pct": 2.48,
-    "dist_ema200_pct": 7.0,
-    "dist_from_high_pct": 6.2,
-    "cmf": 0.068,
-    "rvol": 0.48,
-    "beta": 0.92,
-    "rs_3m_pct": -8.3,
-    "rs_percentile": 42.0,
-    "stop_ref": 40.72,
-    "stop_risk_pct": 3.8,
+    "adx": 12.9,
+    "atr_pct": 2.52,
+    "dist_ema200_pct": 6.8,
+    "dist_from_high_pct": 6.4,
+    "cmf": 0.056,
+    "rvol": 0.6,
+    "beta": 0.8,
+    "rs_3m_pct": -7.6,
+    "rs_percentile": 40.0,
+    "stop_ref": 41.39,
+    "stop_risk_pct": 2.1,
     "median_turnover_ils": 8267892.0,
-    "reversal_signals": 1,
+    "reversal_signals": 2,
     "pattern": "None"
    },
    "whale": {
@@ -3101,7 +4233,7 @@
     "accumulating": false,
     "distributing": false,
     "whale_buy_week": false,
-    "whale_sell_week": true
+    "whale_sell_week": false
    }
   },
   {
@@ -3111,48 +4243,71 @@
    "sector": "נדל\"ן מניב",
    "data_ok": true,
    "data_issues": [],
+   "score": 23.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -5.9,
+     "percentile": 57.0
+    },
+    "hi52": {
+     "value": 68.5,
+     "percentile": 29.0
+    },
+    "dist_ema200": {
+     "value": -12.5,
+     "percentile": 14.0
+    },
+    "ema50_200": {
+     "value": -4.8,
+     "percentile": 20.0
+    }
+   },
+   "timing": {
+    "score": 34.0,
+    "score_week_max": 45.9,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 52.1,
+    "sell_score": 31.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 16.0,
+     "reversal": 2.0,
+     "volume": 4.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 41.0,
-   "score_week_max": 45.9,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 52.1,
-   "sell_score": 31.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 16.0,
-    "reversal": 4.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 20.0,
-    "chg_1w_pct": -7.2,
-    "chg_1m_pct": -10.2,
-    "rsi": 27.4,
-    "adx": 33.7,
-    "atr_pct": 2.58,
-    "dist_ema200_pct": -11.9,
-    "dist_from_high_pct": 13.5,
-    "cmf": 0.152,
-    "rvol": 0.26,
-    "beta": 1.21,
+    "close": 19.9,
+    "chg_1w_pct": -7.1,
+    "chg_1m_pct": -7.9,
+    "rsi": 28.7,
+    "adx": 36.4,
+    "atr_pct": 2.6,
+    "dist_ema200_pct": -12.3,
+    "dist_from_high_pct": 14.0,
+    "cmf": 0.063,
+    "rvol": 0.34,
+    "beta": 1.24,
     "rs_3m_pct": -9.7,
-    "rs_percentile": 34.0,
+    "rs_percentile": 35.0,
     "stop_ref": 20.46,
     "stop_risk_pct": 0.0,
     "median_turnover_ils": 4412209.0,
@@ -3174,51 +4329,74 @@
    "sector": "נדל\"ן מניב",
    "data_ok": true,
    "data_issues": [],
+   "score": 52.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -7.4,
+     "percentile": 43.0
+    },
+    "hi52": {
+     "value": 79.6,
+     "percentile": 66.0
+    },
+    "dist_ema200": {
+     "value": -4.0,
+     "percentile": 43.0
+    },
+    "ema50_200": {
+     "value": -3.2,
+     "percentile": 29.0
+    }
+   },
+   "timing": {
+    "score": 36.3,
+    "score_week_max": 42.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 32.0,
+    "sell_score": 23.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 15.3,
+     "reversal": 7.0,
+     "volume": 2.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": true,
+     "reversal_ready": true,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 42.2,
-   "score_week_max": 42.2,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 32.0,
-   "sell_score": 23.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 15.2,
-    "reversal": 10.0,
-    "volume": 5.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": true,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 53.44,
-    "chg_1w_pct": -0.4,
-    "chg_1m_pct": -0.2,
-    "rsi": 46.8,
-    "adx": 25.9,
-    "atr_pct": 2.07,
-    "dist_ema200_pct": -3.6,
-    "dist_from_high_pct": 7.8,
-    "cmf": -0.075,
-    "rvol": 0.11,
-    "beta": 0.95,
-    "rs_3m_pct": -2.3,
-    "rs_percentile": 56.0,
-    "stop_ref": 51.64,
-    "stop_risk_pct": 3.4,
-    "median_turnover_ils": 6915190.0,
+    "close": 53.35,
+    "chg_1w_pct": -0.6,
+    "chg_1m_pct": -1.0,
+    "rsi": 47.0,
+    "adx": 23.7,
+    "atr_pct": 2.03,
+    "dist_ema200_pct": -3.7,
+    "dist_from_high_pct": 7.9,
+    "cmf": -0.136,
+    "rvol": 0.17,
+    "beta": 0.91,
+    "rs_3m_pct": -4.1,
+    "rs_percentile": 55.0,
+    "stop_ref": 51.65,
+    "stop_risk_pct": 3.2,
+    "median_turnover_ils": 6153095.0,
     "reversal_signals": 2,
     "pattern": "None"
    },
@@ -3237,50 +4415,73 @@
    "sector": "בנקאות",
    "data_ok": true,
    "data_issues": [],
+   "score": 79.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -0.5,
+     "percentile": 64.0
+    },
+    "hi52": {
+     "value": 90.0,
+     "percentile": 91.0
+    },
+    "dist_ema200": {
+     "value": 5.1,
+     "percentile": 82.0
+    },
+    "ema50_200": {
+     "value": 3.4,
+     "percentile": 73.0
+    }
+   },
+   "timing": {
+    "score": 47.0,
+    "score_week_max": 58.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 36.0,
+    "sell_score": 23.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 15.0,
+     "pullback": 12.0,
+     "reversal": 2.0,
+     "volume": 6.0,
+     "risk": 10.0,
+     "rs": 2.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": true,
+     "trend_ready": true,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 52.0,
-   "score_week_max": 55.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 36.0,
-   "sell_score": 22.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 15.0,
-    "pullback": 12.0,
-    "reversal": 5.0,
-    "volume": 8.0,
-    "risk": 10.0,
-    "rs": 2.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": true,
-    "trend_ready": true,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 236.3,
-    "chg_1w_pct": -1.4,
-    "chg_1m_pct": 2.3,
-    "rsi": 53.2,
-    "adx": 13.5,
-    "atr_pct": 1.56,
-    "dist_ema200_pct": 5.6,
-    "dist_from_high_pct": 3.1,
-    "cmf": 0.15,
-    "rvol": 0.14,
-    "beta": 0.69,
-    "rs_3m_pct": 17.6,
-    "rs_percentile": 92.0,
-    "stop_ref": 229.86,
-    "stop_risk_pct": 2.7,
+    "close": 234.5,
+    "chg_1w_pct": -1.0,
+    "chg_1m_pct": 1.1,
+    "rsi": 48.9,
+    "adx": 12.7,
+    "atr_pct": 1.6,
+    "dist_ema200_pct": 4.8,
+    "dist_from_high_pct": 3.8,
+    "cmf": 0.069,
+    "rvol": 0.26,
+    "beta": 0.64,
+    "rs_3m_pct": 17.5,
+    "rs_percentile": 95.0,
+    "stop_ref": 229.82,
+    "stop_risk_pct": 2.0,
     "median_turnover_ils": 88609325.0,
     "reversal_signals": 1,
     "pattern": "None"
@@ -3300,59 +4501,82 @@
    "sector": "קמעונאות",
    "data_ok": true,
    "data_issues": [],
+   "score": 4.0,
+   "rating": "SELL",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -19.0,
+     "percentile": 20.0
+    },
+    "hi52": {
+     "value": 44.3,
+     "percentile": 2.0
+    },
+    "dist_ema200": {
+     "value": -27.7,
+     "percentile": 2.0
+    },
+    "ema50_200": {
+     "value": -18.0,
+     "percentile": 2.0
+    }
+   },
+   "timing": {
+    "score": 28.2,
+    "score_week_max": 54.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 25.2,
+    "sell_score": 39.0,
+    "sell_action": "EXIT",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 14.2,
+     "reversal": 2.0,
+     "volume": 0.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 38.0,
-   "score_week_max": 54.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 25.2,
-   "sell_score": 39.0,
-   "sell_action": "EXIT",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 19.0,
-    "reversal": 5.0,
-    "volume": 2.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 58.74,
-    "chg_1w_pct": -7.6,
-    "chg_1m_pct": -10.6,
-    "rsi": 33.5,
-    "adx": 17.6,
-    "atr_pct": 3.86,
-    "dist_ema200_pct": -26.3,
-    "dist_from_high_pct": 18.9,
-    "cmf": -0.19,
-    "rvol": 0.21,
-    "beta": 1.81,
-    "rs_3m_pct": -24.6,
-    "rs_percentile": 5.0,
-    "stop_ref": 58.51,
-    "stop_risk_pct": 0.4,
-    "median_turnover_ils": 2274486.0,
-    "reversal_signals": 1,
+    "close": 58.23,
+    "chg_1w_pct": -6.5,
+    "chg_1m_pct": -11.7,
+    "rsi": 33.3,
+    "adx": 20.0,
+    "atr_pct": 4.03,
+    "dist_ema200_pct": -26.8,
+    "dist_from_high_pct": 19.6,
+    "cmf": -0.202,
+    "rvol": 0.2,
+    "beta": 2.02,
+    "rs_3m_pct": -22.5,
+    "rs_percentile": 6.0,
+    "stop_ref": 58.47,
+    "stop_risk_pct": 0.0,
+    "median_turnover_ils": 2452731.0,
+    "reversal_signals": 0,
     "pattern": "None"
    },
    "whale": {
     "breakout_week": false,
     "accumulating": false,
     "distributing": false,
-    "whale_buy_week": false,
+    "whale_buy_week": true,
     "whale_sell_week": false
    }
   },
@@ -3363,51 +4587,74 @@
    "sector": "אנרגיה",
    "data_ok": true,
    "data_issues": [],
+   "score": 55.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 6.2,
+     "percentile": 80.0
+    },
+    "hi52": {
+     "value": 67.5,
+     "percentile": 23.0
+    },
+    "dist_ema200": {
+     "value": -4.0,
+     "percentile": 41.0
+    },
+    "ema50_200": {
+     "value": 3.3,
+     "percentile": 71.0
+    }
+   },
+   "timing": {
+    "score": 45.7,
+    "score_week_max": 45.7,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 31.4,
+    "sell_score": 15.0,
+    "sell_action": "TRIM",
+    "layers": {
+     "trend": 5.0,
+     "pullback": 14.7,
+     "reversal": 10.0,
+     "volume": 6.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": true,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 46.0,
-   "score_week_max": 46.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 31.4,
-   "sell_score": 15.0,
-   "sell_action": "TRIM",
-   "layers": {
-    "trend": 5.0,
-    "pullback": 15.0,
-    "reversal": 10.0,
-    "volume": 6.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 19.56,
-    "chg_1w_pct": -3.7,
-    "chg_1m_pct": -3.3,
-    "rsi": 41.5,
-    "adx": 16.7,
-    "atr_pct": 3.74,
-    "dist_ema200_pct": -4.5,
-    "dist_from_high_pct": 11.1,
-    "cmf": 0.01,
-    "rvol": 0.57,
-    "beta": 1.23,
-    "rs_3m_pct": -27.5,
-    "rs_percentile": 3.0,
-    "stop_ref": 18.5,
-    "stop_risk_pct": 5.4,
-    "median_turnover_ils": 15930380.0,
+    "close": 19.62,
+    "chg_1w_pct": -1.0,
+    "chg_1m_pct": -4.5,
+    "rsi": 42.6,
+    "adx": 19.0,
+    "atr_pct": 3.71,
+    "dist_ema200_pct": -4.1,
+    "dist_from_high_pct": 10.9,
+    "cmf": 0.136,
+    "rvol": 0.7,
+    "beta": 1.38,
+    "rs_3m_pct": -25.7,
+    "rs_percentile": 2.0,
+    "stop_ref": 18.51,
+    "stop_risk_pct": 5.7,
+    "median_turnover_ils": 14524720.0,
     "reversal_signals": 1,
     "pattern": "None"
    },
@@ -3416,7 +4663,7 @@
     "accumulating": false,
     "distributing": false,
     "whale_buy_week": false,
-    "whale_sell_week": true
+    "whale_sell_week": false
    }
   },
   {
@@ -3426,51 +4673,74 @@
    "sector": "שירותים פיננסים",
    "data_ok": true,
    "data_issues": [],
+   "score": 5.0,
+   "rating": "SELL",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -26.8,
+     "percentile": 7.0
+    },
+    "hi52": {
+     "value": 64.4,
+     "percentile": 9.0
+    },
+    "dist_ema200": {
+     "value": -14.6,
+     "percentile": 9.0
+    },
+    "ema50_200": {
+     "value": -12.7,
+     "percentile": 5.0
+    }
+   },
+   "timing": {
+    "score": 50.1,
+    "score_week_max": 50.7,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 19.1,
+    "sell_score": 15.0,
+    "sell_action": "TRIM",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 14.1,
+     "reversal": 15.0,
+     "volume": 6.0,
+     "risk": 10.0,
+     "rs": 3.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": true,
+     "reversal_ready": true,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 53.0,
-   "score_week_max": 53.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 19.1,
-   "sell_score": 15.0,
-   "sell_action": "TRIM",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 9.0,
-    "reversal": 23.0,
-    "volume": 6.0,
-    "risk": 10.0,
-    "rs": 3.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": true,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 11.13,
-    "chg_1w_pct": 0.7,
-    "chg_1m_pct": -2.2,
-    "rsi": 48.5,
-    "adx": 17.4,
-    "atr_pct": 2.51,
-    "dist_ema200_pct": -13.3,
-    "dist_from_high_pct": 5.9,
-    "cmf": 0.036,
-    "rvol": 0.47,
-    "beta": 1.05,
-    "rs_3m_pct": -3.4,
-    "rs_percentile": 52.0,
+    "close": 11.02,
+    "chg_1w_pct": -3.9,
+    "chg_1m_pct": -2.6,
+    "rsi": 45.7,
+    "adx": 16.8,
+    "atr_pct": 2.54,
+    "dist_ema200_pct": -14.1,
+    "dist_from_high_pct": 6.8,
+    "cmf": 0.014,
+    "rvol": 0.54,
+    "beta": 1.11,
+    "rs_3m_pct": -6.0,
+    "rs_percentile": 45.0,
     "stop_ref": 10.68,
-    "stop_risk_pct": 4.0,
-    "median_turnover_ils": 6406709.0,
+    "stop_risk_pct": 3.1,
+    "median_turnover_ils": 6082962.0,
     "reversal_signals": 3,
     "pattern": "None"
    },
@@ -3478,7 +4748,7 @@
     "breakout_week": false,
     "accumulating": false,
     "distributing": false,
-    "whale_buy_week": true,
+    "whale_buy_week": false,
     "whale_sell_week": false
    }
   },
@@ -3489,60 +4759,83 @@
    "sector": "נדל\"ן מניב",
    "data_ok": true,
    "data_issues": [],
+   "score": 7.0,
+   "rating": "SELL",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -22.2,
+     "percentile": 12.0
+    },
+    "hi52": {
+     "value": 61.4,
+     "percentile": 5.0
+    },
+    "dist_ema200": {
+     "value": -13.0,
+     "percentile": 12.0
+    },
+    "ema50_200": {
+     "value": -8.6,
+     "percentile": 7.0
+    }
+   },
+   "timing": {
+    "score": 41.1,
+    "score_week_max": 51.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 29.5,
+    "sell_score": 15.0,
+    "sell_action": "TRIM",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 16.1,
+     "reversal": 4.0,
+     "volume": 9.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": true,
+     "reversal_ready": false,
+     "volume_ready": true,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": false
+    }
+   },
    "asof": "2026-09-29",
-   "score": 51.8,
-   "score_week_max": 55.6,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 29.5,
-   "sell_score": 15.0,
-   "sell_action": "TRIM",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 15.8,
-    "reversal": 15.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": true,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": false
-   },
    "metrics": {
-    "close": 280.6,
-    "chg_1w_pct": -0.6,
-    "chg_1m_pct": 0.4,
-    "rsi": 42.2,
-    "adx": 9.9,
-    "atr_pct": 2.87,
-    "dist_ema200_pct": -12.4,
-    "dist_from_high_pct": 8.4,
-    "cmf": 0.165,
-    "rvol": 0.56,
-    "beta": 1.16,
-    "rs_3m_pct": -13.1,
-    "rs_percentile": 23.0,
-    "stop_ref": 269.97,
-    "stop_risk_pct": 3.8,
+    "close": 279.9,
+    "chg_1w_pct": -1.4,
+    "chg_1m_pct": 0.3,
+    "rsi": 42.9,
+    "adx": 10.4,
+    "atr_pct": 3.07,
+    "dist_ema200_pct": -12.5,
+    "dist_from_high_pct": 8.6,
+    "cmf": 0.06,
+    "rvol": 0.69,
+    "beta": 1.09,
+    "rs_3m_pct": -12.8,
+    "rs_percentile": 26.0,
+    "stop_ref": 272.81,
+    "stop_risk_pct": 2.5,
     "median_turnover_ils": 992670.0,
-    "reversal_signals": 3,
+    "reversal_signals": 1,
     "pattern": "None"
    },
    "whale": {
     "breakout_week": false,
     "accumulating": false,
     "distributing": false,
-    "whale_buy_week": true,
-    "whale_sell_week": true
+    "whale_buy_week": false,
+    "whale_sell_week": false
    }
   },
   {
@@ -3552,48 +4845,71 @@
    "sector": "נדל\"ן מניב",
    "data_ok": true,
    "data_issues": [],
+   "score": 35.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -5.9,
+     "percentile": 55.0
+    },
+    "hi52": {
+     "value": 71.1,
+     "percentile": 43.0
+    },
+    "dist_ema200": {
+     "value": -5.2,
+     "percentile": 34.0
+    },
+    "ema50_200": {
+     "value": -3.9,
+     "percentile": 21.0
+    }
+   },
+   "timing": {
+    "score": 38.3,
+    "score_week_max": 44.1,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 42.9,
+    "sell_score": 23.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 16.3,
+     "reversal": 4.0,
+     "volume": 4.0,
+     "risk": 10.0,
+     "rs": 2.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 43.2,
-   "score_week_max": 44.1,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 42.9,
-   "sell_score": 31.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 16.2,
-    "reversal": 4.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 2.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 19.34,
-    "chg_1w_pct": -4.2,
-    "chg_1m_pct": -2.1,
-    "rsi": 40.4,
-    "adx": 23.6,
-    "atr_pct": 2.18,
+    "close": 19.32,
+    "chg_1w_pct": -2.8,
+    "chg_1m_pct": -1.0,
+    "rsi": 41.9,
+    "adx": 24.4,
+    "atr_pct": 2.17,
     "dist_ema200_pct": -5.0,
-    "dist_from_high_pct": 8.7,
-    "cmf": 0.12,
-    "rvol": 0.75,
-    "beta": 1.24,
-    "rs_3m_pct": 2.0,
-    "rs_percentile": 68.0,
+    "dist_from_high_pct": 8.8,
+    "cmf": 0.016,
+    "rvol": 0.83,
+    "beta": 1.15,
+    "rs_3m_pct": 0.4,
+    "rs_percentile": 66.0,
     "stop_ref": 19.39,
     "stop_risk_pct": 0.0,
     "median_turnover_ils": 7911499.0,
@@ -3615,50 +4931,73 @@
    "sector": "נדל\"ן מניב",
    "data_ok": true,
    "data_issues": [],
+   "score": 68.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": 5.4,
+     "percentile": 79.0
+    },
+    "hi52": {
+     "value": 78.9,
+     "percentile": 59.0
+    },
+    "dist_ema200": {
+     "value": 1.3,
+     "percentile": 66.0
+    },
+    "ema50_200": {
+     "value": 1.0,
+     "percentile": 54.0
+    }
+   },
+   "timing": {
+    "score": 51.0,
+    "score_week_max": 56.5,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 19.6,
+    "sell_score": 0.0,
+    "sell_action": "HOLD",
+    "layers": {
+     "trend": 13.0,
+     "pullback": 8.0,
+     "reversal": 10.0,
+     "volume": 7.0,
+     "risk": 10.0,
+     "rs": 3.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": true,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": true,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 55.0,
-   "score_week_max": 55.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 19.6,
-   "sell_score": 0.0,
-   "sell_action": "HOLD",
-   "layers": {
-    "trend": 13.0,
-    "pullback": 8.0,
-    "reversal": 10.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 5.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": true,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 11.44,
-    "chg_1w_pct": 1.1,
-    "chg_1m_pct": 0.4,
+    "close": 11.43,
+    "chg_1w_pct": -2.0,
+    "chg_1m_pct": 1.1,
     "rsi": 53.1,
-    "adx": 13.5,
-    "atr_pct": 2.73,
-    "dist_ema200_pct": 1.4,
+    "adx": 13.3,
+    "atr_pct": 2.71,
+    "dist_ema200_pct": 1.3,
     "dist_from_high_pct": 4.3,
-    "cmf": 0.338,
-    "rvol": 0.21,
-    "beta": 0.81,
-    "rs_3m_pct": 0.4,
-    "rs_percentile": 66.0,
+    "cmf": 0.335,
+    "rvol": 0.25,
+    "beta": 0.7,
+    "rs_3m_pct": -0.8,
+    "rs_percentile": 65.0,
     "stop_ref": 10.65,
-    "stop_risk_pct": 6.9,
+    "stop_risk_pct": 6.8,
     "median_turnover_ils": 2408601.0,
     "reversal_signals": 1,
     "pattern": "None"
@@ -3678,50 +5017,73 @@
    "sector": "תשתיות",
    "data_ok": true,
    "data_issues": [],
+   "score": null,
+   "rating": "N/A",
+   "rating_note": "illiquid: median turnover below ILS 1M",
+   "factors": {
+    "mom_6_1": {
+     "value": -2.1,
+     "percentile": null
+    },
+    "hi52": {
+     "value": 85.1,
+     "percentile": null
+    },
+    "dist_ema200": {
+     "value": 1.3,
+     "percentile": null
+    },
+    "ema50_200": {
+     "value": 2.0,
+     "percentile": null
+    }
+   },
+   "timing": {
+    "score": 47.4,
+    "score_week_max": 52.4,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 31.0,
+    "sell_score": 43.0,
+    "sell_action": "EXIT",
+    "layers": {
+     "trend": 13.0,
+     "pullback": 13.4,
+     "reversal": 2.0,
+     "volume": 6.0,
+     "risk": 10.0,
+     "rs": 3.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": true,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": false
+    }
+   },
    "asof": "2026-09-29",
-   "score": 46.8,
-   "score_week_max": 53.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 31.0,
-   "sell_score": 45.0,
-   "sell_action": "EXIT",
-   "layers": {
-    "trend": 13.0,
-    "pullback": 13.8,
-    "reversal": 2.0,
-    "volume": 8.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": true,
-    "pullback_ready": true,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": false
-   },
    "metrics": {
-    "close": 194.1,
-    "chg_1w_pct": -5.1,
-    "chg_1m_pct": -6.2,
-    "rsi": 43.6,
-    "adx": 17.9,
-    "atr_pct": 2.97,
-    "dist_ema200_pct": 0.7,
-    "dist_from_high_pct": 6.6,
-    "cmf": 0.045,
-    "rvol": 0.25,
-    "beta": 0.41,
-    "rs_3m_pct": -13.1,
-    "rs_percentile": 21.0,
-    "stop_ref": 189.12,
-    "stop_risk_pct": 2.6,
+    "close": 194.8,
+    "chg_1w_pct": -4.2,
+    "chg_1m_pct": -5.0,
+    "rsi": 44.5,
+    "adx": 19.1,
+    "atr_pct": 3.02,
+    "dist_ema200_pct": 1.1,
+    "dist_from_high_pct": 6.3,
+    "cmf": 0.159,
+    "rvol": 0.58,
+    "beta": 0.56,
+    "rs_3m_pct": -5.4,
+    "rs_percentile": 50.0,
+    "stop_ref": 191.96,
+    "stop_risk_pct": 1.5,
     "median_turnover_ils": 517090.0,
     "reversal_signals": 1,
     "pattern": "None"
@@ -3741,114 +5103,74 @@
    "sector": "נדל\"ן מניב",
    "data_ok": true,
    "data_issues": [],
+   "score": 18.0,
+   "rating": "SELL",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -12.5,
+     "percentile": 36.0
+    },
+    "hi52": {
+     "value": 69.5,
+     "percentile": 36.0
+    },
+    "dist_ema200": {
+     "value": -13.3,
+     "percentile": 11.0
+    },
+    "ema50_200": {
+     "value": -5.9,
+     "percentile": 14.0
+    }
+   },
+   "timing": {
+    "score": 30.0,
+    "score_week_max": 50.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 53.4,
+    "sell_score": 31.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 16.0,
+     "reversal": 2.0,
+     "volume": 0.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
    "asof": "2026-09-29",
-   "score": 44.0,
-   "score_week_max": 50.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 53.4,
-   "sell_score": 31.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 16.0,
-    "reversal": 7.0,
-    "volume": 9.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": true,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
    "metrics": {
-    "close": 29.44,
-    "chg_1w_pct": -4.4,
-    "chg_1m_pct": -8.1,
-    "rsi": 30.5,
-    "adx": 22.5,
-    "atr_pct": 2.39,
+    "close": 29.39,
+    "chg_1w_pct": -4.6,
+    "chg_1m_pct": -7.9,
+    "rsi": 32.1,
+    "adx": 23.8,
+    "atr_pct": 2.34,
     "dist_ema200_pct": -12.9,
-    "dist_from_high_pct": 16.2,
-    "cmf": 0.166,
-    "rvol": 0.19,
+    "dist_from_high_pct": 16.4,
+    "cmf": -0.107,
+    "rvol": 0.24,
     "beta": 1.74,
-    "rs_3m_pct": -13.6,
+    "rs_3m_pct": -13.2,
     "rs_percentile": 19.0,
-    "stop_ref": 30.14,
+    "stop_ref": 30.15,
     "stop_risk_pct": 0.0,
     "median_turnover_ils": 9858898.0,
-    "reversal_signals": 1,
-    "pattern": "None"
-   },
-   "whale": {
-    "breakout_week": false,
-    "accumulating": false,
-    "distributing": false,
-    "whale_buy_week": true,
-    "whale_sell_week": false
-   }
-  },
-  {
-   "tase_id": "777037",
-   "name": "שופרסל",
-   "ticker": "SAE.TA",
-   "sector": "קמעונאות",
-   "data_ok": true,
-   "data_issues": [],
-   "asof": "2026-09-29",
-   "score": 29.9,
-   "score_week_max": 48.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 41.6,
-   "sell_score": 31.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 10.9,
-    "reversal": 5.0,
-    "volume": 2.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": false,
-    "reversal_ready": false,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": true
-   },
-   "metrics": {
-    "close": 35.38,
-    "chg_1w_pct": -3.9,
-    "chg_1m_pct": -7.3,
-    "rsi": 26.0,
-    "adx": 37.6,
-    "atr_pct": 2.21,
-    "dist_ema200_pct": -15.8,
-    "dist_from_high_pct": 7.5,
-    "cmf": -0.195,
-    "rvol": 0.27,
-    "beta": 0.08,
-    "rs_3m_pct": -19.3,
-    "rs_percentile": 10.0,
-    "stop_ref": 35.86,
-    "stop_risk_pct": 0.0,
-    "median_turnover_ils": 14806187.0,
     "reversal_signals": 0,
     "pattern": "None"
    },
@@ -3861,6 +5183,92 @@
    }
   },
   {
+   "tase_id": "777037",
+   "name": "שופרסל",
+   "ticker": "SAE.TA",
+   "sector": "קמעונאות",
+   "data_ok": true,
+   "data_issues": [],
+   "score": 21.0,
+   "rating": "HOLD",
+   "rating_note": "",
+   "factors": {
+    "mom_6_1": {
+     "value": -6.0,
+     "percentile": 54.0
+    },
+    "hi52": {
+     "value": 69.2,
+     "percentile": 32.0
+    },
+    "dist_ema200": {
+     "value": -16.4,
+     "percentile": 7.0
+    },
+    "ema50_200": {
+     "value": -5.0,
+     "percentile": 18.0
+    }
+   },
+   "timing": {
+    "score": 25.3,
+    "score_week_max": 48.0,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 41.6,
+    "sell_score": 31.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 11.3,
+     "reversal": 2.0,
+     "volume": 0.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": false,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": true
+    }
+   },
+   "asof": "2026-09-29",
+   "metrics": {
+    "close": 35.16,
+    "chg_1w_pct": -3.7,
+    "chg_1m_pct": -6.7,
+    "rsi": 24.9,
+    "adx": 37.9,
+    "atr_pct": 2.15,
+    "dist_ema200_pct": -16.1,
+    "dist_from_high_pct": 7.9,
+    "cmf": -0.279,
+    "rvol": 0.39,
+    "beta": 0.15,
+    "rs_3m_pct": -22.1,
+    "rs_percentile": 8.0,
+    "stop_ref": 35.87,
+    "stop_risk_pct": 0.0,
+    "median_turnover_ils": 14806187.0,
+    "reversal_signals": 0,
+    "pattern": "None"
+   },
+   "whale": {
+    "breakout_week": false,
+    "accumulating": false,
+    "distributing": false,
+    "whale_buy_week": true,
+    "whale_sell_week": false
+   }
+  },
+  {
    "tase_id": "1091065",
    "name": "מיטרוניקס",
    "ticker": "MTRN.TA",
@@ -3869,51 +5277,74 @@
    "data_issues": [
     "price move of 38% on 2026-08-17 (check for unadjusted corporate action)"
    ],
+   "score": null,
+   "rating": "N/A",
+   "rating_note": "illiquid: median turnover below ILS 1M",
+   "factors": {
+    "mom_6_1": {
+     "value": -21.7,
+     "percentile": null
+    },
+    "hi52": {
+     "value": 43.3,
+     "percentile": null
+    },
+    "dist_ema200": {
+     "value": -35.2,
+     "percentile": null
+    },
+    "ema50_200": {
+     "value": -29.8,
+     "percentile": null
+    }
+   },
+   "timing": {
+    "score": 33.0,
+    "score_week_max": 39.1,
+    "signal": "WAIT",
+    "signal_week": "WAIT",
+    "weekly_signal": "WAIT",
+    "weekly_score": 13.5,
+    "sell_score": 31.0,
+    "sell_action": "REDUCE",
+    "layers": {
+     "trend": 2.0,
+     "pullback": 12.0,
+     "reversal": 7.0,
+     "volume": 2.0,
+     "risk": 10.0,
+     "rs": 0.0
+    },
+    "checks": {
+     "market_safe": true,
+     "sector_safe": false,
+     "trend_ready": false,
+     "pullback_ready": false,
+     "reversal_ready": true,
+     "volume_ready": false,
+     "risk_ready": true,
+     "setup_ready": false,
+     "liquid": false
+    }
+   },
    "asof": "2026-09-29",
-   "score": 33.8,
-   "score_week_max": 36.0,
-   "signal": "WAIT",
-   "signal_week": "WAIT",
-   "weekly_signal": "WAIT",
-   "weekly_score": 13.5,
-   "sell_score": 23.0,
-   "sell_action": "REDUCE",
-   "layers": {
-    "trend": 2.0,
-    "pullback": 12.8,
-    "reversal": 7.0,
-    "volume": 2.0,
-    "risk": 10.0,
-    "rs": 0.0
-   },
-   "checks": {
-    "market_safe": true,
-    "sector_safe": false,
-    "trend_ready": false,
-    "pullback_ready": true,
-    "reversal_ready": true,
-    "volume_ready": false,
-    "risk_ready": true,
-    "setup_ready": false,
-    "liquid": false
-   },
    "metrics": {
-    "close": 2.15,
-    "chg_1w_pct": -3.8,
-    "chg_1m_pct": -16.2,
-    "rsi": 38.3,
-    "adx": 20.9,
-    "atr_pct": 5.0,
-    "dist_ema200_pct": -33.0,
-    "dist_from_high_pct": 24.3,
-    "cmf": -0.291,
-    "rvol": 0.18,
-    "beta": 1.23,
-    "rs_3m_pct": -14.7,
-    "rs_percentile": 16.0,
+    "close": 2.12,
+    "chg_1w_pct": -4.1,
+    "chg_1m_pct": -15.8,
+    "rsi": 36.3,
+    "adx": 20.5,
+    "atr_pct": 5.11,
+    "dist_ema200_pct": -33.9,
+    "dist_from_high_pct": 25.5,
+    "cmf": -0.329,
+    "rvol": 0.23,
+    "beta": 1.03,
+    "rs_3m_pct": -12.3,
+    "rs_percentile": 27.0,
     "stop_ref": 2.09,
-    "stop_risk_pct": 3.0,
-    "median_turnover_ils": 232105.0,
+    "stop_risk_pct": 1.4,
+    "median_turnover_ils": 207816.0,
     "reversal_signals": 2,
     "pattern": "None"
    },
