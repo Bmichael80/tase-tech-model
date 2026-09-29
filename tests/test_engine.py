@@ -99,3 +99,16 @@ def test_v19_flags():
 def test_whale_runs(px):
     w = compute_whale(px, ModelConfig())
     assert len(w) == len(px) and w["mfi"].dropna().between(0, 100).all()
+
+
+def test_scale_break_is_repaired():
+    from engine.data import fix_scale_breaks, check_quality
+    df = make_ohlcv(n=400, seed=5)
+    broken = df.copy()
+    cols = ["open", "high", "low", "close"]
+    broken.iloc[:300, [broken.columns.get_loc(c) for c in cols]] /= 100.0  # earlier bars in the wrong unit
+    fixed, notes = fix_scale_breaks(broken)
+    assert len(notes) == 1
+    assert np.allclose(fixed["close"], df["close"])
+    q = check_quality(fixed, fixed.index[-1])
+    assert q.ok and any("unit change" in i for i in q.issues)

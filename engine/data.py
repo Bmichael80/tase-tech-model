@@ -36,6 +36,35 @@ def _normalize(df: pd.DataFrame) -> pd.DataFrame:
     return df.dropna(subset=["close"])
 
 
+def fix_scale_breaks(df: pd.DataFrame, min_ratio: float = 20.0) -> tuple[pd.DataFrame, list[str]]:
+    """Repair unit changes in the price history (e.g. a switch between agorot and shekels).
+
+    A one-day close-to-close ratio above `min_ratio` (or below 1/min_ratio) that is within 25% of a
+    power of ten is treated as a unit change: all earlier bars are rescaled by that power of ten so the
+    series is continuous. Such a jump is never a real market move. Other extreme jumps are left as they
+    are and reported by check_quality.
+    """
+    notes: list[str] = []
+    df = df.copy()
+    px = ["open", "high", "low", "close"]
+    for _ in range(3):  # at most a few breaks
+        ratio = (df["close"] / df["close"].shift(1)).to_numpy()
+        with np.errstate(divide="ignore", invalid="ignore"):
+            lr = np.abs(np.log10(ratio))
+        idx = np.where(lr > np.log10(min_ratio))[0]
+        if len(idx) == 0:
+            break
+        i = int(idx[-1])
+        power = round(float(np.log10(ratio[i])))
+        if power == 0 or abs(np.log10(ratio[i]) - power) > np.log10(1.25):
+            break
+        factor = 10.0 ** power
+        df.iloc[:i, [df.columns.get_loc(c) for c in px]] *= factor
+        notes.append(f"unit change on {df.index[i].date()} corrected (earlier prices x{factor:g})")
+    df.attrs["notes"] = notes
+    return df, notes
+
+
 def download(tickers: list[str], start: str, retries: int = 3) -> dict[str, pd.DataFrame]:
     """Daily OHLCV, split- and dividend-adjusted (auto_adjust=True), from Yahoo Finance."""
     import yfinance as yf
@@ -54,6 +83,7 @@ def download(tickers: list[str], start: str, retries: int = 3) -> dict[str, pd.D
                 d = _normalize(d)
                 if len(d) == 0:
                     raise ValueError("empty")
+                d, _ = fix_scale_breaks(d)
                 out[t] = d
             except Exception:
                 failed.append(t)
@@ -81,6 +111,8 @@ def check_quality(df: pd.DataFrame | None, ref_last_date: pd.Timestamp, min_bars
     if df is None or df.empty:
         q.fail("no data")
         return q
+    for n in df.attrs.get("notes", []):
+        q.warn(n)
     if len(df) < min_bars:
         q.fail(f"only {len(df)} daily bars (need {min_bars})")
     lag = (ref_last_date - df.index[-1]).days
@@ -98,9 +130,11 @@ def check_quality(df: pd.DataFrame | None, ref_last_date: pd.Timestamp, min_bars
     if zero_vol > 5:
         q.warn(f"{zero_vol} of last 20 sessions without volume")
     jumps = df["close"].pct_change().abs().tail(250)
-    big = jumps[jumps > 0.35]
-    for d, j in big.items():
-        q.warn(f"price move of {j:.0%} on {d.date()} (check for unadjusted corporate action)")
+    for d, j in jumps[jumps > 0.35].items():
+        if j > 1.5:
+            q.fail(f"price move of {j:.0%} on {d.date()} looks like an unadjusted corporate action")
+        else:
+            q.warn(f"price move of {j:.0%} on {d.date()} (check for unadjusted corporate action)")
     return q
 
 
