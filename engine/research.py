@@ -32,6 +32,9 @@ MIN_NAMES = 15
 
 # a-priori composite from the academic literature (chosen before looking at any TASE data)
 PRIOR = {"mom_12_1": 1, "hi52": 1, "low_vol": 1}
+# momentum / trend family that passed the in-sample rule (illiquidity is a liquidity premium, not a
+# technical signal, and v20_trend is a coarse binary copy of dist_ema200 / ema50_200)
+TREND4 = {"mom_6_1": 1, "hi52": 1, "dist_ema200": 1, "ema50_200": 1}
 
 
 def _panel(frames: dict[str, pd.DataFrame], field: str, index: pd.Index) -> pd.DataFrame:
@@ -86,6 +89,7 @@ def build_factors(frames, bench, universe) -> tuple[dict[str, pd.DataFrame], pd.
         for k in ("trend", "pullback", "reversal", "volume", "risk", "rs"):
             parts[f"v20_{k}"][t] = d[f"layer_{k}"]
         parts["v20_sell"][t] = -d["sell_score"]
+        parts.setdefault("v20_signal_week", {})[t] = d["signal"].rolling(5, min_periods=1).max()
     for k, v in parts.items():
         F[k] = pd.DataFrame(v).reindex(idx)
 
@@ -180,14 +184,49 @@ def main(argv=None):
     comps = {"PRIOR (literature: mom 12-1, 52w high, low vol)": PRIOR}
     if selected:
         comps["SELECTED (IS |t|>=2, equal weight)"] = selected
-    comp_results = {name: evaluate(composite(F, ns, tradable)) for name, ns in comps.items()}
+    comps["TREND4 (momentum/trend family)"] = TREND4
+    comp_frames = {name: composite(F, ns, tradable) for name, ns in comps.items()}
+    comp_results = {name: evaluate(cf) for name, cf in comp_frames.items()}
+
+    def quintiles(f, k, dts):
+        rows = []
+        for d in dts:
+            a, r, m = f.loc[d], fwd[k].loc[d], tradable.loc[d]
+            ok = m & a.notna() & r.notna()
+            if ok.sum() < MIN_NAMES:
+                continue
+            q = np.ceil(a[ok].rank(pct=True) * 5).clip(1, 5)
+            rows.append(r[ok].groupby(q).mean())
+        t = pd.DataFrame(rows)
+        return {int(c): round(float(t[c].mean()), 2) for c in t.columns}
+
+    quint = {name: {p: {k: quintiles(cf, k, periods[p]) for k in ("1m", "3m", "6m")} for p in ("IS", "OOS")}
+             for name, cf in comp_frames.items()}
+
+    # does the V20 setup add value as an entry timer on top of a strong trend rating?
+    sig = F["v20_signal_week"]
+    trend = comp_frames["TREND4 (momentum/trend family)"].rank(axis=1, pct=True)
+    timing = {}
+    for p in ("IS", "OOS"):
+        for k in ("1m", "3m"):
+            cells = {"top40 & V20 BUY": [], "top40 & no signal": [], "bottom60 & V20 BUY": []}
+            for d in periods[p]:
+                r, m = fwd[k].loc[d], tradable.loc[d]
+                hi = trend.loc[d] > 0.6
+                s_ = sig.loc[d].reindex(r.index).fillna(0) > 0
+                for name, mask_ in (("top40 & V20 BUY", hi & s_), ("top40 & no signal", hi & ~s_), ("bottom60 & V20 BUY", ~hi & s_)):
+                    v = r[mask_ & m & r.notna()]
+                    cells[name].extend(v.tolist())
+            timing[f"{p} {k}"] = {n: {"n": len(v), "mean": round(float(np.mean(v)), 2) if v else None,
+                                     "hit": round(float(np.mean(np.array(v) > 0) * 100), 1) if v else None}
+                                  for n, v in cells.items()}
 
     out = ROOT / "results" / "research"
     out.mkdir(parents=True, exist_ok=True)
     meta = {"start": str(dates[0].date()), "end": str(dates[-1].date()), "split": args.split,
             "stocks": len(frames), "min_turnover_ils": MIN_TURNOVER, "selected": selected}
     (out / "factors.json").write_text(json.dumps({"meta": meta, "factors": results, "composites": comp_results,
-                                                  "composite_defs": comps}, indent=1, ensure_ascii=False), encoding="utf8")
+                                                  "composite_defs": comps, "quintiles": quint, "timing": timing}, indent=1, ensure_ascii=False), encoding="utf8")
     L = ["# Factor research — TASE technical model V21", "",
          f"Weeks {meta['start']} → {meta['end']} · in-sample before {args.split}, out-of-sample after · {meta['stocks']} stocks · "
          f"tradable filter: median turnover ≥ ₪{MIN_TURNOVER:,}", "",
@@ -207,7 +246,19 @@ def main(argv=None):
         return rows + [""]
 
     ordered = dict(sorted(results.items(), key=lambda kv: -(kv[1]["OOS"]["3m"].get("ic") or -9)))
-    L += table("Composites", comp_results) + table("Single factors (sorted by OOS 3m IC)", ordered)
+    L += table("Composites", comp_results)
+    L += ["## Composite quintiles (mean excess return %, Q1 = weakest, Q5 = strongest)", "",
+          "| composite | period | horizon | Q1 | Q2 | Q3 | Q4 | Q5 |", "|---|---|---|---|---|---|---|---|"]
+    for name, qp in quint.items():
+        for p in ("IS", "OOS"):
+            for k in ("1m", "3m", "6m"):
+                q = qp[p][k]
+                L.append(f"| {name} | {p} | {k} | " + " | ".join(str(q.get(i, "—")) for i in range(1, 6)) + " |")
+    L += ["", "## V20 setup as an entry timer on top of TREND4", "", "| sample | group | n | mean excess % | hit % |", "|---|---|---|---|---|"]
+    for key, cells in timing.items():
+        for n, v in cells.items():
+            L.append(f"| {key} | {n} | {v['n']} | {v['mean']} | {v['hit']} |")
+    L += [""] + table("Single factors (sorted by OOS 3m IC)", ordered)
     (out / "FACTORS.md").write_text("\n".join(L), encoding="utf8")
     print("\n".join(L))
 
