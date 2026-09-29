@@ -1,0 +1,34 @@
+name: Factor research (V21)
+
+on:
+  workflow_dispatch:
+    inputs:
+      split:
+        description: "Out-of-sample starts on"
+        default: "2020-01-01"
+
+permissions:
+  contents: write
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q
+      - name: Factor research
+        run: python -m engine.research --start 2012-01-01 --split "${{ github.event.inputs.split || '2020-01-01' }}"
+      - name: Save report
+        run: |
+          git config user.name "tase-model-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add results
+          git diff --cached --quiet || git commit -m "Factor research $(date -u +%F)"
+          git pull --rebase
+          git push
