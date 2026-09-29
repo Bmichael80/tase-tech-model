@@ -41,7 +41,7 @@ def _panel(frames: dict[str, pd.DataFrame], field: str, index: pd.Index) -> pd.D
     return pd.DataFrame({t: f[field] for t, f in frames.items()}).reindex(index)
 
 
-def build_factors(frames, bench, universe) -> tuple[dict[str, pd.DataFrame], pd.DataFrame, pd.DataFrame]:
+def build_factors(frames, bench, universe, extras: dict | None = None) -> tuple[dict[str, pd.DataFrame], pd.DataFrame, pd.DataFrame]:
     idx = bench.index
     C = _panel(frames, "close", idx)
     H = _panel(frames, "high", idx)
@@ -90,6 +90,9 @@ def build_factors(frames, bench, universe) -> tuple[dict[str, pd.DataFrame], pd.
             parts[f"v20_{k}"][t] = d[f"layer_{k}"]
         parts["v20_sell"][t] = -d["sell_score"]
         parts.setdefault("v20_signal_week", {})[t] = d["signal"].rolling(5, min_periods=1).max()
+        if extras is not None:   # raw series for trade simulation (engine/combo.py); not evaluated as factors
+            for k in ("signal", "sell_score", "stop_reference"):
+                extras.setdefault(k, {})[t] = d[k]
     for k, v in parts.items():
         F[k] = pd.DataFrame(v).reindex(idx)
 
@@ -97,6 +100,10 @@ def build_factors(frames, bench, universe) -> tuple[dict[str, pd.DataFrame], pd.
     for k, h in HORIZONS.items():
         fwd[k] = (C.shift(-(h + 1)) / C.shift(-1) - 1).sub(b.shift(-(h + 1)) / b.shift(-1) - 1, axis=0) * 100
     tradable = valid & (turnover >= MIN_TURNOVER)
+    if extras is not None:
+        for k in list(extras):
+            extras[k] = pd.DataFrame(extras[k]).reindex(idx)
+        extras["close"], extras["bench"] = C, b
     return F, fwd, tradable
 
 
