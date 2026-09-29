@@ -162,6 +162,8 @@ def main(argv=None):
     X: dict = {}
     F, _, tradable = build_factors(frames, bench, universe, extras=X)
     close, bclose = X["close"], X["bench"]
+    for k in ("signal", "sell_score", "stop_reference"):     # names with too little history have no V20 series
+        X[k] = X[k].reindex(columns=close.columns)
     # V21 exactly as in production: TREND4 composite re-ranked 0-100 among tradable names
     v21 = composite(F, TREND4, tradable).rank(axis=1, pct=True) * 100
     v20pct = F["v20_score"].where(tradable).rank(axis=1, pct=True) * 100
