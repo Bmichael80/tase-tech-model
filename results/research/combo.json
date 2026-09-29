@@ -1,0 +1,896 @@
+{
+ "strategies": {
+  "A": {
+   "label": "V21 בלבד",
+   "periods": {
+    "IS 2013-2019": {
+     "cagr": 20.7,
+     "excess": 12.8,
+     "maxdd": -14.7,
+     "vol": 19.8,
+     "sharpe": 1.04,
+     "info": 0.76,
+     "invested": 87.0,
+     "avg_pos": 17.7,
+     "trades": {
+      "n": 322,
+      "win": 52.8,
+      "beat": 46.9,
+      "avg": 6.54,
+      "avg_excess": 5.19,
+      "worst": -60.8,
+      "avg_loss": -7.91,
+      "days": 79.0
+     }
+    },
+    "OOS 2020-2026": {
+     "cagr": 29.6,
+     "excess": 10.9,
+     "maxdd": -44.8,
+     "vol": 24.5,
+     "sharpe": 1.18,
+     "info": 0.99,
+     "invested": 100.0,
+     "avg_pos": 35.4,
+     "trades": {
+      "n": 368,
+      "win": 51.9,
+      "beat": 35.6,
+      "avg": 24.66,
+      "avg_excess": 11.93,
+      "worst": -55.8,
+      "avg_loss": -12.54,
+      "days": 120.0
+     }
+    },
+    "2020-2022": {
+     "cagr": 13.9,
+     "excess": 8.9,
+     "maxdd": -44.8,
+     "vol": 27.9,
+     "sharpe": 0.61,
+     "info": 0.83,
+     "invested": 100.0,
+     "avg_pos": 31.6,
+     "trades": {
+      "n": 167,
+      "win": 44.3,
+      "beat": 33.5,
+      "avg": 9.15,
+      "avg_excess": 3.72,
+      "worst": -55.8,
+      "avg_loss": -14.24,
+      "days": 114.0
+     }
+    },
+    "2023-2026": {
+     "cagr": 43.1,
+     "excess": 12.7,
+     "maxdd": -18.2,
+     "vol": 21.5,
+     "sharpe": 1.78,
+     "info": 1.16,
+     "invested": 100.0,
+     "avg_pos": 38.3,
+     "trades": {
+      "n": 201,
+      "win": 58.2,
+      "beat": 37.3,
+      "avg": 37.55,
+      "avg_excess": 18.75,
+      "worst": -51.8,
+      "avg_loss": -10.66,
+      "days": 125.0
+     }
+    }
+   }
+  },
+  "B": {
+   "label": "V21 + כניסה רק עם אות שלך",
+   "periods": {
+    "IS 2013-2019": {
+     "cagr": 6.4,
+     "excess": -1.5,
+     "maxdd": -18.6,
+     "vol": 16.1,
+     "sharpe": 0.46,
+     "info": -0.05,
+     "invested": 42.0,
+     "avg_pos": 1.9,
+     "trades": {
+      "n": 10,
+      "win": 60.0,
+      "beat": 50.0,
+      "avg": 6.72,
+      "avg_excess": 3.74,
+      "worst": -9.5,
+      "avg_loss": -7.41,
+      "days": 112.0
+     }
+    },
+    "OOS 2020-2026": {
+     "cagr": 24.0,
+     "excess": 5.3,
+     "maxdd": -46.9,
+     "vol": 25.1,
+     "sharpe": 0.98,
+     "info": 0.24,
+     "invested": 79.0,
+     "avg_pos": 4.0,
+     "trades": {
+      "n": 27,
+      "win": 55.6,
+      "beat": 37.0,
+      "avg": 41.37,
+      "avg_excess": 22.72,
+      "worst": -29.2,
+      "avg_loss": -17.83,
+      "days": 159.0
+     }
+    },
+    "2020-2022": {
+     "cagr": -10.3,
+     "excess": -15.3,
+     "maxdd": -33.3,
+     "vol": 21.5,
+     "sharpe": -0.4,
+     "info": -0.63,
+     "invested": 52.0,
+     "avg_pos": 2.5,
+     "trades": {
+      "n": 10,
+      "win": 20.0,
+      "beat": 0.0,
+      "avg": -14.7,
+      "avg_excess": -12.74,
+      "worst": -29.2,
+      "avg_loss": -19.4,
+      "days": 106.0
+     }
+    },
+    "2023-2026": {
+     "cagr": 59.1,
+     "excess": 28.6,
+     "maxdd": -20.9,
+     "vol": 27.4,
+     "sharpe": 1.83,
+     "info": 1.08,
+     "invested": 100.0,
+     "avg_pos": 4.6,
+     "trades": {
+      "n": 17,
+      "win": 76.5,
+      "beat": 58.8,
+      "avg": 74.35,
+      "avg_excess": 43.57,
+      "worst": -25.0,
+      "avg_loss": -14.69,
+      "days": 190.0
+     }
+    }
+   }
+  },
+  "B2": {
+   "label": "V21 (60+) + כניסה רק עם אות שלך",
+   "periods": {
+    "IS 2013-2019": {
+     "cagr": 4.0,
+     "excess": -3.9,
+     "maxdd": -23.2,
+     "vol": 16.7,
+     "sharpe": 0.32,
+     "info": -0.18,
+     "invested": 48.0,
+     "avg_pos": 2.6,
+     "trades": {
+      "n": 21,
+      "win": 47.6,
+      "beat": 38.1,
+      "avg": 10.4,
+      "avg_excess": 6.99,
+      "worst": -20.8,
+      "avg_loss": -7.49,
+      "days": 103.0
+     }
+    },
+    "OOS 2020-2026": {
+     "cagr": 40.2,
+     "excess": 21.5,
+     "maxdd": -43.3,
+     "vol": 28.9,
+     "sharpe": 1.32,
+     "info": 0.95,
+     "invested": 100.0,
+     "avg_pos": 6.2,
+     "trades": {
+      "n": 69,
+      "win": 50.7,
+      "beat": 30.4,
+      "avg": 26.61,
+      "avg_excess": 11.63,
+      "worst": -34.3,
+      "avg_loss": -13.3,
+      "days": 117.0
+     }
+    },
+    "2020-2022": {
+     "cagr": 30.2,
+     "excess": 25.2,
+     "maxdd": -36.7,
+     "vol": 34.1,
+     "sharpe": 0.94,
+     "info": 1.0,
+     "invested": 100.0,
+     "avg_pos": 3.2,
+     "trades": {
+      "n": 25,
+      "win": 28.0,
+      "beat": 12.0,
+      "avg": -5.65,
+      "avg_excess": -4.57,
+      "worst": -34.3,
+      "avg_loss": -15.26,
+      "days": 70.0
+     }
+    },
+    "2023-2026": {
+     "cagr": 48.5,
+     "excess": 18.0,
+     "maxdd": -21.4,
+     "vol": 24.1,
+     "sharpe": 1.76,
+     "info": 0.94,
+     "invested": 100.0,
+     "avg_pos": 8.6,
+     "trades": {
+      "n": 44,
+      "win": 63.6,
+      "beat": 40.9,
+      "avg": 44.94,
+      "avg_excess": 20.83,
+      "worst": -25.0,
+      "avg_loss": -11.09,
+      "days": 143.0
+     }
+    }
+   }
+  },
+  "C": {
+   "label": "V21 + סטופ שלך",
+   "periods": {
+    "IS 2013-2019": {
+     "cagr": 14.0,
+     "excess": 6.1,
+     "maxdd": -21.9,
+     "vol": 22.4,
+     "sharpe": 0.69,
+     "info": 0.36,
+     "invested": 87.0,
+     "avg_pos": 13.4,
+     "trades": {
+      "n": 627,
+      "win": 45.5,
+      "beat": 44.5,
+      "avg": 1.37,
+      "avg_excess": 1.0,
+      "worst": -26.1,
+      "avg_loss": -4.85,
+      "days": 27.0
+     }
+    },
+    "OOS 2020-2026": {
+     "cagr": 22.9,
+     "excess": 4.1,
+     "maxdd": -44.7,
+     "vol": 23.9,
+     "sharpe": 0.98,
+     "info": 0.38,
+     "invested": 100.0,
+     "avg_pos": 25.7,
+     "trades": {
+      "n": 1077,
+      "win": 43.8,
+      "beat": 37.6,
+      "avg": 5.32,
+      "avg_excess": 2.09,
+      "worst": -37.4,
+      "avg_loss": -6.76,
+      "days": 32.0
+     }
+    },
+    "2020-2022": {
+     "cagr": 4.1,
+     "excess": -0.9,
+     "maxdd": -44.7,
+     "vol": 26.5,
+     "sharpe": 0.29,
+     "info": 0.0,
+     "invested": 100.0,
+     "avg_pos": 23.2,
+     "trades": {
+      "n": 461,
+      "win": 39.7,
+      "beat": 35.8,
+      "avg": 2.69,
+      "avg_excess": 0.76,
+      "worst": -37.4,
+      "avg_loss": -6.75,
+      "days": 29.0
+     }
+    },
+    "2023-2026": {
+     "cagr": 39.5,
+     "excess": 9.0,
+     "maxdd": -20.9,
+     "vol": 21.7,
+     "sharpe": 1.64,
+     "info": 0.73,
+     "invested": 100.0,
+     "avg_pos": 27.6,
+     "trades": {
+      "n": 616,
+      "win": 46.9,
+      "beat": 39.0,
+      "avg": 7.29,
+      "avg_excess": 3.09,
+      "worst": -37.2,
+      "avg_loss": -6.78,
+      "days": 34.0
+     }
+    }
+   }
+  },
+  "D": {
+   "label": "V21 + יציאה ב-EXIT שלך",
+   "periods": {
+    "IS 2013-2019": {
+     "cagr": 5.3,
+     "excess": -2.6,
+     "maxdd": -26.8,
+     "vol": 15.0,
+     "sharpe": 0.42,
+     "info": -0.19,
+     "invested": 87.0,
+     "avg_pos": 12.0,
+     "trades": {
+      "n": 926,
+      "win": 41.8,
+      "beat": 43.2,
+      "avg": 0.73,
+      "avg_excess": 0.31,
+      "worst": -87.0,
+      "avg_loss": -3.8,
+      "days": 16.0
+     }
+    },
+    "OOS 2020-2026": {
+     "cagr": 19.6,
+     "excess": 0.8,
+     "maxdd": -43.4,
+     "vol": 24.0,
+     "sharpe": 0.87,
+     "info": 0.13,
+     "invested": 100.0,
+     "avg_pos": 22.7,
+     "trades": {
+      "n": 1760,
+      "win": 42.8,
+      "beat": 39.1,
+      "avg": 2.06,
+      "avg_excess": 0.43,
+      "worst": -34.1,
+      "avg_loss": -5.36,
+      "days": 17.0
+     }
+    },
+    "2020-2022": {
+     "cagr": 3.1,
+     "excess": -1.9,
+     "maxdd": -42.8,
+     "vol": 26.5,
+     "sharpe": 0.25,
+     "info": -0.08,
+     "invested": 100.0,
+     "avg_pos": 20.6,
+     "trades": {
+      "n": 735,
+      "win": 39.6,
+      "beat": 39.3,
+      "avg": 1.06,
+      "avg_excess": 0.05,
+      "worst": -34.1,
+      "avg_loss": -5.25,
+      "days": 16.0
+     }
+    },
+    "2023-2026": {
+     "cagr": 34.0,
+     "excess": 3.5,
+     "maxdd": -21.2,
+     "vol": 21.8,
+     "sharpe": 1.45,
+     "info": 0.32,
+     "invested": 100.0,
+     "avg_pos": 24.3,
+     "trades": {
+      "n": 1025,
+      "win": 45.1,
+      "beat": 39.0,
+      "avg": 2.77,
+      "avg_excess": 0.71,
+      "worst": -31.9,
+      "avg_loss": -5.45,
+      "days": 18.0
+     }
+    }
+   }
+  },
+  "E": {
+   "label": "V21 + סטופ + EXIT שלך",
+   "periods": {
+    "IS 2013-2019": {
+     "cagr": 2.9,
+     "excess": -5.0,
+     "maxdd": -33.8,
+     "vol": 15.1,
+     "sharpe": 0.26,
+     "info": -0.4,
+     "invested": 87.0,
+     "avg_pos": 11.6,
+     "trades": {
+      "n": 1000,
+      "win": 41.9,
+      "beat": 42.5,
+      "avg": 0.57,
+      "avg_excess": 0.22,
+      "worst": -87.0,
+      "avg_loss": -3.76,
+      "days": 15.0
+     }
+    },
+    "OOS 2020-2026": {
+     "cagr": 17.5,
+     "excess": -1.2,
+     "maxdd": -44.7,
+     "vol": 23.8,
+     "sharpe": 0.8,
+     "info": -0.03,
+     "invested": 100.0,
+     "avg_pos": 21.9,
+     "trades": {
+      "n": 1916,
+      "win": 42.2,
+      "beat": 39.0,
+      "avg": 1.72,
+      "avg_excess": 0.31,
+      "worst": -37.2,
+      "avg_loss": -5.1,
+      "days": 15.0
+     }
+    },
+    "2020-2022": {
+     "cagr": 0.7,
+     "excess": -4.3,
+     "maxdd": -41.3,
+     "vol": 26.1,
+     "sharpe": 0.16,
+     "info": -0.27,
+     "invested": 100.0,
+     "avg_pos": 19.8,
+     "trades": {
+      "n": 797,
+      "win": 39.6,
+      "beat": 38.9,
+      "avg": 0.83,
+      "avg_excess": -0.09,
+      "worst": -34.1,
+      "avg_loss": -4.96,
+      "days": 14.0
+     }
+    },
+    "2023-2026": {
+     "cagr": 32.3,
+     "excess": 1.8,
+     "maxdd": -23.0,
+     "vol": 21.9,
+     "sharpe": 1.39,
+     "info": 0.2,
+     "invested": 100.0,
+     "avg_pos": 23.5,
+     "trades": {
+      "n": 1119,
+      "win": 44.0,
+      "beat": 39.1,
+      "avg": 2.36,
+      "avg_excess": 0.59,
+      "worst": -37.2,
+      "avg_loss": -5.22,
+      "days": 16.0
+     }
+    }
+   }
+  },
+  "F": {
+   "label": "שילוב מלא: V21 (60+) + אות + סטופ + EXIT",
+   "periods": {
+    "IS 2013-2019": {
+     "cagr": -7.1,
+     "excess": -14.9,
+     "maxdd": -38.1,
+     "vol": 10.8,
+     "sharpe": -0.62,
+     "info": -1.01,
+     "invested": 16.0,
+     "avg_pos": 1.0,
+     "trades": {
+      "n": 24,
+      "win": 33.3,
+      "beat": 41.7,
+      "avg": -1.77,
+      "avg_excess": -1.28,
+      "worst": -9.8,
+      "avg_loss": -4.57,
+      "days": 10.0
+     }
+    },
+    "OOS 2020-2026": {
+     "cagr": 4.8,
+     "excess": -13.9,
+     "maxdd": -41.0,
+     "vol": 26.2,
+     "sharpe": 0.31,
+     "info": -0.42,
+     "invested": 54.0,
+     "avg_pos": 2.0,
+     "trades": {
+      "n": 79,
+      "win": 44.3,
+      "beat": 39.2,
+      "avg": 2.33,
+      "avg_excess": 0.05,
+      "worst": -17.6,
+      "avg_loss": -4.77,
+      "days": 18.0
+     }
+    },
+    "2020-2022": {
+     "cagr": -17.1,
+     "excess": -22.1,
+     "maxdd": -41.0,
+     "vol": 27.0,
+     "sharpe": -0.56,
+     "info": -0.81,
+     "invested": 47.0,
+     "avg_pos": 1.3,
+     "trades": {
+      "n": 28,
+      "win": 32.1,
+      "beat": 25.0,
+      "avg": -2.54,
+      "avg_excess": -2.62,
+      "worst": -14.4,
+      "avg_loss": -4.92,
+      "days": 13.0
+     }
+    },
+    "2023-2026": {
+     "cagr": 25.6,
+     "excess": -4.9,
+     "maxdd": -26.5,
+     "vol": 25.5,
+     "sharpe": 1.02,
+     "info": -0.09,
+     "invested": 60.0,
+     "avg_pos": 2.4,
+     "trades": {
+      "n": 51,
+      "win": 51.0,
+      "beat": 47.1,
+      "avg": 5.01,
+      "avg_excess": 1.52,
+      "worst": -17.6,
+      "avg_loss": -4.66,
+      "days": 21.0
+     }
+    }
+   }
+  },
+  "G": {
+   "label": "ציון משולב 70% V21 / 30% שלך",
+   "periods": {
+    "IS 2013-2019": {
+     "cagr": 18.9,
+     "excess": 11.0,
+     "maxdd": -15.0,
+     "vol": 19.8,
+     "sharpe": 0.97,
+     "info": 0.67,
+     "invested": 87.0,
+     "avg_pos": 18.4,
+     "trades": {
+      "n": 439,
+      "win": 50.6,
+      "beat": 46.0,
+      "avg": 4.0,
+      "avg_excess": 3.23,
+      "worst": -42.9,
+      "avg_loss": -6.56,
+      "days": 57.0
+     }
+    },
+    "OOS 2020-2026": {
+     "cagr": 28.9,
+     "excess": 10.2,
+     "maxdd": -44.4,
+     "vol": 24.0,
+     "sharpe": 1.18,
+     "info": 0.95,
+     "invested": 100.0,
+     "avg_pos": 36.1,
+     "trades": {
+      "n": 602,
+      "win": 49.5,
+      "beat": 35.0,
+      "avg": 15.44,
+      "avg_excess": 7.72,
+      "worst": -55.8,
+      "avg_loss": -10.08,
+      "days": 77.0
+     }
+    },
+    "2020-2022": {
+     "cagr": 13.6,
+     "excess": 8.6,
+     "maxdd": -44.4,
+     "vol": 27.2,
+     "sharpe": 0.61,
+     "info": 0.83,
+     "invested": 100.0,
+     "avg_pos": 32.6,
+     "trades": {
+      "n": 267,
+      "win": 41.6,
+      "beat": 35.2,
+      "avg": 4.69,
+      "avg_excess": 1.48,
+      "worst": -55.8,
+      "avg_loss": -11.46,
+      "days": 72.0
+     }
+    },
+    "2023-2026": {
+     "cagr": 42.1,
+     "excess": 11.6,
+     "maxdd": -17.4,
+     "vol": 21.2,
+     "sharpe": 1.76,
+     "info": 1.08,
+     "invested": 100.0,
+     "avg_pos": 38.7,
+     "trades": {
+      "n": 335,
+      "win": 55.8,
+      "beat": 34.9,
+      "avg": 24.02,
+      "avg_excess": 12.7,
+      "worst": -40.1,
+      "avg_loss": -8.62,
+      "days": 81.0
+     }
+    }
+   }
+  },
+  "H": {
+   "label": "המודל שלך לבד (אות, סטופ, EXIT)",
+   "periods": {
+    "IS 2013-2019": {
+     "cagr": -0.1,
+     "excess": -8.0,
+     "maxdd": -23.9,
+     "vol": 16.8,
+     "sharpe": 0.08,
+     "info": -0.39,
+     "invested": 41.0,
+     "avg_pos": 1.5,
+     "trades": {
+      "n": 49,
+      "win": 42.9,
+      "beat": 36.7,
+      "avg": 0.69,
+      "avg_excess": -0.07,
+      "worst": -10.0,
+      "avg_loss": -4.1,
+      "days": 18.0
+     }
+    },
+    "OOS 2020-2026": {
+     "cagr": -2.1,
+     "excess": -20.9,
+     "maxdd": -53.4,
+     "vol": 27.5,
+     "sharpe": 0.06,
+     "info": -0.69,
+     "invested": 72.0,
+     "avg_pos": 2.8,
+     "trades": {
+      "n": 162,
+      "win": 35.8,
+      "beat": 31.5,
+      "avg": 0.91,
+      "avg_excess": -0.63,
+      "worst": -31.6,
+      "avg_loss": -5.46,
+      "days": 17.0
+     }
+    },
+    "2020-2022": {
+     "cagr": -18.4,
+     "excess": -23.4,
+     "maxdd": -51.2,
+     "vol": 28.0,
+     "sharpe": -0.58,
+     "info": -0.9,
+     "invested": 68.0,
+     "avg_pos": 2.0,
+     "trades": {
+      "n": 50,
+      "win": 34.0,
+      "beat": 28.0,
+      "avg": -1.8,
+      "avg_excess": -1.57,
+      "worst": -31.6,
+      "avg_loss": -6.44,
+      "days": 16.0
+     }
+    },
+    "2023-2026": {
+     "cagr": 12.5,
+     "excess": -17.9,
+     "maxdd": -32.7,
+     "vol": 27.0,
+     "sharpe": 0.57,
+     "info": -0.52,
+     "invested": 74.0,
+     "avg_pos": 3.4,
+     "trades": {
+      "n": 112,
+      "win": 36.6,
+      "beat": 33.0,
+      "avg": 2.12,
+      "avg_excess": -0.22,
+      "worst": -17.1,
+      "avg_loss": -5.0,
+      "days": 17.0
+     }
+    }
+   }
+  }
+ },
+ "benchmark": {
+  "IS 2013-2019": {
+   "cagr": 7.9,
+   "excess": 0.0,
+   "maxdd": -21.2,
+   "vol": 12.4,
+   "sharpe": 0.67,
+   "info": null,
+   "invested": 100.0,
+   "avg_pos": 1.0
+  },
+  "OOS 2020-2026": {
+   "cagr": 18.7,
+   "excess": 0.0,
+   "maxdd": -34.3,
+   "vol": 20.4,
+   "sharpe": 0.95,
+   "info": null,
+   "invested": 100.0,
+   "avg_pos": 1.0
+  },
+  "2020-2022": {
+   "cagr": 5.0,
+   "excess": 0.0,
+   "maxdd": -34.3,
+   "vol": 23.1,
+   "sharpe": 0.33,
+   "info": null,
+   "invested": 100.0,
+   "avg_pos": 1.0
+  },
+  "2023-2026": {
+   "cagr": 30.5,
+   "excess": 0.0,
+   "maxdd": -16.3,
+   "vol": 18.0,
+   "sharpe": 1.57,
+   "info": null,
+   "invested": 100.0,
+   "avg_pos": 1.0
+  }
+ },
+ "yearly_excess_oos": {
+  "A": {
+   "2020": 17.5,
+   "2021": 12.7,
+   "2022": -5.7,
+   "2023": -7.1,
+   "2024": 9.0,
+   "2025": 39.9,
+   "2026": 5.8
+  },
+  "B": {
+   "2020": 14.7,
+   "2021": -47.4,
+   "2022": -5.3,
+   "2023": 24.2,
+   "2024": 23.8,
+   "2025": 48.8,
+   "2026": -6.0
+  },
+  "B2": {
+   "2020": 37.5,
+   "2021": 57.7,
+   "2022": -15.1,
+   "2023": 15.8,
+   "2024": 10.0,
+   "2025": 36.1,
+   "2026": -4.0
+  },
+  "C": {
+   "2020": 1.2,
+   "2021": 7.5,
+   "2022": -7.4,
+   "2023": -10.2,
+   "2024": 14.7,
+   "2025": 36.9,
+   "2026": -2.1
+  },
+  "D": {
+   "2020": 7.6,
+   "2021": 2.8,
+   "2022": -11.5,
+   "2023": -12.3,
+   "2024": 1.0,
+   "2025": 33.9,
+   "2026": -0.4
+  },
+  "E": {
+   "2020": 3.6,
+   "2021": -0.8,
+   "2022": -10.7,
+   "2023": -15.7,
+   "2024": 3.1,
+   "2025": 31.9,
+   "2026": -1.1
+  },
+  "F": {
+   "2020": -11.0,
+   "2021": -17.7,
+   "2022": -22.1,
+   "2023": 5.5,
+   "2024": -37.4,
+   "2025": 35.4,
+   "2026": -4.2
+  },
+  "G": {
+   "2020": 16.3,
+   "2021": 13.7,
+   "2022": -5.9,
+   "2023": -4.4,
+   "2024": 6.9,
+   "2025": 32.8,
+   "2026": 6.2
+  },
+  "H": {
+   "2020": -5.9,
+   "2021": 1.4,
+   "2022": -36.8,
+   "2023": 17.9,
+   "2024": -44.3,
+   "2025": -19.0,
+   "2026": -6.3
+  }
+ },
+ "cost_per_side": 0.0015,
+ "stocks": 136
+}
