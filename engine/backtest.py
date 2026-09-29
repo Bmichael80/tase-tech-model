@@ -90,7 +90,7 @@ def summarize(panel: pd.DataFrame, split: str) -> dict:
                 "by_sell_action": {sa: _stats(g[col]) for sa, g in p.groupby("sell", observed=False)},
                 "all": _stats(p[col]),
             }
-            ics = p.groupby(level=0).apply(lambda g: g["score"].corr(g[col], method="spearman") if g[col].notna().sum() > 8 else np.nan).dropna()
+            ics = p.groupby(level=0).apply(lambda g: g["score"].rank().corr(g[col].rank()) if g[col].notna().sum() > 8 else np.nan).dropna()
             res[k]["ic_mean"] = round(float(ics.mean()), 4) if len(ics) else None
             res[k]["ic_ir"] = round(float(ics.mean() / ics.std()), 3) if len(ics) > 2 and ics.std() > 0 else None
             res[k]["ic_weeks"] = int(len(ics))
