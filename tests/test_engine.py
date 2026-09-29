@@ -112,3 +112,19 @@ def test_scale_break_is_repaired():
     assert np.allclose(fixed["close"], df["close"])
     q = check_quality(fixed, fixed.index[-1])
     assert q.ok and any("unit change" in i for i in q.issues)
+
+
+def test_v21_rating_is_a_cross_sectional_percentile():
+    from engine import v21
+    frames = {f"S{i}": make_ohlcv(n=600, seed=20 + i, drift=0.0002 * (i - 5)) for i in range(12)}
+    idx = frames["S0"].index
+    F, turnover, elig = v21.factor_panel(frames, idx)
+    s, pct = v21.score(F, elig)
+    last = s.iloc[-1].dropna()
+    assert len(last) == 12 and last.between(0, 100).all()
+    assert abs(last.max() - 100) < 1e-9          # best stock is the 100th percentile
+    ratings = [v21.rating(x) for x in last]
+    assert ratings.count("BUY") >= 2 and ratings.count("SELL") >= 2
+    # the stock with the strongest drift should rank above the weakest one
+    assert last["S11"] > last["S0"]
+    assert v21.rating(float("nan")) == "N/A"

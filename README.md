@@ -1,6 +1,11 @@
 # tase-tech-model
 
-The technical scoring engine behind the "Israel Stock Analysis" dashboard. It is a Python port of the TradingView indicator *Analyst Dashboard V19.0 + Whale Fusion V2*, with the corrections described in [METHODOLOGY.md](METHODOLOGY.md).
+The technical scoring engine behind the "Israel Stock Analysis" dashboard.
+
+- **V21 rating (`engine/v21.py`)**: a cross-sectional momentum/trend composite, selected by out-of-sample factor research on TASE (`engine/research.py`, report in `results/research/FACTORS.md`).
+- **V20 entry timing (`engine/model.py`)**: a Python port of the TradingView indicator *Analyst Dashboard V19.0 + Whale Fusion V2*, with corrections.
+
+See [METHODOLOGY.md](METHODOLOGY.md) for definitions, evidence and limitations.
 
 ## What runs automatically
 

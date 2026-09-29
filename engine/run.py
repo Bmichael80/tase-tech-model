@@ -14,6 +14,7 @@ import numpy as np
 import pandas as pd
 
 from . import data as D
+from . import v21 as V21
 from .model import ModelConfig, compute_daily, compute_weekly_signal, compute_whale, sell_action
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -36,6 +37,11 @@ def score_universe(frames: dict[str, pd.DataFrame], bench: pd.DataFrame, univers
     composites = D.sector_composites(closes, sectors)
     rs_pct = D.rs_percentiles(closes, bench["close"], cfg.rs_period) if closes else {}
 
+    good = {t: f for t, f in frames.items() if D.check_quality(f, ref_last).ok}
+    F21, turnover21, elig21 = V21.factor_panel(good, bench.index)
+    score21, pct21 = V21.score(F21, elig21)
+    d21 = bench.index[-1]
+
     records, errors = [], []
     for s in universe:
         df = frames.get(s.yahoo)
@@ -55,8 +61,15 @@ def score_universe(frames: dict[str, pd.DataFrame], bench: pd.DataFrame, univers
         wlast = wk_done.iloc[-1] if len(wk_done) else None
         conflict_recent = bool(d["conflict"].tail(RECENT_SESSIONS).any())
         sig_now = int(last["signal"])
-        rec.update({
-            "asof": str(d.index[-1].date()),
+        s21 = score21.at[d21, s.yahoo] if s.yahoo in score21.columns else np.nan
+        rec["score"] = _num(s21, 0)
+        rec["rating"] = V21.rating(s21)
+        rec["rating_note"] = ("" if not np.isnan(s21) else
+                              "insufficient history" if s.yahoo not in elig21.columns or turnover21.at[d21, s.yahoo] >= V21.MIN_TURNOVER_ILS
+                              else "illiquid: median turnover below ILS 1M")
+        rec["factors"] = {n: {"value": _num(F21[n].at[d21, s.yahoo] * 100, 1),
+                              "percentile": _num(pct21[n].at[d21, s.yahoo], 0)} for n in V21.FACTORS}
+        rec["timing"] = {
             "score": _num(last["score"], 1),
             "score_week_max": _num(d["score"].tail(RECENT_SESSIONS).max(), 1),
             "signal": "CONFLICT" if bool(last["conflict"]) else SIGNAL_TEXT[sig_now],
@@ -68,6 +81,9 @@ def score_universe(frames: dict[str, pd.DataFrame], bench: pd.DataFrame, univers
             "layers": {k: _num(last[f"layer_{k}"], 1) for k in ("trend", "pullback", "reversal", "volume", "risk", "rs")},
             "checks": {k: bool(last[k]) for k in ("market_safe", "sector_safe", "trend_ready", "pullback_ready",
                                                   "reversal_ready", "volume_ready", "risk_ready", "setup_ready", "liquid")},
+        }
+        rec.update({
+            "asof": str(d.index[-1].date()),
             "metrics": {
                 "close": _num(last["close"] / 100, 2),  # agorot -> ILS
                 "chg_1w_pct": _num((d["close"].iloc[-1] / d["close"].iloc[-6] - 1) * 100, 1) if len(d) > 6 else None,
@@ -113,10 +129,11 @@ def main(argv=None):
     res = score_universe(frames, bench, universe, cfg)
     ok = [r for r in res["records"] if r.get("data_ok")]
     out = {
-        "model": "Analyst Dashboard + Whale Fusion", "model_version": cfg.version,
+        "model": "V21 trend/momentum rating + Analyst Dashboard V20 entry timing", "model_version": "V21",
+        "rating_rule": {"BUY": f"score >= {V21.BUY_AT:g} (top quintile)", "SELL": f"score < {V21.SELL_BELOW:g} (bottom quintile)", "HOLD": "otherwise"},
         "generated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "market_date": res["market_date"], "data_source": "Yahoo Finance (adjusted daily OHLCV)",
-        "benchmark": D.BENCH_TICKER, "thresholds": {"buy": cfg.buy_threshold, "strong_buy": cfg.strong_buy_threshold},
+        "benchmark": D.BENCH_TICKER, "timing_thresholds": {"buy": cfg.buy_threshold, "strong_buy": cfg.strong_buy_threshold},
         "count": len(res["records"]), "scored": len(ok), "errors": res["errors"],
         "records": res["records"],
     }
@@ -125,10 +142,10 @@ def main(argv=None):
     txt = json.dumps(out, ensure_ascii=False, indent=1)
     (rdir / "latest.json").write_text(txt, encoding="utf8")
     (rdir / "history" / f"{res['market_date']}.json").write_text(txt, encoding="utf8")
-    rows = [{"tase_id": r["tase_id"], "name": r["name"], "ticker": r["ticker"], "score": r.get("score"),
-             "signal": r.get("signal"), "signal_week": r.get("signal_week"), "weekly_signal": r.get("weekly_signal"),
-             "sell_action": r.get("sell_action"), "data_ok": r["data_ok"]} for r in res["records"]]
-    pd.DataFrame(rows).sort_values("score", ascending=False).to_csv(rdir / "latest.csv", index=False, encoding="utf-8-sig")
+    rows = [{"tase_id": r["tase_id"], "name": r["name"], "ticker": r["ticker"], "score_v21": r.get("score"),
+             "rating": r.get("rating"), "timing_signal_week": (r.get("timing") or {}).get("signal_week"),
+             "sell_action": (r.get("timing") or {}).get("sell_action"), "data_ok": r["data_ok"]} for r in res["records"]]
+    pd.DataFrame(rows).sort_values("score_v21", ascending=False).to_csv(rdir / "latest.csv", index=False, encoding="utf-8-sig")
     print(f"scored {len(ok)}/{len(res['records'])} stocks, market date {res['market_date']}")
     for e in res["errors"]:
         print("  data problem:", e["ticker"], e["name"], "; ".join(e["issues"]))
