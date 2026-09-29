@@ -1,0 +1,33 @@
+name: Weekly technical scores
+
+on:
+  schedule:
+    - cron: "15 2 * * 6"   # Saturday 02:15 UTC (05:15 Israel), after the Friday close
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Unit tests
+        run: python -m pytest -q
+      - name: Score all stocks
+        run: python -m engine.run
+      - name: Save results to the repository
+        run: |
+          git config user.name "tase-model-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add results
+          git diff --cached --quiet || git commit -m "Weekly scores $(date -u +%F)"
+          git pull --rebase
+          git push
