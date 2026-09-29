@@ -137,7 +137,7 @@ def main(argv=None):
         "rating_rule": {"BUY": f"score >= {V22.BUY_AT:g} and your model not at EXIT", "HOLD": f"{V22.SELL_BELOW:g} <= score < {V22.BUY_AT:g}",
                         "SELL": f"score < {V22.SELL_BELOW:g}"},
         "flag_rule": {"STRONG BUY/BUY": "your model's entry signal in the last trading week",
-                      "STRONG SELL/SELL": "your model's sell action today: EXIT / REDUCE"},
+                      "STRONG SELL": "your model's sell action today is EXIT (sell score >= 34)"},
         "generated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "market_date": res["market_date"], "data_source": "Yahoo Finance (adjusted daily OHLCV)",
         "benchmark": D.BENCH_TICKER, "timing_thresholds": {"buy": cfg.buy_threshold, "strong_buy": cfg.strong_buy_threshold},

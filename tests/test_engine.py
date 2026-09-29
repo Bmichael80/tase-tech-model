@@ -139,7 +139,7 @@ def test_v22_rating_and_flag():
     assert V22.rating(float("nan"), 0) == ("N/A", "")
     assert V22.flag("STRONG BUY", "HOLD") == "STRONG BUY"
     assert V22.flag("BUY", "EXIT") == "STRONG SELL"
-    assert V22.flag("WAIT", "REDUCE") == "SELL"
+    assert V22.flag("WAIT", "REDUCE") is None
     assert V22.flag("WAIT", "TRIM") is None
 
 

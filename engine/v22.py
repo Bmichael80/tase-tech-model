@@ -11,7 +11,9 @@ Rating = BUY  if score >= 80 and the user's model is not at EXIT (sell score >= 
          (exit below 50 was the best of 20/35/50 in both periods; the EXIT veto helped slightly in both)
 Flag   = the user's model (Analyst Dashboard V20), shown next to the rating, never changing it:
          STRONG BUY / BUY  = its entry signal during the last trading week
-         STRONG SELL / SELL = its sell action today: EXIT (sell score >= 34) / REDUCE (22-33)
+         STRONG SELL       = its sell action today is EXIT (sell score >= 34)
+         (REDUCE is not flagged: on 2026-09-29 it fired on 62 of 134 stocks, too often to be informative;
+          it stays visible in the stock's detail panel)
 """
 from __future__ import annotations
 
@@ -54,8 +56,6 @@ def rating(score: float | None, sell_score: float | None) -> tuple[str, str]:
 def flag(signal_week: str | None, sell_action: str | None) -> str | None:
     if sell_action == "EXIT":
         return "STRONG SELL"
-    if sell_action == "REDUCE":
-        return "SELL"
     if signal_week in ("STRONG BUY", "BUY"):
         return signal_week
     return None
