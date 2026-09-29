@@ -14,7 +14,7 @@ import numpy as np
 import pandas as pd
 
 from . import data as D
-from . import v21 as V21
+from . import v22 as V22
 from .model import ModelConfig, compute_daily, compute_weekly_signal, compute_whale, sell_action
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -38,9 +38,8 @@ def score_universe(frames: dict[str, pd.DataFrame], bench: pd.DataFrame, univers
     rs_pct = D.rs_percentiles(closes, bench["close"], cfg.rs_period) if closes else {}
 
     good = {t: f for t, f in frames.items() if D.check_quality(f, ref_last).ok}
-    F21, turnover21, elig21 = V21.factor_panel(good, bench.index)
-    score21, pct21 = V21.score(F21, elig21)
-    d21 = bench.index[-1]
+    sc22, sret22, bret22, ex22, turn22, elig22 = V22.panel(good, bench["close"], bench.index)
+    d22 = bench.index[-1]
 
     records, errors = [], []
     for s in universe:
@@ -61,14 +60,18 @@ def score_universe(frames: dict[str, pd.DataFrame], bench: pd.DataFrame, univers
         wlast = wk_done.iloc[-1] if len(wk_done) else None
         conflict_recent = bool(d["conflict"].tail(RECENT_SESSIONS).any())
         sig_now = int(last["signal"])
-        s21 = score21.at[d21, s.yahoo] if s.yahoo in score21.columns else np.nan
-        rec["score"] = _num(s21, 0)
-        rec["rating"] = V21.rating(s21)
-        rec["rating_note"] = ("" if not np.isnan(s21) else
-                              "insufficient history" if s.yahoo not in elig21.columns or turnover21.at[d21, s.yahoo] >= V21.MIN_TURNOVER_ILS
-                              else "illiquid: median turnover below ILS 1M")
-        rec["factors"] = {n: {"value": _num(F21[n].at[d21, s.yahoo] * 100, 1),
-                              "percentile": _num(pct21[n].at[d21, s.yahoo], 0)} for n in V21.FACTORS}
+        s22 = sc22.at[d22, s.yahoo] if s.yahoo in sc22.columns else np.nan
+        rec["score"] = _num(s22, 0)
+        sell_now = float(last["sell_score"])
+        rec["rating"], rec["rating_note"] = V22.rating(s22, sell_now)
+        if np.isnan(s22):
+            rec["rating_note"] = ("illiquid: median turnover below ILS 1M"
+                                  if s.yahoo in turn22.columns and turn22.at[d22, s.yahoo] < V22.MIN_TURNOVER_ILS
+                                  else "insufficient history")
+        rec["rs"] = {"months": 6,
+                     "stock_pct": _num(sret22.at[d22, s.yahoo] * 100, 1) if s.yahoo in sret22.columns else None,
+                     "index_pct": _num(bret22.at[d22] * 100, 1),
+                     "excess_pct": _num(ex22.at[d22, s.yahoo] * 100, 1) if s.yahoo in ex22.columns else None}
         rec["timing"] = {
             "score": _num(last["score"], 1),
             "score_week_max": _num(d["score"].tail(RECENT_SESSIONS).max(), 1),
@@ -82,6 +85,7 @@ def score_universe(frames: dict[str, pd.DataFrame], bench: pd.DataFrame, univers
             "checks": {k: bool(last[k]) for k in ("market_safe", "sector_safe", "trend_ready", "pullback_ready",
                                                   "reversal_ready", "volume_ready", "risk_ready", "setup_ready", "liquid")},
         }
+        rec["flag"] = V22.flag(rec["timing"]["signal_week"], rec["timing"]["sell_action"])
         rec.update({
             "asof": str(d.index[-1].date()),
             "metrics": {
@@ -129,8 +133,11 @@ def main(argv=None):
     res = score_universe(frames, bench, universe, cfg)
     ok = [r for r in res["records"] if r.get("data_ok")]
     out = {
-        "model": "V21 trend/momentum rating + Analyst Dashboard V20 entry timing", "model_version": "V21",
-        "rating_rule": {"BUY": f"score >= {V21.BUY_AT:g} (top quintile)", "SELL": f"score < {V21.SELL_BELOW:g} (bottom quintile)", "HOLD": "otherwise"},
+        "model": "V22 strength vs TA-125 over 6 months + Analyst Dashboard V20 flags", "model_version": "V22",
+        "rating_rule": {"BUY": f"score >= {V22.BUY_AT:g} and your model not at EXIT", "HOLD": f"{V22.SELL_BELOW:g} <= score < {V22.BUY_AT:g}",
+                        "SELL": f"score < {V22.SELL_BELOW:g}"},
+        "flag_rule": {"STRONG BUY/BUY": "your model's entry signal in the last trading week",
+                      "STRONG SELL/SELL": "your model's sell action today: EXIT / REDUCE"},
         "generated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "market_date": res["market_date"], "data_source": "Yahoo Finance (adjusted daily OHLCV)",
         "benchmark": D.BENCH_TICKER, "timing_thresholds": {"buy": cfg.buy_threshold, "strong_buy": cfg.strong_buy_threshold},
@@ -142,10 +149,10 @@ def main(argv=None):
     txt = json.dumps(out, ensure_ascii=False, indent=1)
     (rdir / "latest.json").write_text(txt, encoding="utf8")
     (rdir / "history" / f"{res['market_date']}.json").write_text(txt, encoding="utf8")
-    rows = [{"tase_id": r["tase_id"], "name": r["name"], "ticker": r["ticker"], "score_v21": r.get("score"),
-             "rating": r.get("rating"), "timing_signal_week": (r.get("timing") or {}).get("signal_week"),
+    rows = [{"tase_id": r["tase_id"], "name": r["name"], "ticker": r["ticker"], "score": r.get("score"),
+             "rating": r.get("rating"), "flag": r.get("flag"), "timing_signal_week": (r.get("timing") or {}).get("signal_week"),
              "sell_action": (r.get("timing") or {}).get("sell_action"), "data_ok": r["data_ok"]} for r in res["records"]]
-    pd.DataFrame(rows).sort_values("score_v21", ascending=False).to_csv(rdir / "latest.csv", index=False, encoding="utf-8-sig")
+    pd.DataFrame(rows).sort_values("score", ascending=False).to_csv(rdir / "latest.csv", index=False, encoding="utf-8-sig")
     print(f"scored {len(ok)}/{len(res['records'])} stocks, market date {res['market_date']}")
     for e in res["errors"]:
         print("  data problem:", e["ticker"], e["name"], "; ".join(e["issues"]))

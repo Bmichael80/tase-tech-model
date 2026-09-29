@@ -128,3 +128,32 @@ def test_v21_rating_is_a_cross_sectional_percentile():
     # the stock with the strongest drift should rank above the weakest one
     assert last["S11"] > last["S0"]
     assert v21.rating(float("nan")) == "N/A"
+
+
+def test_v22_rating_and_flag():
+    from engine import v22 as V22
+    assert V22.rating(85, 10) == ("BUY", "")
+    assert V22.rating(85, 40)[0] == "HOLD"
+    assert V22.rating(60, 0) == ("HOLD", "")
+    assert V22.rating(49, 0) == ("SELL", "")
+    assert V22.rating(float("nan"), 0) == ("N/A", "")
+    assert V22.flag("STRONG BUY", "HOLD") == "STRONG BUY"
+    assert V22.flag("BUY", "EXIT") == "STRONG SELL"
+    assert V22.flag("WAIT", "REDUCE") == "SELL"
+    assert V22.flag("WAIT", "TRIM") is None
+
+
+def test_v22_score_is_relative_to_index():
+    import pandas as pd
+    from engine import v22 as V22
+    from tests.synthetic import make_ohlcv
+    frames = {f"S{i}": make_ohlcv(n=400, seed=i, drift=0.0002 * i) for i in range(6)}
+    for f in frames.values():
+        f["volume"] *= 50
+    bench = make_ohlcv(n=400, seed=99)
+    sc, sret, bret, ex, turn, elig = V22.panel(frames, bench["close"], bench.index)
+    d = bench.index[-1]
+    row = sc.loc[d].dropna()
+    assert len(row) == 6 and row.max() == 100
+    assert (ex.loc[d] - (sret.loc[d] - bret.loc[d])).abs().max() < 1e-12
+    assert row.idxmax() == ex.loc[d].idxmax()
