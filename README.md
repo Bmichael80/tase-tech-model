@@ -11,7 +11,7 @@ See [METHODOLOGY.md](METHODOLOGY.md) for definitions, evidence and limitations.
 
 | Workflow | When | What it does |
 |---|---|---|
-| **Weekly technical scores** | Every Saturday, 05:15 Israel time | Downloads daily data for the 62 stocks, scores them, and commits `results/latest.json` and `latest.csv` |
+| **Weekly technical scores** | Every Saturday, 05:15 Israel time | Downloads daily data for the 136 stocks (all TA-125 members plus 10 names from the original list), scores them, and commits `results/latest.json` and `latest.csv` |
 | **Validate tickers and run backtest** | On the 2nd of every month, or on demand | Checks every ticker, backtests all model variants, and writes `results/backtest/REPORT.md` |
 
 Both workflows can also be started by hand: go to **Actions**, pick the workflow, and click **Run workflow**.
@@ -20,7 +20,7 @@ Both workflows can also be started by hand: go to **Actions**, pick the workflow
 
 | Path | Contents |
 |---|---|
-| `config/universe.csv` | The stocks: TASE security number, name, sector, Yahoo ticker. Add or remove rows here. |
+| `config/universe.csv` | The stocks: TASE security number (unique key), name, sector, Yahoo ticker, ISIN, TA-125 membership, whether a fundamental analysis exists, market cap (₪M). Add or remove rows here. |
 | `engine/model.py` | The model. `ModelConfig()` is V20; `ModelConfig(version="V19")` is the original. |
 | `engine/indicators.py` | TradingView-compatible indicators |
 | `engine/run.py` | The weekly run |
