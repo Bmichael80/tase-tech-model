@@ -1,0 +1,213 @@
+"""V24 study: base strength score (3 + 6 months vs TA-125) adjusted up or down by a technical timing score.
+
+Requested by the user on 2026-09-30: keep strength vs the TA-125 as the base, and let the classic technical
+indicators (moving averages, MACD, RSI, MFI, volume, Bollinger, support / resistance, the user's own model)
+strengthen or weaken it. Everything below is fixed before any result is seen.
+
+BASE (0-100)   percentile among liquid names of: mean of the 3-month and 6-month excess-return ranks vs TA-125
+
+TIMING (-1..+1) = average of these votes (+1 bullish, -1 bearish, 0 neutral):
+  1  moving averages   close > SMA50: +1, else -1
+  2  moving averages   SMA50 > SMA200: +1, else -1
+  3  MACD(12,26,9)     line > signal: +1, else -1
+  4  RSI14             50-70: +1 · above 80 (overbought) or below 40: -1 · else 0
+  5  MFI14             50-80: +1 · above 80 or below 40: -1 · else 0
+  6  volume            20-day volume on up days > volume on down days: +1, else -1
+  7  Bollinger(20,2)   close above the middle band: +1 · below the lower band: -1 · else 0
+  8  support/resist.   close within 2% of the 60-day high (breakout zone): +1 · below the 60-day low of 5 days ago
+                       (support broken): -1 · else 0
+  9  the user's model  entry signal (BUY / STRONG BUY) in the last 5 sessions: +1 · EXIT (sell score >= 34): -1 · else 0
+
+FINAL = BASE + A x TIMING, clipped to 0-100, with A in {0, 5, 10, 15, 20} points (A = 0 is the base alone).
+Choice of A: best in-sample (2013-2019) 3-month rank IC. Adoption (blind test 2020-2026): the chosen A > 0 is used
+only if its OOS 3-month IC >= A = 0 and its OOS simulated excess return >= A = 0; otherwise A = 0.
+Also reported: each vote's own IC, and whether TIMING separates winners from losers INSIDE the strong group
+(base >= 80) and the weak group (base < 50) - i.e. does timing help an advisor pick among strong stocks.
+
+Signals on the adopted FINAL score: BUY >= 80, STRONG BUY >= 90, SELL < 50 (same rules as V23), plus the V23
+STRONG BUY check (90+ must beat plain BUY by 1 pp in both periods).
+
+Usage: python -m engine.v24_study [--start 2012-01-01] [--split 2020-01-01] [--offline DIR]
+Writes results/research/V24.md and v24.json
+"""
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+from . import data as D
+from . import indicators as ta
+from .combo import COST, V20_EXIT
+from .research import HORIZONS, build_factors, rank_ic, summarize_ic, weekly_dates
+from .v23_study import group_edge, run_sim, to_score, urank
+
+ROOT = Path(__file__).resolve().parents[1]
+AMPS = [0, 5, 10, 15, 20]
+
+
+def votes_for(df: pd.DataFrame) -> dict[str, pd.Series]:
+    c, h, l, v = df["close"], df["high"], df["low"], df["volume"]
+    s50, s200 = ta.sma(c, 50), ta.sma(c, 200)
+    line, sig, _ = ta.macd(c)
+    rsi = ta.rsi(c, 14)
+    mfi = ta.mfi((h + l + c) / 3, v, 14)
+    up = c.diff() > 0
+    upv = (v.where(up, 0)).rolling(20, min_periods=15).sum()
+    dnv = (v.where(~up & c.diff().notna(), 0)).rolling(20, min_periods=15).sum()
+    mid, upper, lower = ta.bb(c, 20, 2.0)
+    hi60 = h.rolling(60, min_periods=50).max()
+    lo60 = l.rolling(60, min_periods=50).min().shift(5)
+    sgn = lambda cond: np.where(cond, 1.0, -1.0)
+    out = {
+        "ma_50": pd.Series(sgn(c > s50), index=c.index).where(s50.notna()),
+        "ma_50_200": pd.Series(sgn(s50 > s200), index=c.index).where(s200.notna()),
+        "macd": pd.Series(sgn(line > sig), index=c.index).where(sig.notna()),
+        "rsi": pd.Series(np.select([(rsi >= 50) & (rsi <= 70), (rsi > 80) | (rsi < 40)], [1.0, -1.0], 0.0), index=c.index).where(rsi.notna()),
+        "mfi": pd.Series(np.select([(mfi >= 50) & (mfi <= 80), (mfi > 80) | (mfi < 40)], [1.0, -1.0], 0.0), index=c.index).where(mfi.notna()),
+        "volume": pd.Series(sgn(upv > dnv), index=c.index).where(upv.notna()),
+        "bollinger": pd.Series(np.select([c > mid, c < lower], [1.0, -1.0], 0.0), index=c.index).where(mid.notna()),
+        "support_res": pd.Series(np.select([c >= 0.98 * hi60, c < lo60], [1.0, -1.0], 0.0), index=c.index).where(lo60.notna()),
+    }
+    return out
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--start", default="2012-01-01")
+    ap.add_argument("--split", default="2020-01-01")
+    ap.add_argument("--offline")
+    args = ap.parse_args(argv)
+    universe = D.load_universe()
+    tickers = [s.yahoo for s in universe] + [D.BENCH_TICKER]
+    if args.offline:
+        frames = {t: pd.read_csv(Path(args.offline) / f"{t}.csv", index_col=0, parse_dates=True)
+                  for t in tickers if (Path(args.offline) / f"{t}.csv").exists()}
+    else:
+        frames = D.download(tickers, args.start)
+    bench = frames.pop(D.BENCH_TICKER)
+    X: dict = {}
+    F, fwd, tradable = build_factors(frames, bench, universe, extras=X)
+    C, b = X["close"], X["bench"]
+    idx, cols = C.index, C.columns
+    for k in ("signal", "sell_score"):
+        X[k] = X[k].reindex(columns=cols)
+
+    ex = lambda n: (C / C.shift(n)).div(b / b.shift(n), axis=0) - 1
+    m = tradable & ex(126).notna()
+    base = to_score((urank(ex(63), m) + urank(ex(126), m)) / 2, m)
+
+    V: dict[str, dict] = {}
+    for t, df in frames.items():
+        if t not in cols or len(df) < 260:
+            continue
+        for k, s in votes_for(df).items():
+            V.setdefault(k, {})[t] = s.reindex(idx)
+    votes = {k: pd.DataFrame(v).reindex(columns=cols) for k, v in V.items()}
+    v20sig = X["signal"].fillna(0).rolling(5, min_periods=1).max()
+    votes["your_model"] = pd.DataFrame(np.select([v20sig.to_numpy() >= 1, X["sell_score"].to_numpy() >= V20_EXIT], [1.0, -1.0], 0.0),
+                                       index=idx, columns=cols).where(X["sell_score"].notna())
+    stack = np.stack([votes[k].to_numpy() for k in votes])
+    timing = pd.DataFrame(np.nanmean(stack, axis=0), index=idx, columns=cols).where(m)
+
+    finals = {A: (base + A * timing.fillna(0)).clip(0, 100).where(m) for A in AMPS}
+
+    dates = weekly_dates(idx)
+    start = idx[0] + pd.Timedelta(days=400)
+    dates = dates[dates >= start]
+    split = pd.Timestamp(args.split)
+    wp = {"IS": dates[dates < split], "OOS": dates[dates >= split],
+          "2020-22": dates[(dates >= split) & (dates < "2023-01-01")], "2023-26": dates[dates >= "2023-01-01"]}
+    end = idx[-1] + pd.Timedelta(days=1)
+    periods = {"IS 2013-2019": (start, split), "OOS 2020-2026": (split, end),
+               "2020-2022": (split, pd.Timestamp("2023-01-01")), "2023-2026": (pd.Timestamp("2023-01-01"), end)}
+    wk = set(weekly_dates(idx))
+    weekly = np.array([d in wk for d in idx])
+    early = idx < start
+
+    def ic_of(s):
+        return {p: {h: summarize_ic(rank_ic(s, fwd[h], tradable, ds), hd) for h, hd in HORIZONS.items()} for p, ds in wp.items()}
+
+    ic_final = {A: ic_of(f) for A, f in finals.items()}
+    ic_votes = {k: ic_of(v.where(m)) for k, v in votes.items()}
+    ic_votes["TIMING (all votes)"] = ic_of(timing)
+
+    sims = {}
+    for A, f in finals.items():
+        sc = f.copy()
+        sc.loc[early] = np.nan
+        blocked = X["sell_score"] >= V20_EXIT
+        sims[A] = run_sim(tradable & (sc >= 80) & ~blocked, ~(sc >= 50), C, b, weekly, periods)
+
+    bestA = max(AMPS, key=lambda A: ic_final[A]["IS"]["3m"].get("ic") or -9)
+    o = "OOS 2020-2026"
+    ok = (bestA > 0 and (ic_final[bestA]["OOS"]["3m"].get("ic") or -9) >= (ic_final[0]["OOS"]["3m"].get("ic") or -9)
+          and (sims[bestA][o].get("excess") or -99) >= (sims[0][o].get("excess") or -99))
+    A = bestA if ok else 0
+
+    # does timing separate winners inside the strong / weak groups?
+    strong, weak = m & (base >= 80), m & (base < 50)
+    inside = {}
+    for name, grp in (("strong (base 80+)", strong), ("weak (base < 50)", weak)):
+        inside[name] = {lab: {p: group_edge(grp & cond, grp, fwd["3m"], wp[p], 63) for p in wp}
+                        for lab, cond in (("timing > 0", timing > 0), ("timing < 0", timing < 0), ("timing >= +0.5", timing >= 0.5),
+                                          ("timing <= -0.5", timing <= -0.5))}
+
+    fin = finals[A].copy()
+    fin.loc[early] = np.nan
+    blocked = X["sell_score"] >= V20_EXIT
+    buy = tradable & (fin >= 80) & ~blocked
+    sb = buy & (fin >= 90)
+    sb_edge = {p: group_edge(sb, buy, fwd["3m"], wp[p], 63) for p in wp}
+    sb_ok = all(sb_edge[p].get("n", 0) >= 30 and (sb_edge[p].get("edge") or -9) >= 1.0 for p in ("IS", "OOS"))
+
+    final = {"base": "mean rank of 3m and 6m excess return vs TA-125", "timing_amplitude": A, "best_in_sample_amplitude": bestA,
+             "buy_at": 80, "strong_buy_at": 90 if sb_ok else None, "sell_below": 50, "exit_veto": True}
+    out = ROOT / "results" / "research"
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "v24.json").write_text(json.dumps({"final_model": final, "ic_final": {str(k): v for k, v in ic_final.items()},
+                                              "ic_votes": ic_votes, "sims": {str(k): v for k, v in sims.items()},
+                                              "inside_groups": inside, "strong_buy": sb_edge}, indent=1, ensure_ascii=False, default=str),
+                                  encoding="utf8")
+    f = lambda x: f"{x.get('ic')} ({x.get('t')})"
+    L = ["# V24 study — strength (3m + 6m vs TA-125) adjusted by technical timing", "",
+         f"{len(frames)} stocks · weekly · liquid names only · cost {COST*100:.2f}%/side · IS 2013-2019 for choices, OOS 2020-2026 blind", "",
+         "## Result", "",
+         f"* **Timing adjustment:** ± **{A}** points" + ("" if A == bestA else f" (in-sample best was ±{bestA}, but it failed the blind test)"),
+         f"* **STRONG BUY (90+):** " + ("confirmed" if sb_ok else "not confirmed on this score"), "",
+         "## Final score by timing amplitude A (FINAL = BASE + A × TIMING)", "",
+         "| A | IS 3m IC (t) | OOS 1m IC (t) | OOS 3m IC (t) | OOS 6m IC (t) | 2020-22 3m | 2023-26 3m | OOS excess % | OOS max DD % | OOS Sharpe |",
+         "|---|---|---|---|---|---|---|---|---|---|"]
+    for a in AMPS:
+        r, s = ic_final[a], sims[a][o]
+        L.append(f"| ±{a} | {f(r['IS']['3m'])} | {f(r['OOS']['1m'])} | {f(r['OOS']['3m'])} | {f(r['OOS']['6m'])} | {r['2020-22']['3m'].get('ic')} | "
+                 f"{r['2023-26']['3m'].get('ic')} | {s.get('excess')} | {s.get('maxdd')} | {s.get('sharpe')} |")
+    L += ["", "## Each timing vote on its own (rank IC vs forward excess return)", "",
+          "| vote | IS 1m | IS 3m | OOS 1m | OOS 3m | 2020-22 3m | 2023-26 3m |", "|---|---|---|---|---|---|---|"]
+    for k, r in ic_votes.items():
+        L.append(f"| {k} | {f(r['IS']['1m'])} | {f(r['IS']['3m'])} | {f(r['OOS']['1m'])} | {f(r['OOS']['3m'])} | {r['2020-22']['3m'].get('ic')} | {r['2023-26']['3m'].get('ic')} |")
+    L += ["", "## Does timing help INSIDE a group? (3-month excess return vs the whole group, pp)", "",
+          "| group | timing | IS n | IS edge (t) | OOS n | OOS edge (t) | 2020-22 | 2023-26 |", "|---|---|---|---|---|---|---|---|"]
+    for g, d in inside.items():
+        for lab, r in d.items():
+            L.append(f"| {g} | {lab} | {r['IS'].get('n')} | {r['IS'].get('edge')} ({r['IS'].get('t')}) | {r['OOS'].get('n')} | "
+                     f"{r['OOS'].get('edge')} ({r['OOS'].get('t')}) | {r['2020-22'].get('edge')} | {r['2023-26'].get('edge')} |")
+    L += ["", f"## STRONG BUY (90+) vs BUY on the final score (±{A})", "", "| period | n | edge (t) | hit % |", "|---|---|---|---|"]
+    for p, r in sb_edge.items():
+        L.append(f"| {p} | {r.get('n')} | {r.get('edge')} ({r.get('t')}) | {r.get('hit')} |")
+    L += ["", "## Trade simulation (BUY 80+ unless your model is at EXIT, exit below 50)", ""]
+    for p in periods:
+        L += [f"### {p}", "", "| A | CAGR % | excess % | max DD % | Sharpe | avg pos | trades | win % |", "|---|---|---|---|---|---|---|---|"]
+        for a in AMPS:
+            s, t = sims[a][p], sims[a][p]["trades"]
+            L.append(f"| ±{a} | {s.get('cagr')} | {s.get('excess')} | {s.get('maxdd')} | {s.get('sharpe')} | {s.get('avg_pos')} | {t.get('n')} | {t.get('win')} |")
+        L.append("")
+    (out / "V24.md").write_text("\n".join(L) + "\n", encoding="utf8")
+    print("\n".join(L))
+
+
+if __name__ == "__main__":
+    main()
