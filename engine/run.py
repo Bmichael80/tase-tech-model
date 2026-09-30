@@ -14,6 +14,7 @@ import numpy as np
 import pandas as pd
 
 from . import data as D
+from . import timing as TM
 from . import v22 as V22
 from .model import ModelConfig, compute_daily, compute_weekly_signal, compute_whale, sell_action
 
@@ -86,6 +87,7 @@ def score_universe(frames: dict[str, pd.DataFrame], bench: pd.DataFrame, univers
                                                   "reversal_ready", "volume_ready", "risk_ready", "setup_ready", "liquid")},
         }
         rec["flag"] = V22.flag(rec["timing"]["signal_week"], rec["timing"]["sell_action"])
+        rec["short_timing"] = TM.summary(df, rec["timing"]["signal_week"], sell_now, rec["score"])
         rec.update({
             "asof": str(d.index[-1].date()),
             "metrics": {

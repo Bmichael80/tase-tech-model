@@ -1,0 +1,91 @@
+"""Short-term entry timing for strong stocks (research: results/research/V25.md, 2026-09-30).
+
+Nine classic votes (+1 bullish, -1 bearish, 0 neutral), the same as engine/v24_study.py:
+moving averages (close vs SMA50, SMA50 vs SMA200), MACD(12,26,9), RSI14, MFI14, up/down volume,
+Bollinger(20,2), support / resistance (60-day high / low) and the user's model (entry signal / EXIT).
+TIMING = their average, from -1 to +1.
+
+What the research found (136 stocks, chosen on 2013-2019, blind test 2020-2026):
+  * over 1-2 weeks the classic "bullish" readings were followed by slightly WEAKER returns (short-term reversal)
+  * inside the strong group (score >= 80), stocks with TIMING < 0 (a pullback) beat the rest of the strong
+    group over the next 10 trading days: +0.43 pp in 2013-2019, +0.98 pp in 2020-2026 (t 1.0 / 1.8)
+  * timing does not change the score or the rating; it only suggests WHEN to enter a stock already rated BUY
+
+Entry tag, only for stocks with score >= 80:
+  PULLBACK  TIMING < 0      -> "entry on a pullback" (the tested edge)
+  EXTENDED  TIMING >= +0.5  -> "stretched, consider waiting a few days" (weaker evidence: -0.35 pp OOS, -0.11 pp IS)
+  NEUTRAL   otherwise
+"""
+from __future__ import annotations
+
+import math
+
+import numpy as np
+import pandas as pd
+
+from . import indicators as ta
+
+V20_EXIT = 34.0
+VOTE_NAMES = ["ma_50", "ma_50_200", "macd", "rsi", "mfi", "volume", "bollinger", "support_res", "your_model"]
+
+
+def _f(x, nd=2):
+    try:
+        x = float(x)
+    except (TypeError, ValueError):
+        return None
+    return None if math.isnan(x) or math.isinf(x) else round(x, nd)
+
+
+def votes_for(df: pd.DataFrame) -> tuple[dict[str, pd.Series], dict[str, pd.Series]]:
+    c, h, l, v = df["close"], df["high"], df["low"], df["volume"]
+    s50, s200 = ta.sma(c, 50), ta.sma(c, 200)
+    line, sig, _ = ta.macd(c)
+    rsi = ta.rsi(c, 14)
+    mfi = ta.mfi((h + l + c) / 3, v, 14)
+    up = c.diff() > 0
+    upv = (v.where(up, 0)).rolling(20, min_periods=15).sum()
+    dnv = (v.where(~up & c.diff().notna(), 0)).rolling(20, min_periods=15).sum()
+    mid, upper, lower = ta.bb(c, 20, 2.0)
+    hi60 = h.rolling(60, min_periods=50).max()
+    lo60 = l.rolling(60, min_periods=50).min().shift(5)
+    sgn = lambda cond: np.where(cond, 1.0, -1.0)
+    votes = {
+        "ma_50": pd.Series(sgn(c > s50), index=c.index).where(s50.notna()),
+        "ma_50_200": pd.Series(sgn(s50 > s200), index=c.index).where(s200.notna()),
+        "macd": pd.Series(sgn(line > sig), index=c.index).where(sig.notna()),
+        "rsi": pd.Series(np.select([(rsi >= 50) & (rsi <= 70), (rsi > 80) | (rsi < 40)], [1.0, -1.0], 0.0), index=c.index).where(rsi.notna()),
+        "mfi": pd.Series(np.select([(mfi >= 50) & (mfi <= 80), (mfi > 80) | (mfi < 40)], [1.0, -1.0], 0.0), index=c.index).where(mfi.notna()),
+        "volume": pd.Series(sgn(upv > dnv), index=c.index).where(upv.notna()),
+        "bollinger": pd.Series(np.select([c > mid, c < lower], [1.0, -1.0], 0.0), index=c.index).where(mid.notna()),
+        "support_res": pd.Series(np.select([c >= 0.98 * hi60, c < lo60], [1.0, -1.0], 0.0), index=c.index).where(lo60.notna()),
+    }
+    values = {"rsi": rsi, "mfi": mfi, "macd": line, "macd_signal": sig, "sma50": s50, "sma200": s200,
+              "bb_mid": mid, "bb_upper": upper, "bb_lower": lower, "high_60d": hi60, "low_60d_5ago": lo60}
+    return votes, values
+
+
+def summary(df: pd.DataFrame, signal_week: str | None, sell_score: float | None, score: float | None) -> dict:
+    """Latest timing votes, TIMING and the entry tag, for one stock (prices in agorot are converted to ILS)."""
+    votes, values = votes_for(df)
+    last = {k: v.iloc[-1] for k, v in votes.items()}
+    if signal_week in ("BUY", "STRONG BUY"):
+        last["your_model"] = 1.0
+    elif sell_score is not None and not (isinstance(sell_score, float) and math.isnan(sell_score)) and sell_score >= V20_EXIT:
+        last["your_model"] = -1.0
+    else:
+        last["your_model"] = 0.0
+    vals = [x for x in last.values() if x is not None and not (isinstance(x, float) and math.isnan(x))]
+    t = float(np.mean(vals)) if vals else None
+    entry = None
+    if score is not None and t is not None and score >= 80:
+        entry = "PULLBACK" if t < 0 else "EXTENDED" if t >= 0.5 else "NEUTRAL"
+    price_keys = {"sma50", "sma200", "bb_mid", "bb_upper", "bb_lower", "high_60d", "low_60d_5ago"}
+    return {
+        "score": _f(t, 2),
+        "entry": entry,
+        "votes": {k: (int(last[k]) if last.get(k) is not None and not (isinstance(last[k], float) and math.isnan(last[k])) else None)
+                  for k in VOTE_NAMES},
+        "values": {k: _f(v.iloc[-1] / 100 if k in price_keys else v.iloc[-1], 2) for k, v in values.items()},
+        "close": _f(df["close"].iloc[-1] / 100, 2),
+    }
