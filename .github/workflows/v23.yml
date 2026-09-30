@@ -1,4 +1,4 @@
-name: V23 candidate study (analyst multi-factor vs V22)
+)
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ permissions:
 jobs:
   v23:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -17,15 +17,472 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
-      - run: python -m pytest -q
+      - name: Write the study script
+        run: |
+          cat > engine/v23_study.py <<'PYEOF'
+          """V23 study: the most accurate technical score for "which TASE stocks will beat the TA-125", plus STRONG BUY /
+          STRONG SELL signals that are earned by evidence, not by name.
+
+          Protocol (fixed before any result is seen; same as engine/rs_study.py):
+            * universe: config/universe.csv, liquid names only (median 20-day turnover >= ILS 1M), weekly observations,
+              entry at the next session's close, returns in excess of the TA-125
+            * in-sample (IS) 2013-2019 is used for every choice; 2020-2026 (OOS) is a blind test used only as a gate
+            * every candidate, weight and threshold below is written down here in advance - nothing is tuned
+
+          Part A - the score. Candidates (0-100 percentile among liquid names unless noted):
+            v22            6-month excess return vs TA-125 (today's model, the baseline)
+            rs_3_6         mean rank of 3- and 6-month excess return
+            v22_sector     v22 ranked 50% on the universe and 50% inside the stock's sector
+            sector_mom     70% v22 + 30% the sector's own 6-month excess return (industry momentum)
+            ram            6-month excess return / 3-month daily volatility (risk-adjusted momentum)
+            ram_sector     ram, 50/50 universe/sector ranking
+            trend3         mean rank of: 6-month excess return, distance from EMA200, EMA50 vs EMA200
+            analyst        40% ram, 20% trend quality, 20% low volatility, 10% 1-month reversal, 10% volume (chat 2026-09-30)
+            analyst_no_lv  analyst without low volatility and reversal
+            cts            the user's Composite Technical Score (defined at the bottom of this file), absolute points, own bands 80 / 40
+            Choice: best IS 3-month rank IC. Adoption: the choice replaces v22 only if, in the OOS test, its 3-month IC
+            >= v22, its simulated excess return >= v22 and its max drawdown is not worse than v22's by more than 5 points.
+            Otherwise v22 stays. (All candidates are reported, so a near-miss is visible.)
+
+          Part B - signals on the adopted score. BUY = score >= 80, SELL = score < 50 (V22 bands, kept).
+            STRONG BUY candidates (each is a subset of BUY):
+              sb_top10     score >= 90
+              sb_v20       the user's model (V20) gave BUY or STRONG BUY in the last 5 sessions
+              sb_v20strong the user's model gave STRONG BUY in the last 5 sessions
+              sb_rising    score rose by 15+ points over the last 4 weeks (a new leader)
+              sb_high      close within 3% of its 52-week high
+              sb_regime    TA-125 above its EMA200
+              sb_flow      CMF20 > 0 and 20-day volume above its 120-day average
+            STRONG SELL candidates (each is a subset of SELL):
+              ss_bottom20  score < 20
+              ss_v20exit   the user's model is at EXIT (sell score >= 34)
+              ss_below200  close below EMA200
+              ss_falling   score fell by 30+ points over the last 4 weeks
+              ss_low       close within 3% of its 52-week low
+            A candidate EARNS its label only if, in BOTH IS and OOS: 30+ events, and its mean 3-month excess return beats
+            (for sells: trails) the plain BUY (SELL) group by at least 1.0 percentage point. Among those that earn it, the one
+            with the largest IS difference is used. If none earns it, the label is not shown - an honest "no evidence".
+
+          Part C - portfolio rules on the adopted score (trade simulation, 0.15% cost per side, equal weight):
+            base (BUY 80 / exit < 50) · + no new BUY while the user's model is at EXIT · + no new BUY while TA-125 is
+            below its EMA200 · strong-buy-only entries (if a STRONG BUY rule was earned).
+
+          Usage: python -m engine.v23_study [--start 2012-01-01] [--split 2020-01-01] [--offline DIR]
+          Writes results/research/V23.md and v23.json (v23.json["final_model"] is the machine-readable result)
+          """
+          from __future__ import annotations
+
+          import argparse
+          import json
+          from pathlib import Path
+
+          import numpy as np
+          import pandas as pd
+
+          from . import data as D
+          from . import indicators as ta
+          from .combo import COST, V20_EXIT, portfolio, stats, trade_stats
+          from .research import HORIZONS, build_factors, quintile_spread, rank_ic, summarize_ic, weekly_dates
+
+          ROOT = Path(__file__).resolve().parents[1]
+          MIN_SECTOR_NAMES = 3
+          BUY_AT, SELL_BELOW = 80.0, 50.0
+          MIN_EVENTS, MIN_EDGE = 30, 1.0
+
+
+          # ---------------------------------------------------------------- ranking helpers
+          def urank(x, mask):
+              return x.where(mask).rank(axis=1, pct=True)
+
+
+          def srank(x, mask, sectors):
+              x = x.where(mask)
+              out = urank(x, mask)
+              groups: dict[str, list[str]] = {}
+              for t in x.columns:
+                  groups.setdefault(sectors.get(t, "?"), []).append(t)
+              for cols in groups.values():
+                  if len(cols) < 2:
+                      continue
+                  sub = x[cols]
+                  enough = sub.notna().sum(axis=1) >= MIN_SECTOR_NAMES
+                  out.loc[enough, cols] = sub.rank(axis=1, pct=True).loc[enough]
+              return out
+
+
+          def mixed(x, mask, sectors):
+              return 0.5 * urank(x, mask) + 0.5 * srank(x, mask, sectors)
+
+
+          def to_score(comp, mask):
+              return comp.where(mask).rank(axis=1, pct=True) * 100
+
+
+          def sector_mean(x, mask, sectors):
+              """For each stock, the equal-weight mean of x over the OTHER liquid stocks in its sector (NaN if < 2 peers)."""
+              x = x.where(mask)
+              out = pd.DataFrame(np.nan, index=x.index, columns=x.columns)
+              groups: dict[str, list[str]] = {}
+              for t in x.columns:
+                  groups.setdefault(sectors.get(t, "?"), []).append(t)
+              for cols in groups.values():
+                  sub = x[cols]
+                  s, n = sub.sum(axis=1, min_count=1), sub.notna().sum(axis=1)
+                  for t in cols:
+                      own = sub[t].fillna(0)
+                      cnt = n - sub[t].notna()
+                      out[t] = ((s - own) / cnt).where(cnt >= 2)
+              return out
+
+
+          # ---------------------------------------------------------------- part A
+          def candidates(F, C, b, tradable, sectors, frames):
+              ex = lambda n: (C / C.shift(n)).div(b / b.shift(n), axis=0) - 1
+              ex6, ex3 = ex(126), ex(63)
+              vol = C.pct_change(fill_method=None).rolling(63, min_periods=50).std()
+              ram = ex6 / vol.replace(0, np.nan)
+              m = tradable & ex6.notna()
+              trend_q = (mixed(F["hi52"], m, sectors) + mixed(F["dist_ema200"], m, sectors)) / 2
+              volume_c = (mixed(F["cmf20"], m, sectors) + mixed(F["vol_trend"], m, sectors)) / 2
+              parts = {"ram": (mixed(ram, m, sectors), 0.40), "trend": (trend_q, 0.20), "low_vol": (mixed(F["low_vol"], m, sectors), 0.20),
+                       "rev_1m": (mixed(F["rev_1m"], m, sectors), 0.10), "volume": (volume_c, 0.10)}
+
+              def blend(keys):
+                  w = sum(parts[k][1] for k in keys)
+                  return sum(parts[k][0].fillna(0.5) * parts[k][1] for k in keys) / w
+
+              sec6 = sector_mean(ex6, m, sectors)
+              sec_rank = urank(sec6, m & sec6.notna()).fillna(0.5)
+              return {
+                  "v22": to_score(ex6, m),
+                  "rs_3_6": to_score((urank(ex3, m) + urank(ex6, m)) / 2, m),
+                  "v22_sector": to_score(mixed(ex6, m, sectors), m),
+                  "sector_mom": to_score(0.7 * urank(ex6, m) + 0.3 * sec_rank, m),
+                  "ram": to_score(ram, m),
+                  "ram_sector": to_score(mixed(ram, m, sectors), m),
+                  "trend3": to_score((urank(ex6, m) + urank(F["dist_ema200"], m) + urank(F["ema50_200"], m)) / 3, m),
+                  "analyst": to_score(blend(list(parts)), m),
+                  "analyst_no_lv": to_score(blend(["ram", "trend", "volume"]), m),
+                  "cts": cts_panel(frames, C.index).reindex(columns=C.columns).where(tradable),
+              }
+
+
+          def bands(k):
+              return (80.0, 40.0) if k == "cts" else (BUY_AT, SELL_BELOW)
+
+
+          # ---------------------------------------------------------------- simulation
+          def simulate(entry: pd.DataFrame, exit_: pd.DataFrame, close: pd.DataFrame, weekly: np.ndarray) -> list[dict]:
+              """Enter at the next close after a weekly entry signal; leave at the next close after a weekly exit signal."""
+              trades, n = [], len(close.index)
+              for t in close.columns:
+                  c, en, ex = close[t].to_numpy(), entry[t].to_numpy(), exit_[t].to_numpy()
+                  pos, entry_i, pending = False, None, None
+                  for i in range(n - 1):
+                      if pending == "in":
+                          pos, entry_i = True, i
+                      elif pending == "out":
+                          trades.append({"ticker": t, "entry_i": entry_i, "exit_i": i})
+                          pos = False
+                      pending = None
+                      if np.isnan(c[i]) or not weekly[i]:
+                          continue
+                      if not pos and en[i]:
+                          pending = "in"
+                      elif pos and ex[i]:
+                          pending = "out"
+                  if pos:
+                      trades.append({"ticker": t, "entry_i": entry_i, "exit_i": n - 1})
+              return trades
+
+
+          def run_sim(entry, exit_, C, b, weekly, periods):
+              trades = simulate(entry.fillna(False).astype(bool), exit_.fillna(False).astype(bool), C, weekly)
+              ret, npos = portfolio(trades, C, b)
+              bret = b.pct_change().fillna(0.0)
+              sel = lambda s, lo, hi: s[(s.index >= lo) & (s.index < hi)]
+              return {p: {**stats(sel(ret, lo, hi), sel(bret, lo, hi), sel(npos, lo, hi)), "trades": trade_stats(trades, C, b, lo, hi)}
+                      for p, (lo, hi) in periods.items()}
+
+
+          # ---------------------------------------------------------------- part B
+          def group_edge(mask_grp, mask_base, y, dates, h_days):
+              """Mean forward excess return of a signal group vs its base group, week by week."""
+              rows = []
+              for d in dates:
+                  g, bse, r = mask_grp.loc[d], mask_base.loc[d], y.loc[d]
+                  g, bse = g & r.notna(), bse & r.notna()
+                  if bse.sum() < 3:
+                      continue
+                  rows.append((int(g.sum()), r[g].sum() if g.any() else 0.0, r[bse].mean(), r[g].mean() if g.any() else np.nan,
+                               float((r[g] > 0).sum()) if g.any() else 0.0))
+              if not rows:
+                  return {"n": 0}
+              a = pd.DataFrame(rows, columns=["n", "sum", "base", "gmean", "hits"])
+              n = int(a["n"].sum())
+              if n == 0:
+                  return {"n": 0, "base": round(float(a["base"].mean()), 2)}
+              mean = a["sum"].sum() / n
+              diffs = (a["gmean"] - a["base"]).dropna()
+              overlap = max(1.0, h_days / 5.0)
+              t = float(diffs.mean() / diffs.std() * np.sqrt(len(diffs) / overlap)) if len(diffs) > 2 and diffs.std() > 0 else None
+              return {"n": n, "weeks": int(len(diffs)), "mean": round(float(mean), 2), "base": round(float(a["base"].mean()), 2),
+                      "edge": round(float(diffs.mean()), 2) if len(diffs) else None, "t": round(t, 2) if t is not None else None,
+                      "hit": round(float(a["hits"].sum() / n * 100), 1)}
+
+
+          def main(argv=None):
+              ap = argparse.ArgumentParser()
+              ap.add_argument("--start", default="2012-01-01")
+              ap.add_argument("--split", default="2020-01-01")
+              ap.add_argument("--offline")
+              args = ap.parse_args(argv)
+              universe = D.load_universe()
+              tickers = [s.yahoo for s in universe] + [D.BENCH_TICKER]
+              if args.offline:
+                  frames = {t: pd.read_csv(Path(args.offline) / f"{t}.csv", index_col=0, parse_dates=True)
+                            for t in tickers if (Path(args.offline) / f"{t}.csv").exists()}
+              else:
+                  frames = D.download(tickers, args.start)
+              bench = frames.pop(D.BENCH_TICKER)
+              X: dict = {}
+              F, fwd, tradable = build_factors(frames, bench, universe, extras=X)
+              C, b = X["close"], X["bench"]
+              for k in ("signal", "sell_score"):
+                  X[k] = X[k].reindex(columns=C.columns)
+              sectors = {s.yahoo: s.sector for s in universe}
+              S = candidates(F, C, b, tradable, sectors, frames)
+
+              dates = weekly_dates(C.index)
+              start = C.index[0] + pd.Timedelta(days=400)
+              dates = dates[dates >= start]
+              split = pd.Timestamp(args.split)
+              wp = {"IS": dates[dates < split], "OOS": dates[dates >= split],
+                    "2020-22": dates[(dates >= split) & (dates < "2023-01-01")], "2023-26": dates[dates >= "2023-01-01"]}
+              end = C.index[-1] + pd.Timedelta(days=1)
+              periods = {"IS 2013-2019": (start, split), "OOS 2020-2026": (split, end),
+                         "2020-2022": (split, pd.Timestamp("2023-01-01")), "2023-2026": (pd.Timestamp("2023-01-01"), end)}
+              wk = set(weekly_dates(C.index))
+              weekly = np.array([d in wk for d in C.index])
+              early = C.index < start
+
+              # ---- part A: IC, quintiles, simulation for every candidate
+              ic = {}
+              for k, s in S.items():
+                  ic[k] = {p: {h: {**summarize_ic(rank_ic(s, fwd[h], tradable, ds), hd),
+                                   "q5_q1": (lambda q: round(float(q.mean()), 2) if len(q) else None)(quintile_spread(s, fwd[h], tradable, ds))}
+                               for h, hd in HORIZONS.items()} for p, ds in wp.items()}
+
+              def quint(s, h, ds):
+                  rows = []
+                  for d in ds:
+                      a, r, mm = s.loc[d], fwd[h].loc[d], tradable.loc[d]
+                      ok = mm & a.notna() & r.notna()
+                      if ok.sum() < 15:
+                          continue
+                      rows.append(r[ok].groupby(np.ceil(a[ok].rank(pct=True) * 5).clip(1, 5)).mean())
+                  t = pd.DataFrame(rows)
+                  return {int(c): round(float(t[c].mean()), 2) for c in t.columns} if len(t) else {}
+              quintiles = {k: {p: quint(S[k], "3m", wp[p]) for p in ("IS", "OOS")} for k in S}
+
+              simA = {}
+              for k, s in S.items():
+                  sc = s.copy()
+                  sc.loc[early] = np.nan
+                  hi_, lo_ = bands(k)
+                  simA[k] = run_sim(tradable & (sc >= hi_), ~(sc >= lo_), C, b, weekly, periods)
+              bret = b.pct_change().fillna(0.0)
+              bst = {p: stats(bret[(bret.index >= lo) & (bret.index < hi)], bret[(bret.index >= lo) & (bret.index < hi)],
+                              pd.Series(1, index=bret.index)[(bret.index >= lo) & (bret.index < hi)]) for p, (lo, hi) in periods.items()}
+
+              best = max(S, key=lambda k: ic[k]["IS"]["3m"].get("ic") or -9)
+              o = "OOS 2020-2026"
+              verdictA = {}
+              for k in S:
+                  if k == "v22":
+                      continue
+                  c1 = (ic[k]["OOS"]["3m"].get("ic") or -9) >= (ic["v22"]["OOS"]["3m"].get("ic") or -9)
+                  c2 = (simA[k][o].get("excess") or -99) >= (simA["v22"][o].get("excess") or -99)
+                  c3 = (simA[k][o].get("maxdd") or -99) >= (simA["v22"][o].get("maxdd") or -99) - 5
+                  verdictA[k] = {"oos_ic_ok": bool(c1), "oos_excess_ok": bool(c2), "oos_dd_ok": bool(c3), "adopt": bool(c1 and c2 and c3)}
+              chosen = best if best != "v22" and verdictA[best]["adopt"] else "v22"
+
+              # ---- part B: strong signals on the chosen score
+              score = S[chosen].copy()
+              score.loc[early] = np.nan
+              hi_, lo_ = bands(chosen)
+              ema200 = C.apply(lambda s: ta.ema(s.dropna(), 200).reindex(s.index))
+              high52 = C.rolling(252, min_periods=200).max()
+              low52 = C.rolling(252, min_periods=200).min()
+              v20sig = X["signal"].fillna(0).rolling(5, min_periods=1).max()
+              bench_ok = b > ta.ema(b.dropna(), 200).reindex(b.index)
+              d20 = score - score.shift(20)
+              buy = tradable & (score >= hi_)
+              sell = tradable & (score < lo_)
+              SB = {"sb_top10": buy & (score >= 90), "sb_v20": buy & (v20sig >= 1), "sb_v20strong": buy & (v20sig >= 2),
+                    "sb_rising": buy & (d20 >= 15), "sb_high": buy & (C >= 0.97 * high52),
+                    "sb_regime": buy.mul(bench_ok, axis=0).astype(bool), "sb_flow": buy & (F["cmf20"] > 0) & (F["vol_trend"] > 0)}
+              SS = {"ss_bottom20": sell & (score < 20), "ss_v20exit": sell & (X["sell_score"] >= V20_EXIT),
+                    "ss_below200": sell & (C < ema200), "ss_falling": sell & (d20 <= -30), "ss_low": sell & (C <= 1.03 * low52)}
+              groups = {"BUY (all)": (buy, buy), "SELL (all)": (sell, sell)}
+              groups.update({k: (v, buy) for k, v in SB.items()})
+              groups.update({k: (v, sell) for k, v in SS.items()})
+              ev = {g: {p: {h: group_edge(gm, bm, fwd[h], wp[p], hd) for h, hd in HORIZONS.items()} for p in wp} for g, (gm, bm) in groups.items()}
+
+              def earns(g, sign):
+                  r = [ev[g][p]["3m"] for p in ("IS", "OOS")]
+                  return all(x.get("n", 0) >= MIN_EVENTS and x.get("edge") is not None and sign * x["edge"] >= MIN_EDGE for x in r)
+              sb_ok = [g for g in SB if earns(g, +1)]
+              ss_ok = [g for g in SS if earns(g, -1)]
+              sb_rule = max(sb_ok, key=lambda g: ev[g]["IS"]["3m"]["edge"]) if sb_ok else None
+              ss_rule = min(ss_ok, key=lambda g: ev[g]["IS"]["3m"]["edge"]) if ss_ok else None
+
+              # ---- part C: portfolio rules on the chosen score
+              exit_ = ~(score >= lo_)
+              rulesC = {"base": buy, "+ no BUY while your model is at EXIT": buy & ~(X["sell_score"] >= V20_EXIT),
+                        "+ no BUY while TA-125 < EMA200": buy.mul(bench_ok, axis=0).astype(bool)}
+              if sb_rule:
+                  rulesC[f"STRONG BUY entries only ({sb_rule})"] = SB[sb_rule]
+              simC = {k: run_sim(v, exit_, C, b, weekly, periods) for k, v in rulesC.items()}
+
+              final = {"score": chosen, "buy_at": hi_, "sell_below": lo_, "strong_buy": sb_rule, "strong_sell": ss_rule,
+                       "best_in_sample": best, "adopted_new_score": chosen != "v22"}
+              out = ROOT / "results" / "research"
+              out.mkdir(parents=True, exist_ok=True)
+              (out / "v23.json").write_text(json.dumps({"final_model": final, "ic": ic, "quintiles_3m": quintiles, "verdict": verdictA,
+                                                        "portfolio_A": simA, "signals": ev, "strong_buy_earned": sb_ok, "strong_sell_earned": ss_ok,
+                                                        "portfolio_C": simC, "benchmark": bst}, indent=1, ensure_ascii=False, default=str), encoding="utf8")
+
+              yn = lambda x: "yes" if x else "no"
+              f = lambda x: f"{x.get('ic')} ({x.get('t')})"
+              L = ["# V23 study — best technical score and earned STRONG BUY / STRONG SELL", "",
+                   f"{len(frames)} stocks · weekly · liquid names only · cost {COST*100:.2f}%/side · IS 2013-2019 for choices, OOS 2020-2026 blind", "",
+                   "## Result", "",
+                   f"* **Score:** `{chosen}`" + (" (new; passed the blind test)" if chosen != "v22" else f" (unchanged; best in-sample was `{best}`)"),
+                   f"* **BUY** = score ≥ {hi_:g} · **SELL** = score < {lo_:g}",
+                   f"* **STRONG BUY:** " + (f"`{sb_rule}`" if sb_rule else "none earned it - do not show a STRONG BUY label"),
+                   f"* **STRONG SELL:** " + (f"`{ss_rule}`" if ss_rule else "none earned it - do not show a STRONG SELL label"), "",
+                   f"Rule for a strong label: {MIN_EVENTS}+ events and ≥ {MIN_EDGE:g} pp better (buys) / worse (sells) 3-month excess return than the plain BUY / SELL group, in BOTH IS and OOS.", "",
+                   "## Part A — score candidates", "", "| candidate | IS 3m IC (t) | OOS 1m IC (t) | OOS 3m IC (t) | OOS 6m IC (t) | OOS 3m q5-q1 % | 2020-22 3m | 2023-26 3m | OOS excess % | OOS max DD % | adopt |",
+                   "|---|---|---|---|---|---|---|---|---|---|---|"]
+              for k in S:
+                  r = ic[k]
+                  a = simA[k][o]
+                  L.append(f"| {k} | {f(r['IS']['3m'])} | {f(r['OOS']['1m'])} | {f(r['OOS']['3m'])} | {f(r['OOS']['6m'])} | {r['OOS']['3m'].get('q5_q1')} | "
+                           f"{r['2020-22']['3m'].get('ic')} | {r['2023-26']['3m'].get('ic')} | {a.get('excess')} | {a.get('maxdd')} | "
+                           f"{'baseline' if k == 'v22' else yn(verdictA[k]['adopt'])} |")
+              L += ["", "### 3-month quintiles (mean excess vs TA-125 %, Q5 = strongest)", "", "| candidate | period | Q1 | Q2 | Q3 | Q4 | Q5 |", "|---|---|---|---|---|---|---|"]
+              for k, pq in quintiles.items():
+                  for p, q in pq.items():
+                      L.append(f"| {k} | {p} | " + " | ".join(str(q.get(i, "–")) for i in range(1, 6)) + " |")
+              L += ["", f"## Part B — signals on `{chosen}`", "",
+                    "edge = average weekly difference between the group and its base group (BUY for sb_*, SELL for ss_*), 3-month excess return in pp · t is overlap-adjusted", "",
+                    "| group | IS n | IS 3m mean | IS edge (t) | OOS n | OOS 3m mean | OOS edge (t) | OOS hit % | 2020-22 edge | 2023-26 edge | OOS 1m edge | earned |",
+                    "|---|---|---|---|---|---|---|---|---|---|---|---|"]
+              for g in groups:
+                  i_, o_ = ev[g]["IS"]["3m"], ev[g]["OOS"]["3m"]
+                  earned = "base" if g.endswith("(all)") else yn(g in sb_ok or g in ss_ok)
+                  L.append(f"| {g} | {i_.get('n')} | {i_.get('mean')} | {i_.get('edge')} ({i_.get('t')}) | {o_.get('n')} | {o_.get('mean')} | "
+                           f"{o_.get('edge')} ({o_.get('t')}) | {o_.get('hit')} | {ev[g]['2020-22']['3m'].get('edge')} | {ev[g]['2023-26']['3m'].get('edge')} | "
+                           f"{ev[g]['OOS']['1m'].get('edge')} | {earned} |")
+              L += ["", f"## Part C — portfolio rules on `{chosen}` (exit below {lo_:g})", ""]
+              for p in periods:
+                  L += [f"### {p}", "", "| rule | CAGR % | excess % | max DD % | Sharpe | avg pos | trades | win % | avg trade % | days |", "|---|---|---|---|---|---|---|---|---|---|",
+                        f"| TA-125 | {bst[p].get('cagr')} | 0 | {bst[p].get('maxdd')} | {bst[p].get('sharpe')} | – | – | – | – | – |"]
+                  for name, r in simC.items():
+                      s_, t_ = r[p], r[p]["trades"]
+                      L.append(f"| {name} | {s_.get('cagr')} | {s_.get('excess')} | {s_.get('maxdd')} | {s_.get('sharpe')} | {s_.get('avg_pos')} | {t_.get('n')} | {t_.get('win')} | {t_.get('avg')} | {t_.get('days')} |")
+                  L.append("")
+              L += ["## Part A — trade simulation per candidate (own BUY / exit bands)", ""]
+              for p in periods:
+                  L += [f"### {p}", "", "| candidate | CAGR % | excess % | max DD % | Sharpe | avg pos | trades | win % |", "|---|---|---|---|---|---|---|---|"]
+                  for k, r in simA.items():
+                      s_, t_ = r[p], r[p]["trades"]
+                      L.append(f"| {k} | {s_.get('cagr')} | {s_.get('excess')} | {s_.get('maxdd')} | {s_.get('sharpe')} | {s_.get('avg_pos')} | {t_.get('n')} | {t_.get('win')} |")
+                  L.append("")
+              L += ["## Caveats", "", "* Survivorship bias: the universe is today's stocks, not the historical index members.",
+                    "* 10 score candidates and 12 signal candidates were compared; the in-sample winner is only trusted because it had to pass the blind test.",
+                    "* 3- and 6-month observations overlap; t-values are overlap-adjusted but still approximate.", ""]
+              (out / "V23.md").write_text("\n".join(L) + "\n", encoding="utf8")
+              print("\n".join(L))
+
+
+          # ---------------------------------------------------------------- the user's Composite Technical Score (CTS)
+          """Composite Technical Score (CTS), 0-100: the point-based model proposed by the user on 2026-09-30.
+
+          Implemented exactly as specified, with no tuning. Where the spec left a detail open, the choice is noted.
+
+          Trend (35)      close > SMA200: 15 · close > SMA50 and > SMA20: 10 · SMA20 > SMA50 > SMA200: 10
+                          (SMA50 slope is listed as a parameter but has no points in the spec, so it is not scored)
+          Momentum (25)   RSI14 in 50-68: 10 · MACD(12,26,9) line > 0 and line > signal: 10
+                          Stochastic(14,3) %K > %D and %K < 80: 5
+          Volume (20)     CMF20 > 0: 8 · OBV above its 20-day average (rising): 7
+                          an up day with volume above its 20-day average within the last 5 sessions: 5
+          Structure (20)  close within 3% above the 20-day low (near support): 8 · ADX14 > 20: 7
+                          close in the upper half of the Bollinger band (above SMA20): 5
+          Final           0.7 x daily score + 0.3 x weekly score (same rules on weekly bars; only completed weeks);
+                          daily score alone while the stock has too little history for a weekly SMA200
+          """
+
+
+          def points(df: pd.DataFrame) -> pd.Series:
+              c, h, l, v = df["close"], df["high"], df["low"], df["volume"]
+              s20, s50, s200 = ta.sma(c, 20), ta.sma(c, 50), ta.sma(c, 200)
+              trend = 15 * (c > s200) + 10 * ((c > s50) & (c > s20)) + 10 * ((s20 > s50) & (s50 > s200))
+
+              rsi = ta.rsi(c, 14)
+              line, sig, _ = ta.macd(c)
+              ll, hh = l.rolling(14, min_periods=14).min(), h.rolling(14, min_periods=14).max()
+              k = 100 * (c - ll) / (hh - ll).replace(0, np.nan)
+              k = k.rolling(3, min_periods=3).mean()           # slow %K
+              d = k.rolling(3, min_periods=3).mean()
+              mom = 10 * rsi.between(50, 68) + 10 * ((line > 0) & (line > sig)) + 5 * ((k > d) & (k < 80))
+
+              rng = (h - l).where((h - l) > 0)
+              mfm = ((c - l) - (h - c)) / rng
+              cmf = (mfm * v).rolling(20, min_periods=15).sum() / v.rolling(20, min_periods=15).sum()
+              obv = (np.sign(c.diff()).fillna(0) * v).cumsum()
+              vavg = v.rolling(20, min_periods=15).mean()
+              upvol = ((c.diff() > 0) & (v > vavg)).astype(float).rolling(5, min_periods=1).max() > 0
+              vol = 8 * (cmf > 0) + 7 * (obv > obv.rolling(20, min_periods=15).mean()) + 5 * upvol
+
+              low20 = l.rolling(20, min_periods=15).min()
+              _, _, adx = ta.dmi(h, l, c)
+              struct = 8 * ((c / low20 - 1) < 0.03) + 7 * (adx > 20) + 5 * (c > s20)
+
+              score = (trend + mom + vol + struct).astype(float)
+              return score.where(s200.notna())
+
+
+          def cts(df: pd.DataFrame) -> pd.Series:
+              df = df.dropna(subset=["close"])
+              daily = points(df)
+              wk = df.resample("W-FRI").agg({"open": "first", "high": "max", "low": "min", "close": "last", "volume": "sum"}).dropna(subset=["close"])
+              weekly = points(wk)
+              # a weekly value is known only once its week has closed: label it on the week's last trading day
+              last_day = df.index.to_series().resample("W-FRI").last().reindex(wk.index)
+              weekly.index = pd.DatetimeIndex(last_day.values)
+              weekly = weekly[~weekly.index.isna()]
+              weekly = weekly.reindex(df.index).ffill()
+              # weekly SMA200 needs ~4 years of history; until then the daily score is used alone
+              return (0.7 * daily + 0.3 * weekly).fillna(daily)
+
+
+          def cts_panel(frames: dict[str, pd.DataFrame], index: pd.Index) -> pd.DataFrame:
+              return pd.DataFrame({t: cts(f).reindex(index) for t, f in frames.items() if len(f) >= 260})
+
+
+          if __name__ == "__main__":
+              main()
+
+          PYEOF
       - name: V23 study
         run: python -m engine.v23_study --start 2012-01-01 --split 2020-01-01
       - name: Save report
         run: |
           git config user.name "tase-model-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add results
-          git diff --cached --quiet || git commit -m "V23 candidate study $(date -u +%F)"
+          git add results engine/v23_study.py
+          git diff --cached --quiet || git commit -m "V23 study $(date -u +%F)"
           git pull --rebase
           git push
-
