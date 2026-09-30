@@ -1,4 +1,4 @@
-)
+name: V23 study
 
 on:
   workflow_dispatch:
