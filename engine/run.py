@@ -158,6 +158,12 @@ def main(argv=None):
     print(f"scored {len(ok)}/{len(res['records'])} stocks, market date {res['market_date']}")
     for e in res["errors"]:
         print("  data problem:", e["ticker"], e["name"], "; ".join(e["issues"]))
+    if not args.offline:
+        try:
+            from . import fundq
+            fundq.main()
+        except Exception as e:  # the technical results are already saved
+            print("quantitative fundamentals skipped:", e)
 
 
 if __name__ == "__main__":
