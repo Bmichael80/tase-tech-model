@@ -1,7 +1,7 @@
 {
  "model": "Quantitative fundamental score Q1",
  "version": "Q1",
- "generated_utc": "2026-11-14T09:02:49+00:00",
+ "generated_utc": "2026-11-21T09:54:35+00:00",
  "data_source": "Yahoo Finance financial statements",
  "component_weights": {
   "profitability": 0.25,
@@ -59,8 +59,8 @@
  "scored": 133,
  "errors": [],
  "fx": {
-  "USD": 3.1918399333953857,
-  "EUR": 3.5324089527130127
+  "USD": 3.298180103302002,
+  "EUR": 3.6221139430999756
  },
  "companies": {
   "629014": {
@@ -70,11 +70,11 @@
    "group_he": "צריכה ותעשייה",
    "model": "standard",
    "components": {
-    "profitability": 54.2,
-    "value": 15.6,
+    "profitability": 52.8,
+    "value": 16.7,
     "strength": 16.8,
     "quality": 41.7,
-    "growth": 75.0
+    "growth": 76.0
    },
    "metrics": {
     "gp_assets": {
@@ -83,7 +83,7 @@
     },
     "op_margin": {
      "value": 0.1923,
-     "pct": 95.8
+     "pct": 91.7
     },
     "roe": {
      "value": 0.0634,
@@ -94,20 +94,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0099,
+     "value": 0.0108,
      "pct": 8.3
     },
     "book_yield": {
-     "value": 0.1556,
+     "value": 0.1707,
      "pct": 8.3
     },
     "ebitda_ev": {
-     "value": 0.0344,
+     "value": 0.037,
      "pct": 4.2
     },
     "fcf_yield": {
-     "value": 0.0232,
-     "pct": 41.7
+     "value": 0.0255,
+     "pct": 45.8
     },
     "netdebt_ebitda": {
      "value": 5.8393,
@@ -143,15 +143,15 @@
     },
     "d_margin_q": {
      "value": 0.0186,
-     "pct": 70.8
+     "pct": 75.0
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 163705.8,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 154137.8,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -166,36 +166,36 @@
    "sector": "פארמה"
   },
   "662577": {
-   "score": 61,
+   "score": 57,
    "reason": null,
    "group": "financials",
    "group_he": "בנקים וביטוח",
    "model": "financial",
    "components": {
-    "profitability": 38.5,
-    "value": 69.2,
+    "profitability": 34.6,
+    "value": 57.7,
     "strength": 84.6,
     "growth": 53.8
    },
    "metrics": {
     "roe": {
-     "value": 0.1407,
+     "value": 0.1341,
      "pct": 23.1
     },
     "roa": {
-     "value": 0.0117,
-     "pct": 53.8
+     "value": 0.0108,
+     "pct": 46.2
     },
     "earn_yield": {
-     "value": 0.0979,
-     "pct": 61.5
+     "value": 0.0977,
+     "pct": 38.5
     },
     "book_yield": {
-     "value": 0.6954,
+     "value": 0.7285,
      "pct": 76.9
     },
     "fcf_yield": {
-     "value": 0.0217,
+     "value": 0.1673,
      "pct": null
     },
     "netdebt_ebitda": {
@@ -203,15 +203,15 @@
      "pct": null
     },
     "equity_ratio": {
-     "value": 0.0829,
+     "value": 0.0802,
      "pct": 84.6
     },
     "cfo_assets": {
-     "value": 0.0039,
+     "value": 0.0195,
      "pct": null
     },
     "accruals": {
-     "value": 0.0078,
+     "value": -0.0088,
      "pct": null
     },
     "rev_growth": {
@@ -224,10 +224,10 @@
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 96549.5,
+   "mcap_ils_m": 92694.1,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -243,36 +243,36 @@
    "sector": "בנקאות"
   },
   "604611": {
-   "score": 51,
+   "score": 54,
    "reason": null,
    "group": "financials",
    "group_he": "בנקים וביטוח",
    "model": "financial",
    "components": {
-    "profitability": 42.3,
-    "value": 50.0,
+    "profitability": 50.0,
+    "value": 53.8,
     "strength": 76.9,
     "growth": 32.7
    },
    "metrics": {
     "roe": {
-     "value": 0.1478,
-     "pct": 38.5
-    },
-    "roa": {
-     "value": 0.011,
+     "value": 0.15,
      "pct": 46.2
     },
+    "roa": {
+     "value": 0.0111,
+     "pct": 53.8
+    },
     "earn_yield": {
-     "value": 0.0964,
-     "pct": 38.5
+     "value": 0.1018,
+     "pct": 53.8
     },
     "book_yield": {
-     "value": 0.6523,
-     "pct": 61.5
+     "value": 0.679,
+     "pct": 53.8
     },
     "fcf_yield": {
-     "value": 0.0305,
+     "value": -0.0032,
      "pct": null
     },
     "netdebt_ebitda": {
@@ -280,15 +280,15 @@
      "pct": null
     },
     "equity_ratio": {
-     "value": 0.0745,
+     "value": 0.074,
      "pct": 76.9
     },
     "cfo_assets": {
-     "value": 0.0045,
+     "value": 0.0006,
      "pct": null
     },
     "accruals": {
-     "value": 0.0065,
+     "value": 0.0105,
      "pct": null
     },
     "rev_growth": {
@@ -301,10 +301,10 @@
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 108191.3,
+   "mcap_ils_m": 105211.3,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -320,70 +320,70 @@
    "sector": "בנקאות"
   },
   "1081124": {
-   "score": 36,
+   "score": 38,
    "reason": null,
    "group": "tech",
    "group_he": "טכנולוגיה ותקשורת",
    "model": "standard",
    "components": {
     "profitability": 27.7,
-    "value": 21.7,
-    "strength": 45.7,
-    "quality": 37.0,
+    "value": 25.2,
+    "strength": 48.7,
+    "quality": 41.3,
     "growth": 61.8
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.1544,
+     "value": 0.1514,
      "pct": 13.6
     },
     "op_margin": {
-     "value": 0.094,
+     "value": 0.0974,
      "pct": 39.1
     },
     "roe": {
-     "value": 0.1442,
+     "value": 0.1489,
      "pct": 30.4
     },
     "roa": {
-     "value": 0.0459,
+     "value": 0.0462,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.019,
+     "value": 0.0213,
      "pct": 21.7
     },
     "book_yield": {
-     "value": 0.1315,
-     "pct": 8.7
+     "value": 0.1429,
+     "pct": 17.4
     },
     "ebitda_ev": {
-     "value": 0.0278,
-     "pct": 21.7
+     "value": 0.0304,
+     "pct": 22.7
     },
     "fcf_yield": {
-     "value": 0.0203,
-     "pct": 34.8
+     "value": 0.0268,
+     "pct": 39.1
     },
     "netdebt_ebitda": {
      "value": -1.0,
      "pct": 69.6
     },
     "interest_cover": {
-     "value": 13.4743,
-     "pct": 50.0
+     "value": 20.7965,
+     "pct": 59.1
     },
     "equity_ratio": {
-     "value": 0.3182,
+     "value": 0.3101,
      "pct": 17.4
     },
     "cfo_assets": {
-     "value": 0.0716,
-     "pct": 26.1
+     "value": 0.0801,
+     "pct": 30.4
     },
     "accruals": {
-     "value": -0.0257,
-     "pct": 47.8
+     "value": -0.0339,
+     "pct": 52.2
     },
     "rev_growth": {
      "value": 0.1627,
@@ -394,15 +394,15 @@
      "pct": 69.6
     },
     "d_margin_q": {
-     "value": 0.0157,
+     "value": 0.014,
      "pct": 63.6
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 107057.3,
+   "mcap_ils_m": 105510.2,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -418,14 +418,14 @@
    "sector": "תעשייה ביטחונית"
   },
   "1082379": {
-   "score": 54,
+   "score": 55,
    "reason": null,
    "group": "tech",
    "group_he": "טכנולוגיה ותקשורת",
    "model": "standard",
    "components": {
     "profitability": 34.9,
-    "value": 33.7,
+    "value": 37.5,
     "strength": 81.0,
     "quality": 91.3,
     "growth": 49.2
@@ -448,20 +448,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0199,
+     "value": 0.0248,
      "pct": 26.1
     },
     "book_yield": {
-     "value": 0.1803,
-     "pct": 39.1
+     "value": 0.2243,
+     "pct": 47.8
     },
     "ebitda_ev": {
-     "value": 0.0445,
-     "pct": 43.5
+     "value": 0.0565,
+     "pct": 45.5
     },
     "fcf_yield": {
-     "value": 0.0145,
-     "pct": 26.1
+     "value": 0.018,
+     "pct": 30.4
     },
     "netdebt_ebitda": {
      "value": -1.0,
@@ -504,8 +504,8 @@
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 57054.0,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 47393.6,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -520,36 +520,36 @@
    "sector": "סמיקונדקטור"
   },
   "691212": {
-   "score": 50,
+   "score": 51,
    "reason": null,
    "group": "financials",
    "group_he": "בנקים וביטוח",
    "model": "financial",
    "components": {
     "profitability": 23.1,
-    "value": 92.3,
+    "value": 96.2,
     "strength": 53.8,
     "growth": 17.3
    },
    "metrics": {
     "roe": {
-     "value": 0.1185,
+     "value": 0.1111,
      "pct": 15.4
     },
     "roa": {
-     "value": 0.0085,
+     "value": 0.0078,
      "pct": 30.8
     },
     "earn_yield": {
-     "value": 0.103,
-     "pct": 84.6
+     "value": 0.1103,
+     "pct": 92.3
     },
     "book_yield": {
-     "value": 0.8694,
+     "value": 0.9925,
      "pct": 100.0
     },
     "fcf_yield": {
-     "value": 0.0304,
+     "value": -0.0079,
      "pct": null
     },
     "netdebt_ebitda": {
@@ -557,15 +557,15 @@
      "pct": null
     },
     "equity_ratio": {
-     "value": 0.072,
+     "value": 0.0704,
      "pct": 53.8
     },
     "cfo_assets": {
-     "value": 0.004,
+     "value": 0.0008,
      "pct": null
     },
     "accruals": {
-     "value": 0.0046,
+     "value": 0.007,
      "pct": null
     },
     "rev_growth": {
@@ -578,11 +578,11 @@
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 40014.3,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 35364.3,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -597,7 +597,7 @@
    "sector": "בנקאות"
   },
   "767012": {
-   "score": 44,
+   "score": 43,
    "reason": null,
    "group": "financials",
    "group_he": "בנקים וביטוח",
@@ -605,7 +605,7 @@
    "components": {
     "profitability": 73.1,
     "value": 3.8,
-    "strength": 46.2,
+    "strength": 38.5,
     "growth": 61.5
    },
    "metrics": {
@@ -622,15 +622,15 @@
      "pct": 69.2
     },
     "earn_yield": {
-     "value": 0.0783,
+     "value": 0.0793,
      "pct": 7.7
     },
     "book_yield": {
-     "value": 0.3092,
+     "value": 0.313,
      "pct": 0.0
     },
     "fcf_yield": {
-     "value": 0.0946,
+     "value": 0.0957,
      "pct": null
     },
     "netdebt_ebitda": {
@@ -643,7 +643,7 @@
     },
     "equity_ratio": {
      "value": 0.0625,
-     "pct": 46.2
+     "pct": 38.5
     },
     "cfo_assets": {
      "value": 0.0221,
@@ -674,7 +674,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 42445.2,
+   "mcap_ils_m": 41940.2,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -690,36 +690,36 @@
    "sector": "ביטוח"
   },
   "695437": {
-   "score": 39,
+   "score": 43,
    "reason": null,
    "group": "financials",
    "group_he": "בנקים וביטוח",
    "model": "financial",
    "components": {
-    "profitability": 42.3,
-    "value": 51.9,
-    "strength": 38.5,
+    "profitability": 38.5,
+    "value": 61.5,
+    "strength": 46.2,
     "growth": 13.5
    },
    "metrics": {
     "roe": {
-     "value": 0.1538,
-     "pct": 46.2
+     "value": 0.1483,
+     "pct": 38.5
     },
     "roa": {
-     "value": 0.0096,
+     "value": 0.0095,
      "pct": 38.5
     },
     "earn_yield": {
-     "value": 0.0977,
-     "pct": 50.0
+     "value": 0.1025,
+     "pct": 61.5
     },
     "book_yield": {
-     "value": 0.6349,
-     "pct": 53.8
+     "value": 0.6914,
+     "pct": 61.5
     },
     "fcf_yield": {
-     "value": 0.1128,
+     "value": 0.0899,
      "pct": null
     },
     "netdebt_ebitda": {
@@ -727,15 +727,15 @@
      "pct": null
     },
     "equity_ratio": {
-     "value": 0.0622,
-     "pct": 38.5
+     "value": 0.0637,
+     "pct": 46.2
     },
     "cfo_assets": {
-     "value": 0.0121,
+     "value": 0.0095,
      "pct": null
     },
     "accruals": {
-     "value": -0.0026,
+     "value": -0.0001,
      "pct": null
     },
     "rev_growth": {
@@ -748,10 +748,10 @@
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 56861.9,
+   "mcap_ils_m": 53031.2,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -767,16 +767,16 @@
    "sector": "בנקאות"
   },
   "1084557": {
-   "score": 54,
+   "score": 53,
    "reason": null,
    "group": "tech",
    "group_he": "טכנולוגיה ותקשורת",
    "model": "standard",
    "components": {
     "profitability": 66.0,
-    "value": 33.7,
+    "value": 33.0,
     "strength": 70.9,
-    "quality": 39.1,
+    "quality": 34.8,
     "growth": 57.0
    },
    "metrics": {
@@ -797,20 +797,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0283,
+     "value": 0.0311,
      "pct": 39.1
     },
     "book_yield": {
-     "value": 0.1434,
+     "value": 0.1571,
      "pct": 26.1
     },
     "ebitda_ev": {
-     "value": 0.0316,
-     "pct": 30.4
+     "value": 0.0347,
+     "pct": 31.8
     },
     "fcf_yield": {
-     "value": 0.0241,
-     "pct": 39.1
+     "value": 0.0264,
+     "pct": 34.8
     },
     "netdebt_ebitda": {
      "value": -1.0,
@@ -826,7 +826,7 @@
     },
     "cfo_assets": {
      "value": 0.0953,
-     "pct": 43.5
+     "pct": 34.8
     },
     "accruals": {
      "value": 0.0207,
@@ -849,7 +849,7 @@
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 33657.3,
+   "mcap_ils_m": 31742.5,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -874,8 +874,8 @@
     "profitability": 47.6,
     "value": 18.5,
     "strength": 29.0,
-    "quality": 60.9,
-    "growth": 65.1
+    "quality": 58.7,
+    "growth": 62.8
    },
    "metrics": {
     "gp_assets": {
@@ -895,19 +895,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0104,
+     "value": 0.011,
      "pct": 21.7
     },
     "book_yield": {
-     "value": 0.2514,
+     "value": 0.2662,
      "pct": 26.1
     },
     "ebitda_ev": {
-     "value": 0.0328,
+     "value": 0.034,
      "pct": 17.4
     },
     "fcf_yield": {
-     "value": -0.1842,
+     "value": -0.195,
      "pct": 8.7
     },
     "netdebt_ebitda": {
@@ -928,7 +928,7 @@
     },
     "accruals": {
      "value": -0.0283,
-     "pct": 69.6
+     "pct": 65.2
     },
     "rev_growth": {
      "value": 0.4601,
@@ -944,15 +944,15 @@
     },
     "d_margin_q": {
      "value": 0.0416,
-     "pct": 59.1
+     "pct": 50.0
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 29799.6,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 29086.1,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -992,15 +992,15 @@
      "pct": 84.6
     },
     "earn_yield": {
-     "value": 0.0897,
+     "value": 0.0909,
      "pct": 30.8
     },
     "book_yield": {
-     "value": 0.3455,
+     "value": 0.3504,
      "pct": 15.4
     },
     "fcf_yield": {
-     "value": 0.0577,
+     "value": 0.0585,
      "pct": null
     },
     "netdebt_ebitda": {
@@ -1044,7 +1044,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 36572.1,
+   "mcap_ils_m": 36058.4,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -1085,15 +1085,15 @@
      "pct": 61.5
     },
     "earn_yield": {
-     "value": 0.1135,
+     "value": 0.1177,
      "pct": 100.0
     },
     "book_yield": {
-     "value": 0.5493,
+     "value": 0.5696,
      "pct": 38.5
     },
     "fcf_yield": {
-     "value": 0.0784,
+     "value": 0.0813,
      "pct": null
     },
     "netdebt_ebitda": {
@@ -1137,7 +1137,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 21014.0,
+   "mcap_ils_m": 20262.2,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -1160,9 +1160,9 @@
    "model": "standard",
    "components": {
     "profitability": 59.4,
-    "value": 79.3,
+    "value": 80.2,
     "strength": 78.1,
-    "quality": 58.7,
+    "quality": 54.3,
     "growth": 48.8
    },
    "metrics": {
@@ -1183,19 +1183,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0691,
+     "value": 0.0736,
      "pct": 78.3
     },
     "book_yield": {
-     "value": 0.7075,
+     "value": 0.754,
      "pct": 82.6
     },
     "ebitda_ev": {
-     "value": 0.1376,
-     "pct": 73.9
+     "value": 0.1472,
+     "pct": 77.3
     },
     "fcf_yield": {
-     "value": 0.0859,
+     "value": 0.0915,
      "pct": 82.6
     },
     "netdebt_ebitda": {
@@ -1212,11 +1212,11 @@
     },
     "cfo_assets": {
      "value": 0.1113,
-     "pct": 56.5
+     "pct": 52.2
     },
     "accruals": {
      "value": -0.0391,
-     "pct": 60.9
+     "pct": 56.5
     },
     "rev_growth": {
      "value": 0.0768,
@@ -1239,8 +1239,8 @@
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 17351.5,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 16823.7,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -1262,7 +1262,7 @@
    "model": "standard",
    "components": {
     "profitability": 89.9,
-    "value": 58.7,
+    "value": 58.4,
     "strength": 6.0,
     "quality": 91.3,
     "growth": 48.8
@@ -1285,19 +1285,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0573,
+     "value": 0.0589,
      "pct": 69.6
     },
     "book_yield": {
-     "value": 0.1346,
-     "pct": 17.4
+     "value": 0.1385,
+     "pct": 13.0
     },
     "ebitda_ev": {
-     "value": 0.1359,
-     "pct": 69.6
+     "value": 0.1386,
+     "pct": 72.7
     },
     "fcf_yield": {
-     "value": 0.0832,
+     "value": 0.0856,
      "pct": 78.3
     },
     "netdebt_ebitda": {
@@ -1341,7 +1341,7 @@
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 19370.1,
+   "mcap_ils_m": 18834.4,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -1357,17 +1357,17 @@
    "sector": "תקשורת"
   },
   "1134402": {
-   "score": 51,
+   "score": 50,
    "reason": null,
    "group": "energy_infra",
    "group_he": "אנרגיה ותשתיות",
    "model": "standard",
    "components": {
     "profitability": 42.9,
-    "value": 54.3,
-    "strength": 47.8,
-    "quality": 67.4,
-    "growth": 44.8
+    "value": 52.2,
+    "strength": 46.4,
+    "quality": 65.2,
+    "growth": 45.9
    },
    "metrics": {
     "gp_assets": {
@@ -1387,19 +1387,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.024,
-     "pct": 52.2
+     "value": 0.0247,
+     "pct": 43.5
     },
     "book_yield": {
-     "value": 0.4695,
+     "value": 0.4831,
      "pct": 69.6
     },
     "ebitda_ev": {
-     "value": 0.0671,
+     "value": 0.0684,
      "pct": 47.8
     },
     "fcf_yield": {
-     "value": -0.042,
+     "value": -0.0432,
      "pct": 47.8
     },
     "netdebt_ebitda": {
@@ -1408,7 +1408,7 @@
     },
     "interest_cover": {
      "value": 1.5626,
-     "pct": 30.4
+     "pct": 26.1
     },
     "equity_ratio": {
      "value": 0.3891,
@@ -1420,7 +1420,7 @@
     },
     "accruals": {
      "value": -0.0295,
-     "pct": 73.9
+     "pct": 69.6
     },
     "rev_growth": {
      "value": 0.1249,
@@ -1436,14 +1436,14 @@
     },
     "d_margin_q": {
      "value": 0.0093,
-     "pct": 27.3
+     "pct": 31.8
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 17903.5,
+   "mcap_ils_m": 17977.3,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -1466,7 +1466,7 @@
    "model": "standard",
    "components": {
     "profitability": 82.3,
-    "value": 38.0,
+    "value": 38.5,
     "strength": 85.4,
     "quality": 54.3,
     "growth": 44.3
@@ -1489,19 +1489,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0337,
+     "value": 0.037,
      "pct": 43.5
     },
     "book_yield": {
-     "value": 0.1351,
+     "value": 0.1487,
      "pct": 21.7
     },
     "ebitda_ev": {
-     "value": 0.0439,
-     "pct": 39.1
+     "value": 0.0489,
+     "pct": 40.9
     },
     "fcf_yield": {
-     "value": 0.0279,
+     "value": 0.0307,
      "pct": 47.8
     },
     "netdebt_ebitda": {
@@ -1545,7 +1545,7 @@
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 17419.9,
+   "mcap_ils_m": 16354.3,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -1568,10 +1568,10 @@
    "model": "standard",
    "components": {
     "profitability": 44.3,
-    "value": 34.2,
+    "value": 34.8,
     "strength": 62.3,
-    "quality": 71.7,
-    "growth": 60.5
+    "quality": 69.6,
+    "growth": 59.4
    },
    "metrics": {
     "gp_assets": {
@@ -1591,28 +1591,28 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0166,
-     "pct": 30.4
+     "value": 0.0183,
+     "pct": 34.8
     },
     "book_yield": {
-     "value": 0.2567,
-     "pct": 30.4
+     "value": 0.2833,
+     "pct": 34.8
     },
     "ebitda_ev": {
-     "value": 0.0423,
-     "pct": 32.6
+     "value": 0.0458,
+     "pct": 30.4
     },
     "fcf_yield": {
-     "value": -0.0436,
-     "pct": 43.5
+     "value": -0.0481,
+     "pct": 39.1
     },
     "netdebt_ebitda": {
      "value": 4.1206,
-     "pct": 52.2
+     "pct": 47.8
     },
     "interest_cover": {
      "value": 3.185,
-     "pct": 69.6
+     "pct": 73.9
     },
     "equity_ratio": {
      "value": 0.3361,
@@ -1624,7 +1624,7 @@
     },
     "accruals": {
      "value": -0.0297,
-     "pct": 78.3
+     "pct": 73.9
     },
     "rev_growth": {
      "value": 0.2417,
@@ -1640,14 +1640,14 @@
     },
     "d_margin_q": {
      "value": 0.1667,
-     "pct": 81.8
+     "pct": 77.3
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 30001.8,
+   "mcap_ils_m": 28096.8,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -1671,7 +1671,7 @@
    "components": {
     "profitability": 34.6,
     "value": 30.6,
-    "strength": 45.2,
+    "strength": 46.2,
     "quality": 62.9,
     "growth": 34.7
    },
@@ -1693,24 +1693,24 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0438,
+     "value": 0.0448,
      "pct": 22.6
     },
     "book_yield": {
-     "value": 0.6259,
+     "value": 0.64,
      "pct": 19.4
     },
     "ebitda_ev": {
-     "value": 0.0513,
-     "pct": 22.6
+     "value": 0.052,
+     "pct": 25.8
     },
     "fcf_yield": {
-     "value": 0.0312,
-     "pct": 58.1
+     "value": 0.0319,
+     "pct": 54.8
     },
     "netdebt_ebitda": {
      "value": 7.5346,
-     "pct": 45.2
+     "pct": 48.4
     },
     "interest_cover": {
      "value": 2.9172,
@@ -1742,14 +1742,14 @@
     },
     "d_margin_q": {
      "value": -0.0634,
-     "pct": 6.9
+     "pct": 7.1
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 41215.1,
+   "mcap_ils_m": 40306.1,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -1772,58 +1772,58 @@
    "model": "standard",
    "components": {
     "profitability": 19.2,
-    "value": 12.0,
+    "value": 11.0,
     "strength": 58.7,
     "quality": 56.5,
-    "growth": 24.2
+    "growth": 25.3
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.1667,
+     "value": 0.1748,
      "pct": 27.3
     },
     "op_margin": {
-     "value": 0.0605,
-     "pct": 21.7
+     "value": 0.0387,
+     "pct": 17.4
     },
     "roe": {
-     "value": 0.0112,
-     "pct": 8.7
+     "value": 0.0159,
+     "pct": 13.0
     },
     "roa": {
-     "value": 0.0063,
+     "value": 0.0093,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0011,
+     "value": 0.0016,
      "pct": 8.7
     },
     "book_yield": {
-     "value": 0.1007,
+     "value": 0.0979,
      "pct": 0.0
     },
     "ebitda_ev": {
-     "value": 0.0051,
-     "pct": 8.7
+     "value": 0.0046,
+     "pct": 9.1
     },
     "fcf_yield": {
-     "value": 0.0151,
-     "pct": 30.4
+     "value": 0.0146,
+     "pct": 26.1
     },
     "netdebt_ebitda": {
      "value": -1.0,
      "pct": 69.6
     },
     "equity_ratio": {
-     "value": 0.5673,
+     "value": 0.5837,
      "pct": 47.8
     },
     "cfo_assets": {
-     "value": 0.094,
+     "value": 0.0959,
      "pct": 39.1
     },
     "accruals": {
-     "value": -0.0876,
+     "value": -0.0867,
      "pct": 73.9
     },
     "rev_growth": {
@@ -1839,16 +1839,16 @@
      "pct": 8.7
     },
     "d_margin_q": {
-     "value": -0.1456,
-     "pct": 0.0
+     "value": -0.097,
+     "pct": 4.5
     }
    },
    "fiscal_year_end": "2026-07-31",
-   "last_quarter": "2026-07-31",
+   "last_quarter": "2026-10-31",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 871642.0,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 965578.1,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -1863,16 +1863,16 @@
    "sector": "טכנולוגיה"
   },
   "1141969": {
-   "score": 69,
+   "score": 70,
    "reason": null,
    "group": "energy_infra",
    "group_he": "אנרגיה ותשתיות",
    "model": "standard",
    "components": {
-    "profitability": 92.7,
-    "value": 41.3,
-    "strength": 50.7,
-    "quality": 73.9,
+    "profitability": 94.1,
+    "value": 44.6,
+    "strength": 49.3,
+    "quality": 71.7,
     "growth": 96.6
    },
    "metrics": {
@@ -1886,26 +1886,26 @@
     },
     "roe": {
      "value": 0.3508,
-     "pct": 95.7
+     "pct": 100.0
     },
     "roa": {
      "value": 0.0861,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0646,
-     "pct": 73.9
+     "value": 0.07,
+     "pct": 82.6
     },
     "book_yield": {
-     "value": 0.1841,
+     "value": 0.1995,
      "pct": 4.3
     },
     "ebitda_ev": {
-     "value": 0.0802,
-     "pct": 56.5
+     "value": 0.0849,
+     "pct": 60.9
     },
     "fcf_yield": {
-     "value": -0.0538,
+     "value": -0.0583,
      "pct": 30.4
     },
     "netdebt_ebitda": {
@@ -1914,7 +1914,7 @@
     },
     "interest_cover": {
      "value": 2.6669,
-     "pct": 60.9
+     "pct": 56.5
     },
     "equity_ratio": {
      "value": 0.2456,
@@ -1926,7 +1926,7 @@
     },
     "accruals": {
      "value": -0.0265,
-     "pct": 52.2
+     "pct": 47.8
     },
     "rev_growth": {
      "value": 3.747,
@@ -1949,7 +1949,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 14505.1,
+   "mcap_ils_m": 13827.7,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -1971,63 +1971,63 @@
    "group_he": "פיננסים ואחזקות",
    "model": "standard",
    "components": {
-    "profitability": 84.2,
+    "profitability": 89.3,
     "value": 15.4,
-    "strength": 79.9,
+    "strength": 77.4,
     "quality": 96.2,
     "growth": 88.5
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.3347,
+     "value": 0.2872,
      "pct": 83.3
     },
     "op_margin": {
-     "value": 0.4879,
+     "value": 0.5034,
      "pct": 84.6
     },
     "roe": {
-     "value": 0.3879,
-     "pct": 84.6
+     "value": 0.4708,
+     "pct": 100.0
     },
     "roa": {
-     "value": 0.2061,
+     "value": 0.1784,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0212,
+     "value": 0.0249,
      "pct": 15.4
     },
     "book_yield": {
-     "value": 0.0548,
+     "value": 0.0529,
      "pct": 0.0
     },
     "ebitda_ev": {
-     "value": 0.0344,
-     "pct": 0.0
+     "value": 0.0394,
+     "pct": 7.7
     },
     "fcf_yield": {
-     "value": 0.0257,
-     "pct": 46.2
+     "value": 0.0281,
+     "pct": 38.5
     },
     "netdebt_ebitda": {
      "value": -1.0,
      "pct": 88.5
     },
     "interest_cover": {
-     "value": 54.0955,
+     "value": 73.8588,
      "pct": 66.7
     },
     "equity_ratio": {
-     "value": 0.5314,
-     "pct": 84.6
+     "value": 0.3788,
+     "pct": 76.9
     },
     "cfo_assets": {
-     "value": 0.3024,
+     "value": 0.2481,
      "pct": 100.0
     },
     "accruals": {
-     "value": -0.0963,
+     "value": -0.0698,
      "pct": 92.3
     },
     "rev_growth": {
@@ -2043,16 +2043,16 @@
      "pct": 100.0
     },
     "d_margin_q": {
-     "value": 0.1147,
+     "value": 0.0704,
      "pct": 84.6
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 12146.0,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 11098.3,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -2074,9 +2074,9 @@
    "model": "standard",
    "components": {
     "profitability": 58.6,
-    "value": 31.5,
+    "value": 31.7,
     "strength": 58.9,
-    "quality": 43.5,
+    "quality": 41.3,
     "growth": 40.9
    },
    "metrics": {
@@ -2097,19 +2097,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.027,
+     "value": 0.0297,
      "pct": 34.8
     },
     "book_yield": {
-     "value": 0.1525,
+     "value": 0.1675,
      "pct": 34.8
     },
     "ebitda_ev": {
-     "value": 0.0107,
-     "pct": 13.0
+     "value": 0.0118,
+     "pct": 13.6
     },
     "fcf_yield": {
-     "value": 0.0257,
+     "value": 0.0282,
      "pct": 43.5
     },
     "netdebt_ebitda": {
@@ -2126,7 +2126,7 @@
     },
     "cfo_assets": {
      "value": 0.1002,
-     "pct": 47.8
+     "pct": 43.5
     },
     "accruals": {
      "value": -0.0058,
@@ -2153,7 +2153,7 @@
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 15793.1,
+   "mcap_ils_m": 14858.6,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -2169,20 +2169,20 @@
    "sector": "סמיקונדקטור"
   },
   "593038": {
-   "score": 31,
+   "score": 30,
    "reason": null,
    "group": "financials",
    "group_he": "בנקים וביטוח",
    "model": "financial",
    "components": {
     "profitability": 23.1,
-    "value": 59.6,
+    "value": 57.7,
     "strength": 15.4,
     "growth": 15.4
    },
    "metrics": {
     "roe": {
-     "value": 0.1447,
+     "value": 0.1433,
      "pct": 30.8
     },
     "roa": {
@@ -2190,15 +2190,15 @@
      "pct": 15.4
     },
     "earn_yield": {
-     "value": 0.0977,
-     "pct": 50.0
+     "value": 0.1013,
+     "pct": 46.2
     },
     "book_yield": {
-     "value": 0.6752,
+     "value": 0.7068,
      "pct": 69.2
     },
     "fcf_yield": {
-     "value": -0.0753,
+     "value": 0.0509,
      "pct": null
     },
     "netdebt_ebitda": {
@@ -2206,15 +2206,15 @@
      "pct": null
     },
     "equity_ratio": {
-     "value": 0.0507,
+     "value": 0.0508,
      "pct": 15.4
     },
     "cfo_assets": {
-     "value": -0.0047,
+     "value": 0.0045,
      "pct": null
     },
     "accruals": {
-     "value": 0.0121,
+     "value": 0.0028,
      "pct": null
     },
     "rev_growth": {
@@ -2227,11 +2227,11 @@
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 22065.4,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 20560.9,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -2246,14 +2246,14 @@
    "sector": "בנקאות"
   },
   "1081165": {
-   "score": 46,
+   "score": 42,
    "reason": null,
    "group": "financials",
    "group_he": "בנקים וביטוח",
    "model": "financial",
    "components": {
     "profitability": 38.5,
-    "value": 69.2,
+    "value": 57.7,
     "strength": 7.7,
     "growth": 69.2
    },
@@ -2271,15 +2271,15 @@
      "pct": 23.1
     },
     "earn_yield": {
-     "value": 0.1063,
-     "pct": 92.3
+     "value": 0.1029,
+     "pct": 69.2
     },
     "book_yield": {
-     "value": 0.606,
+     "value": 0.5866,
      "pct": 46.2
     },
     "fcf_yield": {
-     "value": 0.1269,
+     "value": 0.1228,
      "pct": null
     },
     "netdebt_ebitda": {
@@ -2323,7 +2323,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 17900.5,
+   "mcap_ils_m": 18494.0,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -2346,10 +2346,10 @@
    "model": "real_estate",
    "components": {
     "profitability": 90.0,
-    "value": 38.7,
+    "value": 37.1,
     "strength": 81.7,
     "quality": 45.2,
-    "growth": 45.5
+    "growth": 45.8
    },
    "metrics": {
     "gp_assets": {
@@ -2369,20 +2369,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0767,
+     "value": 0.0801,
      "pct": 35.5
     },
     "book_yield": {
-     "value": 0.3165,
+     "value": 0.3306,
      "pct": 3.2
     },
     "ebitda_ev": {
-     "value": 0.0844,
+     "value": 0.0871,
      "pct": 64.5
     },
     "fcf_yield": {
-     "value": 0.0244,
-     "pct": 51.6
+     "value": 0.0255,
+     "pct": 45.2
     },
     "netdebt_ebitda": {
      "value": 3.0915,
@@ -2418,14 +2418,14 @@
     },
     "d_margin_q": {
      "value": -0.0242,
-     "pct": 27.6
+     "pct": 28.6
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 17524.3,
+   "mcap_ils_m": 16776.6,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -2441,14 +2441,14 @@
    "sector": "נדל\"ן מניב"
   },
   "566018": {
-   "score": 65,
+   "score": 64,
    "reason": null,
    "group": "financials",
    "group_he": "בנקים וביטוח",
    "model": "financial",
    "components": {
     "profitability": 88.5,
-    "value": 15.4,
+    "value": 11.5,
     "strength": 92.3,
     "growth": 73.1
    },
@@ -2466,15 +2466,15 @@
      "pct": 92.3
     },
     "earn_yield": {
-     "value": 0.0829,
-     "pct": 23.1
+     "value": 0.085,
+     "pct": 15.4
     },
     "book_yield": {
-     "value": 0.3227,
+     "value": 0.3309,
      "pct": 7.7
     },
     "fcf_yield": {
-     "value": 0.0328,
+     "value": 0.0336,
      "pct": null
     },
     "netdebt_ebitda": {
@@ -2518,7 +2518,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 29991.5,
+   "mcap_ils_m": 29247.9,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -2541,10 +2541,10 @@
    "model": "real_estate",
    "components": {
     "profitability": 62.3,
-    "value": 50.8,
-    "strength": 46.2,
+    "value": 48.4,
+    "strength": 47.3,
     "quality": 45.2,
-    "growth": 64.4
+    "growth": 65.0
    },
    "metrics": {
     "gp_assets": {
@@ -2564,24 +2564,24 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0883,
-     "pct": 41.9
+     "value": 0.0908,
+     "pct": 45.2
     },
     "book_yield": {
-     "value": 0.7213,
-     "pct": 38.7
+     "value": 0.7413,
+     "pct": 32.3
     },
     "ebitda_ev": {
-     "value": 0.0841,
-     "pct": 61.3
+     "value": 0.0852,
+     "pct": 58.1
     },
     "fcf_yield": {
-     "value": 0.0353,
-     "pct": 61.3
+     "value": 0.0363,
+     "pct": 58.1
     },
     "netdebt_ebitda": {
      "value": 6.5587,
-     "pct": 54.8
+     "pct": 58.1
     },
     "interest_cover": {
      "value": 3.0984,
@@ -2613,14 +2613,14 @@
     },
     "d_margin_q": {
      "value": 0.0049,
-     "pct": 69.0
+     "pct": 71.4
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 18563.3,
+   "mcap_ils_m": 18063.1,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -2636,17 +2636,17 @@
    "sector": "נדל\"ן מניב"
   },
   "281014": {
-   "score": 52,
+   "score": 53,
    "reason": null,
    "group": "consumer_industry",
    "group_he": "צריכה ותעשייה",
    "model": "standard",
    "components": {
     "profitability": 36.1,
-    "value": 76.0,
-    "strength": 57.5,
+    "value": 77.1,
+    "strength": 57.4,
     "quality": 54.2,
-    "growth": 31.2
+    "growth": 32.3
    },
    "metrics": {
     "gp_assets": {
@@ -2666,28 +2666,28 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0527,
-     "pct": 54.2
+     "value": 0.0568,
+     "pct": 58.3
     },
     "book_yield": {
-     "value": 1.0565,
+     "value": 1.1394,
      "pct": 100.0
     },
     "ebitda_ev": {
-     "value": 0.1659,
+     "value": 0.1747,
      "pct": 91.7
     },
     "fcf_yield": {
-     "value": 0.0478,
+     "value": 0.0515,
      "pct": 58.3
     },
     "netdebt_ebitda": {
      "value": 1.8598,
-     "pct": 58.3
+     "pct": 62.5
     },
     "interest_cover": {
      "value": 3.45,
-     "pct": 39.1
+     "pct": 34.8
     },
     "equity_ratio": {
      "value": 0.4682,
@@ -2715,14 +2715,14 @@
     },
     "d_margin_q": {
      "value": -0.001,
-     "pct": 33.3
+     "pct": 37.5
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 18780.0,
+   "mcap_ils_m": 17992.6,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -2762,19 +2762,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0698,
+     "value": 0.07,
      "pct": null
     },
     "book_yield": {
-     "value": 0.3939,
+     "value": 0.395,
      "pct": null
     },
     "ebitda_ev": {
-     "value": 0.1114,
+     "value": 0.1116,
      "pct": null
     },
     "fcf_yield": {
-     "value": 0.1148,
+     "value": 0.1151,
      "pct": null
     },
     "netdebt_ebitda": {
@@ -2810,7 +2810,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 8649.5,
+   "mcap_ils_m": 8625.8,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -2826,17 +2826,17 @@
    "sector": "גז ונפט"
   },
   "323014": {
-   "score": 55,
+   "score": 54,
    "reason": null,
    "group": "real_estate",
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
     "profitability": 70.5,
-    "value": 50.0,
+    "value": 46.0,
     "strength": 71.0,
     "quality": 32.3,
-    "growth": 38.5
+    "growth": 39.5
    },
    "metrics": {
     "gp_assets": {
@@ -2856,20 +2856,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0915,
+     "value": 0.0929,
      "pct": 54.8
     },
     "book_yield": {
-     "value": 0.7161,
-     "pct": 35.5
+     "value": 0.7269,
+     "pct": 29.0
     },
     "ebitda_ev": {
-     "value": 0.0858,
-     "pct": 67.7
+     "value": 0.0865,
+     "pct": 61.3
     },
     "fcf_yield": {
-     "value": 0.0198,
-     "pct": 41.9
+     "value": 0.0201,
+     "pct": 38.7
     },
     "netdebt_ebitda": {
      "value": 4.9476,
@@ -2905,14 +2905,14 @@
     },
     "d_margin_q": {
      "value": -0.035,
-     "pct": 17.2
+     "pct": 21.4
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 18980.3,
+   "mcap_ils_m": 18698.9,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -2928,70 +2928,70 @@
    "sector": "נדל\"ן מניב"
   },
   "475020": {
-   "score": 67,
+   "score": 68,
    "reason": null,
    "group": "energy_infra",
    "group_he": "אנרגיה ותשתיות",
    "model": "standard",
    "components": {
-    "profitability": 73.6,
-    "value": 58.7,
-    "strength": 87.0,
-    "quality": 89.1,
-    "growth": 18.0
+    "profitability": 76.5,
+    "value": 65.2,
+    "strength": 82.6,
+    "quality": 84.8,
+    "growth": 21.4
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.1041,
+     "value": 0.1075,
      "pct": 73.9
     },
     "op_margin": {
-     "value": 0.4109,
+     "value": 0.4412,
      "pct": 81.8
     },
     "roe": {
-     "value": 0.1404,
-     "pct": 65.2
+     "value": 0.1511,
+     "pct": 73.9
     },
     "roa": {
-     "value": 0.0651,
+     "value": 0.0643,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0407,
-     "pct": 65.2
+     "value": 0.0492,
+     "pct": 69.6
     },
     "book_yield": {
-     "value": 0.2898,
-     "pct": 34.8
+     "value": 0.3255,
+     "pct": 43.5
     },
     "ebitda_ev": {
-     "value": 0.0936,
-     "pct": 65.2
+     "value": 0.1079,
+     "pct": 78.3
     },
     "fcf_yield": {
-     "value": 0.0087,
+     "value": 0.0261,
      "pct": 69.6
     },
     "netdebt_ebitda": {
-     "value": 1.8958,
-     "pct": 82.6
-    },
-    "interest_cover": {
-     "value": 5.3195,
+     "value": 1.6625,
      "pct": 87.0
     },
+    "interest_cover": {
+     "value": 4.4552,
+     "pct": 82.6
+    },
     "equity_ratio": {
-     "value": 0.4636,
-     "pct": 91.3
+     "value": 0.4256,
+     "pct": 78.3
     },
     "cfo_assets": {
-     "value": 0.0994,
+     "value": 0.1067,
      "pct": 87.0
     },
     "accruals": {
-     "value": -0.0343,
-     "pct": 91.3
+     "value": -0.0425,
+     "pct": 82.6
     },
     "rev_growth": {
      "value": -0.1088,
@@ -3006,16 +3006,16 @@
      "pct": 9.1
     },
     "d_margin_q": {
-     "value": 0.0239,
-     "pct": 40.9
+     "value": 0.0439,
+     "pct": 54.5
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 20659.3,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 19906.8,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -3030,70 +3030,70 @@
    "sector": "גז ונפט"
   },
   "1084128": {
-   "score": 62,
+   "score": 66,
    "reason": null,
    "group": "energy_infra",
    "group_he": "אנרגיה ותשתיות",
    "model": "standard",
    "components": {
-    "profitability": 75.0,
-    "value": 94.6,
-    "strength": 40.6,
-    "quality": 47.8,
-    "growth": 29.7
+    "profitability": 60.5,
+    "value": 88.0,
+    "strength": 47.8,
+    "quality": 78.3,
+    "growth": 49.1
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.0671,
+     "value": 0.0673,
      "pct": 52.2
     },
     "op_margin": {
-     "value": 0.3469,
-     "pct": 72.7
+     "value": 0.4079,
+     "pct": 77.3
     },
     "roe": {
-     "value": 0.3821,
-     "pct": 100.0
+     "value": 0.0925,
+     "pct": 52.2
     },
     "roa": {
-     "value": 0.0617,
+     "value": 0.0152,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.2335,
-     "pct": 100.0
+     "value": 0.0648,
+     "pct": 73.9
     },
     "book_yield": {
-     "value": 0.6111,
+     "value": 0.7002,
      "pct": 91.3
     },
     "ebitda_ev": {
-     "value": 0.1407,
+     "value": 0.1735,
      "pct": 91.3
     },
     "fcf_yield": {
-     "value": 0.1173,
+     "value": 0.1481,
      "pct": 95.7
     },
     "netdebt_ebitda": {
-     "value": 3.2639,
-     "pct": 60.9
+     "value": 2.6842,
+     "pct": 65.2
     },
     "interest_cover": {
-     "value": 2.4388,
-     "pct": 52.2
+     "value": 3.1332,
+     "pct": 69.6
     },
     "equity_ratio": {
-     "value": 0.1614,
+     "value": 0.1643,
      "pct": 8.7
     },
     "cfo_assets": {
-     "value": 0.0622,
+     "value": 0.0625,
      "pct": 69.6
     },
     "accruals": {
-     "value": -0.0005,
-     "pct": 26.1
+     "value": -0.0473,
+     "pct": 87.0
     },
     "rev_growth": {
      "value": -0.1049,
@@ -3108,15 +3108,15 @@
      "pct": 13.6
     },
     "d_margin_q": {
-     "value": -0.1027,
-     "pct": 4.5
+     "value": 0.2019,
+     "pct": 81.8
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 14685.3,
+   "mcap_ils_m": 13980.8,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -3132,7 +3132,7 @@
    "sector": "גז ונפט"
   },
   "777037": {
-   "score": 68,
+   "score": 67,
    "reason": null,
    "group": "consumer_industry",
    "group_he": "צריכה ותעשייה",
@@ -3140,7 +3140,7 @@
    "components": {
     "profitability": 55.6,
     "value": 83.3,
-    "strength": 64.9,
+    "strength": 63.5,
     "quality": 87.5,
     "growth": 44.8
    },
@@ -3162,24 +3162,24 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0753,
+     "value": 0.0789,
      "pct": 83.3
     },
     "book_yield": {
-     "value": 0.4561,
+     "value": 0.478,
      "pct": 62.5
     },
     "ebitda_ev": {
-     "value": 0.2048,
+     "value": 0.2114,
      "pct": 95.8
     },
     "fcf_yield": {
-     "value": 0.2016,
+     "value": 0.2113,
      "pct": 91.7
     },
     "netdebt_ebitda": {
      "value": 1.5288,
-     "pct": 83.3
+     "pct": 79.2
     },
     "interest_cover": {
      "value": 4.6939,
@@ -3218,8 +3218,8 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 8804.5,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 8401.6,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -3241,8 +3241,8 @@
    "model": "standard",
    "components": {
     "profitability": 62.5,
-    "value": 41.7,
-    "strength": 64.9,
+    "value": 40.6,
+    "strength": 66.3,
     "quality": 50.0,
     "growth": 65.6
    },
@@ -3264,16 +3264,16 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0461,
+     "value": 0.046,
      "pct": 41.7
     },
     "book_yield": {
-     "value": 0.2477,
+     "value": 0.247,
      "pct": 25.0
     },
     "ebitda_ev": {
-     "value": 0.0909,
-     "pct": 50.0
+     "value": 0.0907,
+     "pct": 45.8
     },
     "fcf_yield": {
      "value": 0.0272,
@@ -3289,7 +3289,7 @@
     },
     "equity_ratio": {
      "value": 0.3621,
-     "pct": 50.0
+     "pct": 54.2
     },
     "cfo_assets": {
      "value": 0.0921,
@@ -3320,8 +3320,8 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 13292.5,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 13327.7,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -3336,16 +3336,16 @@
    "sector": "מזון וקמעונאות"
   },
   "226019": {
-   "score": 56,
+   "score": 55,
    "reason": null,
    "group": "real_estate",
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
     "profitability": 43.0,
-    "value": 47.6,
-    "strength": 55.9,
-    "quality": 96.8,
+    "value": 46.8,
+    "strength": 54.8,
+    "quality": 93.5,
     "growth": 51.2
    },
    "metrics": {
@@ -3366,19 +3366,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0573,
-     "pct": 29.0
+     "value": 0.0593,
+     "pct": 25.8
     },
     "book_yield": {
-     "value": 0.9336,
-     "pct": 61.3
+     "value": 0.9653,
+     "pct": 58.1
     },
     "ebitda_ev": {
-     "value": 0.051,
-     "pct": 19.4
+     "value": 0.0519,
+     "pct": 22.6
     },
     "fcf_yield": {
-     "value": 0.1097,
+     "value": 0.1134,
      "pct": 80.6
     },
     "netdebt_ebitda": {
@@ -3387,7 +3387,7 @@
     },
     "interest_cover": {
      "value": 4.4168,
-     "pct": 61.3
+     "pct": 58.1
     },
     "equity_ratio": {
      "value": 0.4208,
@@ -3395,11 +3395,11 @@
     },
     "cfo_assets": {
      "value": 0.0504,
-     "pct": 100.0
+     "pct": 96.8
     },
     "accruals": {
      "value": -0.0246,
-     "pct": 93.5
+     "pct": 90.3
     },
     "rev_growth": {
      "value": 0.0333,
@@ -3422,8 +3422,8 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 9468.6,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 9157.3,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -3438,17 +3438,17 @@
    "sector": "נדל\"ן מניב"
   },
   "1166768": {
-   "score": 21,
+   "score": 20,
    "reason": null,
    "group": "energy_infra",
    "group_he": "אנרגיה ותשתיות",
    "model": "standard",
    "components": {
     "profitability": 7.3,
-    "value": 18.5,
+    "value": 15.2,
     "strength": 18.8,
-    "quality": 26.1,
-    "growth": 48.8
+    "quality": 21.7,
+    "growth": 47.6
    },
    "metrics": {
     "gp_assets": {
@@ -3468,20 +3468,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": -0.0187,
+     "value": -0.0203,
      "pct": 17.4
     },
     "book_yield": {
-     "value": 0.2311,
-     "pct": 21.7
+     "value": 0.2511,
+     "pct": 13.0
     },
     "ebitda_ev": {
-     "value": 0.0092,
+     "value": 0.0098,
      "pct": 8.7
     },
     "fcf_yield": {
-     "value": -0.065,
-     "pct": 26.1
+     "value": -0.0706,
+     "pct": 21.7
     },
     "netdebt_ebitda": {
      "value": 31.6752,
@@ -3501,7 +3501,7 @@
     },
     "accruals": {
      "value": -0.006,
-     "pct": 39.1
+     "pct": 30.4
     },
     "rev_growth": {
      "value": 0.6222,
@@ -3517,15 +3517,15 @@
     },
     "d_margin_q": {
      "value": -0.0609,
-     "pct": 9.1
+     "pct": 4.5
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 12327.5,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 11348.5,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -3540,70 +3540,70 @@
    "sector": "אנרגיה"
   },
   "1133875": {
-   "score": 42,
+   "score": 44,
    "reason": null,
    "group": "energy_infra",
    "group_he": "אנרגיה ותשתיות",
    "model": "standard",
    "components": {
-    "profitability": 50.0,
-    "value": 40.2,
+    "profitability": 52.8,
+    "value": 44.6,
     "strength": 29.0,
-    "quality": 32.6,
-    "growth": 57.2
+    "quality": 41.3,
+    "growth": 52.7
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.0551,
+     "value": 0.0534,
      "pct": 47.8
     },
     "op_margin": {
-     "value": 0.0885,
-     "pct": 50.0
+     "value": 0.0828,
+     "pct": 45.5
     },
     "roe": {
-     "value": 0.0999,
-     "pct": 52.2
+     "value": 0.1085,
+     "pct": 65.2
     },
     "roa": {
-     "value": 0.0187,
+     "value": 0.0206,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0224,
-     "pct": 39.1
+     "value": 0.0275,
+     "pct": 52.2
     },
     "book_yield": {
-     "value": 0.2239,
+     "value": 0.2538,
      "pct": 17.4
     },
     "ebitda_ev": {
-     "value": 0.061,
+     "value": 0.0658,
      "pct": 43.5
     },
     "fcf_yield": {
-     "value": 0.0025,
-     "pct": 60.9
+     "value": 0.0236,
+     "pct": 65.2
     },
     "netdebt_ebitda": {
-     "value": 6.4196,
+     "value": 6.3355,
      "pct": 34.8
     },
     "interest_cover": {
-     "value": 1.8938,
+     "value": 2.0016,
      "pct": 34.8
     },
     "equity_ratio": {
-     "value": 0.1873,
+     "value": 0.1899,
      "pct": 17.4
     },
     "cfo_assets": {
-     "value": 0.0192,
-     "pct": 43.5
+     "value": 0.036,
+     "pct": 47.8
     },
     "accruals": {
-     "value": -0.0004,
-     "pct": 21.7
+     "value": -0.0154,
+     "pct": 34.8
     },
     "rev_growth": {
      "value": 0.1943,
@@ -3618,15 +3618,15 @@
      "pct": 68.2
     },
     "d_margin_q": {
-     "value": 0.0114,
-     "pct": 31.8
+     "value": -0.0221,
+     "pct": 13.6
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 14969.2,
+   "mcap_ils_m": 13834.8,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -3649,9 +3649,9 @@
    "model": "standard",
    "components": {
     "profitability": 42.4,
-    "value": 29.3,
-    "strength": 50.1,
-    "quality": 30.4,
+    "value": 29.7,
+    "strength": 48.6,
+    "quality": 28.3,
     "growth": 38.8
    },
    "metrics": {
@@ -3672,19 +3672,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0244,
+     "value": 0.0271,
      "pct": 30.4
     },
     "book_yield": {
-     "value": 0.1464,
+     "value": 0.1627,
      "pct": 30.4
     },
     "ebitda_ev": {
-     "value": 0.0344,
-     "pct": 34.8
+     "value": 0.0382,
+     "pct": 36.4
     },
     "fcf_yield": {
-     "value": 0.0063,
+     "value": 0.007,
      "pct": 21.7
     },
     "netdebt_ebitda": {
@@ -3693,7 +3693,7 @@
     },
     "interest_cover": {
      "value": 13.6287,
-     "pct": 54.5
+     "pct": 50.0
     },
     "equity_ratio": {
      "value": 0.6636,
@@ -3701,7 +3701,7 @@
     },
     "cfo_assets": {
      "value": 0.0787,
-     "pct": 30.4
+     "pct": 26.1
     },
     "accruals": {
      "value": 0.0318,
@@ -3728,8 +3728,8 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 7193.3,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 6685.2,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -3744,7 +3744,7 @@
    "sector": "תעשייה ביטחונית"
   },
   "1081942": {
-   "score": 31,
+   "score": 30,
    "reason": null,
    "group": "energy_infra",
    "group_he": "אנרגיה ותשתיות",
@@ -3753,7 +3753,7 @@
     "profitability": 26.5,
     "value": 33.7,
     "strength": 23.2,
-    "quality": 23.9,
+    "quality": 19.6,
     "growth": 49.0
    },
    "metrics": {
@@ -3774,19 +3774,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": -0.0258,
+     "value": -0.028,
      "pct": 8.7
     },
     "book_yield": {
-     "value": 0.5863,
+     "value": 0.6365,
      "pct": 87.0
     },
     "ebitda_ev": {
-     "value": 0.0407,
+     "value": 0.0423,
      "pct": 26.1
     },
     "fcf_yield": {
-     "value": -0.0872,
+     "value": -0.0947,
      "pct": 13.0
     },
     "netdebt_ebitda": {
@@ -3807,7 +3807,7 @@
     },
     "accruals": {
      "value": -0.0008,
-     "pct": 30.4
+     "pct": 21.7
     },
     "rev_growth": {
      "value": 0.0946,
@@ -3830,7 +3830,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 10194.8,
+   "mcap_ils_m": 9390.4,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -3846,14 +3846,14 @@
    "sector": "תשתיות"
   },
   "1087824": {
-   "score": 60,
+   "score": 59,
    "reason": null,
    "group": "consumer_industry",
    "group_he": "צריכה ותעשייה",
    "model": "standard",
    "components": {
     "profitability": 51.4,
-    "value": 70.8,
+    "value": 69.8,
     "strength": 67.6,
     "quality": 95.8,
     "growth": 7.3
@@ -3876,19 +3876,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0735,
+     "value": 0.0704,
      "pct": 75.0
     },
     "book_yield": {
-     "value": 0.3366,
-     "pct": 33.3
+     "value": 0.3224,
+     "pct": 29.2
     },
     "ebitda_ev": {
-     "value": 0.2552,
+     "value": 0.2413,
      "pct": 100.0
     },
     "fcf_yield": {
-     "value": 0.0749,
+     "value": 0.0718,
      "pct": 75.0
     },
     "netdebt_ebitda": {
@@ -3932,8 +3932,8 @@
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 12128.8,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 13085.0,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -3955,62 +3955,62 @@
    "model": "standard",
    "components": {
     "profitability": 79.6,
-    "value": 27.2,
-    "strength": 23.2,
-    "quality": 26.1,
-    "growth": 22.3
+    "value": 30.4,
+    "strength": 24.6,
+    "quality": 28.3,
+    "growth": 13.2
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.1216,
+     "value": 0.113,
      "pct": 78.3
     },
     "op_margin": {
-     "value": 0.4479,
+     "value": 0.4812,
      "pct": 90.9
     },
     "roe": {
-     "value": 0.1429,
+     "value": 0.1114,
      "pct": 69.6
     },
     "roa": {
-     "value": 0.0248,
+     "value": 0.0193,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0292,
+     "value": 0.0288,
      "pct": 56.5
     },
     "book_yield": {
-     "value": 0.2045,
-     "pct": 8.7
+     "value": 0.2582,
+     "pct": 21.7
     },
     "ebitda_ev": {
-     "value": 0.0516,
+     "value": 0.0588,
      "pct": 39.1
     },
     "fcf_yield": {
-     "value": -0.2194,
+     "value": -0.2493,
      "pct": 4.3
     },
     "netdebt_ebitda": {
-     "value": 8.0327,
+     "value": 7.7773,
      "pct": 30.4
     },
     "interest_cover": {
-     "value": 1.356,
-     "pct": 26.1
+     "value": 1.7122,
+     "pct": 30.4
     },
     "equity_ratio": {
-     "value": 0.1734,
+     "value": 0.1733,
      "pct": 13.0
     },
     "cfo_assets": {
-     "value": 0.0127,
-     "pct": 34.8
+     "value": 0.0136,
+     "pct": 39.1
     },
     "accruals": {
-     "value": 0.0121,
+     "value": 0.0057,
      "pct": 17.4
     },
     "rev_growth": {
@@ -4026,15 +4026,15 @@
      "pct": 0.0
     },
     "d_margin_q": {
-     "value": 0.0265,
-     "pct": 45.5
+     "value": -0.0538,
+     "pct": 9.1
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 11229.3,
+   "mcap_ils_m": 10314.0,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -4050,15 +4050,15 @@
    "sector": "אנרגיה"
   },
   "1083484": {
-   "score": 60,
+   "score": 59,
    "reason": null,
    "group": "tech",
    "group_he": "טכנולוגיה ותקשורת",
    "model": "standard",
    "components": {
     "profitability": 51.6,
-    "value": 67.9,
-    "strength": 33.9,
+    "value": 64.0,
+    "strength": 32.3,
     "quality": 97.8,
     "growth": 57.0
    },
@@ -4080,20 +4080,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0523,
-     "pct": 65.2
+     "value": 0.0529,
+     "pct": 56.5
     },
     "book_yield": {
-     "value": 0.3297,
-     "pct": 65.2
+     "value": 0.3334,
+     "pct": 60.9
     },
     "ebitda_ev": {
-     "value": 0.1985,
-     "pct": 82.6
+     "value": 0.2004,
+     "pct": 86.4
     },
     "fcf_yield": {
-     "value": 0.0627,
-     "pct": 58.7
+     "value": 0.0634,
+     "pct": 52.2
     },
     "netdebt_ebitda": {
      "value": 0.5912,
@@ -4101,7 +4101,7 @@
     },
     "interest_cover": {
      "value": 9.0909,
-     "pct": 36.4
+     "pct": 31.8
     },
     "equity_ratio": {
      "value": 0.5145,
@@ -4136,8 +4136,8 @@
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 6439.1,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 6367.7,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -4159,7 +4159,7 @@
    "model": "standard",
    "components": {
     "profitability": 60.9,
-    "value": 84.2,
+    "value": 84.8,
     "strength": 56.1,
     "quality": 13.0,
     "growth": 97.8
@@ -4182,20 +4182,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.2486,
+     "value": 0.2528,
      "pct": 91.3
     },
     "book_yield": {
-     "value": 0.9756,
+     "value": 0.9924,
      "pct": 91.3
     },
     "ebitda_ev": {
-     "value": 0.3099,
-     "pct": 95.7
+     "value": 0.315,
+     "pct": 100.0
     },
     "fcf_yield": {
-     "value": 0.0627,
-     "pct": 58.7
+     "value": 0.0638,
+     "pct": 56.5
     },
     "netdebt_ebitda": {
      "value": 0.1589,
@@ -4238,7 +4238,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 5061.0,
+   "mcap_ils_m": 4975.6,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -4254,70 +4254,70 @@
    "sector": "מדיה ותקשורת"
   },
   "445015": {
-   "score": 42,
+   "score": 48,
    "reason": null,
    "group": "tech",
    "group_he": "טכנולוגיה ותקשורת",
    "model": "standard",
    "components": {
-    "profitability": 49.9,
-    "value": 50.0,
-    "strength": 22.2,
-    "quality": 39.1,
-    "growth": 46.8
+    "profitability": 52.9,
+    "value": 51.7,
+    "strength": 23.7,
+    "quality": 63.0,
+    "growth": 47.9
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.2011,
-     "pct": 45.5
+     "value": 0.2211,
+     "pct": 50.0
     },
     "op_margin": {
-     "value": 0.0901,
+     "value": 0.0925,
      "pct": 34.8
     },
     "roe": {
-     "value": 0.2109,
-     "pct": 69.6
+     "value": 0.2362,
+     "pct": 73.9
     },
     "roa": {
-     "value": 0.0642,
+     "value": 0.0714,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.04,
+     "value": 0.0465,
      "pct": 47.8
     },
     "book_yield": {
-     "value": 0.1899,
-     "pct": 47.8
+     "value": 0.1969,
+     "pct": 39.1
     },
     "ebitda_ev": {
-     "value": 0.0843,
-     "pct": 52.2
+     "value": 0.0947,
+     "pct": 59.1
     },
     "fcf_yield": {
-     "value": 0.0501,
-     "pct": 52.2
+     "value": 0.0711,
+     "pct": 60.9
     },
     "netdebt_ebitda": {
-     "value": 0.7426,
+     "value": 0.6002,
      "pct": 21.7
     },
     "interest_cover": {
-     "value": 7.3945,
-     "pct": 31.8
+     "value": 9.1584,
+     "pct": 36.4
     },
     "equity_ratio": {
-     "value": 0.3045,
+     "value": 0.3021,
      "pct": 13.0
     },
     "cfo_assets": {
-     "value": 0.0881,
-     "pct": 34.8
+     "value": 0.117,
+     "pct": 60.9
     },
     "accruals": {
-     "value": -0.0239,
-     "pct": 43.5
+     "value": -0.0456,
+     "pct": 65.2
     },
     "rev_growth": {
      "value": 0.1182,
@@ -4332,15 +4332,15 @@
      "pct": 47.8
     },
     "d_margin_q": {
-     "value": 0.0038,
-     "pct": 50.0
+     "value": 0.0052,
+     "pct": 54.5
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 10043.0,
+   "mcap_ils_m": 9968.9,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -4356,70 +4356,70 @@
    "sector": "טכנולוגיה"
   },
   "1081843": {
-   "score": 57,
+   "score": 59,
    "reason": null,
    "group": "finance_holding",
    "group_he": "פיננסים ואחזקות",
    "model": "standard",
    "components": {
-    "profitability": 76.3,
-    "value": 44.2,
-    "strength": 67.6,
-    "quality": 3.8,
-    "growth": 84.6
+    "profitability": 71.2,
+    "value": 43.3,
+    "strength": 62.5,
+    "quality": 46.2,
+    "growth": 71.2
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.2272,
+     "value": 0.2159,
      "pct": 75.0
     },
     "op_margin": {
-     "value": 0.4031,
+     "value": 0.4048,
      "pct": 61.5
     },
     "roe": {
-     "value": 0.421,
-     "pct": 92.3
+     "value": 0.2276,
+     "pct": 76.9
     },
     "roa": {
-     "value": 0.1301,
+     "value": 0.0742,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.1023,
-     "pct": 84.6
+     "value": 0.0648,
+     "pct": 65.4
     },
     "book_yield": {
-     "value": 0.2431,
+     "value": 0.2846,
      "pct": 23.1
     },
     "ebitda_ev": {
-     "value": 0.1119,
-     "pct": 53.8
+     "value": 0.0851,
+     "pct": 30.8
     },
     "fcf_yield": {
-     "value": -0.0201,
-     "pct": 15.4
+     "value": 0.048,
+     "pct": 53.8
     },
     "netdebt_ebitda": {
-     "value": 2.2539,
-     "pct": 53.8
+     "value": 3.2169,
+     "pct": 38.5
     },
     "interest_cover": {
      "value": 100.0,
      "pct": 87.5
     },
     "equity_ratio": {
-     "value": 0.3092,
+     "value": 0.3259,
      "pct": 61.5
     },
     "cfo_assets": {
-     "value": -0.0168,
-     "pct": 7.7
+     "value": 0.0636,
+     "pct": 53.8
     },
     "accruals": {
-     "value": 0.1469,
-     "pct": 0.0
+     "value": 0.0106,
+     "pct": 38.5
     },
     "rev_growth": {
      "value": 0.3686,
@@ -4434,15 +4434,15 @@
      "pct": 92.3
     },
     "d_margin_q": {
-     "value": 0.0228,
-     "pct": 53.8
+     "value": -0.1642,
+     "pct": 0.0
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 9108.6,
+   "mcap_ils_m": 8307.6,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -4465,10 +4465,10 @@
    "model": "real_estate",
    "components": {
     "profitability": 33.3,
-    "value": 15.3,
+    "value": 13.7,
     "strength": 5.4,
-    "quality": 74.2,
-    "growth": 40.5
+    "quality": 72.6,
+    "growth": 40.8
    },
    "metrics": {
     "gp_assets": {
@@ -4488,19 +4488,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": -0.0476,
+     "value": -0.05,
      "pct": 3.2
     },
     "book_yield": {
-     "value": 0.8196,
-     "pct": 48.4
+     "value": 0.8606,
+     "pct": 41.9
     },
     "ebitda_ev": {
-     "value": 0.0399,
+     "value": 0.0402,
      "pct": 6.5
     },
     "fcf_yield": {
-     "value": -0.51,
+     "value": -0.5355,
      "pct": 3.2
     },
     "netdebt_ebitda": {
@@ -4521,7 +4521,7 @@
     },
     "accruals": {
      "value": -0.0261,
-     "pct": 96.8
+     "pct": 93.5
     },
     "rev_growth": {
      "value": 0.0798,
@@ -4537,14 +4537,14 @@
     },
     "d_margin_q": {
      "value": -0.0196,
-     "pct": 34.5
+     "pct": 35.7
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 6220.1,
+   "mcap_ils_m": 5923.6,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -4560,17 +4560,17 @@
    "sector": "נדל\"ן מניב"
   },
   "1143429": {
-   "score": 29,
+   "score": 28,
    "reason": null,
    "group": "consumer_industry",
    "group_he": "צריכה ותעשייה",
    "model": "standard",
    "components": {
     "profitability": 29.2,
-    "value": 34.4,
+    "value": 32.3,
     "strength": 7.0,
     "quality": 39.6,
-    "growth": 35.4
+    "growth": 36.5
    },
    "metrics": {
     "gp_assets": {
@@ -4594,16 +4594,16 @@
      "pct": 4.2
     },
     "book_yield": {
-     "value": 0.4091,
+     "value": 0.4059,
      "pct": 54.2
     },
     "ebitda_ev": {
-     "value": 0.0769,
-     "pct": 33.3
+     "value": 0.0767,
+     "pct": 29.2
     },
     "fcf_yield": {
-     "value": 0.0239,
-     "pct": 45.8
+     "value": 0.0237,
+     "pct": 41.7
     },
     "netdebt_ebitda": {
      "value": 8.6502,
@@ -4639,15 +4639,15 @@
     },
     "d_margin_q": {
      "value": 0.0113,
-     "pct": 54.2
+     "pct": 58.3
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 10570.0,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 10654.2,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -4668,11 +4668,11 @@
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
-    "profitability": 62.7,
-    "value": 54.8,
-    "strength": 71.0,
-    "quality": 82.3,
-    "growth": 38.5
+    "profitability": 66.0,
+    "value": 52.4,
+    "strength": 73.1,
+    "quality": 80.6,
+    "growth": 38.8
    },
    "metrics": {
     "gp_assets": {
@@ -4685,26 +4685,26 @@
     },
     "roe": {
      "value": 0.0828,
-     "pct": 35.5
+     "pct": 41.9
     },
     "roa": {
      "value": 0.0361,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0889,
-     "pct": 51.6
+     "value": 0.0905,
+     "pct": 41.9
     },
     "book_yield": {
-     "value": 1.0733,
-     "pct": 67.7
+     "value": 1.0925,
+     "pct": 64.5
     },
     "ebitda_ev": {
-     "value": 0.0596,
-     "pct": 29.0
+     "value": 0.0601,
+     "pct": 32.3
     },
     "fcf_yield": {
-     "value": 0.0854,
+     "value": 0.0869,
      "pct": 71.0
     },
     "netdebt_ebitda": {
@@ -4713,19 +4713,19 @@
     },
     "interest_cover": {
      "value": 14.4311,
-     "pct": 96.8
+     "pct": 100.0
     },
     "equity_ratio": {
      "value": 0.436,
-     "pct": 80.6
+     "pct": 83.9
     },
     "cfo_assets": {
      "value": 0.0348,
-     "pct": 77.4
+     "pct": 80.6
     },
     "accruals": {
      "value": 0.0013,
-     "pct": 87.1
+     "pct": 80.6
     },
     "rev_growth": {
      "value": 0.0224,
@@ -4741,15 +4741,15 @@
     },
     "d_margin_q": {
      "value": -0.0162,
-     "pct": 37.9
+     "pct": 39.3
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 9279.5,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 9116.5,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -4771,15 +4771,15 @@
    "model": "standard",
    "components": {
     "profitability": 56.9,
-    "value": 97.8,
-    "strength": 84.1,
-    "quality": 69.6,
-    "growth": 33.7
+    "value": 98.9,
+    "strength": 85.5,
+    "quality": 67.4,
+    "growth": 32.6
    },
    "metrics": {
     "gp_assets": {
      "value": 0.0962,
-     "pct": 69.6
+     "pct": 65.2
     },
     "op_margin": {
      "value": 0.0412,
@@ -4787,26 +4787,26 @@
     },
     "roe": {
      "value": 0.1859,
-     "pct": 78.3
+     "pct": 82.6
     },
     "roa": {
      "value": 0.069,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.1999,
-     "pct": 91.3
+     "value": 0.205,
+     "pct": 95.7
     },
     "book_yield": {
-     "value": 1.0752,
+     "value": 1.1028,
      "pct": 100.0
     },
     "ebitda_ev": {
-     "value": 0.298,
+     "value": 0.3035,
      "pct": 100.0
     },
     "fcf_yield": {
-     "value": 0.1578,
+     "value": 0.1618,
      "pct": 100.0
     },
     "netdebt_ebitda": {
@@ -4815,7 +4815,7 @@
     },
     "interest_cover": {
      "value": 4.7107,
-     "pct": 82.6
+     "pct": 87.0
     },
     "equity_ratio": {
      "value": 0.3711,
@@ -4827,7 +4827,7 @@
     },
     "accruals": {
      "value": -0.0276,
-     "pct": 60.9
+     "pct": 56.5
     },
     "rev_growth": {
      "value": -0.2255,
@@ -4843,14 +4843,14 @@
     },
     "d_margin_q": {
      "value": 0.1023,
-     "pct": 72.7
+     "pct": 68.2
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 5907.6,
+   "mcap_ils_m": 5951.4,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -4887,15 +4887,15 @@
      "pct": 0.0
     },
     "earn_yield": {
-     "value": 0.0429,
+     "value": 0.0464,
      "pct": 0.0
     },
     "book_yield": {
-     "value": 0.7462,
+     "value": 0.8081,
      "pct": 84.6
     },
     "fcf_yield": {
-     "value": -0.1645,
+     "value": -0.1782,
      "pct": null
     },
     "netdebt_ebitda": {
@@ -4927,8 +4927,8 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 10143.0,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 9366.6,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -4943,17 +4943,17 @@
    "sector": "בנקאות"
   },
   "SG9999012629": {
-   "score": 48,
+   "score": 49,
    "reason": null,
    "group": "energy_infra",
    "group_he": "אנרגיה ותשתיות",
    "model": "standard",
    "components": {
     "profitability": 36.8,
-    "value": 53.3,
+    "value": 57.6,
     "strength": 55.1,
-    "quality": 45.7,
-    "growth": 53.4
+    "quality": 41.3,
+    "growth": 52.3
    },
    "metrics": {
     "gp_assets": {
@@ -4973,28 +4973,28 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0372,
-     "pct": 60.9
+     "value": 0.0412,
+     "pct": 65.2
     },
     "book_yield": {
-     "value": 0.4826,
-     "pct": 73.9
+     "value": 0.5349,
+     "pct": 82.6
     },
     "ebitda_ev": {
-     "value": 0.0921,
-     "pct": 60.9
+     "value": 0.0989,
+     "pct": 65.2
     },
     "fcf_yield": {
-     "value": -0.0781,
+     "value": -0.0866,
      "pct": 17.4
     },
     "netdebt_ebitda": {
      "value": 3.2474,
-     "pct": 65.2
+     "pct": 60.9
     },
     "interest_cover": {
      "value": 3.7663,
-     "pct": 73.9
+     "pct": 78.3
     },
     "equity_ratio": {
      "value": 0.2153,
@@ -5002,11 +5002,11 @@
     },
     "cfo_assets": {
      "value": 0.0336,
-     "pct": 47.8
+     "pct": 43.5
     },
     "accruals": {
      "value": -0.017,
-     "pct": 43.5
+     "pct": 39.1
     },
     "rev_growth": {
      "value": 0.1606,
@@ -5022,14 +5022,14 @@
     },
     "d_margin_q": {
      "value": 0.1052,
-     "pct": 77.3
+     "pct": 72.7
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 10317.5,
+   "mcap_ils_m": 9619.2,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -5045,69 +5045,69 @@
    "sector": "אנרגיה"
   },
   "1098920": {
-   "score": 65,
+   "score": 66,
    "reason": null,
    "group": "real_estate",
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
-    "profitability": 71.0,
-    "value": 63.7,
-    "strength": 59.1,
+    "profitability": 75.8,
+    "value": 61.3,
+    "strength": 61.3,
     "quality": 58.1,
-    "growth": 72.1
+    "growth": 73.4
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.0455,
+     "value": 0.0451,
      "pct": null
     },
     "op_margin": {
-     "value": 0.8323,
+     "value": 0.8295,
      "pct": 100.0
     },
     "roe": {
-     "value": 0.0893,
-     "pct": 41.9
+     "value": 0.0917,
+     "pct": 51.6
     },
     "roa": {
-     "value": 0.0427,
+     "value": 0.043,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.1011,
+     "value": 0.1029,
      "pct": 67.7
     },
     "book_yield": {
-     "value": 1.1315,
-     "pct": 71.0
+     "value": 1.1226,
+     "pct": 67.7
     },
     "ebitda_ev": {
-     "value": 0.0695,
-     "pct": 48.4
+     "value": 0.0678,
+     "pct": 41.9
     },
     "fcf_yield": {
-     "value": 0.0672,
+     "value": 0.0692,
      "pct": 67.7
     },
     "netdebt_ebitda": {
-     "value": 7.7284,
-     "pct": 41.9
-    },
-    "interest_cover": {
-     "value": 3.1576,
+     "value": 8.0653,
      "pct": 45.2
     },
+    "interest_cover": {
+     "value": 3.3229,
+     "pct": 48.4
+    },
     "equity_ratio": {
-     "value": 0.4784,
+     "value": 0.469,
      "pct": 90.3
     },
     "cfo_assets": {
-     "value": 0.0284,
+     "value": 0.0289,
      "pct": 64.5
     },
     "accruals": {
-     "value": 0.0143,
+     "value": 0.0141,
      "pct": 51.6
     },
     "rev_growth": {
@@ -5123,16 +5123,16 @@
      "pct": 80.0
     },
     "d_margin_q": {
-     "value": -0.0118,
-     "pct": 44.8
+     "value": -0.0105,
+     "pct": 50.0
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 4205.3,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 4235.6,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -5154,7 +5154,7 @@
    "model": "standard",
    "components": {
     "profitability": 17.6,
-    "value": 33.7,
+    "value": 37.0,
     "strength": 13.0,
     "quality": 8.7,
     "growth": 52.5
@@ -5177,19 +5177,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0239,
-     "pct": 47.8
+     "value": 0.0295,
+     "pct": 60.9
     },
     "book_yield": {
-     "value": 0.3886,
+     "value": 0.4795,
      "pct": 65.2
     },
     "ebitda_ev": {
-     "value": 0.0344,
+     "value": 0.0371,
      "pct": 21.7
     },
     "fcf_yield": {
-     "value": -0.3926,
+     "value": -0.4843,
      "pct": 0.0
     },
     "netdebt_ebitda": {
@@ -5233,7 +5233,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 5155.5,
+   "mcap_ils_m": 4178.4,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -5256,7 +5256,7 @@
    "model": "standard",
    "components": {
     "profitability": 65.0,
-    "value": 58.7,
+    "value": 56.0,
     "strength": 59.0,
     "quality": 69.6,
     "growth": 46.8
@@ -5279,20 +5279,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0482,
+     "value": 0.0498,
      "pct": 52.2
     },
     "book_yield": {
-     "value": 0.2363,
-     "pct": 56.5
+     "value": 0.2441,
+     "pct": 52.2
     },
     "ebitda_ev": {
-     "value": 0.0892,
-     "pct": 56.5
+     "value": 0.0922,
+     "pct": 54.5
     },
     "fcf_yield": {
-     "value": 0.0697,
-     "pct": 69.6
+     "value": 0.072,
+     "pct": 65.2
     },
     "netdebt_ebitda": {
      "value": -1.0,
@@ -5335,7 +5335,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 5621.7,
+   "mcap_ils_m": 5442.5,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -5351,22 +5351,22 @@
    "sector": "טכנולוגיה"
   },
   "739037": {
-   "score": 45,
+   "score": 43,
    "reason": null,
    "group": "energy_infra",
    "group_he": "אנרגיה ותשתיות",
    "model": "standard",
    "components": {
     "profitability": 45.2,
-    "value": 45.7,
-    "strength": 33.3,
-    "quality": 56.5,
-    "growth": 44.9
+    "value": 43.5,
+    "strength": 30.4,
+    "quality": 54.3,
+    "growth": 46.0
    },
    "metrics": {
     "gp_assets": {
      "value": 0.0677,
-     "pct": 60.9
+     "pct": 56.5
     },
     "op_margin": {
      "value": 0.0254,
@@ -5374,26 +5374,26 @@
     },
     "roe": {
      "value": 0.1071,
-     "pct": 56.5
+     "pct": 60.9
     },
     "roa": {
      "value": 0.0138,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0225,
-     "pct": 43.5
+     "value": 0.024,
+     "pct": 39.1
     },
     "book_yield": {
-     "value": 0.2098,
-     "pct": 13.0
+     "value": 0.2239,
+     "pct": 8.7
     },
     "ebitda_ev": {
-     "value": 0.0758,
+     "value": 0.0791,
      "pct": 52.2
     },
     "fcf_yield": {
-     "value": 0.0249,
+     "value": 0.0266,
      "pct": 73.9
     },
     "netdebt_ebitda": {
@@ -5402,7 +5402,7 @@
     },
     "interest_cover": {
      "value": 2.4815,
-     "pct": 56.5
+     "pct": 47.8
     },
     "equity_ratio": {
      "value": 0.129,
@@ -5414,7 +5414,7 @@
     },
     "accruals": {
      "value": -0.0268,
-     "pct": 56.5
+     "pct": 52.2
     },
     "rev_growth": {
      "value": 0.132,
@@ -5430,15 +5430,15 @@
     },
     "d_margin_q": {
      "value": 0.0026,
-     "pct": 22.7
+     "pct": 27.3
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 8632.9,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 8088.6,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -5460,8 +5460,8 @@
    "model": "standard",
    "components": {
     "profitability": 50.0,
-    "value": 16.7,
-    "strength": 42.3,
+    "value": 18.8,
+    "strength": 40.8,
     "quality": 31.2,
     "growth": 59.9
    },
@@ -5483,19 +5483,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.015,
-     "pct": 12.5
+     "value": 0.0168,
+     "pct": 16.7
     },
     "book_yield": {
-     "value": 0.1623,
+     "value": 0.1818,
      "pct": 12.5
     },
     "ebitda_ev": {
-     "value": 0.0387,
-     "pct": 8.3
+     "value": 0.0428,
+     "pct": 12.5
     },
     "fcf_yield": {
-     "value": 0.0118,
+     "value": 0.0132,
      "pct": 33.3
     },
     "netdebt_ebitda": {
@@ -5504,7 +5504,7 @@
     },
     "interest_cover": {
      "value": 3.5494,
-     "pct": 43.5
+     "pct": 39.1
     },
     "equity_ratio": {
      "value": 0.3564,
@@ -5539,7 +5539,7 @@
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 5519.1,
+   "mcap_ils_m": 5091.9,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -5555,69 +5555,69 @@
    "sector": "תעשייה"
   },
   "1168558": {
-   "score": 65,
+   "score": 70,
    "reason": null,
    "group": "consumer_industry",
    "group_he": "צריכה ותעשייה",
    "model": "standard",
    "components": {
-    "profitability": 95.8,
-    "value": 28.1,
-    "strength": 44.9,
-    "quality": 91.7,
+    "profitability": 97.2,
+    "value": 32.3,
+    "strength": 57.7,
+    "quality": 93.8,
     "growth": 78.1
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.5025,
+     "value": 0.5233,
      "pct": 95.8
     },
     "op_margin": {
-     "value": 0.1871,
-     "pct": 91.7
+     "value": 0.1959,
+     "pct": 95.8
     },
     "roe": {
-     "value": 0.5352,
+     "value": 0.5982,
      "pct": 100.0
     },
     "roa": {
-     "value": 0.108,
+     "value": 0.128,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0319,
+     "value": 0.0373,
      "pct": 29.2
     },
     "book_yield": {
-     "value": 0.0597,
+     "value": 0.0624,
      "pct": 0.0
     },
     "ebitda_ev": {
-     "value": 0.0721,
-     "pct": 20.8
+     "value": 0.0781,
+     "pct": 33.3
     },
     "fcf_yield": {
-     "value": 0.0518,
-     "pct": 62.5
-    },
-    "netdebt_ebitda": {
-     "value": 1.7525,
+     "value": 0.0576,
      "pct": 66.7
     },
+    "netdebt_ebitda": {
+     "value": 1.4281,
+     "pct": 83.3
+    },
     "interest_cover": {
-     "value": 3.4443,
-     "pct": 34.8
+     "value": 4.0716,
+     "pct": 56.5
     },
     "equity_ratio": {
-     "value": 0.2017,
+     "value": 0.214,
      "pct": 33.3
     },
     "cfo_assets": {
-     "value": 0.1921,
-     "pct": 95.8
+     "value": 0.2093,
+     "pct": 100.0
     },
     "accruals": {
-     "value": -0.0841,
+     "value": -0.0813,
      "pct": 87.5
     },
     "rev_growth": {
@@ -5633,16 +5633,16 @@
      "pct": 91.7
     },
     "d_margin_q": {
-     "value": 0.0341,
+     "value": 0.0317,
      "pct": 79.2
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 4695.7,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 4894.3,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -5681,19 +5681,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0742,
+     "value": 0.082,
      "pct": null
     },
     "book_yield": {
-     "value": 0.1326,
+     "value": 0.1466,
      "pct": null
     },
     "ebitda_ev": {
-     "value": 0.1779,
+     "value": 0.1839,
      "pct": null
     },
     "fcf_yield": {
-     "value": 0.2075,
+     "value": 0.2294,
      "pct": null
     },
     "netdebt_ebitda": {
@@ -5737,7 +5737,7 @@
    "last_quarter": "2026-03-31",
    "ttm": false,
    "fin_currency": "USD",
-   "mcap_ils_m": 5483.5,
+   "mcap_ils_m": 5125.2,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -5762,8 +5762,8 @@
     "profitability": 14.6,
     "value": 34.8,
     "strength": 42.0,
-    "quality": 45.7,
-    "growth": 65.3
+    "quality": 43.5,
+    "growth": 63.0
    },
    "metrics": {
     "gp_assets": {
@@ -5783,19 +5783,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": -0.0189,
+     "value": -0.0204,
      "pct": 13.0
     },
     "book_yield": {
-     "value": 0.3602,
+     "value": 0.3887,
      "pct": 60.9
     },
     "ebitda_ev": {
-     "value": 0.0138,
+     "value": 0.0147,
      "pct": 13.0
     },
     "fcf_yield": {
-     "value": -0.0371,
+     "value": -0.04,
      "pct": 52.2
     },
     "netdebt_ebitda": {
@@ -5816,7 +5816,7 @@
     },
     "accruals": {
      "value": -0.028,
-     "pct": 65.2
+     "pct": 60.9
     },
     "rev_growth": {
      "value": 0.3234,
@@ -5832,14 +5832,14 @@
     },
     "d_margin_q": {
      "value": 0.03,
-     "pct": 50.0
+     "pct": 40.9
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 6392.9,
+   "mcap_ils_m": 5924.3,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -5855,17 +5855,17 @@
    "sector": "אנרגיה"
   },
   "232017": {
-   "score": 75,
+   "score": 74,
    "reason": null,
    "group": "energy_infra",
    "group_he": "אנרגיה ותשתיות",
    "model": "standard",
    "components": {
     "profitability": 86.6,
-    "value": 76.1,
-    "strength": 88.4,
-    "quality": 73.9,
-    "growth": 38.9
+    "value": 73.9,
+    "strength": 89.9,
+    "quality": 71.7,
+    "growth": 36.6
    },
    "metrics": {
     "gp_assets": {
@@ -5874,30 +5874,30 @@
     },
     "op_margin": {
      "value": 0.3523,
-     "pct": 77.3
+     "pct": 72.7
     },
     "roe": {
      "value": 0.1998,
-     "pct": 82.6
+     "pct": 87.0
     },
     "roa": {
      "value": 0.0868,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0662,
-     "pct": 82.6
+     "value": 0.0691,
+     "pct": 78.3
     },
     "book_yield": {
-     "value": 0.3315,
+     "value": 0.346,
      "pct": 52.2
     },
     "ebitda_ev": {
-     "value": 0.1113,
-     "pct": 87.0
+     "value": 0.1152,
+     "pct": 82.6
     },
     "fcf_yield": {
-     "value": 0.0593,
+     "value": 0.0618,
      "pct": 82.6
     },
     "netdebt_ebitda": {
@@ -5910,7 +5910,7 @@
     },
     "equity_ratio": {
      "value": 0.4346,
-     "pct": 82.6
+     "pct": 87.0
     },
     "cfo_assets": {
      "value": 0.1131,
@@ -5918,7 +5918,7 @@
     },
     "accruals": {
      "value": -0.0263,
-     "pct": 47.8
+     "pct": 43.5
     },
     "rev_growth": {
      "value": -0.0346,
@@ -5934,14 +5934,14 @@
     },
     "d_margin_q": {
      "value": 0.0556,
-     "pct": 68.2
+     "pct": 59.1
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 5737.4,
+   "mcap_ils_m": 5680.1,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -5957,17 +5957,17 @@
    "sector": "גז ונפט"
   },
   "394015": {
-   "score": 72,
+   "score": 73,
    "reason": null,
    "group": "energy_infra",
    "group_he": "אנרגיה ותשתיות",
    "model": "standard",
    "components": {
-    "profitability": 92.8,
-    "value": 70.7,
-    "strength": 84.1,
-    "quality": 63.0,
-    "growth": 34.8
+    "profitability": 94.2,
+    "value": 71.7,
+    "strength": 87.0,
+    "quality": 58.7,
+    "growth": 32.6
    },
    "metrics": {
     "gp_assets": {
@@ -5980,31 +5980,31 @@
     },
     "roe": {
      "value": 0.2459,
-     "pct": 87.0
+     "pct": 91.3
     },
     "roa": {
      "value": 0.1065,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0725,
+     "value": 0.079,
      "pct": 87.0
     },
     "book_yield": {
-     "value": 0.2947,
+     "value": 0.3214,
      "pct": 39.1
     },
     "ebitda_ev": {
-     "value": 0.1001,
-     "pct": 69.6
+     "value": 0.1072,
+     "pct": 73.9
     },
     "fcf_yield": {
-     "value": 0.0656,
+     "value": 0.0716,
      "pct": 87.0
     },
     "netdebt_ebitda": {
      "value": 1.9817,
-     "pct": 78.3
+     "pct": 82.6
     },
     "interest_cover": {
      "value": 6.5867,
@@ -6012,7 +6012,7 @@
     },
     "equity_ratio": {
      "value": 0.4333,
-     "pct": 78.3
+     "pct": 82.6
     },
     "cfo_assets": {
      "value": 0.1119,
@@ -6020,7 +6020,7 @@
     },
     "accruals": {
      "value": -0.0053,
-     "pct": 34.8
+     "pct": 26.1
     },
     "rev_growth": {
      "value": -0.1087,
@@ -6036,15 +6036,15 @@
     },
     "d_margin_q": {
      "value": 0.0304,
-     "pct": 54.5
+     "pct": 45.5
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 5647.7,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 5351.0,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -6065,8 +6065,8 @@
    "group_he": "טכנולוגיה ותקשורת",
    "model": "standard",
    "components": {
-    "profitability": 63.4,
-    "value": 84.8,
+    "profitability": 61.9,
+    "value": 84.7,
     "strength": 28.1,
     "quality": 82.6,
     "growth": 56.1
@@ -6082,26 +6082,26 @@
     },
     "roe": {
      "value": 0.2148,
-     "pct": 73.9
+     "pct": 69.6
     },
     "roa": {
      "value": 0.0974,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.1163,
+     "value": 0.11,
      "pct": 87.0
     },
     "book_yield": {
-     "value": 0.5412,
+     "value": 0.5121,
      "pct": 73.9
     },
     "ebitda_ev": {
-     "value": 0.2612,
-     "pct": 91.3
+     "value": 0.2505,
+     "pct": 90.9
     },
     "fcf_yield": {
-     "value": 0.1228,
+     "value": 0.1162,
      "pct": 87.0
     },
     "netdebt_ebitda": {
@@ -6145,7 +6145,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 5195.7,
+   "mcap_ils_m": 5491.4,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -6161,15 +6161,15 @@
    "sector": "תקשורת"
   },
   "1090315": {
-   "score": 30,
+   "score": 31,
    "reason": null,
    "group": "real_estate",
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
-    "profitability": 32.8,
-    "value": 15.3,
-    "strength": 59.1,
+    "profitability": 34.4,
+    "value": 16.1,
+    "strength": 60.2,
     "quality": 12.9,
     "growth": 30.7
    },
@@ -6184,31 +6184,31 @@
     },
     "roe": {
      "value": 0.0817,
-     "pct": 32.3
+     "pct": 35.5
     },
     "roa": {
      "value": 0.0337,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0393,
-     "pct": 16.1
+     "value": 0.042,
+     "pct": 19.4
     },
     "book_yield": {
-     "value": 0.4808,
+     "value": 0.5139,
      "pct": 12.9
     },
     "ebitda_ev": {
-     "value": 0.0424,
+     "value": 0.0443,
      "pct": 12.9
     },
     "fcf_yield": {
-     "value": -0.1022,
+     "value": -0.1092,
      "pct": 19.4
     },
     "netdebt_ebitda": {
      "value": 8.1934,
-     "pct": 38.7
+     "pct": 41.9
     },
     "interest_cover": {
      "value": 5.2659,
@@ -6240,15 +6240,15 @@
     },
     "d_margin_q": {
      "value": -0.0683,
-     "pct": 3.4
+     "pct": 3.6
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 8658.0,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 8100.3,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -6263,16 +6263,16 @@
    "sector": "נדל\"ן בנייה"
   },
   "256016": {
-   "score": 57,
+   "score": 56,
    "reason": null,
    "group": "tech",
    "group_he": "טכנולוגיה ותקשורת",
    "model": "standard",
    "components": {
     "profitability": 49.5,
-    "value": 88.0,
+    "value": 88.9,
     "strength": 38.0,
-    "quality": 34.8,
+    "quality": 32.6,
     "growth": 62.6
    },
    "metrics": {
@@ -6293,19 +6293,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.3528,
+     "value": 0.3812,
      "pct": 100.0
     },
     "book_yield": {
-     "value": 0.6743,
+     "value": 0.7287,
      "pct": 78.3
     },
     "ebitda_ev": {
-     "value": 0.1566,
-     "pct": 78.3
+     "value": 0.1709,
+     "pct": 81.8
     },
     "fcf_yield": {
-     "value": 0.198,
+     "value": 0.214,
      "pct": 95.7
     },
     "netdebt_ebitda": {
@@ -6322,7 +6322,7 @@
     },
     "cfo_assets": {
      "value": 0.109,
-     "pct": 52.2
+     "pct": 47.8
     },
     "accruals": {
      "value": 0.071,
@@ -6349,8 +6349,8 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 5709.1,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 5459.1,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -6372,9 +6372,9 @@
    "model": "standard",
    "components": {
     "profitability": 58.9,
-    "value": 58.7,
-    "strength": 51.6,
-    "quality": 65.2,
+    "value": 60.5,
+    "strength": 50.1,
+    "quality": 63.0,
     "growth": 43.3
    },
    "metrics": {
@@ -6395,20 +6395,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0491,
+     "value": 0.0549,
      "pct": 60.9
     },
     "book_yield": {
-     "value": 0.1893,
+     "value": 0.2114,
      "pct": 43.5
     },
     "ebitda_ev": {
-     "value": 0.1001,
-     "pct": 65.2
+     "value": 0.1126,
+     "pct": 68.2
     },
     "fcf_yield": {
-     "value": 0.0694,
-     "pct": 65.2
+     "value": 0.0775,
+     "pct": 69.6
     },
     "netdebt_ebitda": {
      "value": -1.0,
@@ -6416,7 +6416,7 @@
     },
     "interest_cover": {
      "value": 18.7768,
-     "pct": 59.1
+     "pct": 54.5
     },
     "equity_ratio": {
      "value": 0.3568,
@@ -6428,7 +6428,7 @@
     },
     "accruals": {
      "value": -0.0451,
-     "pct": 65.2
+     "pct": 60.9
     },
     "rev_growth": {
      "value": 0.1626,
@@ -6451,8 +6451,8 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 5470.1,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 4897.8,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -6474,10 +6474,10 @@
    "model": "real_estate",
    "components": {
     "profitability": 4.8,
-    "value": 12.1,
+    "value": 12.9,
     "strength": 8.6,
     "quality": 25.8,
-    "growth": 54.0
+    "growth": 53.9
    },
    "metrics": {
     "gp_assets": {
@@ -6497,20 +6497,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0049,
+     "value": 0.0053,
      "pct": 6.5
     },
     "book_yield": {
-     "value": 0.5844,
+     "value": 0.628,
      "pct": 16.1
     },
     "ebitda_ev": {
-     "value": 0.0268,
+     "value": 0.0275,
      "pct": 3.2
     },
     "fcf_yield": {
-     "value": -0.0773,
-     "pct": 22.6
+     "value": -0.083,
+     "pct": 25.8
     },
     "netdebt_ebitda": {
      "value": 22.658,
@@ -6546,14 +6546,14 @@
     },
     "d_margin_q": {
      "value": 0.0433,
-     "pct": 89.7
+     "pct": 89.3
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 4871.8,
+   "mcap_ils_m": 4534.0,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -6569,14 +6569,14 @@
    "sector": "נדל\"ן בנייה"
   },
   "328013": {
-   "score": 30,
+   "score": 31,
    "reason": null,
    "group": "tech",
    "group_he": "טכנולוגיה ותקשורת",
    "model": "standard",
    "components": {
     "profitability": 19.6,
-    "value": 43.5,
+    "value": 47.3,
     "strength": 33.7,
     "quality": 8.7,
     "growth": 43.8
@@ -6595,19 +6595,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0484,
-     "pct": 56.5
+     "value": 0.0579,
+     "pct": 65.2
     },
     "book_yield": {
-     "value": 0.3195,
-     "pct": 60.9
+     "value": 0.3819,
+     "pct": 65.2
     },
     "ebitda_ev": {
-     "value": 0.0594,
-     "pct": 47.8
+     "value": 0.0698,
+     "pct": 50.0
     },
     "fcf_yield": {
-     "value": -0.0049,
+     "value": -0.0058,
      "pct": 8.7
     },
     "netdebt_ebitda": {
@@ -6651,7 +6651,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 2867.2,
+   "mcap_ils_m": 2478.3,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -6667,69 +6667,69 @@
    "sector": "טכנולוגיה"
   },
   "576017": {
-   "score": 51,
+   "score": 52,
    "reason": null,
    "group": "finance_holding",
    "group_he": "פיננסים ואחזקות",
    "model": "standard",
    "components": {
     "profitability": 32.5,
-    "value": 82.7,
+    "value": 86.5,
     "strength": 36.5,
     "quality": 69.2,
-    "growth": 32.7
+    "growth": 28.8
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.1637,
+     "value": 0.1649,
      "pct": 66.7
     },
     "op_margin": {
-     "value": 0.0842,
+     "value": 0.0843,
      "pct": 15.4
     },
     "roe": {
-     "value": 0.0395,
+     "value": 0.0405,
      "pct": 15.4
     },
     "roa": {
-     "value": 0.0087,
+     "value": 0.0091,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0649,
-     "pct": 69.2
+     "value": 0.0767,
+     "pct": 84.6
     },
     "book_yield": {
-     "value": 1.6414,
+     "value": 1.8935,
      "pct": 92.3
     },
     "ebitda_ev": {
-     "value": 0.3435,
+     "value": 0.3744,
      "pct": 100.0
     },
     "fcf_yield": {
-     "value": 0.0955,
+     "value": 0.1013,
      "pct": 69.2
     },
     "netdebt_ebitda": {
-     "value": 1.6658,
+     "value": 1.566,
      "pct": 61.5
     },
     "interest_cover": {
-     "value": 3.0541,
+     "value": 3.1498,
      "pct": 25.0
     },
     "equity_ratio": {
-     "value": 0.2194,
+     "value": 0.2239,
      "pct": 23.1
     },
     "cfo_assets": {
-     "value": 0.0658,
+     "value": 0.0655,
      "pct": 61.5
     },
     "accruals": {
-     "value": -0.0571,
+     "value": -0.0565,
      "pct": 76.9
     },
     "rev_growth": {
@@ -6745,16 +6745,16 @@
      "pct": 15.4
     },
     "d_margin_q": {
-     "value": 0.0221,
-     "pct": 46.2
+     "value": -0.0004,
+     "pct": 30.8
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 6148.7,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 5634.7,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -6769,17 +6769,17 @@
    "sector": "השקעות ואחזקה"
   },
   "1082510": {
-   "score": 41,
+   "score": 42,
    "reason": null,
    "group": "tech",
    "group_he": "טכנולוגיה ותקשורת",
    "model": "standard",
    "components": {
-    "profitability": 22.2,
-    "value": 67.4,
+    "profitability": 23.6,
+    "value": 70.6,
     "strength": 48.1,
     "quality": 13.0,
-    "growth": 49.8
+    "growth": 48.7
    },
    "metrics": {
     "gp_assets": {
@@ -6788,7 +6788,7 @@
     },
     "op_margin": {
      "value": 0.0598,
-     "pct": 17.4
+     "pct": 21.7
     },
     "roe": {
      "value": 0.0556,
@@ -6799,19 +6799,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0706,
+     "value": 0.081,
      "pct": 82.6
     },
     "book_yield": {
-     "value": 1.2702,
-     "pct": 95.7
+     "value": 1.4575,
+     "pct": 100.0
     },
     "ebitda_ev": {
-     "value": 0.2066,
-     "pct": 87.0
+     "value": 0.2581,
+     "pct": 95.5
     },
     "fcf_yield": {
-     "value": -0.0577,
+     "value": -0.0662,
      "pct": 4.3
     },
     "netdebt_ebitda": {
@@ -6848,15 +6848,15 @@
     },
     "d_margin_q": {
      "value": 0.0039,
-     "pct": 54.5
+     "pct": 50.0
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 1394.2,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 1255.6,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -6871,13 +6871,13 @@
    "sector": "טכנולוגיה"
   },
   "1175934": {
-   "score": 70,
+   "score": 71,
    "reason": null,
    "group": "energy_infra",
    "group_he": "אנרגיה ותשתיות",
    "model": "standard",
    "components": {
-    "profitability": 45.7,
+    "profitability": 47.8,
     "value": 88.0,
     "strength": 98.6,
     "quality": 15.2,
@@ -6890,27 +6890,27 @@
     },
     "roe": {
      "value": 0.2614,
-     "pct": 91.3
+     "pct": 95.7
     },
     "roa": {
      "value": 0.1598,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.2072,
-     "pct": 95.7
+     "value": 0.2115,
+     "pct": 100.0
     },
     "book_yield": {
-     "value": 0.7926,
+     "value": 0.809,
      "pct": 95.7
     },
     "ebitda_ev": {
-     "value": 0.2036,
+     "value": 0.2068,
      "pct": 95.7
     },
     "fcf_yield": {
-     "value": 0.0056,
-     "pct": 65.2
+     "value": 0.0058,
+     "pct": 60.9
     },
     "netdebt_ebitda": {
      "value": 1.158,
@@ -6941,7 +6941,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 3930.3,
+   "mcap_ils_m": 3850.6,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -6957,14 +6957,14 @@
    "sector": "תשתיות"
   },
   "209015": {
-   "score": 69,
+   "score": 71,
    "reason": null,
    "group": "financials",
    "group_he": "בנקים וביטוח",
    "model": "financial",
    "components": {
     "profitability": 73.1,
-    "value": 50.0,
+    "value": 57.7,
     "strength": 69.2,
     "growth": 92.3
    },
@@ -6982,15 +6982,15 @@
      "pct": 76.9
     },
     "earn_yield": {
-     "value": 0.1009,
-     "pct": 69.2
+     "value": 0.1067,
+     "pct": 84.6
     },
     "book_yield": {
-     "value": 0.4078,
+     "value": 0.4315,
      "pct": 30.8
     },
     "fcf_yield": {
-     "value": -0.0644,
+     "value": -0.0681,
      "pct": null
     },
     "netdebt_ebitda": {
@@ -7034,8 +7034,8 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 4386.3,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 4145.2,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -7060,7 +7060,7 @@
     "value": 49.0,
     "strength": 39.6,
     "quality": 77.1,
-    "growth": 45.8
+    "growth": 46.9
    },
    "metrics": {
     "gp_assets": {
@@ -7080,28 +7080,28 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0494,
+     "value": 0.0508,
      "pct": 45.8
     },
     "book_yield": {
-     "value": 0.1238,
+     "value": 0.1274,
      "pct": 4.2
     },
     "ebitda_ev": {
-     "value": 0.1305,
+     "value": 0.1334,
      "pct": 66.7
     },
     "fcf_yield": {
-     "value": 0.0888,
+     "value": 0.0913,
      "pct": 79.2
     },
     "netdebt_ebitda": {
      "value": 1.8145,
-     "pct": 62.5
+     "pct": 66.7
     },
     "interest_cover": {
      "value": 3.8641,
-     "pct": 52.2
+     "pct": 47.8
     },
     "equity_ratio": {
      "value": 0.1158,
@@ -7129,15 +7129,15 @@
     },
     "d_margin_q": {
      "value": 0.0031,
-     "pct": 45.8
+     "pct": 50.0
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 4449.5,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 4324.2,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -7159,10 +7159,10 @@
    "model": "real_estate",
    "components": {
     "profitability": 9.8,
-    "value": 25.8,
+    "value": 24.2,
     "strength": 10.8,
     "quality": 51.6,
-    "growth": 44.2
+    "growth": 45.5
    },
    "metrics": {
     "gp_assets": {
@@ -7182,20 +7182,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0101,
+     "value": 0.0111,
      "pct": 12.9
     },
     "book_yield": {
-     "value": 0.8566,
-     "pct": 54.8
+     "value": 0.9481,
+     "pct": 51.6
     },
     "ebitda_ev": {
-     "value": 0.0408,
+     "value": 0.0419,
      "pct": 9.7
     },
     "fcf_yield": {
-     "value": -0.076,
-     "pct": 25.8
+     "value": -0.0842,
+     "pct": 22.6
     },
     "netdebt_ebitda": {
      "value": 17.662,
@@ -7231,14 +7231,14 @@
     },
     "d_margin_q": {
      "value": -0.0104,
-     "pct": 48.3
+     "pct": 53.6
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 5959.0,
+   "mcap_ils_m": 5383.5,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -7261,7 +7261,7 @@
    "model": "standard",
    "components": {
     "profitability": 54.2,
-    "value": 44.8,
+    "value": 45.8,
     "strength": 93.1,
     "quality": 75.0,
     "growth": 92.7
@@ -7284,20 +7284,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0436,
+     "value": 0.0452,
      "pct": 37.5
     },
     "book_yield": {
-     "value": 0.3358,
-     "pct": 29.2
+     "value": 0.3481,
+     "pct": 33.3
     },
     "ebitda_ev": {
-     "value": 0.089,
-     "pct": 45.8
+     "value": 0.0921,
+     "pct": 50.0
     },
     "fcf_yield": {
-     "value": 0.052,
-     "pct": 66.7
+     "value": 0.0539,
+     "pct": 62.5
     },
     "netdebt_ebitda": {
      "value": 0.6366,
@@ -7340,7 +7340,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 3795.6,
+   "mcap_ils_m": 3661.1,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -7356,22 +7356,22 @@
    "sector": "תעשייה"
   },
   "1175116": {
-   "score": 28,
+   "score": 27,
    "reason": null,
    "group": "tech",
    "group_he": "טכנולוגיה ותקשורת",
    "model": "standard",
    "components": {
-    "profitability": 25.4,
-    "value": 17.4,
+    "profitability": 22.4,
+    "value": 16.6,
     "strength": 11.7,
-    "quality": 34.8,
+    "quality": 30.4,
     "growth": 67.5
    },
    "metrics": {
     "gp_assets": {
      "value": 0.2161,
-     "pct": 50.0
+     "pct": 45.5
     },
     "op_margin": {
      "value": 0.0283,
@@ -7379,7 +7379,7 @@
     },
     "roe": {
      "value": 0.0127,
-     "pct": 13.0
+     "pct": 8.7
     },
     "roa": {
      "value": 0.0031,
@@ -7390,12 +7390,12 @@
      "pct": 13.0
     },
     "book_yield": {
-     "value": 0.1336,
-     "pct": 13.0
+     "value": 0.1352,
+     "pct": 8.7
     },
     "ebitda_ev": {
-     "value": 0.0305,
-     "pct": 26.1
+     "value": 0.0308,
+     "pct": 27.3
     },
     "fcf_yield": {
      "value": -0.0003,
@@ -7419,7 +7419,7 @@
     },
     "accruals": {
      "value": -0.0309,
-     "pct": 52.2
+     "pct": 43.5
     },
     "rev_growth": {
      "value": 0.2752,
@@ -7442,8 +7442,8 @@
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 6130.0,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 6259.0,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -7458,17 +7458,17 @@
    "sector": "טכנולוגיה"
   },
   "373019": {
-   "score": 33,
+   "score": 34,
    "reason": null,
    "group": "real_estate",
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
     "profitability": 58.5,
-    "value": 19.4,
+    "value": 25.8,
     "strength": 34.4,
     "quality": 3.2,
-    "growth": 38.5
+    "growth": 39.6
    },
    "metrics": {
     "gp_assets": {
@@ -7488,28 +7488,28 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0543,
-     "pct": 25.8
+     "value": 0.0653,
+     "pct": 29.0
     },
     "book_yield": {
-     "value": 0.3367,
+     "value": 0.4049,
      "pct": 6.5
     },
     "ebitda_ev": {
-     "value": 0.0635,
-     "pct": 32.3
+     "value": 0.0702,
+     "pct": 51.6
     },
     "fcf_yield": {
-     "value": -0.2034,
-     "pct": 12.9
+     "value": -0.2447,
+     "pct": 16.1
     },
     "netdebt_ebitda": {
      "value": 6.7918,
-     "pct": 51.6
+     "pct": 54.8
     },
     "interest_cover": {
      "value": 2.9871,
-     "pct": 38.7
+     "pct": 35.5
     },
     "equity_ratio": {
      "value": 0.1981,
@@ -7537,15 +7537,15 @@
     },
     "d_margin_q": {
      "value": -0.0301,
-     "pct": 20.7
+     "pct": 25.0
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 4972.0,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 4133.9,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -7560,14 +7560,14 @@
    "sector": "נדל\"ן בנייה"
   },
   "759019": {
-   "score": 57,
+   "score": 58,
    "reason": null,
    "group": "real_estate",
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
-    "profitability": 77.2,
-    "value": 48.4,
+    "profitability": 78.8,
+    "value": 47.6,
     "strength": 49.5,
     "quality": 45.2,
     "growth": 62.6
@@ -7583,35 +7583,35 @@
     },
     "roe": {
      "value": 0.1354,
-     "pct": 71.0
+     "pct": 74.2
     },
     "roa": {
      "value": 0.0346,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0885,
-     "pct": 45.2
+     "value": 0.0914,
+     "pct": 48.4
     },
     "book_yield": {
-     "value": 0.6541,
-     "pct": 29.0
+     "value": 0.6756,
+     "pct": 25.8
     },
     "ebitda_ev": {
-     "value": 0.0807,
+     "value": 0.0819,
      "pct": 54.8
     },
     "fcf_yield": {
-     "value": 0.0419,
-     "pct": 64.5
+     "value": 0.0433,
+     "pct": 61.3
     },
     "netdebt_ebitda": {
      "value": 6.9499,
-     "pct": 48.4
+     "pct": 51.6
     },
     "interest_cover": {
      "value": 4.5959,
-     "pct": 67.7
+     "pct": 64.5
     },
     "equity_ratio": {
      "value": 0.2554,
@@ -7642,7 +7642,7 @@
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 8063.0,
+   "mcap_ils_m": 7807.1,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -7665,10 +7665,10 @@
    "model": "standard",
    "components": {
     "profitability": 61.1,
-    "value": 54.2,
+    "value": 55.2,
     "strength": 22.6,
     "quality": 16.7,
-    "growth": 51.6
+    "growth": 52.6
    },
    "metrics": {
     "gp_assets": {
@@ -7688,19 +7688,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0558,
-     "pct": 62.5
+     "value": 0.0601,
+     "pct": 66.7
     },
     "book_yield": {
-     "value": 0.4288,
+     "value": 0.462,
      "pct": 58.3
     },
     "ebitda_ev": {
-     "value": 0.1652,
+     "value": 0.1709,
      "pct": 87.5
     },
     "fcf_yield": {
-     "value": -0.1176,
+     "value": -0.1267,
      "pct": 8.3
     },
     "netdebt_ebitda": {
@@ -7737,15 +7737,15 @@
     },
     "d_margin_q": {
      "value": 0.0148,
-     "pct": 66.7
+     "pct": 70.8
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 4190.6,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 3888.9,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -7760,70 +7760,70 @@
    "sector": "קמעונאות"
   },
   "1095835": {
-   "score": 72,
+   "score": 74,
    "reason": null,
    "group": "real_estate",
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
-    "profitability": 51.2,
-    "value": 86.3,
-    "strength": 79.6,
-    "quality": 80.6,
-    "growth": 62.6
+    "profitability": 57.7,
+    "value": 88.7,
+    "strength": 82.8,
+    "quality": 74.2,
+    "growth": 63.4
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.0433,
+     "value": 0.0434,
      "pct": null
     },
     "op_margin": {
-     "value": 0.6951,
+     "value": 0.7094,
      "pct": 76.7
     },
     "roe": {
-     "value": 0.0722,
-     "pct": 25.8
+     "value": 0.0827,
+     "pct": 38.7
     },
     "roa": {
-     "value": 0.037,
+     "value": 0.0429,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.1285,
-     "pct": 80.6
+     "value": 0.152,
+     "pct": 83.9
     },
     "book_yield": {
-     "value": 1.7792,
-     "pct": 90.3
+     "value": 1.8373,
+     "pct": 93.5
     },
     "ebitda_ev": {
-     "value": 0.1211,
-     "pct": 90.3
+     "value": 0.1368,
+     "pct": 93.5
     },
     "fcf_yield": {
-     "value": 0.1212,
+     "value": 0.1246,
      "pct": 83.9
     },
     "netdebt_ebitda": {
-     "value": 3.7656,
+     "value": 3.2518,
      "pct": 87.1
     },
     "interest_cover": {
-     "value": 4.0301,
-     "pct": 58.1
+     "value": 4.7965,
+     "pct": 67.7
     },
     "equity_ratio": {
-     "value": 0.5129,
+     "value": 0.5189,
      "pct": 93.5
     },
     "cfo_assets": {
-     "value": 0.0353,
-     "pct": 80.6
+     "value": 0.0361,
+     "pct": 83.9
     },
     "accruals": {
-     "value": 0.0017,
-     "pct": 80.6
+     "value": 0.0068,
+     "pct": 64.5
     },
     "rev_growth": {
      "value": 0.048,
@@ -7838,16 +7838,16 @@
      "pct": 36.7
     },
     "d_margin_q": {
-     "value": 0.0485,
-     "pct": 93.1
+     "value": 0.0562,
+     "pct": 96.4
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 5730.5,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 5649.7,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -7862,17 +7862,17 @@
    "sector": "נדל\"ן מניב"
   },
   "NL0015000D84": {
-   "score": 61,
+   "score": 59,
    "reason": null,
    "group": "real_estate",
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
     "profitability": 58.7,
-    "value": 44.4,
+    "value": 38.7,
     "strength": 77.4,
-    "quality": 59.7,
-    "growth": 71.0
+    "quality": 58.1,
+    "growth": 71.1
    },
    "metrics": {
     "gp_assets": {
@@ -7892,20 +7892,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0932,
-     "pct": 58.1
+     "value": 0.0928,
+     "pct": 51.6
     },
     "book_yield": {
-     "value": 0.6468,
-     "pct": 25.8
+     "value": 0.6444,
+     "pct": 22.6
     },
     "ebitda_ev": {
-     "value": 0.0663,
-     "pct": 45.2
+     "value": 0.0661,
+     "pct": 38.7
     },
     "fcf_yield": {
-     "value": 0.0232,
-     "pct": 48.4
+     "value": 0.0231,
+     "pct": 41.9
     },
     "netdebt_ebitda": {
      "value": 5.7784,
@@ -7921,7 +7921,7 @@
     },
     "cfo_assets": {
      "value": 0.038,
-     "pct": 90.3
+     "pct": 87.1
     },
     "accruals": {
      "value": 0.0289,
@@ -7941,15 +7941,15 @@
     },
     "d_margin_q": {
      "value": -0.057,
-     "pct": 10.3
+     "pct": 10.7
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "EUR",
-   "mcap_ils_m": 2909.8,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 2994.7,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -7964,70 +7964,70 @@
    "sector": "נדל\"ן מניב"
   },
   "1109644": {
-   "score": 71,
+   "score": 66,
    "reason": null,
    "group": "real_estate",
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
-    "profitability": 75.7,
-    "value": 75.8,
-    "strength": 62.4,
-    "quality": 75.0,
-    "growth": 60.6
+    "profitability": 59.6,
+    "value": 67.7,
+    "strength": 58.1,
+    "quality": 88.7,
+    "growth": 62.4
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.0531,
+     "value": 0.0544,
      "pct": null
     },
     "op_margin": {
-     "value": 0.7909,
+     "value": 0.7814,
      "pct": 93.3
     },
     "roe": {
-     "value": 0.1022,
-     "pct": 58.1
+     "value": 0.0761,
+     "pct": 25.8
     },
     "roa": {
-     "value": 0.0447,
+     "value": 0.0331,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.1533,
-     "pct": 87.1
+     "value": 0.1144,
+     "pct": 71.0
     },
     "book_yield": {
-     "value": 1.5,
+     "value": 1.5031,
      "pct": 87.1
     },
     "ebitda_ev": {
-     "value": 0.0651,
-     "pct": 41.9
+     "value": 0.0493,
+     "pct": 19.4
     },
     "fcf_yield": {
-     "value": 0.1231,
-     "pct": 87.1
+     "value": 0.1337,
+     "pct": 93.5
     },
     "netdebt_ebitda": {
-     "value": 9.989,
-     "pct": 25.8
+     "value": 13.1485,
+     "pct": 16.1
     },
     "interest_cover": {
-     "value": 5.7976,
+     "value": 5.4704,
      "pct": 77.4
     },
     "equity_ratio": {
-     "value": 0.4373,
-     "pct": 83.9
+     "value": 0.435,
+     "pct": 80.6
     },
     "cfo_assets": {
-     "value": 0.0359,
-     "pct": 85.5
+     "value": 0.0387,
+     "pct": 93.5
     },
     "accruals": {
-     "value": 0.0088,
-     "pct": 64.5
+     "value": -0.0056,
+     "pct": 83.9
     },
     "rev_growth": {
      "value": 0.0701,
@@ -8040,18 +8040,14 @@
     "d_margin": {
      "value": -0.0029,
      "pct": 60.0
-    },
-    "d_margin_q": {
-     "value": -0.0048,
-     "pct": 55.2
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
-   "ttm": false,
+   "last_quarter": "2026-09-30",
+   "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 1956.5,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 1966.3,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -8066,22 +8062,22 @@
    "sector": "נדל\"ן מניב"
   },
   "1080985": {
-   "score": 50,
+   "score": 51,
    "reason": null,
    "group": "consumer_industry",
    "group_he": "צריכה ותעשייה",
    "model": "standard",
    "components": {
-    "profitability": 45.8,
+    "profitability": 47.2,
     "value": 35.4,
     "strength": 63.3,
     "quality": 66.7,
-    "growth": 47.9
+    "growth": 50.0
    },
    "metrics": {
     "gp_assets": {
      "value": 0.1259,
-     "pct": 25.0
+     "pct": 29.2
     },
     "op_margin": {
      "value": 0.1707,
@@ -8096,19 +8092,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0315,
+     "value": 0.0323,
      "pct": 25.0
     },
     "book_yield": {
-     "value": 0.3519,
-     "pct": 45.8
+     "value": 0.3612,
+     "pct": 41.7
     },
     "ebitda_ev": {
-     "value": 0.0679,
-     "pct": 16.7
+     "value": 0.0694,
+     "pct": 20.8
     },
     "fcf_yield": {
-     "value": 0.0383,
+     "value": 0.0393,
      "pct": 54.2
     },
     "netdebt_ebitda": {
@@ -8145,15 +8141,15 @@
     },
     "d_margin_q": {
      "value": 0.0338,
-     "pct": 75.0
+     "pct": 83.3
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 7760.6,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 7562.2,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -8168,70 +8164,70 @@
    "sector": "מלונאות ואירוח"
   },
   "1176387": {
-   "score": 67,
+   "score": 62,
    "reason": null,
    "group": "energy_infra",
    "group_he": "אנרגיה ותשתיות",
    "model": "standard",
    "components": {
-    "profitability": 52.6,
-    "value": 67.4,
-    "strength": 84.1,
+    "profitability": 45.3,
+    "value": 57.6,
+    "strength": 76.8,
     "quality": 84.8,
-    "growth": 51.2
+    "growth": 52.4
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.0674,
-     "pct": 56.5
+     "value": 0.0686,
+     "pct": 60.9
     },
     "op_margin": {
-     "value": 0.0554,
+     "value": 0.0556,
      "pct": 27.3
     },
     "roe": {
-     "value": 0.1467,
-     "pct": 73.9
+     "value": 0.0784,
+     "pct": 47.8
     },
     "roa": {
-     "value": 0.0646,
+     "value": 0.0359,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.048,
-     "pct": 69.6
+     "value": 0.0262,
+     "pct": 47.8
     },
     "book_yield": {
-     "value": 0.3273,
+     "value": 0.334,
      "pct": 47.8
     },
     "ebitda_ev": {
-     "value": 0.1082,
-     "pct": 73.9
+     "value": 0.0836,
+     "pct": 56.5
     },
     "fcf_yield": {
-     "value": 0.0454,
+     "value": 0.0421,
      "pct": 78.3
     },
     "netdebt_ebitda": {
-     "value": 1.6253,
-     "pct": 87.0
-    },
-    "interest_cover": {
-     "value": 3.947,
+     "value": 2.05,
      "pct": 78.3
     },
+    "interest_cover": {
+     "value": 2.7162,
+     "pct": 60.9
+    },
     "equity_ratio": {
-     "value": 0.44,
-     "pct": 87.0
+     "value": 0.4579,
+     "pct": 91.3
     },
     "cfo_assets": {
-     "value": 0.098,
-     "pct": 82.6
+     "value": 0.0937,
+     "pct": 73.9
     },
     "accruals": {
-     "value": -0.0334,
-     "pct": 87.0
+     "value": -0.0578,
+     "pct": 95.7
     },
     "rev_growth": {
      "value": -0.045,
@@ -8246,15 +8242,15 @@
      "pct": 72.7
     },
     "d_margin_q": {
-     "value": -0.0005,
-     "pct": 18.2
+     "value": 0.0006,
+     "pct": 22.7
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 7338.4,
+   "mcap_ils_m": 7349.2,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -8270,7 +8266,7 @@
    "sector": "אנרגיה"
   },
   "127019": {
-   "score": 28,
+   "score": 29,
    "reason": null,
    "group": "finance_holding",
    "group_he": "פיננסים ואחזקות",
@@ -8279,8 +8275,8 @@
     "profitability": 41.7,
     "value": 15.4,
     "strength": 20.7,
-    "quality": 30.8,
-    "growth": 34.6
+    "quality": 26.9,
+    "growth": 40.4
    },
    "metrics": {
     "gp_assets": {
@@ -8300,19 +8296,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.002,
+     "value": 0.0022,
      "pct": 7.7
     },
     "book_yield": {
-     "value": 0.5167,
+     "value": 0.5617,
      "pct": 38.5
     },
     "ebitda_ev": {
-     "value": 0.0607,
+     "value": 0.0633,
      "pct": 15.4
     },
     "fcf_yield": {
-     "value": -0.1803,
+     "value": -0.196,
      "pct": 0.0
     },
     "netdebt_ebitda": {
@@ -8329,7 +8325,7 @@
     },
     "cfo_assets": {
      "value": -0.0013,
-     "pct": 15.4
+     "pct": 7.7
     },
     "accruals": {
      "value": 0.0023,
@@ -8349,14 +8345,14 @@
     },
     "d_margin_q": {
      "value": 0.0098,
-     "pct": 23.1
+     "pct": 46.2
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 3498.2,
+   "mcap_ils_m": 3218.0,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -8397,15 +8393,15 @@
      "pct": 100.0
     },
     "earn_yield": {
-     "value": 0.1011,
+     "value": 0.1051,
      "pct": 76.9
     },
     "book_yield": {
-     "value": 0.366,
+     "value": 0.3805,
      "pct": 23.1
     },
     "fcf_yield": {
-     "value": 0.0797,
+     "value": 0.0829,
      "pct": null
     },
     "netdebt_ebitda": {
@@ -8449,8 +8445,8 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 3646.7,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 3507.7,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -8465,65 +8461,65 @@
    "sector": "ביטוח"
   },
   "1157403": {
-   "score": 51,
+   "score": 48,
    "reason": null,
    "group": "finance_holding",
    "group_he": "פיננסים ואחזקות",
    "model": "standard",
    "components": {
-    "profitability": 34.6,
-    "value": 82.7,
+    "profitability": 32.1,
+    "value": 83.7,
     "strength": 19.2,
     "quality": 76.9,
-    "growth": 42.3
+    "growth": 23.1
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.1008,
+     "value": 0.094,
      "pct": 50.0
     },
     "op_margin": {
-     "value": 0.2051,
-     "pct": 30.8
+     "value": 0.199,
+     "pct": 23.1
     },
     "roe": {
-     "value": 0.0684,
+     "value": 0.0626,
      "pct": 23.1
     },
     "roa": {
-     "value": 0.008,
+     "value": 0.0069,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0631,
-     "pct": 61.5
+     "value": 0.0648,
+     "pct": 65.4
     },
     "book_yield": {
-     "value": 0.9233,
+     "value": 1.0344,
      "pct": 84.6
     },
     "ebitda_ev": {
-     "value": 0.1308,
+     "value": 0.14,
      "pct": 84.6
     },
     "fcf_yield": {
-     "value": 0.5897,
+     "value": 0.5652,
      "pct": 100.0
     },
     "netdebt_ebitda": {
-     "value": 3.8266,
+     "value": 3.6977,
      "pct": 30.8
     },
     "equity_ratio": {
-     "value": 0.1169,
+     "value": 0.1101,
      "pct": 7.7
     },
     "cfo_assets": {
-     "value": 0.0825,
+     "value": 0.0669,
      "pct": 69.2
     },
     "accruals": {
-     "value": -0.0745,
+     "value": -0.06,
      "pct": 84.6
     },
     "rev_growth": {
@@ -8539,16 +8535,16 @@
      "pct": 0.0
     },
     "d_margin_q": {
-     "value": 0.2209,
-     "pct": 100.0
+     "value": -0.024,
+     "pct": 23.1
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 3612.0,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 3257.0,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -8570,10 +8566,10 @@
    "model": "standard",
    "components": {
     "profitability": 72.3,
-    "value": 69.6,
+    "value": 70.3,
     "strength": 71.7,
-    "quality": 67.4,
-    "growth": 61.8
+    "quality": 63.0,
+    "growth": 60.7
    },
    "metrics": {
     "gp_assets": {
@@ -8593,19 +8589,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0597,
+     "value": 0.0644,
      "pct": 73.9
     },
     "book_yield": {
-     "value": 0.3771,
+     "value": 0.407,
      "pct": 69.6
     },
     "ebitda_ev": {
-     "value": 0.0942,
-     "pct": 60.9
+     "value": 0.1053,
+     "pct": 63.6
     },
     "fcf_yield": {
-     "value": 0.0728,
+     "value": 0.0786,
      "pct": 73.9
     },
     "netdebt_ebitda": {
@@ -8626,7 +8622,7 @@
     },
     "accruals": {
      "value": -0.0334,
-     "pct": 56.5
+     "pct": 47.8
     },
     "rev_growth": {
      "value": 0.3246,
@@ -8642,14 +8638,14 @@
     },
     "d_margin_q": {
      "value": -0.111,
-     "pct": 4.5
+     "pct": 0.0
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 1239.0,
+   "mcap_ils_m": 1186.1,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -8672,9 +8668,9 @@
    "model": "standard",
    "components": {
     "profitability": 5.8,
-    "value": 25.0,
-    "strength": 20.3,
-    "quality": 52.2,
+    "value": 23.9,
+    "strength": 18.8,
+    "quality": 50.0,
     "growth": 79.3
    },
    "metrics": {
@@ -8695,11 +8691,11 @@
      "pct": null
     },
     "earn_yield": {
-     "value": -0.0425,
+     "value": -0.0433,
      "pct": 4.3
     },
     "book_yield": {
-     "value": 0.3519,
+     "value": 0.3585,
      "pct": 56.5
     },
     "ebitda_ev": {
@@ -8707,8 +8703,8 @@
      "pct": 0.0
     },
     "fcf_yield": {
-     "value": -0.0494,
-     "pct": 39.1
+     "value": -0.0503,
+     "pct": 34.8
     },
     "netdebt_ebitda": {
      "value": 182.2873,
@@ -8720,7 +8716,7 @@
     },
     "equity_ratio": {
      "value": 0.3122,
-     "pct": 56.5
+     "pct": 52.2
     },
     "cfo_assets": {
      "value": -0.0075,
@@ -8728,7 +8724,7 @@
     },
     "accruals": {
      "value": -0.0302,
-     "pct": 82.6
+     "pct": 78.3
     },
     "rev_growth": {
      "value": 2.6159,
@@ -8751,7 +8747,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "EUR",
-   "mcap_ils_m": 4444.0,
+   "mcap_ils_m": 4473.4,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -8767,17 +8763,17 @@
    "sector": "אנרגיה"
   },
   "1178722": {
-   "score": 43,
+   "score": 44,
    "reason": null,
    "group": "energy_infra",
    "group_he": "אנרגיה ותשתיות",
    "model": "standard",
    "components": {
-    "profitability": 58.6,
-    "value": 28.8,
+    "profitability": 63.0,
+    "value": 29.3,
     "strength": 60.9,
     "quality": 8.7,
-    "growth": 51.2
+    "growth": 52.3
    },
    "metrics": {
     "gp_assets": {
@@ -8786,30 +8782,30 @@
     },
     "op_margin": {
      "value": 0.0834,
-     "pct": 45.5
+     "pct": 50.0
     },
     "roe": {
      "value": 0.0948,
-     "pct": 47.8
+     "pct": 56.5
     },
     "roa": {
      "value": 0.0263,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0125,
+     "value": 0.0149,
      "pct": 26.1
     },
     "book_yield": {
-     "value": 0.1317,
+     "value": 0.1569,
      "pct": 0.0
     },
     "ebitda_ev": {
-     "value": 0.0423,
-     "pct": 32.6
+     "value": 0.0493,
+     "pct": 34.8
     },
     "fcf_yield": {
-     "value": -0.0285,
+     "value": -0.0339,
      "pct": 56.5
     },
     "netdebt_ebitda": {
@@ -8846,15 +8842,15 @@
     },
     "d_margin_q": {
      "value": -0.0211,
-     "pct": 13.6
+     "pct": 18.2
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 4661.4,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 3912.9,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -8877,9 +8873,9 @@
    "components": {
     "profitability": 44.4,
     "value": 96.2,
-    "strength": 36.8,
-    "quality": 57.7,
-    "growth": 38.5
+    "strength": 39.3,
+    "quality": 53.8,
+    "growth": 40.4
    },
    "metrics": {
     "gp_assets": {
@@ -8899,24 +8895,24 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.164,
+     "value": 0.1674,
      "pct": 100.0
     },
     "book_yield": {
-     "value": 1.8648,
+     "value": 1.9035,
      "pct": 100.0
     },
     "ebitda_ev": {
-     "value": 0.2267,
+     "value": 0.2285,
      "pct": 92.3
     },
     "fcf_yield": {
-     "value": 0.316,
+     "value": 0.3225,
      "pct": 92.3
     },
     "netdebt_ebitda": {
      "value": 2.7524,
-     "pct": 38.5
+     "pct": 46.2
     },
     "interest_cover": {
      "value": 5.2342,
@@ -8928,7 +8924,7 @@
     },
     "cfo_assets": {
      "value": 0.0512,
-     "pct": 53.8
+     "pct": 46.2
     },
     "accruals": {
      "value": -0.0283,
@@ -8948,15 +8944,15 @@
     },
     "d_margin_q": {
      "value": 0.0686,
-     "pct": 69.2
+     "pct": 76.9
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 3533.1,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 3461.1,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -8971,17 +8967,17 @@
    "sector": "השקעות ואחזקה"
   },
   "1141464": {
-   "score": 57,
+   "score": 55,
    "reason": null,
    "group": "finance_holding",
    "group_he": "פיננסים ואחזקות",
    "model": "standard",
    "components": {
-    "profitability": 79.5,
-    "value": 36.5,
+    "profitability": 76.9,
+    "value": 32.7,
     "strength": 60.5,
-    "quality": 50.0,
-    "growth": 55.8
+    "quality": 46.2,
+    "growth": 57.7
    },
    "metrics": {
     "gp_assets": {
@@ -8994,27 +8990,27 @@
     },
     "roe": {
      "value": 0.4252,
-     "pct": 100.0
+     "pct": 92.3
     },
     "roa": {
      "value": 0.12,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0514,
-     "pct": 38.5
+     "value": 0.0501,
+     "pct": 30.8
     },
     "book_yield": {
-     "value": 0.121,
+     "value": 0.1179,
      "pct": 7.7
     },
     "ebitda_ev": {
-     "value": 0.0998,
+     "value": 0.0974,
      "pct": 46.2
     },
     "fcf_yield": {
-     "value": 0.0368,
-     "pct": 53.8
+     "value": 0.0359,
+     "pct": 46.2
     },
     "netdebt_ebitda": {
      "value": 0.6191,
@@ -9034,7 +9030,7 @@
     },
     "accruals": {
      "value": 0.0205,
-     "pct": 23.1
+     "pct": 15.4
     },
     "rev_growth": {
      "value": 0.2917,
@@ -9050,14 +9046,14 @@
     },
     "d_margin_q": {
      "value": -0.0321,
-     "pct": 7.7
+     "pct": 15.4
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 2776.7,
+   "mcap_ils_m": 2849.6,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -9073,17 +9069,17 @@
    "sector": "שירותים פיננסים"
   },
   "314013": {
-   "score": 69,
+   "score": 68,
    "reason": null,
    "group": "consumer_industry",
    "group_he": "צריכה ותעשייה",
    "model": "standard",
    "components": {
     "profitability": 68.1,
-    "value": 53.1,
+    "value": 50.0,
     "strength": 83.2,
     "quality": 85.4,
-    "growth": 60.4
+    "growth": 61.5
    },
    "metrics": {
     "gp_assets": {
@@ -9104,11 +9100,11 @@
     },
     "earn_yield": {
      "value": 0.0538,
-     "pct": 58.3
+     "pct": 50.0
     },
     "book_yield": {
      "value": 0.2189,
-     "pct": 20.8
+     "pct": 16.7
     },
     "ebitda_ev": {
      "value": 0.1163,
@@ -9152,15 +9148,15 @@
     },
     "d_margin_q": {
      "value": 0.0027,
-     "pct": 41.7
+     "pct": 45.8
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 2424.8,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 2425.4,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -9175,17 +9171,17 @@
    "sector": "שירותים"
   },
   "288019": {
-   "score": 51,
+   "score": 53,
    "reason": null,
    "group": "consumer_industry",
    "group_he": "צריכה ותעשייה",
    "model": "standard",
    "components": {
     "profitability": 61.1,
-    "value": 40.6,
-    "strength": 69.1,
+    "value": 43.7,
+    "strength": 72.0,
     "quality": 18.8,
-    "growth": 62.5
+    "growth": 63.5
    },
    "metrics": {
     "gp_assets": {
@@ -9205,28 +9201,28 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0505,
-     "pct": 50.0
+     "value": 0.0547,
+     "pct": 54.2
     },
     "book_yield": {
-     "value": 0.3478,
-     "pct": 41.7
+     "value": 0.3769,
+     "pct": 50.0
     },
     "ebitda_ev": {
-     "value": 0.0775,
+     "value": 0.083,
      "pct": 41.7
     },
     "fcf_yield": {
-     "value": -0.0018,
+     "value": -0.0019,
      "pct": 29.2
     },
     "netdebt_ebitda": {
      "value": 1.9794,
-     "pct": 50.0
+     "pct": 54.2
     },
     "interest_cover": {
      "value": 6.5707,
-     "pct": 78.3
+     "pct": 82.6
     },
     "equity_ratio": {
      "value": 0.4778,
@@ -9254,14 +9250,14 @@
     },
     "d_margin_q": {
      "value": 0.0107,
-     "pct": 50.0
+     "pct": 54.2
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 3542.3,
+   "mcap_ils_m": 3268.4,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -9277,17 +9273,17 @@
    "sector": "תעשייה"
   },
   "175018": {
-   "score": 67,
+   "score": 68,
    "reason": null,
    "group": "finance_holding",
    "group_he": "פיננסים ואחזקות",
    "model": "standard",
    "components": {
-    "profitability": 74.1,
+    "profitability": 76.7,
     "value": 44.2,
-    "strength": 71.8,
+    "strength": 74.4,
     "quality": 96.2,
-    "growth": 54.8
+    "growth": 58.7
    },
    "metrics": {
     "gp_assets": {
@@ -9300,26 +9296,26 @@
     },
     "roe": {
      "value": 0.2785,
-     "pct": 76.9
+     "pct": 84.6
     },
     "roa": {
      "value": 0.1159,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0468,
+     "value": 0.0499,
      "pct": 23.1
     },
     "book_yield": {
-     "value": 0.1679,
+     "value": 0.179,
      "pct": 15.4
     },
     "ebitda_ev": {
-     "value": 0.126,
+     "value": 0.1351,
      "pct": 76.9
     },
     "fcf_yield": {
-     "value": 0.0896,
+     "value": 0.0956,
      "pct": 61.5
     },
     "netdebt_ebitda": {
@@ -9332,7 +9328,7 @@
     },
     "equity_ratio": {
      "value": 0.4163,
-     "pct": 76.9
+     "pct": 84.6
     },
     "cfo_assets": {
      "value": 0.2372,
@@ -9356,15 +9352,15 @@
     },
     "d_margin_q": {
      "value": 0.0899,
-     "pct": 76.9
+     "pct": 92.3
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 5690.5,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 5337.5,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -9379,17 +9375,17 @@
    "sector": "שירותים פיננסים"
   },
   "1098565": {
-   "score": 70,
+   "score": 69,
    "reason": null,
    "group": "real_estate",
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
     "profitability": 63.7,
-    "value": 91.9,
-    "strength": 62.4,
-    "quality": 75.8,
-    "growth": 45.5
+    "value": 90.3,
+    "strength": 63.4,
+    "quality": 74.2,
+    "growth": 44.6
    },
    "metrics": {
     "gp_assets": {
@@ -9409,19 +9405,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.1802,
-     "pct": 96.8
+     "value": 0.1814,
+     "pct": 93.5
     },
     "book_yield": {
-     "value": 1.284,
+     "value": 1.2928,
      "pct": 80.6
     },
     "ebitda_ev": {
-     "value": 0.129,
-     "pct": 93.5
+     "value": 0.1293,
+     "pct": 90.3
     },
     "fcf_yield": {
-     "value": 0.1378,
+     "value": 0.1387,
      "pct": 96.8
     },
     "netdebt_ebitda": {
@@ -9430,7 +9426,7 @@
     },
     "interest_cover": {
      "value": 3.7707,
-     "pct": 51.6
+     "pct": 54.8
     },
     "equity_ratio": {
      "value": 0.355,
@@ -9438,7 +9434,7 @@
     },
     "cfo_assets": {
      "value": 0.0381,
-     "pct": 93.5
+     "pct": 90.3
     },
     "accruals": {
      "value": 0.0117,
@@ -9458,14 +9454,14 @@
     },
     "d_margin_q": {
      "value": 0.0543,
-     "pct": 96.6
+     "pct": 92.9
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 3406.0,
+   "mcap_ils_m": 3382.8,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -9481,7 +9477,7 @@
    "sector": "נדל\"ן מניב"
   },
   "431015": {
-   "score": 55,
+   "score": 54,
    "reason": null,
    "group": "finance_holding",
    "group_he": "פיננסים ואחזקות",
@@ -9490,8 +9486,8 @@
     "profitability": 51.3,
     "value": 38.5,
     "strength": 92.0,
-    "quality": 19.2,
-    "growth": 73.1
+    "quality": 11.5,
+    "growth": 75.0
    },
    "metrics": {
     "gp_assets": {
@@ -9511,20 +9507,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0543,
+     "value": 0.057,
      "pct": 46.2
     },
     "book_yield": {
-     "value": 0.5477,
+     "value": 0.5754,
      "pct": 46.2
     },
     "ebitda_ev": {
-     "value": 0.0851,
-     "pct": 30.8
+     "value": 0.0905,
+     "pct": 38.5
     },
     "fcf_yield": {
-     "value": 0.0075,
-     "pct": 30.8
+     "value": 0.0078,
+     "pct": 23.1
     },
     "netdebt_ebitda": {
      "value": -1.0,
@@ -9540,11 +9536,11 @@
     },
     "cfo_assets": {
      "value": 0.0116,
-     "pct": 30.8
+     "pct": 23.1
     },
     "accruals": {
      "value": 0.0724,
-     "pct": 7.7
+     "pct": 0.0
     },
     "rev_growth": {
      "value": 0.1558,
@@ -9560,15 +9556,15 @@
     },
     "d_margin_q": {
      "value": 0.059,
-     "pct": 61.5
+     "pct": 69.2
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 3714.4,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 3535.9,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -9583,69 +9579,69 @@
    "sector": "השקעות ואחזקה"
   },
   "627034": {
-   "score": 62,
+   "score": 63,
    "reason": null,
    "group": "consumer_industry",
    "group_he": "צריכה ותעשייה",
    "model": "standard",
    "components": {
-    "profitability": 57.6,
+    "profitability": 62.5,
     "value": 71.9,
-    "strength": 55.0,
+    "strength": 53.5,
     "quality": 72.9,
-    "growth": 53.1
+    "growth": 49.0
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.4559,
+     "value": 0.459,
      "pct": 91.7
     },
     "op_margin": {
-     "value": 0.088,
-     "pct": 41.7
+     "value": 0.0915,
+     "pct": 54.2
     },
     "roe": {
-     "value": 0.1097,
-     "pct": 39.6
+     "value": 0.1129,
+     "pct": 41.7
     },
     "roa": {
-     "value": 0.0459,
+     "value": 0.0472,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0601,
+     "value": 0.0663,
      "pct": 70.8
     },
     "book_yield": {
-     "value": 0.5479,
+     "value": 0.5874,
      "pct": 70.8
     },
     "ebitda_ev": {
-     "value": 0.1033,
+     "value": 0.1111,
      "pct": 58.3
     },
     "fcf_yield": {
-     "value": 0.1138,
+     "value": 0.1238,
      "pct": 87.5
     },
     "netdebt_ebitda": {
-     "value": 2.4685,
+     "value": 2.3817,
      "pct": 41.7
     },
     "interest_cover": {
-     "value": 4.1272,
-     "pct": 56.5
+     "value": 4.0337,
+     "pct": 52.2
     },
     "equity_ratio": {
-     "value": 0.4189,
+     "value": 0.4183,
      "pct": 66.7
     },
     "cfo_assets": {
-     "value": 0.1216,
+     "value": 0.1214,
      "pct": 70.8
     },
     "accruals": {
-     "value": -0.0757,
+     "value": -0.0741,
      "pct": 75.0
     },
     "rev_growth": {
@@ -9661,15 +9657,15 @@
      "pct": 41.7
     },
     "d_margin_q": {
-     "value": 0.0385,
-     "pct": 83.3
+     "value": 0.013,
+     "pct": 66.7
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 5269.7,
+   "mcap_ils_m": 5214.6,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -9692,10 +9688,10 @@
    "model": "real_estate",
    "components": {
     "profitability": 52.3,
-    "value": 91.9,
-    "strength": 60.2,
+    "value": 91.1,
+    "strength": 61.3,
     "quality": 58.1,
-    "growth": 37.6
+    "growth": 37.8
    },
    "metrics": {
     "gp_assets": {
@@ -9715,20 +9711,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.1977,
+     "value": 0.2089,
      "pct": 100.0
     },
     "book_yield": {
-     "value": 1.7861,
-     "pct": 93.5
+     "value": 1.8867,
+     "pct": 96.8
     },
     "ebitda_ev": {
-     "value": 0.1087,
-     "pct": 83.9
+     "value": 0.111,
+     "pct": 80.6
     },
     "fcf_yield": {
-     "value": 0.1237,
-     "pct": 90.3
+     "value": 0.1307,
+     "pct": 87.1
     },
     "netdebt_ebitda": {
      "value": 5.6244,
@@ -9736,7 +9732,7 @@
     },
     "interest_cover": {
      "value": 3.5373,
-     "pct": 48.4
+     "pct": 51.6
     },
     "equity_ratio": {
      "value": 0.4118,
@@ -9764,14 +9760,14 @@
     },
     "d_margin_q": {
      "value": -0.0509,
-     "pct": 13.8
+     "pct": 14.3
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 2598.8,
+   "mcap_ils_m": 2460.2,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -9787,69 +9783,69 @@
    "sector": "נדל\"ן מניב"
   },
   "1097948": {
-   "score": 35,
+   "score": 29,
    "reason": null,
    "group": "real_estate",
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
-    "profitability": 35.8,
-    "value": 37.1,
-    "strength": 55.9,
+    "profitability": 22.8,
+    "value": 31.5,
+    "strength": 44.1,
     "quality": 9.7,
-    "growth": 25.1
+    "growth": 34.2
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.0366,
+     "value": 0.0356,
      "pct": null
     },
     "op_margin": {
-     "value": 0.1423,
+     "value": 0.1415,
      "pct": 16.7
     },
     "roe": {
-     "value": 0.0995,
-     "pct": 54.8
+     "value": 0.0774,
+     "pct": 29.0
     },
     "roa": {
-     "value": 0.0361,
+     "value": 0.0275,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0784,
-     "pct": 38.7
+     "value": 0.07,
+     "pct": 32.3
     },
     "book_yield": {
-     "value": 0.7887,
-     "pct": 41.9
+     "value": 0.9035,
+     "pct": 45.2
     },
     "ebitda_ev": {
-     "value": 0.0703,
-     "pct": 51.6
+     "value": 0.0625,
+     "pct": 35.5
     },
     "fcf_yield": {
-     "value": -0.1969,
-     "pct": 16.1
+     "value": -0.2804,
+     "pct": 12.9
     },
     "netdebt_ebitda": {
-     "value": 6.5476,
-     "pct": 58.1
+     "value": 8.3308,
+     "pct": 38.7
     },
     "interest_cover": {
-     "value": 3.813,
-     "pct": 54.8
+     "value": 3.0293,
+     "pct": 38.7
     },
     "equity_ratio": {
-     "value": 0.3634,
+     "value": 0.3557,
      "pct": 54.8
     },
     "cfo_assets": {
-     "value": -0.0904,
+     "value": -0.1101,
      "pct": 9.7
     },
     "accruals": {
-     "value": 0.1265,
+     "value": 0.1376,
      "pct": 9.7
     },
     "rev_growth": {
@@ -9865,16 +9861,16 @@
      "pct": 40.0
     },
     "d_margin_q": {
-     "value": -0.0281,
-     "pct": 24.1
+     "value": -0.004,
+     "pct": 60.7
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 2561.7,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 2236.1,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -9898,7 +9894,7 @@
     "profitability": 27.0,
     "value": 26.1,
     "strength": 21.7,
-    "quality": 69.6,
+    "quality": 67.4,
     "growth": 67.0
    },
    "metrics": {
@@ -9919,20 +9915,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": -0.0698,
+     "value": -0.0703,
      "pct": 0.0
     },
     "book_yield": {
-     "value": 0.4947,
-     "pct": 78.3
+     "value": 0.4985,
+     "pct": 73.9
     },
     "ebitda_ev": {
      "value": 0.0043,
      "pct": 4.3
     },
     "fcf_yield": {
-     "value": -0.0682,
-     "pct": 21.7
+     "value": -0.0687,
+     "pct": 26.1
     },
     "netdebt_ebitda": {
      "value": 102.7113,
@@ -9948,7 +9944,7 @@
     },
     "cfo_assets": {
      "value": 0.0134,
-     "pct": 39.1
+     "pct": 34.8
     },
     "accruals": {
      "value": -0.0607,
@@ -9975,8 +9971,8 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 3852.5,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 3823.1,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -9998,10 +9994,10 @@
    "model": "standard",
    "components": {
     "profitability": 48.6,
-    "value": 68.8,
-    "strength": 93.0,
+    "value": 67.7,
+    "strength": 94.4,
     "quality": 8.3,
-    "growth": 54.2
+    "growth": 55.2
    },
    "metrics": {
     "gp_assets": {
@@ -10021,19 +10017,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.1048,
-     "pct": 95.8
+     "value": 0.1032,
+     "pct": 91.7
     },
     "book_yield": {
-     "value": 0.7308,
+     "value": 0.7203,
      "pct": 75.0
     },
     "ebitda_ev": {
-     "value": 0.1501,
+     "value": 0.1482,
      "pct": 83.3
     },
     "fcf_yield": {
-     "value": -0.03,
+     "value": -0.0296,
      "pct": 20.8
     },
     "netdebt_ebitda": {
@@ -10046,7 +10042,7 @@
     },
     "equity_ratio": {
      "value": 0.6536,
-     "pct": 95.8
+     "pct": 100.0
     },
     "cfo_assets": {
      "value": -0.0118,
@@ -10070,14 +10066,14 @@
     },
     "d_margin_q": {
      "value": -0.0035,
-     "pct": 25.0
+     "pct": 29.2
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 2167.0,
+   "mcap_ils_m": 2198.7,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -10093,14 +10089,14 @@
    "sector": "מזון וקמעונאות"
   },
   "587014": {
-   "score": 79,
+   "score": 78,
    "reason": null,
    "group": "tech",
    "group_he": "טכנולוגיה ותקשורת",
    "model": "standard",
    "components": {
     "profitability": 91.1,
-    "value": 93.5,
+    "value": 91.3,
     "strength": 79.4,
     "quality": 43.5,
     "growth": 68.2
@@ -10123,19 +10119,15 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.2812,
+     "value": 0.3106,
      "pct": 95.7
     },
     "book_yield": {
-     "value": 0.8905,
+     "value": 0.9837,
      "pct": 87.0
     },
-    "ebitda_ev": {
-     "value": 16.9212,
-     "pct": 100.0
-    },
     "fcf_yield": {
-     "value": 0.1647,
+     "value": 0.182,
      "pct": 91.3
     },
     "netdebt_ebitda": {
@@ -10179,7 +10171,7 @@
    "last_quarter": "2026-06-30",
    "ttm": false,
    "fin_currency": "ILS",
-   "mcap_ils_m": 1226.0,
+   "mcap_ils_m": 1109.8,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -10203,9 +10195,9 @@
    "components": {
     "profitability": 43.1,
     "value": 40.6,
-    "strength": 45.1,
+    "strength": 45.0,
     "quality": 54.2,
-    "growth": 44.8
+    "growth": 45.8
    },
    "metrics": {
     "gp_assets": {
@@ -10225,19 +10217,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0431,
+     "value": 0.0441,
      "pct": 33.3
     },
     "book_yield": {
-     "value": 0.3445,
+     "value": 0.3525,
      "pct": 37.5
     },
     "ebitda_ev": {
-     "value": 0.0929,
+     "value": 0.0945,
      "pct": 54.2
     },
     "fcf_yield": {
-     "value": 0.022,
+     "value": 0.0226,
      "pct": 37.5
     },
     "netdebt_ebitda": {
@@ -10246,11 +10238,11 @@
     },
     "interest_cover": {
      "value": 3.6994,
-     "pct": 47.8
+     "pct": 43.5
     },
     "equity_ratio": {
      "value": 0.3692,
-     "pct": 54.2
+     "pct": 58.3
     },
     "cfo_assets": {
      "value": 0.0887,
@@ -10274,14 +10266,14 @@
     },
     "d_margin_q": {
      "value": 0.0001,
-     "pct": 37.5
+     "pct": 41.7
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 4673.8,
+   "mcap_ils_m": 4568.0,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -10297,69 +10289,69 @@
    "sector": "קמעונאות"
   },
   "1091354": {
-   "score": 65,
+   "score": 62,
    "reason": null,
    "group": "real_estate",
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
-    "profitability": 65.4,
-    "value": 75.0,
-    "strength": 48.4,
-    "quality": 73.4,
-    "growth": 59.2
+    "profitability": 63.8,
+    "value": 76.6,
+    "strength": 51.6,
+    "quality": 67.7,
+    "growth": 45.5
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.045,
+     "value": 0.0418,
      "pct": null
     },
     "op_margin": {
-     "value": 0.559,
+     "value": 0.5487,
      "pct": 56.7
     },
     "roe": {
-     "value": 0.1359,
-     "pct": 74.2
+     "value": 0.1315,
+     "pct": 71.0
     },
     "roa": {
-     "value": 0.0451,
+     "value": 0.0438,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.1397,
-     "pct": 83.9
+     "value": 0.16,
+     "pct": 87.1
     },
     "book_yield": {
-     "value": 1.0274,
-     "pct": 64.5
+     "value": 1.216,
+     "pct": 71.0
     },
     "ebitda_ev": {
-     "value": 0.1028,
-     "pct": 77.4
+     "value": 0.1037,
+     "pct": 74.2
     },
     "fcf_yield": {
-     "value": 0.0906,
+     "value": 0.0965,
      "pct": 74.2
     },
     "netdebt_ebitda": {
-     "value": 5.9435,
+     "value": 6.2808,
      "pct": 61.3
     },
     "interest_cover": {
-     "value": 2.9808,
-     "pct": 35.5
+     "value": 3.1873,
+     "pct": 45.2
     },
     "equity_ratio": {
-     "value": 0.332,
+     "value": 0.3329,
      "pct": 48.4
     },
     "cfo_assets": {
-     "value": 0.0359,
-     "pct": 85.5
+     "value": 0.0336,
+     "pct": 74.2
     },
     "accruals": {
-     "value": 0.0093,
+     "value": 0.0102,
      "pct": 61.3
     },
     "rev_growth": {
@@ -10375,16 +10367,16 @@
      "pct": 53.3
     },
     "d_margin_q": {
-     "value": 0.0131,
-     "pct": 72.4
+     "value": -0.0431,
+     "pct": 17.9
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 7647.5,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 7095.0,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -10406,10 +10398,10 @@
    "model": "standard",
    "components": {
     "profitability": 19.4,
-    "value": 53.8,
+    "value": 51.9,
     "strength": 7.7,
-    "quality": 53.8,
-    "growth": 55.8
+    "quality": 50.0,
+    "growth": 61.5
    },
    "metrics": {
     "gp_assets": {
@@ -10429,19 +10421,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": -0.0018,
+     "value": -0.002,
      "pct": 0.0
     },
     "book_yield": {
-     "value": 0.6559,
+     "value": 0.7432,
      "pct": 61.5
     },
     "ebitda_ev": {
-     "value": 0.1213,
-     "pct": 69.2
+     "value": 0.1242,
+     "pct": 61.5
     },
     "fcf_yield": {
-     "value": 0.1408,
+     "value": 0.1595,
      "pct": 84.6
     },
     "netdebt_ebitda": {
@@ -10458,7 +10450,7 @@
     },
     "cfo_assets": {
      "value": 0.0395,
-     "pct": 38.5
+     "pct": 30.8
     },
     "accruals": {
      "value": -0.0397,
@@ -10478,15 +10470,15 @@
     },
     "d_margin_q": {
      "value": 0.0099,
-     "pct": 30.8
+     "pct": 53.8
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 2820.4,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 2489.3,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -10501,14 +10493,14 @@
    "sector": "השקעות ואחזקה"
   },
   "1222462": {
-   "score": 43,
+   "score": 44,
    "reason": null,
    "group": "tech",
    "group_he": "טכנולוגיה ותקשורת",
    "model": "standard",
    "components": {
     "profitability": 61.9,
-    "value": 13.0,
+    "value": 13.2,
     "strength": 79.6,
     "quality": 6.5,
     "growth": 52.2
@@ -10535,12 +10527,12 @@
      "pct": 17.4
     },
     "book_yield": {
-     "value": 0.1108,
+     "value": 0.1103,
      "pct": 4.3
     },
     "ebitda_ev": {
-     "value": 0.0246,
-     "pct": 17.4
+     "value": 0.0245,
+     "pct": 18.2
     },
     "fcf_yield": {
      "value": -0.0016,
@@ -10587,8 +10579,8 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 2336.0,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 2424.9,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -10603,17 +10595,17 @@
    "sector": "טכנולוגיה"
   },
   "136010": {
-   "score": 61,
+   "score": 62,
    "reason": null,
    "group": "real_estate",
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
     "profitability": 53.4,
-    "value": 46.8,
+    "value": 47.6,
     "strength": 93.5,
     "quality": 38.7,
-    "growth": 77.9
+    "growth": 79.2
    },
    "metrics": {
     "gp_assets": {
@@ -10633,19 +10625,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0964,
+     "value": 0.1005,
      "pct": 61.3
     },
     "book_yield": {
-     "value": 0.4613,
+     "value": 0.4805,
      "pct": 9.7
     },
     "ebitda_ev": {
-     "value": 0.1082,
-     "pct": 80.6
+     "value": 0.1121,
+     "pct": 83.9
     },
     "fcf_yield": {
-     "value": 0.0097,
+     "value": 0.0101,
      "pct": 35.5
     },
     "netdebt_ebitda": {
@@ -10682,14 +10674,14 @@
     },
     "d_margin_q": {
      "value": -0.0122,
-     "pct": 41.4
+     "pct": 46.4
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 3403.6,
+   "mcap_ils_m": 3267.3,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -10705,17 +10697,17 @@
    "sector": "נדל\"ן מניב"
   },
   "715011": {
-   "score": 32,
+   "score": 34,
    "reason": null,
    "group": "real_estate",
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
-    "profitability": 32.7,
-    "value": 30.6,
+    "profitability": 35.9,
+    "value": 37.1,
     "strength": 29.0,
     "quality": 6.5,
-    "growth": 60.2
+    "growth": 60.0
    },
    "metrics": {
     "gp_assets": {
@@ -10728,26 +10720,26 @@
     },
     "roe": {
      "value": 0.0888,
-     "pct": 38.7
+     "pct": 45.2
     },
     "roa": {
      "value": 0.0245,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.071,
-     "pct": 32.3
+     "value": 0.0845,
+     "pct": 38.7
     },
     "book_yield": {
-     "value": 0.7995,
-     "pct": 45.2
+     "value": 0.9515,
+     "pct": 54.8
     },
     "ebitda_ev": {
-     "value": 0.0643,
-     "pct": 35.5
+     "value": 0.0686,
+     "pct": 45.2
     },
     "fcf_yield": {
-     "value": -0.3282,
+     "value": -0.3906,
      "pct": 9.7
     },
     "netdebt_ebitda": {
@@ -10784,14 +10776,14 @@
     },
     "d_margin_q": {
      "value": 0.0352,
-     "pct": 82.8
+     "pct": 82.1
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 3191.9,
+   "mcap_ils_m": 2681.9,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -10807,70 +10799,70 @@
    "sector": "נדל\"ן בנייה"
   },
   "1173137": {
-   "score": 55,
+   "score": 58,
    "reason": null,
    "group": "real_estate",
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
     "profitability": 48.4,
-    "value": 29.0,
-    "strength": 75.3,
-    "quality": 90.3,
-    "growth": 48.7
+    "value": 37.9,
+    "strength": 74.2,
+    "quality": 98.4,
+    "growth": 43.9
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.0729,
+     "value": 0.0655,
      "pct": null
     },
     "op_margin": {
-     "value": 0.031,
+     "value": 0.0274,
      "pct": 3.3
     },
     "roe": {
-     "value": 0.1827,
+     "value": 0.1699,
      "pct": 93.5
     },
     "roa": {
-     "value": 0.0434,
+     "value": 0.0385,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.04,
-     "pct": 19.4
+     "value": 0.0401,
+     "pct": 16.1
     },
     "book_yield": {
-     "value": 0.219,
+     "value": 0.2362,
      "pct": 0.0
     },
     "ebitda_ev": {
-     "value": 0.0818,
-     "pct": 58.1
+     "value": 0.0888,
+     "pct": 71.0
     },
     "fcf_yield": {
-     "value": 0.019,
-     "pct": 38.7
+     "value": 0.0649,
+     "pct": 64.5
     },
     "netdebt_ebitda": {
-     "value": 0.2529,
+     "value": -1.0,
      "pct": 100.0
     },
     "interest_cover": {
-     "value": 17.9037,
-     "pct": 100.0
+     "value": 11.4086,
+     "pct": 96.8
     },
     "equity_ratio": {
-     "value": 0.2377,
+     "value": 0.2265,
      "pct": 25.8
     },
     "cfo_assets": {
-     "value": 0.0418,
-     "pct": 96.8
+     "value": 0.0819,
+     "pct": 100.0
     },
     "accruals": {
-     "value": 0.0016,
-     "pct": 83.9
+     "value": -0.0434,
+     "pct": 96.8
     },
     "rev_growth": {
      "value": 0.0805,
@@ -10885,16 +10877,16 @@
      "pct": 63.3
     },
     "d_margin_q": {
-     "value": 0.0014,
-     "pct": 62.1
+     "value": -0.0133,
+     "pct": 42.9
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 4032.2,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 3742.6,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -10916,10 +10908,10 @@
    "model": "real_estate",
    "components": {
     "profitability": 14.9,
-    "value": 29.0,
-    "strength": 19.4,
+    "value": 26.6,
+    "strength": 20.4,
     "quality": 37.1,
-    "growth": 51.4
+    "growth": 51.9
    },
    "metrics": {
     "gp_assets": {
@@ -10944,11 +10936,11 @@
     },
     "book_yield": {
      "value": 0.8237,
-     "pct": 51.6
+     "pct": 38.7
     },
     "ebitda_ev": {
      "value": 0.0532,
-     "pct": 25.8
+     "pct": 29.0
     },
     "fcf_yield": {
      "value": -0.0404,
@@ -10956,7 +10948,7 @@
     },
     "netdebt_ebitda": {
      "value": 11.5702,
-     "pct": 16.1
+     "pct": 19.4
     },
     "interest_cover": {
      "value": 1.3304,
@@ -10988,7 +10980,7 @@
     },
     "d_margin_q": {
      "value": 0.003,
-     "pct": 65.5
+     "pct": 67.9
     }
    },
    "fiscal_year_end": "2025-12-31",
@@ -11011,17 +11003,17 @@
    "sector": "נדל\"ן בנייה"
   },
   "1188200": {
-   "score": 34,
+   "score": 36,
    "reason": null,
    "group": "real_estate",
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
     "profitability": 55.2,
-    "value": 33.1,
-    "strength": 25.8,
+    "value": 40.3,
+    "strength": 26.9,
     "quality": 0.0,
-    "growth": 43.3
+    "growth": 43.5
    },
    "metrics": {
     "gp_assets": {
@@ -11041,24 +11033,24 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.1047,
-     "pct": 71.0
+     "value": 0.1264,
+     "pct": 77.4
     },
     "book_yield": {
-     "value": 0.6381,
-     "pct": 22.6
+     "value": 0.7707,
+     "pct": 35.5
     },
     "ebitda_ev": {
-     "value": 0.0648,
-     "pct": 38.7
+     "value": 0.0687,
+     "pct": 48.4
     },
     "fcf_yield": {
-     "value": -0.6412,
+     "value": -0.7744,
      "pct": 0.0
     },
     "netdebt_ebitda": {
      "value": 10.3121,
-     "pct": 22.6
+     "pct": 25.8
     },
     "interest_cover": {
      "value": 2.9357,
@@ -11090,14 +11082,14 @@
     },
     "d_margin_q": {
      "value": -0.0205,
-     "pct": 31.0
+     "pct": 32.1
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 2588.7,
+   "mcap_ils_m": 2143.5,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -11113,17 +11105,17 @@
    "sector": "נדל\"ן בנייה"
   },
   "642017": {
-   "score": 32,
+   "score": 33,
    "reason": null,
    "group": "finance_holding",
    "group_he": "פיננסים ואחזקות",
    "model": "standard",
    "components": {
     "profitability": 23.5,
-    "value": 44.2,
-    "strength": 39.5,
-    "quality": 7.7,
-    "growth": 38.5
+    "value": 46.2,
+    "strength": 42.1,
+    "quality": 3.8,
+    "growth": 44.2
    },
    "metrics": {
     "gp_assets": {
@@ -11143,24 +11135,24 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0571,
+     "value": 0.063,
      "pct": 53.8
     },
     "book_yield": {
-     "value": 0.5892,
+     "value": 0.6505,
      "pct": 53.8
     },
     "ebitda_ev": {
-     "value": 0.1177,
-     "pct": 61.5
+     "value": 0.126,
+     "pct": 69.2
     },
     "fcf_yield": {
-     "value": -0.0988,
+     "value": -0.109,
      "pct": 7.7
     },
     "netdebt_ebitda": {
      "value": 2.5784,
-     "pct": 46.2
+     "pct": 53.8
     },
     "interest_cover": {
      "value": 6.6855,
@@ -11176,7 +11168,7 @@
     },
     "accruals": {
      "value": 0.0584,
-     "pct": 15.4
+     "pct": 7.7
     },
     "rev_growth": {
      "value": 0.0454,
@@ -11192,14 +11184,14 @@
     },
     "d_margin_q": {
      "value": 0.0077,
-     "pct": 15.4
+     "pct": 38.5
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 4508.5,
+   "mcap_ils_m": 4083.7,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -11221,7 +11213,7 @@
    "group_he": "צריכה ותעשייה",
    "model": "standard",
    "components": {
-    "profitability": 6.9,
+    "profitability": 8.3,
     "value": 26.0,
     "strength": 30.6,
     "quality": 16.7,
@@ -11230,7 +11222,7 @@
    "metrics": {
     "gp_assets": {
      "value": 0.1233,
-     "pct": 20.8
+     "pct": 25.0
     },
     "op_margin": {
      "value": -0.2906,
@@ -11245,19 +11237,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": -0.1176,
+     "value": -0.1232,
      "pct": 0.0
     },
     "book_yield": {
-     "value": 0.8869,
+     "value": 0.9288,
      "pct": 91.7
     },
     "ebitda_ev": {
-     "value": -0.0161,
+     "value": -0.0168,
      "pct": 0.0
     },
     "fcf_yield": {
-     "value": -0.1079,
+     "value": -0.113,
      "pct": 12.5
     },
     "netdebt_ebitda": {
@@ -11301,8 +11293,8 @@
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 4017.0,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 3963.5,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -11323,16 +11315,16 @@
    "group_he": "צריכה ותעשייה",
    "model": "standard",
    "components": {
-    "profitability": 28.5,
-    "value": 66.7,
+    "profitability": 29.2,
+    "value": 67.7,
     "strength": 18.3,
     "quality": 8.3,
-    "growth": 59.4
+    "growth": 60.4
    },
    "metrics": {
     "gp_assets": {
      "value": 0.1212,
-     "pct": 16.7
+     "pct": 20.8
     },
     "op_margin": {
      "value": 0.073,
@@ -11340,26 +11332,26 @@
     },
     "roe": {
      "value": 0.1097,
-     "pct": 39.6
+     "pct": 37.5
     },
     "roa": {
      "value": 0.021,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.1003,
-     "pct": 91.7
+     "value": 0.1037,
+     "pct": 95.8
     },
     "book_yield": {
-     "value": 0.9143,
+     "value": 0.946,
      "pct": 95.8
     },
     "ebitda_ev": {
-     "value": 0.1427,
+     "value": 0.1439,
      "pct": 75.0
     },
     "fcf_yield": {
-     "value": -0.3385,
+     "value": -0.3502,
      "pct": 4.2
     },
     "netdebt_ebitda": {
@@ -11396,15 +11388,15 @@
     },
     "d_margin_q": {
      "value": -0.0084,
-     "pct": 20.8
+     "pct": 25.0
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 2543.3,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 2458.0,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -11419,14 +11411,14 @@
    "sector": "יבואני רכב"
   },
   "1102128": {
-   "score": 36,
+   "score": 38,
    "reason": null,
    "group": "real_estate",
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
-    "profitability": 30.9,
-    "value": 38.7,
+    "profitability": 34.1,
+    "value": 41.9,
     "strength": 50.5,
     "quality": 22.6,
     "growth": 37.3
@@ -11442,26 +11434,26 @@
     },
     "roe": {
      "value": 0.0969,
-     "pct": 48.4
+     "pct": 54.8
     },
     "roa": {
      "value": 0.0302,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0888,
-     "pct": 48.4
-    },
-    "book_yield": {
-     "value": 0.9165,
+     "value": 0.0982,
      "pct": 58.1
     },
+    "book_yield": {
+     "value": 1.0129,
+     "pct": 61.3
+    },
     "ebitda_ev": {
-     "value": 0.0433,
+     "value": 0.0449,
      "pct": 16.1
     },
     "fcf_yield": {
-     "value": -0.0327,
+     "value": -0.0361,
      "pct": 32.3
     },
     "netdebt_ebitda": {
@@ -11505,7 +11497,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 2406.7,
+   "mcap_ils_m": 2177.8,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -11527,11 +11519,11 @@
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
-    "profitability": 65.9,
+    "profitability": 67.5,
     "value": 78.2,
-    "strength": 73.1,
-    "quality": 72.6,
-    "growth": 40.6
+    "strength": 72.0,
+    "quality": 74.2,
+    "growth": 40.4
    },
    "metrics": {
     "gp_assets": {
@@ -11544,26 +11536,26 @@
     },
     "roe": {
      "value": 0.0898,
-     "pct": 45.2
+     "pct": 48.4
     },
     "roa": {
      "value": 0.0385,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.1183,
-     "pct": 77.4
+     "value": 0.1229,
+     "pct": 74.2
     },
     "book_yield": {
-     "value": 1.3178,
+     "value": 1.3688,
      "pct": 83.9
     },
     "ebitda_ev": {
-     "value": 0.1025,
-     "pct": 74.2
+     "value": 0.1044,
+     "pct": 77.4
     },
     "fcf_yield": {
-     "value": 0.1052,
+     "value": 0.1092,
      "pct": 77.4
     },
     "netdebt_ebitda": {
@@ -11572,7 +11564,7 @@
     },
     "interest_cover": {
      "value": 4.5355,
-     "pct": 64.5
+     "pct": 61.3
     },
     "equity_ratio": {
      "value": 0.4291,
@@ -11580,7 +11572,7 @@
     },
     "cfo_assets": {
      "value": 0.0342,
-     "pct": 74.2
+     "pct": 77.4
     },
     "accruals": {
      "value": 0.0043,
@@ -11600,14 +11592,14 @@
     },
     "d_margin_q": {
      "value": 0.0309,
-     "pct": 79.3
+     "pct": 78.6
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 3536.2,
+   "mcap_ils_m": 3404.6,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -11623,14 +11615,14 @@
    "sector": "נדל\"ן מניב"
   },
   "1173228": {
-   "score": 24,
+   "score": 25,
    "reason": null,
    "group": "financials",
    "group_he": "בנקים וביטוח",
    "model": "financial",
    "components": {
     "profitability": 7.7,
-    "value": 53.8,
+    "value": 57.7,
     "strength": 23.1,
     "growth": 0.0
    },
@@ -11648,15 +11640,15 @@
      "pct": 7.7
     },
     "earn_yield": {
-     "value": 0.0808,
-     "pct": 15.4
+     "value": 0.0862,
+     "pct": 23.1
     },
     "book_yield": {
-     "value": 0.7823,
+     "value": 0.8348,
      "pct": 92.3
     },
     "fcf_yield": {
-     "value": -0.1832,
+     "value": -0.1955,
      "pct": null
     },
     "netdebt_ebitda": {
@@ -11700,8 +11692,8 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 1869.6,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 1752.2,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -11716,14 +11708,14 @@
    "sector": "ביטוח"
   },
   "1094044": {
-   "score": 32,
+   "score": 34,
    "reason": null,
    "group": "real_estate",
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
     "profitability": 0.0,
-    "value": 19.4,
+    "value": 24.2,
     "strength": 11.8,
     "quality": 67.7,
     "growth": 100.0
@@ -11742,20 +11734,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": -0.1518,
+     "value": -0.1995,
      "pct": 0.0
     },
     "book_yield": {
-     "value": 0.7062,
-     "pct": 32.3
+     "value": 0.9283,
+     "pct": 48.4
     },
     "ebitda_ev": {
-     "value": -0.0258,
+     "value": -0.0286,
      "pct": 0.0
     },
     "fcf_yield": {
-     "value": 0.0219,
-     "pct": 45.2
+     "value": 0.0288,
+     "pct": 48.4
     },
     "netdebt_ebitda": {
      "value": 99.0,
@@ -11786,8 +11778,8 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 1091.3,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 857.9,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -11811,8 +11803,8 @@
     "profitability": 41.2,
     "value": 61.5,
     "strength": 33.8,
-    "quality": 50.0,
-    "growth": 48.1
+    "quality": 46.2,
+    "growth": 53.8
    },
    "metrics": {
     "gp_assets": {
@@ -11832,19 +11824,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0713,
+     "value": 0.0748,
      "pct": 76.9
     },
     "book_yield": {
-     "value": 0.8017,
+     "value": 0.8416,
      "pct": 69.2
     },
     "ebitda_ev": {
-     "value": 0.0753,
+     "value": 0.0771,
      "pct": 23.1
     },
     "fcf_yield": {
-     "value": 0.1137,
+     "value": 0.1193,
      "pct": 76.9
     },
     "netdebt_ebitda": {
@@ -11861,7 +11853,7 @@
     },
     "cfo_assets": {
      "value": 0.0508,
-     "pct": 46.2
+     "pct": 38.5
     },
     "accruals": {
      "value": -0.0196,
@@ -11881,15 +11873,15 @@
     },
     "d_margin_q": {
      "value": 0.0107,
-     "pct": 38.5
+     "pct": 61.5
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 3616.9,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 3445.4,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -11910,11 +11902,11 @@
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
-    "profitability": 74.1,
-    "value": 95.6,
+    "profitability": 77.4,
+    "value": 92.7,
     "strength": 34.4,
     "quality": 53.2,
-    "growth": 49.4
+    "growth": 50.8
    },
    "metrics": {
     "gp_assets": {
@@ -11927,27 +11919,27 @@
     },
     "roe": {
      "value": 0.0976,
-     "pct": 51.6
+     "pct": 58.1
     },
     "roa": {
      "value": 0.0113,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.1759,
-     "pct": 91.9
+     "value": 0.1781,
+     "pct": 90.3
     },
     "book_yield": {
-     "value": 1.802,
-     "pct": 96.8
+     "value": 1.8239,
+     "pct": 90.3
     },
     "ebitda_ev": {
-     "value": 0.1689,
+     "value": 0.1691,
      "pct": 100.0
     },
     "fcf_yield": {
-     "value": 0.1302,
-     "pct": 93.5
+     "value": 0.1318,
+     "pct": 90.3
     },
     "netdebt_ebitda": {
      "value": 5.2548,
@@ -11983,15 +11975,15 @@
     },
     "d_margin_q": {
      "value": -0.0025,
-     "pct": 58.6
+     "pct": 64.3
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 1728.1,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 1707.4,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -12006,70 +11998,70 @@
    "sector": "נדל\"ן מניב"
   },
   "1141357": {
-   "score": 65,
+   "score": 70,
    "reason": null,
    "group": "energy_infra",
    "group_he": "אנרגיה ותשתיות",
    "model": "standard",
    "components": {
-    "profitability": 64.8,
-    "value": 82.6,
-    "strength": 47.8,
-    "quality": 84.8,
+    "profitability": 72.0,
+    "value": 87.0,
+    "strength": 53.6,
+    "quality": 87.0,
     "growth": 41.5
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.0895,
-     "pct": 65.2
+     "value": 0.1035,
+     "pct": 69.6
     },
     "op_margin": {
-     "value": 0.3285,
+     "value": 0.3366,
      "pct": 68.2
     },
     "roe": {
-     "value": 0.1294,
-     "pct": 60.9
+     "value": 0.1565,
+     "pct": 78.3
     },
     "roa": {
-     "value": 0.04,
+     "value": 0.0494,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.065,
-     "pct": 78.3
+     "value": 0.0829,
+     "pct": 91.3
     },
     "book_yield": {
-     "value": 0.502,
-     "pct": 82.6
-    },
-    "ebitda_ev": {
-     "value": 0.1092,
+     "value": 0.5299,
      "pct": 78.3
     },
+    "ebitda_ev": {
+     "value": 0.1268,
+     "pct": 87.0
+    },
     "fcf_yield": {
-     "value": 0.1093,
+     "value": 0.1272,
      "pct": 91.3
     },
     "netdebt_ebitda": {
-     "value": 4.4095,
-     "pct": 47.8
-    },
-    "interest_cover": {
-     "value": 2.2983,
-     "pct": 43.5
-    },
-    "equity_ratio": {
-     "value": 0.3093,
+     "value": 3.8452,
      "pct": 52.2
     },
+    "interest_cover": {
+     "value": 2.5429,
+     "pct": 52.2
+    },
+    "equity_ratio": {
+     "value": 0.3154,
+     "pct": 56.5
+    },
     "cfo_assets": {
-     "value": 0.0916,
-     "pct": 73.9
+     "value": 0.097,
+     "pct": 82.6
     },
     "accruals": {
-     "value": -0.0515,
-     "pct": 95.7
+     "value": -0.0476,
+     "pct": 91.3
     },
     "rev_growth": {
      "value": -0.0346,
@@ -12084,16 +12076,16 @@
      "pct": 22.7
     },
     "d_margin_q": {
-     "value": 0.0545,
+     "value": 0.0582,
      "pct": 63.6
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "USD",
-   "mcap_ils_m": 2335.3,
-   "mcap_source": "shares x price",
+   "mcap_ils_m": 2294.2,
+   "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
     "income": true,
@@ -12135,17 +12127,17 @@
    "sector": "יבואני רכב"
   },
   "416016": {
-   "score": 61,
+   "score": 62,
    "reason": null,
    "group": "real_estate",
    "group_he": "נדל\"ן",
    "model": "real_estate",
    "components": {
-    "profitability": 49.5,
-    "value": 71.0,
+    "profitability": 51.1,
+    "value": 70.2,
     "strength": 94.6,
     "quality": 43.5,
-    "growth": 37.9
+    "growth": 39.2
    },
    "metrics": {
     "gp_assets": {
@@ -12158,27 +12150,27 @@
     },
     "roe": {
      "value": 0.0797,
-     "pct": 29.0
+     "pct": 32.3
     },
     "roa": {
      "value": 0.0491,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0967,
+     "value": 0.1012,
      "pct": 64.5
     },
     "book_yield": {
-     "value": 1.2135,
+     "value": 1.2703,
      "pct": 77.4
     },
     "ebitda_ev": {
-     "value": 0.11,
+     "value": 0.1138,
      "pct": 87.1
     },
     "fcf_yield": {
-     "value": 0.0289,
-     "pct": 54.8
+     "value": 0.0302,
+     "pct": 51.6
     },
     "netdebt_ebitda": {
      "value": 2.3366,
@@ -12214,15 +12206,15 @@
     },
     "d_margin_q": {
      "value": -0.0101,
-     "pct": 51.7
+     "pct": 57.1
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 3147.9,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 3007.3,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -12237,7 +12229,7 @@
    "sector": "נדל\"ן מניב"
   },
   "1173699": {
-   "score": 70,
+   "score": 67,
    "reason": null,
    "group": "consumer_industry",
    "group_he": "צריכה ותעשייה",
@@ -12245,61 +12237,61 @@
    "components": {
     "profitability": 90.3,
     "value": 51.0,
-    "strength": 66.5,
-    "quality": 97.9,
-    "growth": 41.7
+    "strength": 62.3,
+    "quality": 95.8,
+    "growth": 31.3
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.5624,
+     "value": 0.5419,
      "pct": 100.0
     },
     "op_margin": {
-     "value": 0.1488,
+     "value": 0.1443,
      "pct": 79.2
     },
     "roe": {
-     "value": 0.2769,
+     "value": 0.2574,
      "pct": 91.7
     },
     "roa": {
-     "value": 0.1026,
+     "value": 0.0922,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0563,
-     "pct": 66.7
+     "value": 0.0588,
+     "pct": 62.5
     },
     "book_yield": {
-     "value": 0.2035,
-     "pct": 16.7
+     "value": 0.2283,
+     "pct": 20.8
     },
     "ebitda_ev": {
-     "value": 0.0772,
+     "value": 0.0804,
      "pct": 37.5
     },
     "fcf_yield": {
-     "value": 0.099,
+     "value": 0.1056,
      "pct": 83.3
     },
     "netdebt_ebitda": {
-     "value": 1.9411,
-     "pct": 54.2
+     "value": 2.1069,
+     "pct": 50.0
     },
     "interest_cover": {
-     "value": 8.3791,
+     "value": 8.0136,
      "pct": 87.0
     },
     "equity_ratio": {
-     "value": 0.3707,
-     "pct": 58.3
+     "value": 0.3581,
+     "pct": 50.0
     },
     "cfo_assets": {
-     "value": 0.2179,
-     "pct": 100.0
+     "value": 0.2045,
+     "pct": 95.8
     },
     "accruals": {
-     "value": -0.1153,
+     "value": -0.1123,
      "pct": 95.8
     },
     "rev_growth": {
@@ -12315,15 +12307,15 @@
      "pct": 20.8
     },
     "d_margin_q": {
-     "value": 0.0145,
-     "pct": 62.5
+     "value": -0.0176,
+     "pct": 20.8
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 2602.9,
+   "mcap_ils_m": 2350.4,
    "mcap_source": "yahoo market cap",
    "warnings": [],
    "statements": {
@@ -12339,14 +12331,14 @@
    "sector": "אופנה והלבשה"
   },
   "1168533": {
-   "score": 34,
+   "score": 33,
    "reason": null,
    "group": "consumer_industry",
    "group_he": "צריכה ותעשייה",
    "model": "standard",
    "components": {
     "profitability": 8.3,
-    "value": 28.1,
+    "value": 25.0,
     "strength": 58.8,
     "quality": 31.2,
     "growth": 53.1
@@ -12369,19 +12361,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0158,
-     "pct": 16.7
+     "value": 0.0161,
+     "pct": 12.5
     },
     "book_yield": {
-     "value": 0.3612,
-     "pct": 50.0
+     "value": 0.3689,
+     "pct": 45.8
     },
     "ebitda_ev": {
-     "value": 0.074,
-     "pct": 29.2
+     "value": 0.0754,
+     "pct": 25.0
     },
     "fcf_yield": {
-     "value": -0.0398,
+     "value": -0.0406,
      "pct": 16.7
     },
     "netdebt_ebitda": {
@@ -12425,8 +12417,8 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 2605.0,
-   "mcap_source": "yahoo market cap",
+   "mcap_ils_m": 2550.0,
+   "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
     "income": true,
@@ -12441,69 +12433,69 @@
    "sector": "תעשייה"
   },
   "1176205": {
-   "score": 41,
+   "score": 37,
    "reason": null,
    "group": "consumer_industry",
    "group_he": "צריכה ותעשייה",
    "model": "standard",
    "components": {
-    "profitability": 30.6,
-    "value": 39.6,
-    "strength": 87.3,
+    "profitability": 22.2,
+    "value": 37.5,
+    "strength": 77.5,
     "quality": 20.8,
     "growth": 21.9
    },
    "metrics": {
     "gp_assets": {
-     "value": 0.1289,
-     "pct": 29.2
+     "value": 0.12,
+     "pct": 16.7
     },
     "op_margin": {
-     "value": 0.1037,
-     "pct": 54.2
+     "value": 0.087,
+     "pct": 41.7
     },
     "roe": {
-     "value": 0.0375,
+     "value": 0.0263,
      "pct": 8.3
     },
     "roa": {
-     "value": 0.0246,
+     "value": 0.0171,
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0312,
+     "value": 0.024,
      "pct": 20.8
     },
     "book_yield": {
-     "value": 0.8337,
+     "value": 0.9142,
      "pct": 87.5
     },
     "ebitda_ev": {
-     "value": 0.0738,
-     "pct": 25.0
+     "value": 0.0672,
+     "pct": 16.7
     },
     "fcf_yield": {
-     "value": -0.0149,
+     "value": -0.0104,
      "pct": 25.0
     },
     "netdebt_ebitda": {
-     "value": 1.569,
-     "pct": 79.2
+     "value": 1.8687,
+     "pct": 58.3
     },
     "interest_cover": {
-     "value": 7.3041,
-     "pct": 82.6
+     "value": 6.2364,
+     "pct": 78.3
     },
     "equity_ratio": {
-     "value": 0.655,
-     "pct": 100.0
+     "value": 0.6526,
+     "pct": 95.8
     },
     "cfo_assets": {
-     "value": 0.0051,
+     "value": 0.006,
      "pct": 20.8
     },
     "accruals": {
-     "value": 0.0194,
+     "value": 0.0111,
      "pct": 20.8
     },
     "rev_growth": {
@@ -12519,15 +12511,15 @@
      "pct": 66.7
     },
     "d_margin_q": {
-     "value": -0.0633,
+     "value": -0.0648,
      "pct": 0.0
     }
    },
    "fiscal_year_end": "2025-12-31",
-   "last_quarter": "2026-06-30",
+   "last_quarter": "2026-09-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 1454.3,
+   "mcap_ils_m": 1332.6,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -12550,7 +12542,7 @@
    "model": "standard",
    "components": {
     "profitability": 61.1,
-    "value": 49.0,
+    "value": 47.9,
     "strength": 10.4,
     "quality": 0.0,
     "growth": 45.8
@@ -12573,19 +12565,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.1709,
+     "value": 0.1809,
      "pct": 100.0
     },
     "book_yield": {
-     "value": 0.773,
+     "value": 0.8182,
      "pct": 83.3
     },
     "ebitda_ev": {
-     "value": 0.0401,
-     "pct": 12.5
+     "value": 0.0406,
+     "pct": 8.3
     },
     "fcf_yield": {
-     "value": -0.9171,
+     "value": -0.9707,
      "pct": 0.0
     },
     "netdebt_ebitda": {
@@ -12625,7 +12617,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 1425.4,
+   "mcap_ils_m": 1346.6,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -12648,10 +12640,10 @@
    "model": "real_estate",
    "components": {
     "profitability": 61.9,
-    "value": 67.3,
+    "value": 68.5,
     "strength": 34.4,
     "quality": 33.9,
-    "growth": 75.9
+    "growth": 75.8
    },
    "metrics": {
     "gp_assets": {
@@ -12671,19 +12663,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.1759,
-     "pct": 91.9
+     "value": 0.1836,
+     "pct": 96.8
     },
     "book_yield": {
-     "value": 1.2058,
+     "value": 1.2589,
      "pct": 74.2
     },
     "ebitda_ev": {
-     "value": 0.1445,
+     "value": 0.1457,
      "pct": 96.8
     },
     "fcf_yield": {
-     "value": -0.4553,
+     "value": -0.4754,
      "pct": 6.5
     },
     "netdebt_ebitda": {
@@ -12720,14 +12712,14 @@
     },
     "d_margin_q": {
      "value": 0.0418,
-     "pct": 86.2
+     "pct": 85.7
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 1478.7,
+   "mcap_ils_m": 1416.4,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -12743,17 +12735,17 @@
    "sector": "נדל\"ן מניב"
   },
   "1168186": {
-   "score": 42,
+   "score": 41,
    "reason": null,
    "group": "finance_holding",
    "group_he": "פיננסים ואחזקות",
    "model": "standard",
    "components": {
-    "profitability": 42.1,
-    "value": 53.8,
+    "profitability": 44.7,
+    "value": 50.0,
     "strength": 34.3,
-    "quality": 26.9,
-    "growth": 46.2
+    "quality": 19.2,
+    "growth": 48.1
    },
    "metrics": {
     "gp_assets": {
@@ -12762,7 +12754,7 @@
     },
     "op_margin": {
      "value": 0.2042,
-     "pct": 23.1
+     "pct": 30.8
     },
     "roe": {
      "value": 0.1417,
@@ -12773,20 +12765,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.1232,
+     "value": 0.1362,
      "pct": 92.3
     },
     "book_yield": {
-     "value": 0.8691,
+     "value": 0.9611,
      "pct": 76.9
     },
     "ebitda_ev": {
-     "value": 0.0385,
-     "pct": 7.7
+     "value": 0.0391,
+     "pct": 0.0
     },
     "fcf_yield": {
-     "value": 0.0124,
-     "pct": 38.5
+     "value": 0.0138,
+     "pct": 30.8
     },
     "netdebt_ebitda": {
      "value": 21.9117,
@@ -12802,11 +12794,11 @@
     },
     "cfo_assets": {
      "value": 0.0056,
-     "pct": 23.1
+     "pct": 15.4
     },
     "accruals": {
      "value": 0.0127,
-     "pct": 30.8
+     "pct": 23.1
     },
     "rev_growth": {
      "value": 0.0139,
@@ -12822,14 +12814,14 @@
     },
     "d_margin_q": {
      "value": 0.1686,
-     "pct": 92.3
+     "pct": 100.0
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 1635.3,
+   "mcap_ils_m": 1478.8,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -12845,17 +12837,17 @@
    "sector": "שירותים פיננסים"
   },
   "1158161": {
-   "score": 50,
+   "score": 51,
    "reason": null,
    "group": "finance_holding",
    "group_he": "פיננסים ואחזקות",
    "model": "standard",
    "components": {
     "profitability": 57.7,
-    "value": 30.8,
+    "value": 34.6,
     "strength": 89.4,
-    "quality": 61.5,
-    "growth": 6.7
+    "quality": 57.7,
+    "growth": 8.7
    },
    "metrics": {
     "op_margin": {
@@ -12871,20 +12863,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0497,
-     "pct": 30.8
+     "value": 0.0521,
+     "pct": 38.5
     },
     "book_yield": {
-     "value": 0.3034,
+     "value": 0.3181,
      "pct": 30.8
     },
     "ebitda_ev": {
-     "value": 0.0992,
-     "pct": 38.5
+     "value": 0.1048,
+     "pct": 53.8
     },
     "fcf_yield": {
-     "value": 0.0013,
-     "pct": 23.1
+     "value": 0.0014,
+     "pct": 15.4
     },
     "netdebt_ebitda": {
      "value": -1.0,
@@ -12904,7 +12896,7 @@
     },
     "accruals": {
      "value": 0.0117,
-     "pct": 38.5
+     "pct": 30.8
     },
     "rev_growth": {
      "value": 0.0364,
@@ -12920,14 +12912,14 @@
     },
     "d_margin_q": {
      "value": -0.1095,
-     "pct": 0.0
+     "pct": 7.7
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 766.5,
+   "mcap_ils_m": 731.1,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -12953,7 +12945,7 @@
     "value": 81.2,
     "strength": 23.9,
     "quality": 58.3,
-    "growth": 32.3
+    "growth": 33.3
    },
    "metrics": {
     "gp_assets": {
@@ -12973,19 +12965,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0738,
+     "value": 0.0771,
      "pct": 79.2
     },
     "book_yield": {
-     "value": 0.7383,
+     "value": 0.7718,
      "pct": 79.2
     },
     "ebitda_ev": {
-     "value": 0.1338,
+     "value": 0.1358,
      "pct": 70.8
     },
     "fcf_yield": {
-     "value": 0.2291,
+     "value": 0.2396,
      "pct": 95.8
     },
     "netdebt_ebitda": {
@@ -13022,14 +13014,14 @@
     },
     "d_margin_q": {
      "value": -0.0024,
-     "pct": 29.2
+     "pct": 33.3
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 561.4,
+   "mcap_ils_m": 537.0,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -13045,14 +13037,14 @@
    "sector": "קמעונאות"
   },
   "368019": {
-   "score": 24,
+   "score": 25,
    "reason": null,
    "group": "tech",
    "group_he": "טכנולוגיה ותקשורת",
    "model": "standard",
    "components": {
     "profitability": 3.0,
-    "value": 14.1,
+    "value": 15.2,
     "strength": 52.2,
     "quality": 41.3,
     "growth": 23.9
@@ -13075,19 +13067,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": -0.1818,
+     "value": -0.2238,
      "pct": 4.3
     },
     "book_yield": {
-     "value": 0.2243,
-     "pct": 52.2
+     "value": 0.276,
+     "pct": 56.5
     },
     "ebitda_ev": {
-     "value": -0.1577,
+     "value": -0.1956,
      "pct": 0.0
     },
     "fcf_yield": {
-     "value": -0.1544,
+     "value": -0.19,
      "pct": 0.0
     },
     "netdebt_ebitda": {
@@ -13131,7 +13123,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 518.8,
+   "mcap_ils_m": 421.5,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -13147,7 +13139,7 @@
    "sector": "טכנולוגיה"
   },
   "5010129": {
-   "score": 51,
+   "score": 52,
    "reason": null,
    "group": "consumer_industry",
    "group_he": "צריכה ותעשייה",
@@ -13157,7 +13149,7 @@
     "value": 83.3,
     "strength": 11.3,
     "quality": 50.0,
-    "growth": 60.4
+    "growth": 61.5
    },
    "metrics": {
     "gp_assets": {
@@ -13177,19 +13169,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0812,
+     "value": 0.0805,
      "pct": 87.5
     },
     "book_yield": {
-     "value": 0.5199,
+     "value": 0.5152,
      "pct": 66.7
     },
     "ebitda_ev": {
-     "value": 0.1471,
+     "value": 0.1468,
      "pct": 79.2
     },
     "fcf_yield": {
-     "value": 0.4244,
+     "value": 0.4205,
      "pct": 100.0
     },
     "netdebt_ebitda": {
@@ -13226,14 +13218,14 @@
     },
     "d_margin_q": {
      "value": 0.0121,
-     "pct": 58.3
+     "pct": 62.5
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 1256.0,
+   "mcap_ils_m": 1267.4,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -13256,10 +13248,10 @@
    "model": "real_estate",
    "components": {
     "profitability": 34.7,
-    "value": 86.3,
-    "strength": 14.0,
-    "quality": 66.1,
-    "growth": 41.2
+    "value": 87.1,
+    "strength": 15.1,
+    "quality": 64.5,
+    "growth": 41.0
    },
    "metrics": {
     "gp_assets": {
@@ -13279,24 +13271,24 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.1174,
-     "pct": 74.2
+     "value": 0.1348,
+     "pct": 80.6
     },
     "book_yield": {
-     "value": 2.812,
+     "value": 3.2294,
      "pct": 100.0
     },
     "ebitda_ev": {
-     "value": 0.0864,
-     "pct": 71.0
+     "value": 0.0873,
+     "pct": 67.7
     },
     "fcf_yield": {
-     "value": 0.2375,
+     "value": 0.2728,
      "pct": 100.0
     },
     "netdebt_ebitda": {
      "value": 10.6307,
-     "pct": 19.4
+     "pct": 22.6
     },
     "interest_cover": {
      "value": 1.6573,
@@ -13312,7 +13304,7 @@
     },
     "accruals": {
      "value": -0.0063,
-     "pct": 90.3
+     "pct": 87.1
     },
     "rev_growth": {
      "value": -0.0193,
@@ -13328,14 +13320,14 @@
     },
     "d_margin_q": {
      "value": 0.0203,
-     "pct": 75.9
+     "pct": 75.0
     }
    },
    "fiscal_year_end": "2025-12-31",
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 1465.1,
+   "mcap_ils_m": 1275.8,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -13351,15 +13343,15 @@
    "sector": "נדל\"ן מניב"
   },
   "258012": {
-   "score": 42,
+   "score": 40,
    "reason": null,
    "group": "energy_infra",
    "group_he": "אנרגיה ותשתיות",
    "model": "standard",
    "components": {
     "profitability": 54.2,
-    "value": 48.9,
-    "strength": 55.1,
+    "value": 43.5,
+    "strength": 53.6,
     "quality": 2.2,
     "growth": 31.6
    },
@@ -13381,20 +13373,20 @@
      "pct": null
     },
     "earn_yield": {
-     "value": 0.0168,
-     "pct": 34.8
+     "value": 0.0152,
+     "pct": 30.4
     },
     "book_yield": {
-     "value": 0.2982,
-     "pct": 43.5
+     "value": 0.2692,
+     "pct": 30.4
     },
     "ebitda_ev": {
-     "value": 0.1108,
-     "pct": 82.6
+     "value": 0.1025,
+     "pct": 69.6
     },
     "fcf_yield": {
-     "value": -0.0497,
-     "pct": 34.8
+     "value": -0.0449,
+     "pct": 43.5
     },
     "netdebt_ebitda": {
      "value": 2.2379,
@@ -13402,7 +13394,7 @@
     },
     "interest_cover": {
      "value": 2.3342,
-     "pct": 47.8
+     "pct": 43.5
     },
     "equity_ratio": {
      "value": 0.2567,
@@ -13437,7 +13429,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 1512.9,
+   "mcap_ils_m": 1676.0,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
@@ -13460,9 +13452,9 @@
    "model": "standard",
    "components": {
     "profitability": 15.0,
-    "value": 51.1,
+    "value": 50.0,
     "strength": 3.0,
-    "quality": 80.4,
+    "quality": 78.3,
     "growth": 13.4
    },
    "metrics": {
@@ -13483,19 +13475,19 @@
      "pct": null
     },
     "earn_yield": {
-     "value": -1.2927,
+     "value": -1.272,
      "pct": 0.0
     },
     "book_yield": {
-     "value": 1.414,
-     "pct": 100.0
+     "value": 1.3913,
+     "pct": 95.7
     },
     "ebitda_ev": {
-     "value": -0.0727,
-     "pct": 4.3
+     "value": -0.0724,
+     "pct": 4.5
     },
     "fcf_yield": {
-     "value": 0.6732,
+     "value": 0.6624,
      "pct": 100.0
     },
     "netdebt_ebitda": {
@@ -13512,7 +13504,7 @@
     },
     "cfo_assets": {
      "value": 0.1129,
-     "pct": 60.9
+     "pct": 56.5
     },
     "accruals": {
      "value": -0.2894,
@@ -13539,7 +13531,7 @@
    "last_quarter": "2026-06-30",
    "ttm": true,
    "fin_currency": "ILS",
-   "mcap_ils_m": 222.1,
+   "mcap_ils_m": 225.7,
    "mcap_source": "shares x price",
    "warnings": [],
    "statements": {
